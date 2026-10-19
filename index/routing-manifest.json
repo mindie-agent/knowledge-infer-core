@@ -1,9 +1,16 @@
 {
-  "build_elapsed_ms": 4.847625037655234,
+  "build_elapsed_ms": 10.97070798277855,
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-sglang-decode-retraction-and-oom-abort": [],
+    "unit-sglang-finish-precedence-and-kv-release": [],
+    "unit-sglang-generate-input-normalization": [],
+    "unit-sglang-hisparse-completion-and-allocation-release": [],
     "unit-sglang-manager-completion-and-ownership": [],
+    "unit-sglang-overlap-copy-completion-boundary": [],
+    "unit-sglang-queue-fallback-and-chunk-budgets": [],
     "unit-sglang-registry-identity-and-shutdown-drain": [],
+    "unit-sglang-result-commit-and-flush-gates": [],
     "unit-sglang-scheduler-abort-and-outstanding-work": [],
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
     "unit-sglang-tp-capacity-and-result-contracts": [],
@@ -24,12 +31,19 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "f850b2f738915b759a422c6cea6a5f576c53d3b4ff8305de8b69f1031ecc754d",
-  "generation": "1cf1318c71636d09819239a9099f8019b9b55419522bca801167cd96985b559b",
+  "digest": "aca8fbf37b51280e90d2e1738084ad72ffd28f35ae681944420a8f8ebc2d5bd9",
+  "generation": "98af57e3cf1f0c6219dd8d9186917d7746e39d2d749ed27ed237ec11cd162767",
   "id_path": {
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+    "unit-sglang-decode-retraction-and-oom-abort": "serving/sglang/unit-sglang-decode-retraction-and-oom-abort.md",
+    "unit-sglang-finish-precedence-and-kv-release": "serving/sglang/unit-sglang-finish-precedence-and-kv-release.md",
+    "unit-sglang-generate-input-normalization": "serving/sglang/unit-sglang-generate-input-normalization.md",
+    "unit-sglang-hisparse-completion-and-allocation-release": "serving/sglang/unit-sglang-hisparse-completion-and-allocation-release.md",
     "unit-sglang-manager-completion-and-ownership": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
+    "unit-sglang-overlap-copy-completion-boundary": "serving/sglang/unit-sglang-overlap-copy-completion-boundary.md",
+    "unit-sglang-queue-fallback-and-chunk-budgets": "serving/sglang/unit-sglang-queue-fallback-and-chunk-budgets.md",
     "unit-sglang-registry-identity-and-shutdown-drain": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
+    "unit-sglang-result-commit-and-flush-gates": "serving/sglang/unit-sglang-result-commit-and-flush-gates.md",
     "unit-sglang-scheduler-abort-and-outstanding-work": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": "serving/sglang/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
     "unit-sglang-tp-capacity-and-result-contracts": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
@@ -53,7 +67,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 22,
+  "unit_count": 29,
   "units": [
     {
       "category": "sop",
@@ -97,6 +111,201 @@
           "reclamation",
           "ownership",
           "cache"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:142335944ad1894c4f9cd1213b8114b51e654a1004812ad65a798e419cdb330c",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:1ed2253c8c69d3383d4db7e4b7aabd96285e4dcdc04bc4ea4a6761d80691b496",
+      "content_sha256": "1ed2253c8c69d3383d4db7e4b7aabd96285e4dcdc04bc4ea4a6761d80691b496",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-decode-retraction-and-oom-abort",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-decode-retraction-and-oom-abort.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-decode-retraction-and-oom-abort-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L2325-L2360",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L3389-L3476",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L3752-L3775"
+        ],
+        "source_digest": "e1e48f05fea4e5ac452520b013099a8c4c114af837ccf135d001bc6d873c1117",
+        "source_locator": "docs/evidence/unit-sglang-decode-retraction-and-oom-abort-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Decode retraction preserves the final request only until its explicit OOM abort path",
+      "token_estimate": 466,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "decode",
+          "retraction",
+          "preserves",
+          "the",
+          "final",
+          "request",
+          "only",
+          "until",
+          "its",
+          "explicit",
+          "oom",
+          "abort",
+          "path"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:b60619a76dc4a3b6bc534f8860f5f86e32ee969ad8ff5e8b5b29cd84a35249b2",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:64a0112e1b436338bbe00d8aed27f3879b53f8729d05b6c88a1df753ebf9539a",
+      "content_sha256": "64a0112e1b436338bbe00d8aed27f3879b53f8729d05b6c88a1df753ebf9539a",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-finish-precedence-and-kv-release",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-finish-precedence-and-kv-release.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-finish-precedence-and-kv-release-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L1562-L1579",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L1996-L2087",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L2096-L2134"
+        ],
+        "source_digest": "f344608ee72038e7ef79bee42592537bfc9a8445c28cda4ddf4cf2616bae3c91",
+        "source_locator": "docs/evidence/unit-sglang-finish-precedence-and-kv-release-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Request finish precedence and KV ownership release are explicit state transitions",
+      "token_estimate": 492,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "request",
+          "finish",
+          "precedence",
+          "and",
+          "kv",
+          "ownership",
+          "release",
+          "are",
+          "explicit",
+          "state",
+          "transitions"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:3f856e2c6d62537e54131c16d04e7b3ecf1598aa767c6f741bcbe793acd9d753",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:7098cb5ce2a39cb218876137015b2dffaed0cb46229effe841a747013117cab6",
+      "content_sha256": "7098cb5ce2a39cb218876137015b2dffaed0cb46229effe841a747013117cab6",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-generate-input-normalization",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-generate-input-normalization.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-generate-input-normalization-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/io_struct.py#L444-L515",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/io_struct.py#L907-L947",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/io_struct.py#L959-L1064"
+        ],
+        "source_digest": "1bb3e7af58b6e53d09fa01384adf086819b4ee480af7bc15d58a27d905af5ac3",
+        "source_locator": "docs/evidence/unit-sglang-generate-input-normalization-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "GenerateReqInput normalization is not an exactly-one input-form contract",
+      "token_estimate": 458,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "generatereqinput",
+          "normalization",
+          "is",
+          "not",
+          "an",
+          "exactly-one",
+          "input-form",
+          "contract"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:165a6f2c59643d3fd450f6f2b17c1bc2641abb2cb01414e4cc78749346d37b57",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:3fd06aea25000c1770eb168b594970d47cd3bfa746b4c02ed38fa9bfde38df82",
+      "content_sha256": "3fd06aea25000c1770eb168b594970d47cd3bfa746b4c02ed38fa9bfde38df82",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-hisparse-completion-and-allocation-release",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-hisparse-completion-and-allocation-release.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-hisparse-completion-and-allocation-release-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/hisparse_coordinator.py#L157-L188",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/hisparse_coordinator.py#L1063-L1090",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/hisparse_coordinator.py#L1397-L1458"
+        ],
+        "source_digest": "0195f7917e8ae8d9701c42e16dbde4275eefba5bec3a1c1cc3860977d32fea4c",
+        "source_locator": "docs/evidence/unit-sglang-hisparse-completion-and-allocation-release-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HiSparse completion releases the current allocation after waiting for its producers",
+      "token_estimate": 552,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "hisparse",
+          "completion",
+          "releases",
+          "the",
+          "current",
+          "allocation",
+          "after",
+          "waiting",
+          "for",
+          "its",
+          "producers"
         ]
       }
     },
@@ -157,6 +366,107 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:99038d7bb9c7043e5fd3d095d9628c7cd69c746032e76778e676c63e69bfcfe5",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:7d7c1ef50be6cf224723254bcf2bf21a7f64ea03728f91d1a720e15ac70f96bd",
+      "content_sha256": "7d7c1ef50be6cf224723254bcf2bf21a7f64ea03728f91d1a720e15ac70f96bd",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-overlap-copy-completion-boundary",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-overlap-copy-completion-boundary.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-overlap-copy-completion-boundary-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/overlap_utils.py#L212-L253",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/overlap_utils.py#L544-L604"
+        ],
+        "source_digest": "c62fb5dc162960d8f57dabd401d165167de81fc3b5477f637f85e51543059707",
+        "source_locator": "docs/evidence/unit-sglang-overlap-copy-completion-boundary-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Overlap CPU consumers wait on copy completion while stream ordering has a narrower role",
+      "token_estimate": 424,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "overlap",
+          "cpu",
+          "consumers",
+          "wait",
+          "on",
+          "copy",
+          "completion",
+          "while",
+          "stream",
+          "ordering",
+          "has",
+          "a",
+          "narrower",
+          "role"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:fa156cd0eaa4803dd70eb7ed43a703495575adaef3ac9a20ed7c554360d4971a",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:d2579ec7e7d565decbdc18c257af5fe1b78de504bed188170c63b4db4c8ed558",
+      "content_sha256": "d2579ec7e7d565decbdc18c257af5fe1b78de504bed188170c63b4db4c8ed558",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-queue-fallback-and-chunk-budgets",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-queue-fallback-and-chunk-budgets.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-queue-fallback-and-chunk-budgets-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L214-L262",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L301-L312",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L834-L853",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L1544-L1558",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L1581-L1611"
+        ],
+        "source_digest": "d2ccf7c0fe5cf8d8d037136f6ecf4c8a9e572431982e384ce463b762f88a3e99",
+        "source_locator": "docs/evidence/unit-sglang-queue-fallback-and-chunk-budgets-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Scheduler queue fallback and chunk budgets retain distinct selection behavior",
+      "token_estimate": 595,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "scheduler",
+          "queue",
+          "fallback",
+          "and",
+          "chunk",
+          "budgets",
+          "retain",
+          "distinct",
+          "selection",
+          "behavior"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:a05cb132239968c10a7f7cfe37fe3db8fb0afc5492f404d7c99b6c58f448ce57",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -200,6 +510,57 @@
           "during",
           "failure",
           "cleanup"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:7658aad45eeca0a63d729b85eb9bee2d5160fbb91d664888d80115a8b529b0d8",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:d6c4646166a7cf8dff87acfca0c3fa9dfcf5818e8d1f24e88d283095735899a8",
+      "content_sha256": "d6c4646166a7cf8dff87acfca0c3fa9dfcf5818e8d1f24e88d283095735899a8",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-result-commit-and-flush-gates",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-result-commit-and-flush-gates.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-result-commit-and-flush-gates-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L307-L328",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L379-L396",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L807-L825",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L1354-L1387",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/flush_wrapper.py#L22-L61"
+        ],
+        "source_digest": "20bdb4b12bf2a71fb7b7f498fbd3981d61814eada121e1cc196128ecab2d3f95",
+        "source_locator": "docs/evidence/unit-sglang-result-commit-and-flush-gates-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Scheduler result commit, KV release and flush completion use separate gates",
+      "token_estimate": 658,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "scheduler",
+          "result",
+          "commit",
+          "kv",
+          "release",
+          "and",
+          "flush",
+          "completion",
+          "use",
+          "separate",
+          "gates"
         ]
       }
     },

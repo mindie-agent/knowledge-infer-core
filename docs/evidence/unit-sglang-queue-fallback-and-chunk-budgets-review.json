@@ -1,0 +1,88 @@
+{
+  "index": 10,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Scheduler queue fallback and chunk budgets retain distinct selection behavior",
+  "mechanism": "The configured LPM or HRRN policy can return an active FCFS policy when the waiting queue exceeds its configured threshold. However, calc_priority checks the configured self.policy for the explicit FCFS sorting branch; the active-policy fallback reaches a pass branch and preserves existing queue order. Thus the threshold fallback is not evidence of a newly sorted FCFS queue. Prefill budget evaluation distinguishes NO_TOKEN for memory or Mamba exhaustion from OTHER for input, diffusion-model or chunk limits. Replay can reduce the effective chunk limit, and later alignment rounds a permitted chunk down to the required boundary; a successful budget check need not admit the full remaining request.",
+  "corrections": [
+    "Do not equate the active fallback label with execution of the configured-FCFS sort.",
+    "Keep memory/token exhaustion separate from other scheduling-budget limits.",
+    "The accepted subset establishes source decisions only, without throughput or starvation measurements."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/schedule_policy.py",
+      "line_start": 214,
+      "line_end": 262,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "28f57c7a6ef21f386d9083f24cbc4077280dd31e7abbc94667c904f9365aec68",
+      "range_sha256": "d8cb0abddaaba7ad28bcdf82914eb6a1bcc29ffebca14fb533ca47278bec46e6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_policy.py:0-23189"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L214-L262"
+    },
+    {
+      "path": "python/sglang/srt/managers/schedule_policy.py",
+      "line_start": 301,
+      "line_end": 312,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "28f57c7a6ef21f386d9083f24cbc4077280dd31e7abbc94667c904f9365aec68",
+      "range_sha256": "3d1072a016b78775e4b52ea62699ab7c91718eb09c650c787b4e0bebc6826f49",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_policy.py:0-23189"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L301-L312"
+    },
+    {
+      "path": "python/sglang/srt/managers/schedule_policy.py",
+      "line_start": 834,
+      "line_end": 853,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "28f57c7a6ef21f386d9083f24cbc4077280dd31e7abbc94667c904f9365aec68",
+      "range_sha256": "994120feb82eb75e9d2396c224e0bc746e5e589b45b21ba26fa08e1a1e7c9c87",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_policy.py:23189-72236"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L834-L853"
+    },
+    {
+      "path": "python/sglang/srt/managers/schedule_policy.py",
+      "line_start": 1544,
+      "line_end": 1558,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "28f57c7a6ef21f386d9083f24cbc4077280dd31e7abbc94667c904f9365aec68",
+      "range_sha256": "f830ec26fc5440efd25876f7d950f1ee90fd81ee5f99592a3aed7e44e840e89f",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_policy.py:23189-72236"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L1544-L1558"
+    },
+    {
+      "path": "python/sglang/srt/managers/schedule_policy.py",
+      "line_start": 1581,
+      "line_end": 1611,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "28f57c7a6ef21f386d9083f24cbc4077280dd31e7abbc94667c904f9365aec68",
+      "range_sha256": "49e9a3feecdf89b09c132baed491423df1dc2990fca4f1d1217e0f48f6344b5d",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_policy.py:23189-72236"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_policy.py#L1581-L1611"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "fc8066823855b94a9a31a9cc9330d573fc4ef190750614c59c437fa481d8153a",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "a66052593600e9bacdb78f84f496f2bf2926dbda1c9904a50bb8093163ef3ac1",
+    "original_receipt": "68d7e64b5431c4ce8b56ac2714c0c7baa5501f01c21f37891351eaf631b24092",
+    "original_admission": "4d54d7ac7f1feca3627757a3ee4a4a556607e307a0c749de6088428330a85eb7"
+  }
+}

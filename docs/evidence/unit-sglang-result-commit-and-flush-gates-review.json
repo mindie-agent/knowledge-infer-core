@@ -1,0 +1,88 @@
+{
+  "index": 11,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Scheduler result commit, KV release and flush completion use separate gates",
+  "mechanism": "The result processor commits the shown prefill state only when a request is unfinished, not retracted and has no in-flight chunks; a separate condition controls the KV checkpoint. Chunk acceptance similarly excludes already finished requests. Abort handling chooses offload or direct release from its actual mask and configuration, while the later lookahead assertion is conditional on a Mamba mask being present. FlushWrapper rejects a second pending flush request, attempts immediate completion when no timeout was supplied or the scheduler is idle, and otherwise defers until idle or the deadline. A deferred return value is not by itself a successful cache flush.",
+  "corrections": [
+    "Discard the original empty __init__.py line-1 citation because that file has no line 1.",
+    "Do not generalize the conditional Mamba lookahead assertion to every request.",
+    "Commit eligibility, release choice and user-visible flush completion are separate contracts; no live scheduler test was run."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/batch_result_processor.py",
+      "line_start": 307,
+      "line_end": 328,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4867c24b439c9a26718edafdfc7ab0fa682b1597a91c0033f4facfbea896ad80",
+      "range_sha256": "ccd480e604b03d0ab4db6e2ff94487d13f3b5111a07710b93129e15c03a73033",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/batch_result_processor.py:0-49141"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L307-L328"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/batch_result_processor.py",
+      "line_start": 379,
+      "line_end": 396,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4867c24b439c9a26718edafdfc7ab0fa682b1597a91c0033f4facfbea896ad80",
+      "range_sha256": "0da384184794fa8648d651e15f20eef416e338386518e0a07503b123116694db",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/batch_result_processor.py:0-49141"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L379-L396"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/batch_result_processor.py",
+      "line_start": 807,
+      "line_end": 825,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4867c24b439c9a26718edafdfc7ab0fa682b1597a91c0033f4facfbea896ad80",
+      "range_sha256": "4b6c9658bba4c9612d5e96c8cc72bc6d0c077204d551480341ef12868edcc3a2",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/batch_result_processor.py:0-49141"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L807-L825"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/batch_result_processor.py",
+      "line_start": 1354,
+      "line_end": 1387,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4867c24b439c9a26718edafdfc7ab0fa682b1597a91c0033f4facfbea896ad80",
+      "range_sha256": "626b13e4653b6e58a693d3cd12b171bf187c548cd669b32053f3eae2b9ed55e7",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/batch_result_processor.py:49141-70959"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/batch_result_processor.py#L1354-L1387"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/flush_wrapper.py",
+      "line_start": 22,
+      "line_end": 61,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f10ac3d5f4db13c4b0b09804e8c3fae18cbbadd5bca0076890c77ede52be2a9a",
+      "range_sha256": "7c3f8b6c0e2aafbc581ee9d179d1cf886b140e8d4aed9e16db37d6c8bc217ceb",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/flush_wrapper.py:0-2058"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/flush_wrapper.py#L22-L61"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "b706d89311b22f67806a41edf6dd63c849959aed3bf05dd7a511ab815febaaba",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "e25b2b43cbacfb7c79100c40ceb98af89137843536914f497a5803ffeff5c3cd",
+    "original_receipt": "ca74bd61c6c7f4dd7bf712ba2748f60548f9c2fba8d688f1a6dc791061b30b71",
+    "original_admission": "974d2122ac1d5171a726b6e5c6f40625a7e212cc12624507f02ca82403fbb5b9"
+  }
+}

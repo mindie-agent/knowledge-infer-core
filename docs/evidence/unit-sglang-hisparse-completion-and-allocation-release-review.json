@@ -1,0 +1,64 @@
+{
+  "index": 5,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "HiSparse completion releases the current allocation after waiting for its producers",
+  "mechanism": "At the pinned SGLang revision, speculative HiSparse swap-in is restricted by its explicit enablement, speculative algorithm and draft-window checks. Ready-prefix accounting waits for the request-specific backup event before publishing the backed-up prefix. request_finished first waits for pending swap-in and backup work, then frees the persistent and scratch device allocations currently owned by the request. It uses allocated length rather than sequence length for the owned device range, clears the full request-to-token mapping, frees host allocation and resets request bookkeeping. These operations establish an ordering and ownership contract in the source; they do not establish a measured device cleanup duration or prove that every sparse-cache path uses identical synchronization.",
+  "corrections": [
+    "Retain waits for both swap-in and backup instead of treating a logical request finish as immediate safe reuse.",
+    "Use the actual allocated range and current persistent/scratch union; do not substitute the live sequence length.",
+    "Only the cited HiSparse subset is accepted; detokenizer, embedding and disaggregation helper claims remain outside this editorial decision."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/hisparse_coordinator.py",
+      "line_start": 157,
+      "line_end": 188,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "cfe012ce100ee86dcc5080ca5168d51fd4abd83e8c62ee72d3606b5feafc282e",
+      "range_sha256": "a644e45dadda6f4c61733ee6bfee02656612e29eeb2e7c0cb88c247527ff18b3",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/hisparse_coordinator.py:0-21233"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/hisparse_coordinator.py#L157-L188"
+    },
+    {
+      "path": "python/sglang/srt/managers/hisparse_coordinator.py",
+      "line_start": 1063,
+      "line_end": 1090,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "cfe012ce100ee86dcc5080ca5168d51fd4abd83e8c62ee72d3606b5feafc282e",
+      "range_sha256": "a54c1bb3572ae435d8bab1774c1cd674a0decba1506a6dc5db33f7eedfbad4dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/hisparse_coordinator.py:21233-68811"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/hisparse_coordinator.py#L1063-L1090"
+    },
+    {
+      "path": "python/sglang/srt/managers/hisparse_coordinator.py",
+      "line_start": 1397,
+      "line_end": 1458,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "cfe012ce100ee86dcc5080ca5168d51fd4abd83e8c62ee72d3606b5feafc282e",
+      "range_sha256": "167d23789cd518952218e6a413e98be5ba6f6ccacea3356a23b019fe71dbfbf6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/hisparse_coordinator.py:21233-68811"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/hisparse_coordinator.py#L1397-L1458"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "a97a137fbbcf73ab08b512833080800d4ae75629262128ce03a3fa77c93bc606",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "ec28828a8cee29db56a4bc0ac6c258cf151109dc611a1165a58291ce7507c9bd",
+    "original_receipt": "c1498d81127a538903105b6da33b228160fd4eecef4cd181836ec365f2f08101",
+    "original_admission": "130689d93a407afa73860939def9f7b22f536ecc7c43a9201a075d2981ad54c2"
+  }
+}

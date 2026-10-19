@@ -1,0 +1,64 @@
+{
+  "index": 8,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Request finish precedence and KV ownership release are explicit state transitions",
+  "mechanism": "Req detaches its owned KV allocation from request bookkeeping before returning the owned range, including the speculative tail. Finish evaluation first honors a deferred to_finish reason, then invalid vocabulary output, stop strings, EOS, length and grammar completion in that order. Resetting for retraction asserts that KV has already been released and clears execution state before the request is reused. The shown offload helper backs up KV but does not itself free the request allocation; the load path clears its backup reference after restoring it. Consequently finish, offload, free and retraction reset must not be collapsed into one operation.",
+  "corrections": [
+    "Preserve the actual finish-reason precedence instead of treating all terminal conditions as interchangeable.",
+    "A successful offload backup is not evidence that the device allocation has been released.",
+    "The selected ranges do not prove full multimodal request normalization or all sampler semantics."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/schedule_batch.py",
+      "line_start": 1562,
+      "line_end": 1579,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "b4097d82650ad48ac13e4a5b7cdedb8fadcef4e5716e738dd4bd88602abe8fbd",
+      "range_sha256": "87ff971dfcba4490086e4baef5d2e0e85c1448016a8ad2c801d0263a044bd550",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_batch.py:38704-87780"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L1562-L1579"
+    },
+    {
+      "path": "python/sglang/srt/managers/schedule_batch.py",
+      "line_start": 1996,
+      "line_end": 2087,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "b4097d82650ad48ac13e4a5b7cdedb8fadcef4e5716e738dd4bd88602abe8fbd",
+      "range_sha256": "c34161bf18f3dabc0332ede6b74733b34710603af4f2e4bfb6d48eecc71f0731",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_batch.py:38704-87780"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L1996-L2087"
+    },
+    {
+      "path": "python/sglang/srt/managers/schedule_batch.py",
+      "line_start": 2096,
+      "line_end": 2134,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "b4097d82650ad48ac13e4a5b7cdedb8fadcef4e5716e738dd4bd88602abe8fbd",
+      "range_sha256": "113346c3cbdd691979da3675e96dc92df3330e023324edf70cb4474fad753957",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/schedule_batch.py:38704-87780"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/schedule_batch.py#L2096-L2134"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "7e9dc25bbc0641dcf787fa17adc9862ac2bb63edf4cea8d38c87076f16b3203d",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "7a0fda455550acf0e6474fa462a0dae35941aa1df60a48b491f8e02b9fdc7124",
+    "original_receipt": "1398a6222a76455c5a068a2132e826ca4029cc9b729d6582c855d0f692b4cc87",
+    "original_admission": "548c112ac924cdbd5dd1f468969a0bffd5e26038f0e02c9d1c5937415b8140a1"
+  }
+}

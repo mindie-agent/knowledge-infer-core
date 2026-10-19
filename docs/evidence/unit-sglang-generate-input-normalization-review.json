@@ -1,0 +1,64 @@
+{
+  "index": 6,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "GenerateReqInput normalization is not an exactly-one input-form contract",
+  "mechanism": "GenerateReqInput normalization at the pinned revision rejects an all-empty input and a simultaneous text/input_ids/input_embeds triple. The actual predicates still allow pairs. In the text branch it clears input_embeds but does not clear input_ids, so the excerpts do not support an exactly-one-form invariant. Bootstrap normalization expands a scalar bootstrap_room across a batch with per-item offsets in the shown branch. __getitem__ constructs and caches a per-request object by indexing selected normalized fields; this is not a fresh general validation pass and it does not prove every field has been independently shape-checked.",
+  "corrections": [
+    "Replace the candidate exactly-one claim with the two actual rejection predicates.",
+    "Distinguish bootstrap normalization from per-item extraction.",
+    "No end-to-end multimodal, streaming or transport conformance was tested."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/io_struct.py",
+      "line_start": 444,
+      "line_end": 515,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "a1fd901e2998b0789f7ec70b032e645cde80404ec3540374d16125d84582e682",
+      "range_sha256": "8c9b7649c3d2aa8f7b86a2c0eb28d27f15d3c6cc00b90f7f5e5df69eada6d3d2",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/io_struct.py:0-48138"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/io_struct.py#L444-L515"
+    },
+    {
+      "path": "python/sglang/srt/managers/io_struct.py",
+      "line_start": 907,
+      "line_end": 947,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "a1fd901e2998b0789f7ec70b032e645cde80404ec3540374d16125d84582e682",
+      "range_sha256": "9df500927cdcdd1026afb348497ae248d33432ee571cf5530f014219edb94fcb",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/io_struct.py:0-48138"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/io_struct.py#L907-L947"
+    },
+    {
+      "path": "python/sglang/srt/managers/io_struct.py",
+      "line_start": 959,
+      "line_end": 1064,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "a1fd901e2998b0789f7ec70b032e645cde80404ec3540374d16125d84582e682",
+      "range_sha256": "56c07a7382fad4e7a44516525897a2ecdc2452900f416900f6978961051961a8",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/io_struct.py:0-48138"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/io_struct.py#L959-L1064"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "bf08ab8842c015498b22511f6251fa300cd22b7cca2fc7f3257537e0b3b1550a",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "49723b1f9f3d8bc800de334be1bf1471a178a0649c705fa82c139c1b4d9de5f4",
+    "original_receipt": "a19aba578ee5578e51cbbbd93c10acc6717e8c0d4415a71b164775bc41b03672",
+    "original_admission": "e908c8b55a256bbb8a06b6b73b86cfb5325fa4208272a15e769c5ed650ce0aa5"
+  }
+}

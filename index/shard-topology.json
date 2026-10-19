@@ -1,8 +1,15 @@
 {
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-sglang-decode-retraction-and-oom-abort": [],
+    "unit-sglang-finish-precedence-and-kv-release": [],
+    "unit-sglang-generate-input-normalization": [],
+    "unit-sglang-hisparse-completion-and-allocation-release": [],
     "unit-sglang-manager-completion-and-ownership": [],
+    "unit-sglang-overlap-copy-completion-boundary": [],
+    "unit-sglang-queue-fallback-and-chunk-budgets": [],
     "unit-sglang-registry-identity-and-shutdown-drain": [],
+    "unit-sglang-result-commit-and-flush-gates": [],
     "unit-sglang-scheduler-abort-and-outstanding-work": [],
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
     "unit-sglang-tp-capacity-and-result-contracts": [],
@@ -23,18 +30,25 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "a7c0031623825824534b1ec6baa1b5efc9653ef729caec3920cd6ad27b8f3f86",
+  "digest": "fb123e97b4f6fac5c185274a16a49bb07ea113e17a7026f3ae432fdf5ae65b5b",
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 112526,
-      "estimated_tokens": 17241,
+      "bytes": 137576,
+      "estimated_tokens": 20886,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-sglang-cancellation-and-cache-ownership",
+        "unit-sglang-decode-retraction-and-oom-abort",
+        "unit-sglang-finish-precedence-and-kv-release",
+        "unit-sglang-generate-input-normalization",
+        "unit-sglang-hisparse-completion-and-allocation-release",
         "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-overlap-copy-completion-boundary",
+        "unit-sglang-queue-fallback-and-chunk-budgets",
         "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-scheduler-abort-and-outstanding-work",
         "unit-sglang-tokenizer-dispatch-and-abort-boundary",
         "unit-sglang-tp-capacity-and-result-contracts",
@@ -55,21 +69,28 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 22
+      "units": 29
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 112526,
-        "estimated_tokens": 17241,
+        "bytes": 137576,
+        "estimated_tokens": 20886,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
           "unit-sglang-cancellation-and-cache-ownership",
+          "unit-sglang-decode-retraction-and-oom-abort",
+          "unit-sglang-finish-precedence-and-kv-release",
+          "unit-sglang-generate-input-normalization",
+          "unit-sglang-hisparse-completion-and-allocation-release",
           "unit-sglang-manager-completion-and-ownership",
+          "unit-sglang-overlap-copy-completion-boundary",
+          "unit-sglang-queue-fallback-and-chunk-budgets",
           "unit-sglang-registry-identity-and-shutdown-drain",
+          "unit-sglang-result-commit-and-flush-gates",
           "unit-sglang-scheduler-abort-and-outstanding-work",
           "unit-sglang-tokenizer-dispatch-and-abort-boundary",
           "unit-sglang-tp-capacity-and-result-contracts",
@@ -90,17 +111,17 @@
           "unit-tgi-vision-token-mask-and-connector-geometry",
           "unit-vllm-cancellation-and-block-reclamation"
         ],
-        "units": 22
+        "units": 29
       }
     ]
   },
-  "index_build_elapsed_ms": 4.847625037655234,
-  "index_digest": "f850b2f738915b759a422c6cea6a5f576c53d3b4ff8305de8b69f1031ecc754d",
+  "index_build_elapsed_ms": 10.97070798277855,
+  "index_digest": "aca8fbf37b51280e90d2e1738084ad72ffd28f35ae681944420a8f8ebc2d5bd9",
   "leaves": [
     {
       "automatic": false,
-      "bytes": 28116,
-      "estimated_tokens": 4359,
+      "bytes": 53166,
+      "estimated_tokens": 8004,
       "exceeds": [
         "estimated_tokens"
       ],
@@ -109,13 +130,20 @@
       "recommended_action": "review_leaf_split",
       "unit_ids": [
         "unit-sglang-cancellation-and-cache-ownership",
+        "unit-sglang-decode-retraction-and-oom-abort",
+        "unit-sglang-finish-precedence-and-kv-release",
+        "unit-sglang-generate-input-normalization",
+        "unit-sglang-hisparse-completion-and-allocation-release",
         "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-overlap-copy-completion-boundary",
+        "unit-sglang-queue-fallback-and-chunk-budgets",
         "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-scheduler-abort-and-outstanding-work",
         "unit-sglang-tokenizer-dispatch-and-abort-boundary",
         "unit-sglang-tp-capacity-and-result-contracts"
       ],
-      "units": 6
+      "units": 13
     },
     {
       "automatic": false,
@@ -176,21 +204,28 @@
   "two_level_subtrees": [
     {
       "automatic": false,
-      "bytes": 28116,
-      "estimated_tokens": 4359,
+      "bytes": 53166,
+      "estimated_tokens": 8004,
       "exceeds": [],
       "kind": "subtree",
       "path": "serving/sglang",
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
         "unit-sglang-cancellation-and-cache-ownership",
+        "unit-sglang-decode-retraction-and-oom-abort",
+        "unit-sglang-finish-precedence-and-kv-release",
+        "unit-sglang-generate-input-normalization",
+        "unit-sglang-hisparse-completion-and-allocation-release",
         "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-overlap-copy-completion-boundary",
+        "unit-sglang-queue-fallback-and-chunk-budgets",
         "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-scheduler-abort-and-outstanding-work",
         "unit-sglang-tokenizer-dispatch-and-abort-boundary",
         "unit-sglang-tp-capacity-and-result-contracts"
       ],
-      "units": 6
+      "units": 13
     },
     {
       "automatic": false,
@@ -245,7 +280,7 @@
       "units": 1
     }
   ],
-  "unit_count": 22,
+  "unit_count": 29,
   "units": {
     "unit-sglang-cancellation-and-cache-ownership": {
       "bytes": 4223,
@@ -256,6 +291,50 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+      "tier": "L2"
+    },
+    "unit-sglang-decode-retraction-and-oom-abort": {
+      "bytes": 3296,
+      "category": "sop",
+      "content_sha256": "1ed2253c8c69d3383d4db7e4b7aabd96285e4dcdc04bc4ea4a6761d80691b496",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 466,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-decode-retraction-and-oom-abort.md",
+      "tier": "L2"
+    },
+    "unit-sglang-finish-precedence-and-kv-release": {
+      "bytes": 3385,
+      "category": "sop",
+      "content_sha256": "64a0112e1b436338bbe00d8aed27f3879b53f8729d05b6c88a1df753ebf9539a",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 492,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-finish-precedence-and-kv-release.md",
+      "tier": "L2"
+    },
+    "unit-sglang-generate-input-normalization": {
+      "bytes": 3186,
+      "category": "sop",
+      "content_sha256": "7098cb5ce2a39cb218876137015b2dffaed0cb46229effe841a747013117cab6",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 458,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-generate-input-normalization.md",
+      "tier": "L2"
+    },
+    "unit-sglang-hisparse-completion-and-allocation-release": {
+      "bytes": 3674,
+      "category": "sop",
+      "content_sha256": "3fd06aea25000c1770eb168b594970d47cd3bfa746b4c02ed38fa9bfde38df82",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 552,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-hisparse-completion-and-allocation-release.md",
       "tier": "L2"
     },
     "unit-sglang-manager-completion-and-ownership": {
@@ -269,6 +348,28 @@
       "path": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
       "tier": "L2"
     },
+    "unit-sglang-overlap-copy-completion-boundary": {
+      "bytes": 2991,
+      "category": "sop",
+      "content_sha256": "7d7c1ef50be6cf224723254bcf2bf21a7f64ea03728f91d1a720e15ac70f96bd",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 424,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-overlap-copy-completion-boundary.md",
+      "tier": "L2"
+    },
+    "unit-sglang-queue-fallback-and-chunk-budgets": {
+      "bytes": 4076,
+      "category": "sop",
+      "content_sha256": "d2579ec7e7d565decbdc18c257af5fe1b78de504bed188170c63b4db4c8ed558",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 595,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-queue-fallback-and-chunk-budgets.md",
+      "tier": "L2"
+    },
     "unit-sglang-registry-identity-and-shutdown-drain": {
       "bytes": 3832,
       "category": "sop",
@@ -278,6 +379,17 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
+      "tier": "L2"
+    },
+    "unit-sglang-result-commit-and-flush-gates": {
+      "bytes": 4442,
+      "category": "sop",
+      "content_sha256": "d6c4646166a7cf8dff87acfca0c3fa9dfcf5818e8d1f24e88d283095735899a8",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 658,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-result-commit-and-flush-gates.md",
       "tier": "L2"
     },
     "unit-sglang-scheduler-abort-and-outstanding-work": {

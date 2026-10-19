@@ -1,0 +1,52 @@
+{
+  "index": 7,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Overlap CPU consumers wait on copy completion while stream ordering has a narrower role",
+  "mechanism": "The overlap confidence-copy path schedules a device-to-host copy after its producer dependency and records a completion event; the CPU consumer queries completion before using that copied confidence. These excerpts contain no wait for a previous occupant when a ring slot is selected, so a complete slot-reuse lifetime proof cannot be inferred. resolve_seq_lens_cpu can skip the initial event wait when stream_ordered is set, but a private device-to-host copy still has its own completion wait before CPU use. When CPU sequence lengths are unnecessary it returns None; otherwise the selected path synchronizes the transfer before returning host values.",
+  "corrections": [
+    "A producer stream dependency and a CPU-visible copy completion are separate boundaries.",
+    "Do not infer safe ring-buffer slot reuse from the confidence consumer check alone.",
+    "No real asynchronous device race or throughput effect was measured."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/overlap_utils.py",
+      "line_start": 212,
+      "line_end": 253,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "ecf7df9ca730b7766f48b64092cedf895921b3cdbaf4cf7289b3d676d3c20d25",
+      "range_sha256": "3c50ea197a5b1c45150436e1c24feae7314b265b088505eea2b9913de7bf8311",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/overlap_utils.py:0-28518"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/overlap_utils.py#L212-L253"
+    },
+    {
+      "path": "python/sglang/srt/managers/overlap_utils.py",
+      "line_start": 544,
+      "line_end": 604,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "ecf7df9ca730b7766f48b64092cedf895921b3cdbaf4cf7289b3d676d3c20d25",
+      "range_sha256": "f7d9d6e12fc4040c894d558ee979d0611e85faeedbd39c34db4b6c1f4464b209",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/overlap_utils.py:0-28518"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/overlap_utils.py#L544-L604"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "86686d02d832b41e37b2398bb9788bc95066c3818bd038086888e2fef0125bd9",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "e969a64c0bb3a087b66196435941c41d73e5551ae6cd6c9827e34ec46dced43d",
+    "original_receipt": "bb4170a744a663e4150688179916a9187630de7ba250e2a1218d15b74242e4da",
+    "original_admission": "8109903c642a5940306b4d331a3a7fc9265479a6c8c0e82250d58f52c0df700e"
+  }
+}

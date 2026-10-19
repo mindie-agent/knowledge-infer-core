@@ -1,0 +1,39 @@
+{
+  "schema_version": "mindie-reviewed-domain-admission/1",
+  "domain": "infer-core",
+  "validator_revision": "ab2216600c545c1904b969f369b6aee1b15d0de4",
+  "editorial_packet_sha256": [
+    "83342d41801756161ac70068167ba5a1a89c0d41a8364f2161b1ded5da382eb6"
+  ],
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "accepted_existing_unit_count": 22,
+  "admitted_unit_ids": [
+    "unit-sglang-hisparse-completion-and-allocation-release",
+    "unit-sglang-generate-input-normalization",
+    "unit-sglang-overlap-copy-completion-boundary",
+    "unit-sglang-finish-precedence-and-kv-release",
+    "unit-sglang-decode-retraction-and-oom-abort",
+    "unit-sglang-queue-fallback-and-chunk-budgets",
+    "unit-sglang-result-commit-and-flush-gates"
+  ],
+  "source_revisions": [
+    "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+  ],
+  "c6": "applied",
+  "correct_condition_query": "matched",
+  "mismatched_revision": "excluded",
+  "missing_revision": "excluded",
+  "exact_ref_readback": "matched",
+  "index": "generated_and_checked",
+  "existing_unit_bytes": "preserved",
+  "source_projection": "actual_single_pass_Gitleaks_and_deterministic_scan_unchanged",
+  "decision_preparation": "Deterministic projection of independently reviewed mechanism and corrections; no new model interpretation.",
+  "formal_publication": "Requires final contract/2 release pin and remote readback.",
+  "model_calls": 0,
+  "framework_execution": 0,
+  "npu_calls": 0,
+  "remote_writes": 0
+}
