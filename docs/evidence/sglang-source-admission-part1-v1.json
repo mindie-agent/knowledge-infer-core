@@ -1,0 +1,37 @@
+{
+  "schema_version": "mindie-reviewed-domain-admission/1",
+  "domain": "infer-core",
+  "validator_revision": "165c47fb8acae10a4e591ea522fd0de0ba527ad0",
+  "editorial_packet_sha256": [
+    "13c9bc015922596a51d6a484f167048466df8bd79e7d254e8c39249f3e01398d"
+  ],
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "accepted_existing_unit_count": 17,
+  "admitted_unit_ids": [
+    "unit-sglang-manager-completion-and-ownership",
+    "unit-sglang-scheduler-abort-and-outstanding-work",
+    "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+    "unit-sglang-registry-identity-and-shutdown-drain",
+    "unit-sglang-tp-capacity-and-result-contracts"
+  ],
+  "source_revisions": [
+    "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+  ],
+  "c6": "applied",
+  "correct_condition_query": "matched",
+  "mismatched_revision": "excluded",
+  "missing_revision": "excluded",
+  "exact_ref_readback": "matched",
+  "index": "generated_and_checked",
+  "existing_unit_bytes": "preserved",
+  "source_projection": "actual_single_pass_Gitleaks_and_deterministic_scan_unchanged",
+  "decision_preparation": "Deterministic projection of independently reviewed mechanism and corrections; no new model interpretation.",
+  "formal_publication": "Requires final contract/2 release pin and remote readback.",
+  "model_calls": 0,
+  "framework_execution": 0,
+  "npu_calls": 0,
+  "remote_writes": 0
+}

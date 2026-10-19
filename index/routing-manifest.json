@@ -1,7 +1,12 @@
 {
-  "build_elapsed_ms": 3.003166988492012,
+  "build_elapsed_ms": 4.847625037655234,
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-sglang-manager-completion-and-ownership": [],
+    "unit-sglang-registry-identity-and-shutdown-drain": [],
+    "unit-sglang-scheduler-abort-and-outstanding-work": [],
+    "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
+    "unit-sglang-tp-capacity-and-result-contracts": [],
     "unit-tgi-cache-axes-and-mask-semantics": [],
     "unit-tgi-expanded-deepseek-kv-storage": [],
     "unit-tgi-kv-head-topology-and-preprocessing": [],
@@ -19,10 +24,15 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "2d7c6d9d5c00673b08e689b2e4b78e37c7ce7d3ee61ff5a824b897277a7e1319",
-  "generation": "c148fd996dd5ea1321713dcf9669d94a4c08f625fe47ffe7c1147b51a85b67a4",
+  "digest": "f850b2f738915b759a422c6cea6a5f576c53d3b4ff8305de8b69f1031ecc754d",
+  "generation": "1cf1318c71636d09819239a9099f8019b9b55419522bca801167cd96985b559b",
   "id_path": {
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+    "unit-sglang-manager-completion-and-ownership": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
+    "unit-sglang-registry-identity-and-shutdown-drain": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
+    "unit-sglang-scheduler-abort-and-outstanding-work": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
+    "unit-sglang-tokenizer-dispatch-and-abort-boundary": "serving/sglang/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
+    "unit-sglang-tp-capacity-and-result-contracts": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
     "unit-tgi-cache-axes-and-mask-semantics": "serving/tgi/unit-tgi-cache-axes-and-mask-semantics.md",
     "unit-tgi-expanded-deepseek-kv-storage": "serving/tgi/unit-tgi-expanded-deepseek-kv-storage.md",
     "unit-tgi-kv-head-topology-and-preprocessing": "serving/tgi/unit-tgi-kv-head-topology-and-preprocessing.md",
@@ -43,7 +53,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 17,
+  "unit_count": 22,
   "units": [
     {
       "category": "sop",
@@ -87,6 +97,257 @@
           "reclamation",
           "ownership",
           "cache"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:21f717e7f07d8279685a8f75ff6a36a40a94454dc589e3edcd86c3cf83233428",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:9c6aef9758b7de34514000f36205c6e80023419413cd2aebdef19e9f8af48f6a",
+      "content_sha256": "9c6aef9758b7de34514000f36205c6e80023419413cd2aebdef19e9f8af48f6a",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-manager-completion-and-ownership",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-manager-completion-and-ownership-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/async_d2h_copy_worker.py#L11-L40",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/async_d2h_copy_worker.py#L79-L106",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/communicator.py#L41-L79",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/communicator.py#L90-L103",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/cache_controller.py#L1102-L1153",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/cache_controller.py#L1421-L1433",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L121-L154",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L233-L239",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L321-L324",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L343-L358",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L875-L899"
+        ],
+        "source_digest": "df642e15ebdfb73ede7ea3a8c1f36cde1e13af1ab0c853d7ab52c0b14cb90b1d",
+        "source_locator": "docs/evidence/unit-sglang-manager-completion-and-ownership-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "SGLang manager completion signals retain distinct success and ownership conditions",
+      "token_estimate": 1119,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "manager",
+          "completion",
+          "signals",
+          "retain",
+          "distinct",
+          "success",
+          "and",
+          "ownership",
+          "conditions"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:a05cb132239968c10a7f7cfe37fe3db8fb0afc5492f404d7c99b6c58f448ce57",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:b45a32ec68dd8e03f633753a960262e05c2ce339100e2bc1d5b00d8440802792",
+      "content_sha256": "b45a32ec68dd8e03f633753a960262e05c2ce339100e2bc1d5b00d8440802792",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-registry-identity-and-shutdown-drain",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-registry-identity-and-shutdown-drain-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L3520-L3583",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L3589-L3655",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L3810-L3886"
+        ],
+        "source_digest": "d1e7bd9b4444cdfd7c87acf979547b354a3b49072009bf0d8bc139c32a1d5633",
+        "source_locator": "docs/evidence/unit-sglang-registry-identity-and-shutdown-drain-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Tokenizer registry identity guards protect newer requests during failure cleanup",
+      "token_estimate": 600,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "tokenizer",
+          "registry",
+          "identity",
+          "guards",
+          "protect",
+          "newer",
+          "requests",
+          "during",
+          "failure",
+          "cleanup"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:a03c25c7a657c85d2bfb4e3bc1e60a68b311eb8b9257380bbe3485f66fa64b24",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:64be14ed54ddfeb3a17790cf7f22fcb9a483733e4b8e722f02a89ec7b7726d4b",
+      "content_sha256": "64be14ed54ddfeb3a17790cf7f22fcb9a483733e4b8e722f02a89ec7b7726d4b",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-scheduler-abort-and-outstanding-work",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-scheduler-abort-and-outstanding-work-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3487-L3531",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3533-L3585",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3713-L3762",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L4398-L4421"
+        ],
+        "source_digest": "03a995951eddaf28a009424afbd0ddd48a898202f3766727ccce47adeb28439d",
+        "source_locator": "docs/evidence/unit-sglang-scheduler-abort-and-outstanding-work-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Scheduler abort admission and resource release must respect outstanding work",
+      "token_estimate": 650,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "scheduler",
+          "abort",
+          "admission",
+          "and",
+          "resource",
+          "release",
+          "must",
+          "respect",
+          "outstanding",
+          "work"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:0853183a10cf0a30896ffb30b1d47056c3e58b1f4dc1b282fef22d8b782c0b2f",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:526d78059cd37349c0b31a1fcd9cd83c4cab3bf0c5545df8cdd8dc8d6da9135f",
+      "content_sha256": "526d78059cd37349c0b31a1fcd9cd83c4cab3bf0c5545df8cdd8dc8d6da9135f",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-tokenizer-dispatch-and-abort-boundary-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L1781-L1822",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L1936-L1944",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L1964-L1983",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L2253-L2272"
+        ],
+        "source_digest": "abe3f9cc1d4329ee922a373acf9c5ca7852cd638243c43b4750bf57e905e26b5",
+        "source_locator": "docs/evidence/unit-sglang-tokenizer-dispatch-and-abort-boundary-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Tokenizer dispatch bookkeeping and abort requests have separate completion boundaries",
+      "token_estimate": 601,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "tokenizer",
+          "dispatch",
+          "bookkeeping",
+          "and",
+          "abort",
+          "requests",
+          "have",
+          "separate",
+          "completion",
+          "boundaries"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:3c170defa7edc5143b9e745e4bf0b0789947915e5b314fb641dcdc8f9276d18b",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:332d8f12e90715fe24236a2daed8635214538a826e334bbdfa2ed5797fa1aea4",
+      "content_sha256": "332d8f12e90715fe24236a2daed8635214538a826e334bbdfa2ed5797fa1aea4",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-tp-capacity-and-result-contracts",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-tp-capacity-and-result-contracts-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L354-L386",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L393-L418",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L543-L555",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L701-L745",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/utils.py#L136-L161",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/utils.py#L479-L495"
+        ],
+        "source_digest": "7bafbfd21297fe0bdd8149690d2ceafd9452170197d666dc56e38a2630c74696",
+        "source_locator": "docs/evidence/unit-sglang-tp-capacity-and-result-contracts-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "TP-worker capacity reports and token-result types are conditional contracts",
+      "token_estimate": 764,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "tp-worker",
+          "capacity",
+          "reports",
+          "and",
+          "token-result",
+          "types",
+          "are",
+          "conditional",
+          "contracts"
         ]
       }
     },

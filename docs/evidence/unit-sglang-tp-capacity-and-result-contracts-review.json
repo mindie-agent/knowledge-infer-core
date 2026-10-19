@@ -1,0 +1,101 @@
+{
+  "index": 4,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "TP-worker capacity reports and token-result types are conditional contracts",
+  "mechanism": "TpModelWorker seed selection first honors an explicit seed, then reuses the elastic joiner's configured seed, then broadcasts a PP-speculative draft worker's seed inside its TP group, otherwise using the world group. The source explains that first PP stages do not construct that draft worker and cannot join its world broadcast. Memory-pool validation uses effective logical token capacity directly, but get_worker_info multiplies it by page_interleave_shard_size before computing the reported request limit and subtracting the input reserve. EAGLE alone reserves output slots using max(top_k * num_steps, max_speculative_num_draft_tokens); these excerpts do not establish one combined admission formula. Delayed sampling finalizes elastic CUDA-graph scaling inside its deferred callback and returns before the immediate/prefill-only finalization line. Prefill-only execution creates dummy zero token IDs as a tensor, so GenerationBatchResult.has_sampled_token_ids, which only tests isinstance(torch.Tensor), cannot prove that sampling actually happened. extra_keep_alive_refs is a documented two-iteration lifetime handoff to the scheduler, not a demonstrated drain protocol.",
+  "corrections": [
+    "Do not include delayed sampling in the branch that reaches the later immediate finalization call.",
+    "Distinguish memory-pool validation from reported capacity instead of silently equating their formulas.",
+    "The tensor type check is not evidence of a semantic sample.",
+    "No end-to-end distributed deadlock, cancellation, capacity or performance experiment was run."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/tp_worker.py",
+      "line_start": 354,
+      "line_end": 386,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3668a19cd3f6d5e923cd4620dd32e880dc9006411402b3c95c648566a8a377e3",
+      "range_sha256": "f4b37b3fa30d9e98f6dc07d0be5313d2fbce4a3ac540c79a371f0f634fd92ee8",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tp_worker.py:0-32111"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L354-L386"
+    },
+    {
+      "path": "python/sglang/srt/managers/tp_worker.py",
+      "line_start": 393,
+      "line_end": 418,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3668a19cd3f6d5e923cd4620dd32e880dc9006411402b3c95c648566a8a377e3",
+      "range_sha256": "a83d47e2c372564d33816bb128614876f27146496e2aaa2a3a4cf564a0c5f288",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tp_worker.py:0-32111"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L393-L418"
+    },
+    {
+      "path": "python/sglang/srt/managers/tp_worker.py",
+      "line_start": 543,
+      "line_end": 555,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3668a19cd3f6d5e923cd4620dd32e880dc9006411402b3c95c648566a8a377e3",
+      "range_sha256": "7c3c1a14544c85bac0d57502e9084a5ba27763d0ece64f93581613e0253fdb90",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tp_worker.py:0-32111"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L543-L555"
+    },
+    {
+      "path": "python/sglang/srt/managers/tp_worker.py",
+      "line_start": 701,
+      "line_end": 745,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3668a19cd3f6d5e923cd4620dd32e880dc9006411402b3c95c648566a8a377e3",
+      "range_sha256": "29a70a996e89d20a39ecf1ecc15267984e86c1bbb5806e936b6a4ef55256baf9",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tp_worker.py:0-32111"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tp_worker.py#L701-L745"
+    },
+    {
+      "path": "python/sglang/srt/managers/utils.py",
+      "line_start": 136,
+      "line_end": 161,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f69829aba012ca7162574be396bf3aba51a145feae09b8e96e077118f718cff6",
+      "range_sha256": "8eca179a819f3263c901e137f730eff4917024809bbec54fd5f0c7cffcd1ee39",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/utils.py:0-21839"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/utils.py#L136-L161"
+    },
+    {
+      "path": "python/sglang/srt/managers/utils.py",
+      "line_start": 479,
+      "line_end": 495,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f69829aba012ca7162574be396bf3aba51a145feae09b8e96e077118f718cff6",
+      "range_sha256": "4a13b93e7e82fc8534b29eb6b6a9cbe6c50aa149a0d3ac7199d9b96c61fe1f24",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/utils.py:0-21839"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/utils.py#L479-L495"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "afc7e7e46f10da13bba39ccff2cca3107494778b1ea94a65ab21e7e252d1bb5e",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "13c9bc015922596a51d6a484f167048466df8bd79e7d254e8c39249f3e01398d",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "b4083453ea37aa15af24e841b48775d948b0015c22cf73a3d4b3ed21a474d68f",
+    "original_receipt": "7bdb8133d8b4af1f3d10b5ab77654ef674823b0b6c691a8fa2bbfae70b8f2ae7",
+    "original_admission": "5c723ac3b4f4344ed0746c33a7875acdfc3fa14838537e0f806419833178465d"
+  }
+}

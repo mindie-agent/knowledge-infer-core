@@ -1,0 +1,162 @@
+{
+  "index": 0,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "SGLang manager completion signals retain distinct success and ownership conditions",
+  "mechanism": "At the pinned SGLang revision, HostCopyDone.query reports completion even when a copy failed; synchronize waits and rethrows a stored error. The copy worker signals completion in finally after waiting for the producer event and using its private stream, while shutdown only joins for the requested timeout without a post-join liveness check. FanOutCommunicator queueing calls share an untagged event and result list, clear them only after the wait returns, and count received responses against fan_out. Cancellation of a waiter does not itself correlate late responses or clear this shared state. HiCache _page_transfer continues producing one PrefetchAck per storage batch after cooperative termination or a failed batch; the consumer MIN-reduces completed token counts across completion groups. DPBudget speculatively increments requests and estimated input tokens; refresh is throttled to 20 ms and total_tokens_scheduler charges len(input_ids). This is a dispatch heuristic, not an observed completion cost. Follow-bootstrap routing takes bootstrap_room modulo the entire worker list without checking active status at that point; elastic activation asserts that its socket was already bound, so an inactive slot does not necessarily mean a None socket.",
+  "corrections": [
+    "Completion is not copy success; destination validity requires the error-bearing synchronization path.",
+    "Untagged shared communicator state does not prove that an actual race occurred in a running service.",
+    "Preserve the per-batch acknowledgement cadence even when no further storage copy succeeds.",
+    "Replace the candidate's inactive-slot-implies-None claim with the narrower missing active-status guard.",
+    "No throughput, latency improvement, hardware behavior or complete scheduler cancellation protocol was measured."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/async_d2h_copy_worker.py",
+      "line_start": 11,
+      "line_end": 40,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4d28960931a66b5461f6f9a2443030b49719b554f0524790d45e9239d418659b",
+      "range_sha256": "39c2c4e6664312f137cd33925be518d88389709c03d1f5a565ff938aa03229b9",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/async_d2h_copy_worker.py:0-3920"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/async_d2h_copy_worker.py#L11-L40"
+    },
+    {
+      "path": "python/sglang/srt/managers/async_d2h_copy_worker.py",
+      "line_start": 79,
+      "line_end": 106,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4d28960931a66b5461f6f9a2443030b49719b554f0524790d45e9239d418659b",
+      "range_sha256": "ab8d0f4da9c8125ca301ec8c265ff5b7c68053183512c4d8663e833c84efd5ed",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/async_d2h_copy_worker.py:0-3920"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/async_d2h_copy_worker.py#L79-L106"
+    },
+    {
+      "path": "python/sglang/srt/managers/communicator.py",
+      "line_start": 41,
+      "line_end": 79,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8228691d693cc2877b23fc777866a6779c1ed8511dff0c64ad002d2c602e0552",
+      "range_sha256": "9a938f65518307efd7fd2f0705bb36624d93a56a03401853786762437fc9b50b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/communicator.py:0-3807"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/communicator.py#L41-L79"
+    },
+    {
+      "path": "python/sglang/srt/managers/communicator.py",
+      "line_start": 90,
+      "line_end": 103,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8228691d693cc2877b23fc777866a6779c1ed8511dff0c64ad002d2c602e0552",
+      "range_sha256": "bbc007b2ef28449d85f546e3b193d8cdc65174acd36d54d29a1178cfce802193",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/communicator.py:0-3807"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/communicator.py#L90-L103"
+    },
+    {
+      "path": "python/sglang/srt/managers/cache_controller.py",
+      "line_start": 1102,
+      "line_end": 1153,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "41463e938054f7a62b2676a95fb99f05015120940a38ae3ddf236b85a944ed92",
+      "range_sha256": "bef387703701bb7f419c37e56f69d357f6cd42064416e67321a190f6b0e214ac",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/cache_controller.py:0-49079"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/cache_controller.py#L1102-L1153"
+    },
+    {
+      "path": "python/sglang/srt/managers/cache_controller.py",
+      "line_start": 1421,
+      "line_end": 1433,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "41463e938054f7a62b2676a95fb99f05015120940a38ae3ddf236b85a944ed92",
+      "range_sha256": "89a404828dd9dd9d18d4140144dea776603cca51eab694135ad68dbd36cda268",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/cache_controller.py:49079-56749"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/cache_controller.py#L1421-L1433"
+    },
+    {
+      "path": "python/sglang/srt/managers/data_parallel_controller.py",
+      "line_start": 121,
+      "line_end": 154,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "734640547521a65f63bf6f8166b430ca3896fed77e9ba84307977390d76db0d6",
+      "range_sha256": "7c26b3a5d2eda33b60ac2166bd72b1282b7b4df8d5db6e7d90441e6462458921",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/data_parallel_controller.py:0-39981"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L121-L154"
+    },
+    {
+      "path": "python/sglang/srt/managers/data_parallel_controller.py",
+      "line_start": 233,
+      "line_end": 239,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "734640547521a65f63bf6f8166b430ca3896fed77e9ba84307977390d76db0d6",
+      "range_sha256": "641528521aec5d913c48d3bb70b9ab77c2cd70545bf9835f37ff498d35914a45",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/data_parallel_controller.py:0-39981"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L233-L239"
+    },
+    {
+      "path": "python/sglang/srt/managers/data_parallel_controller.py",
+      "line_start": 321,
+      "line_end": 324,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "734640547521a65f63bf6f8166b430ca3896fed77e9ba84307977390d76db0d6",
+      "range_sha256": "a3ef2bf57483872fe3aa2644852a542b401e1f83bd638bd8b43a45f7f96ada8e",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/data_parallel_controller.py:0-39981"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L321-L324"
+    },
+    {
+      "path": "python/sglang/srt/managers/data_parallel_controller.py",
+      "line_start": 343,
+      "line_end": 358,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "734640547521a65f63bf6f8166b430ca3896fed77e9ba84307977390d76db0d6",
+      "range_sha256": "e965fbb164629c8a28a096b74589e634117a66bc1989b0686f4d087529a124d1",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/data_parallel_controller.py:0-39981"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L343-L358"
+    },
+    {
+      "path": "python/sglang/srt/managers/data_parallel_controller.py",
+      "line_start": 875,
+      "line_end": 899,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "734640547521a65f63bf6f8166b430ca3896fed77e9ba84307977390d76db0d6",
+      "range_sha256": "8e2586a0666c8fe396f8981ad53f67e9ff714bf454e122309d496560debbe1a7",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/data_parallel_controller.py:0-39981"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/data_parallel_controller.py#L875-L899"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "8e93a88f1872791f00132964d38e4da2d8ac7f1f5fbb17bbb86b59407b99c266",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "13c9bc015922596a51d6a484f167048466df8bd79e7d254e8c39249f3e01398d",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "85be362d57ff94ae2e2f54bcdbb1d5fd6f0028a02a0ad80f6c01a5421531c20f",
+    "original_receipt": "5a41ab0730783f9fda5fdcc51e85a7810f4fc0f60e48d96dadb7e3eb10469439",
+    "original_admission": "da3d323bd9fa238cb162530c83f8ac6338bc485bdfea063d7e787c69f88926c3"
+  }
+}

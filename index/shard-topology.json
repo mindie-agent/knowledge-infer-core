@@ -1,6 +1,11 @@
 {
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-sglang-manager-completion-and-ownership": [],
+    "unit-sglang-registry-identity-and-shutdown-drain": [],
+    "unit-sglang-scheduler-abort-and-outstanding-work": [],
+    "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
+    "unit-sglang-tp-capacity-and-result-contracts": [],
     "unit-tgi-cache-axes-and-mask-semantics": [],
     "unit-tgi-expanded-deepseek-kv-storage": [],
     "unit-tgi-kv-head-topology-and-preprocessing": [],
@@ -18,16 +23,21 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "5bbfb2304f7e13751dd6d19fc14e8dd1289225314fffdf87603986fad9d1252d",
+  "digest": "a7c0031623825824534b1ec6baa1b5efc9653ef729caec3920cd6ad27b8f3f86",
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 88633,
-      "estimated_tokens": 13507,
+      "bytes": 112526,
+      "estimated_tokens": 17241,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-sglang-cancellation-and-cache-ownership",
+        "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+        "unit-sglang-tp-capacity-and-result-contracts",
         "unit-tgi-cache-axes-and-mask-semantics",
         "unit-tgi-expanded-deepseek-kv-storage",
         "unit-tgi-kv-head-topology-and-preprocessing",
@@ -45,19 +55,24 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 17
+      "units": 22
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 88633,
-        "estimated_tokens": 13507,
+        "bytes": 112526,
+        "estimated_tokens": 17241,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
           "unit-sglang-cancellation-and-cache-ownership",
+          "unit-sglang-manager-completion-and-ownership",
+          "unit-sglang-registry-identity-and-shutdown-drain",
+          "unit-sglang-scheduler-abort-and-outstanding-work",
+          "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+          "unit-sglang-tp-capacity-and-result-contracts",
           "unit-tgi-cache-axes-and-mask-semantics",
           "unit-tgi-expanded-deepseek-kv-storage",
           "unit-tgi-kv-head-topology-and-preprocessing",
@@ -75,25 +90,32 @@
           "unit-tgi-vision-token-mask-and-connector-geometry",
           "unit-vllm-cancellation-and-block-reclamation"
         ],
-        "units": 17
+        "units": 22
       }
     ]
   },
-  "index_build_elapsed_ms": 3.003166988492012,
-  "index_digest": "2d7c6d9d5c00673b08e689b2e4b78e37c7ce7d3ee61ff5a824b897277a7e1319",
+  "index_build_elapsed_ms": 4.847625037655234,
+  "index_digest": "f850b2f738915b759a422c6cea6a5f576c53d3b4ff8305de8b69f1031ecc754d",
   "leaves": [
     {
       "automatic": false,
-      "bytes": 4223,
-      "estimated_tokens": 625,
-      "exceeds": [],
+      "bytes": 28116,
+      "estimated_tokens": 4359,
+      "exceeds": [
+        "estimated_tokens"
+      ],
       "kind": "leaf",
       "path": "serving/sglang",
       "recommended_action": "review_leaf_split",
       "unit_ids": [
-        "unit-sglang-cancellation-and-cache-ownership"
+        "unit-sglang-cancellation-and-cache-ownership",
+        "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+        "unit-sglang-tp-capacity-and-result-contracts"
       ],
-      "units": 1
+      "units": 6
     },
     {
       "automatic": false,
@@ -154,16 +176,21 @@
   "two_level_subtrees": [
     {
       "automatic": false,
-      "bytes": 4223,
-      "estimated_tokens": 625,
+      "bytes": 28116,
+      "estimated_tokens": 4359,
       "exceeds": [],
       "kind": "subtree",
       "path": "serving/sglang",
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
-        "unit-sglang-cancellation-and-cache-ownership"
+        "unit-sglang-cancellation-and-cache-ownership",
+        "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+        "unit-sglang-tp-capacity-and-result-contracts"
       ],
-      "units": 1
+      "units": 6
     },
     {
       "automatic": false,
@@ -218,7 +245,7 @@
       "units": 1
     }
   ],
-  "unit_count": 17,
+  "unit_count": 22,
   "units": {
     "unit-sglang-cancellation-and-cache-ownership": {
       "bytes": 4223,
@@ -229,6 +256,61 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+      "tier": "L2"
+    },
+    "unit-sglang-manager-completion-and-ownership": {
+      "bytes": 7081,
+      "category": "sop",
+      "content_sha256": "9c6aef9758b7de34514000f36205c6e80023419413cd2aebdef19e9f8af48f6a",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 1119,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
+      "tier": "L2"
+    },
+    "unit-sglang-registry-identity-and-shutdown-drain": {
+      "bytes": 3832,
+      "category": "sop",
+      "content_sha256": "b45a32ec68dd8e03f633753a960262e05c2ce339100e2bc1d5b00d8440802792",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 600,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
+      "tier": "L2"
+    },
+    "unit-sglang-scheduler-abort-and-outstanding-work": {
+      "bytes": 4141,
+      "category": "sop",
+      "content_sha256": "64be14ed54ddfeb3a17790cf7f22fcb9a483733e4b8e722f02a89ec7b7726d4b",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 650,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
+      "tier": "L2"
+    },
+    "unit-sglang-tokenizer-dispatch-and-abort-boundary": {
+      "bytes": 4001,
+      "category": "sop",
+      "content_sha256": "526d78059cd37349c0b31a1fcd9cd83c4cab3bf0c5545df8cdd8dc8d6da9135f",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 601,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
+      "tier": "L2"
+    },
+    "unit-sglang-tp-capacity-and-result-contracts": {
+      "bytes": 4838,
+      "category": "sop",
+      "content_sha256": "332d8f12e90715fe24236a2daed8635214538a826e334bbdfa2ed5797fa1aea4",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 764,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
       "tier": "L2"
     },
     "unit-tgi-cache-axes-and-mask-semantics": {

@@ -1,0 +1,76 @@
+{
+  "index": 1,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Scheduler abort admission and resource release must respect outstanding work",
+  "mechanism": "The scheduler rejects an incoming request when the waiting queue is full unless priority scheduling finds a strictly lower-priority queued victim; equal victim priorities use later queue-entry time first. Waiting-timeout polling scans the waiting queue, whereas running-timeout polling deduplicates request IDs and skips already finished or to_finish requests. It emits AbortReq objects rather than directly removing requests; the source states that ranks must drop the same requests in the same iteration. Chunked-prefill abort is deferred to process_pending_chunked_abort: if the request has moved, the marker is dropped only when finished or no longer holding KV, otherwise abort is retried at the new location. For the still-current chunked request, sender/bootstrap metadata and KV are released before clearing the chunked marker. During decode, finishing in-flight requests are filtered, and KV pressure with such pending completions skips a decode step instead of immediately retracting the remaining requests. Pending offload copies are drained before the later retraction path.",
+  "corrections": [
+    "Finished/to_finish/deduplication skips belong only to running-timeout polling.",
+    "The same-iteration rank requirement and overlap drain description are source invariants; no distributed execution was performed.",
+    "This accepted subset does not claim complete coverage of embedding ingress, multimodal validation or storage-prefetch retries."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/scheduler.py",
+      "line_start": 3487,
+      "line_end": 3531,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+      "range_sha256": "95c23e1d8e4bf3b58eee733a3668baa4b0893ab0168466d07a5f63b38a58cfaf",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler.py:112368-161520"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3487-L3531"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler.py",
+      "line_start": 3533,
+      "line_end": 3585,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+      "range_sha256": "2ace9ca31e2aa67cf968718e96858b79e70eddd3a22c93f3bd1fcf83d5e5203a",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler.py:112368-161520"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3533-L3585"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler.py",
+      "line_start": 3713,
+      "line_end": 3762,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+      "range_sha256": "b54bfd014a49f9ca4e1a80d7101c02b0d73770a66a4b180a30c4e4371ccc0a5a",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler.py:112368-161520"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3713-L3762"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler.py",
+      "line_start": 4398,
+      "line_end": 4421,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+      "range_sha256": "5da4154af2a962c060085a6bd52dd32a808d4692a95ed082ebb5e91ae28c409f",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler.py:161520-210669"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L4398-L4421"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "5d7e2cfabfb75f565281fae8bfbd80c0bfc24565037653ab5ff13b6dea8ec7a1",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "13c9bc015922596a51d6a484f167048466df8bd79e7d254e8c39249f3e01398d",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "20286b23bb4c07485b1173edccaa392f63472ff1a0695e63c3b0976aaf4f6bd2",
+    "original_receipt": "4e44d0d3257370f8b4c75d369e4c0f307bfa7dd88dd5b4e9d6f71b72653c5998",
+    "original_admission": "ccf83e6a65f3b05c088423186a861f8be990e6e1f1e169f3029dc82caaecf24c"
+  }
+}

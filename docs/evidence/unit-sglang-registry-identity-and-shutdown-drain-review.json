@@ -1,0 +1,65 @@
+{
+  "index": 3,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Tokenizer registry identity guards protect newer requests during failure cleanup",
+  "mechanism": "TokenizerManager normalizes incoming request IDs, rejects duplicates against both the live registry and the new batch, creates states, then installs them together. Failure cleanup checks object identity: a different state under the same rid is left untouched, and that early continue also skips encoder_dispatch_ready removal and notification. A matching dispatched state is aborted and retained for the scheduler response; an undelivered state is deleted locally and its LoRA release helper is called. Abort echoes ignore health-check requests and missing rids, then mark a found state finished, build terminal output, delete it, release LoRA and notify the event. Graceful shutdown first waits for the registry to drain in five-second intervals without a request-drain deadline unless unhealthy or forced shutdown triggers the force-exit handler. Only after that loop does it send ShutdownReq and apply the scheduler-exit deadline; scheduler polling uses blocking time.sleep inside the async coroutine.",
+  "corrections": [
+    "Registry presence does not by itself mean active model execution.",
+    "The identity guard does not always drain encoder_dispatch_ready; the mismatch branch deliberately skips that later action.",
+    "Replace whole admitted-unit citations with exact function ranges.",
+    "The accepted subset makes no claim about scoring-layer cancellation or unseen base-generator cleanup."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 3520,
+      "line_end": 3583,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "a7c8325071b2137783a428e579165d9c19a55d9d94fdd54cd86b69bdb531fc6b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:114591-163697"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L3520-L3583"
+    },
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 3589,
+      "line_end": 3655,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "222d412b8d7d4e218fbd9f047575c55e00a09580644b35c8c7b79307d1bde2fb",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:114591-163697"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L3589-L3655"
+    },
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 3810,
+      "line_end": 3886,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "9be992a7b0e3220be6d1274b89b34772721fb7a4a09d253f75113a08ea26d8d6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:163697-177448"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L3810-L3886"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "c86617e25462925c57f481c323b2c34d1f853df7b4fcd2d40b3bbbc0cf1cc4c6",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "13c9bc015922596a51d6a484f167048466df8bd79e7d254e8c39249f3e01398d",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "adf118354f9444ad03e7e7e4d044963b70cb8f9f3aa376b69fd708f15e9b7f6c",
+    "original_receipt": "e9fda987c2276ed68e64016b5262ed15bcf2fd2c68341def7062a8d57f6a6a03",
+    "original_admission": "a0b743a9a18d1b0f07e10476bdb91d2b77e7de1161ab77bebd793aa9f37a5104"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "index": 2,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Tokenizer dispatch bookkeeping and abort requests have separate completion boundaries",
+  "mechanism": "TokenizerManager prepares multimodal and positional-embedding transports, dispatches to the scheduler, marks the request state as dispatched, and only then sets its local dispatched flag. The finally block cancels prepared transports only while that flag remains false; this records local control flow, not a scheduler acknowledgement. An Engine request with no HTTP request object waits on its state event without the HTTP polling timeout, whereas an HTTP request periodically checks disconnect state. Single-request abort rejects an empty rid, deduplicates live states with abort_sent, and resets that flag if scheduler dispatch raises. abort_all bypasses the per-state lookup and deduplication. LoRA release has its own lora_released flag and schedules at most one release task when LoRA is enabled and the request carries a LoRA path.",
+  "corrections": [
+    "Use actual narrow boundaries 1781-1822, 1936-1944 and 2253-2272 rather than the approximate review endpoints.",
+    "A local dispatched flag does not prove remote acceptance or downstream KV release.",
+    "No global at-most-once claim applies to abort_all, and no bounded completion time is inferred from scheduling a LoRA release task."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 1781,
+      "line_end": 1822,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "df27f82c8dc3762bfad859103ad02475b13cea9998329b0b4f354512887b2dcc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:65457-114591"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L1781-L1822"
+    },
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 1936,
+      "line_end": 1944,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "a58f434b03314ae3346b5ebaa5c21f76c3889ee9c1d90c6fb987099bb48cb1df",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:65457-114591"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L1936-L1944"
+    },
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 1964,
+      "line_end": 1983,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "ca368259e762b8aa6d748606694f72e93c2b148e1379c5ca80864cc14edfc5b6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:65457-114591"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L1964-L1983"
+    },
+    {
+      "path": "python/sglang/srt/managers/tokenizer_manager.py",
+      "line_start": 2253,
+      "line_end": 2272,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+      "range_sha256": "80724261a60a5e999a731495bd67db2de6c2d65881081d2988450c88523aa16b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/tokenizer_manager.py:65457-114591"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L2253-L2272"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "d109cf7fbd01fc271317b0297cfd24e70046945d496e1d22bbd494f80c621a4d",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "13c9bc015922596a51d6a484f167048466df8bd79e7d254e8c39249f3e01398d",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "c9ef2135cfc34d294991d70f5a21f8169a052c799434aabfb6ce79f86ba3e9bb",
+    "original_receipt": "02806174e100df6a62c11d49e0781d8f3131f79259b02b9d0103d46182bab7fe",
+    "original_admission": "52eec378a91e0b24ffa7213d003e1096750fa80e7fd0bffb6592ba1038559839"
+  }
+}
