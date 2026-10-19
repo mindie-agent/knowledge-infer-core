@@ -1,43 +1,86 @@
 {
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-tgi-cache-axes-and-mask-semantics": [],
+    "unit-tgi-expanded-deepseek-kv-storage": [],
+    "unit-tgi-kv-head-topology-and-preprocessing": [],
+    "unit-tgi-model-family-batch-state": [],
+    "unit-tgi-model-state-layout-and-backend-guards": [],
+    "unit-tgi-multimodal-cache-and-cross-attention": [],
+    "unit-tgi-paged-allocation-and-chunk-admission": [],
+    "unit-tgi-prefill-speculation-and-graph-eligibility": [],
+    "unit-tgi-radix-release-and-eviction": [],
+    "unit-tgi-receiver-closure-and-cleanup-errors": [],
+    "unit-tgi-t5-cache-precision-and-return-contracts": [],
+    "unit-tgi-tokenizer-generation-and-image-limits": [],
+    "unit-tgi-transformers-attention-and-forward-boundary": [],
     "unit-tgi-v3-cancellation-and-batch-reclamation": [],
+    "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "4cdf4ea777eb859c1f937d8c4eab64402485169ecfd63cced5eeb470241ee4d6",
+  "digest": "5bbfb2304f7e13751dd6d19fc14e8dd1289225314fffdf87603986fad9d1252d",
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 14691,
-      "estimated_tokens": 2152,
+      "bytes": 88633,
+      "estimated_tokens": 13507,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-sglang-cancellation-and-cache-ownership",
+        "unit-tgi-cache-axes-and-mask-semantics",
+        "unit-tgi-expanded-deepseek-kv-storage",
+        "unit-tgi-kv-head-topology-and-preprocessing",
+        "unit-tgi-model-family-batch-state",
+        "unit-tgi-model-state-layout-and-backend-guards",
+        "unit-tgi-multimodal-cache-and-cross-attention",
+        "unit-tgi-paged-allocation-and-chunk-admission",
+        "unit-tgi-prefill-speculation-and-graph-eligibility",
+        "unit-tgi-radix-release-and-eviction",
+        "unit-tgi-receiver-closure-and-cleanup-errors",
+        "unit-tgi-t5-cache-precision-and-return-contracts",
+        "unit-tgi-tokenizer-generation-and-image-limits",
+        "unit-tgi-transformers-attention-and-forward-boundary",
         "unit-tgi-v3-cancellation-and-batch-reclamation",
+        "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 3
+      "units": 17
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 14691,
-        "estimated_tokens": 2152,
+        "bytes": 88633,
+        "estimated_tokens": 13507,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
           "unit-sglang-cancellation-and-cache-ownership",
+          "unit-tgi-cache-axes-and-mask-semantics",
+          "unit-tgi-expanded-deepseek-kv-storage",
+          "unit-tgi-kv-head-topology-and-preprocessing",
+          "unit-tgi-model-family-batch-state",
+          "unit-tgi-model-state-layout-and-backend-guards",
+          "unit-tgi-multimodal-cache-and-cross-attention",
+          "unit-tgi-paged-allocation-and-chunk-admission",
+          "unit-tgi-prefill-speculation-and-graph-eligibility",
+          "unit-tgi-radix-release-and-eviction",
+          "unit-tgi-receiver-closure-and-cleanup-errors",
+          "unit-tgi-t5-cache-precision-and-return-contracts",
+          "unit-tgi-tokenizer-generation-and-image-limits",
+          "unit-tgi-transformers-attention-and-forward-boundary",
           "unit-tgi-v3-cancellation-and-batch-reclamation",
+          "unit-tgi-vision-token-mask-and-connector-geometry",
           "unit-vllm-cancellation-and-block-reclamation"
         ],
-        "units": 3
+        "units": 17
       }
     ]
   },
-  "index_digest": "77a42de81da38e712aaa8d3c52168701fc1fcd8aa3ee326330282fea5b6db799",
+  "index_build_elapsed_ms": 3.003166988492012,
+  "index_digest": "2d7c6d9d5c00673b08e689b2e4b78e37c7ce7d3ee61ff5a824b897277a7e1319",
   "leaves": [
     {
       "automatic": false,
@@ -51,6 +94,34 @@
         "unit-sglang-cancellation-and-cache-ownership"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 73942,
+      "estimated_tokens": 11355,
+      "exceeds": [
+        "estimated_tokens"
+      ],
+      "kind": "leaf",
+      "path": "serving/tgi",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-tgi-cache-axes-and-mask-semantics",
+        "unit-tgi-expanded-deepseek-kv-storage",
+        "unit-tgi-kv-head-topology-and-preprocessing",
+        "unit-tgi-model-family-batch-state",
+        "unit-tgi-model-state-layout-and-backend-guards",
+        "unit-tgi-multimodal-cache-and-cross-attention",
+        "unit-tgi-paged-allocation-and-chunk-admission",
+        "unit-tgi-prefill-speculation-and-graph-eligibility",
+        "unit-tgi-radix-release-and-eviction",
+        "unit-tgi-receiver-closure-and-cleanup-errors",
+        "unit-tgi-t5-cache-precision-and-return-contracts",
+        "unit-tgi-tokenizer-generation-and-image-limits",
+        "unit-tgi-transformers-attention-and-forward-boundary",
+        "unit-tgi-vision-token-mask-and-connector-geometry"
+      ],
+      "units": 14
     },
     {
       "automatic": false,
@@ -96,6 +167,32 @@
     },
     {
       "automatic": false,
+      "bytes": 73942,
+      "estimated_tokens": 11355,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/tgi",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-tgi-cache-axes-and-mask-semantics",
+        "unit-tgi-expanded-deepseek-kv-storage",
+        "unit-tgi-kv-head-topology-and-preprocessing",
+        "unit-tgi-model-family-batch-state",
+        "unit-tgi-model-state-layout-and-backend-guards",
+        "unit-tgi-multimodal-cache-and-cross-attention",
+        "unit-tgi-paged-allocation-and-chunk-admission",
+        "unit-tgi-prefill-speculation-and-graph-eligibility",
+        "unit-tgi-radix-release-and-eviction",
+        "unit-tgi-receiver-closure-and-cleanup-errors",
+        "unit-tgi-t5-cache-precision-and-return-contracts",
+        "unit-tgi-tokenizer-generation-and-image-limits",
+        "unit-tgi-transformers-attention-and-forward-boundary",
+        "unit-tgi-vision-token-mask-and-connector-geometry"
+      ],
+      "units": 14
+    },
+    {
+      "automatic": false,
       "bytes": 4544,
       "estimated_tokens": 681,
       "exceeds": [],
@@ -121,7 +218,7 @@
       "units": 1
     }
   ],
-  "unit_count": 3,
+  "unit_count": 17,
   "units": {
     "unit-sglang-cancellation-and-cache-ownership": {
       "bytes": 4223,
@@ -130,7 +227,151 @@
       "domain_path": "serving/sglang",
       "estimated_tokens": 625,
       "evidence_strength": "single_observation",
+      "inherits_from": [],
       "path": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+      "tier": "L2"
+    },
+    "unit-tgi-cache-axes-and-mask-semantics": {
+      "bytes": 6117,
+      "category": "sop",
+      "content_sha256": "84e883d393262dbd8d2b3990089b3969dea71f7a35f34352990884b7741c97c3",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 960,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-cache-axes-and-mask-semantics.md",
+      "tier": "L2"
+    },
+    "unit-tgi-expanded-deepseek-kv-storage": {
+      "bytes": 5048,
+      "category": "sop",
+      "content_sha256": "1ffc6b3a1abe27fe2386ec32e62d577a59361cd72fdd779a2ebec9020bfb219c",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 781,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-expanded-deepseek-kv-storage.md",
+      "tier": "L2"
+    },
+    "unit-tgi-kv-head-topology-and-preprocessing": {
+      "bytes": 6139,
+      "category": "sop",
+      "content_sha256": "a2aaf5f7f3a1d6e91061f2a051c93375c91601ce1b4dbd6fe3102ea780cff652",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 951,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-kv-head-topology-and-preprocessing.md",
+      "tier": "L2"
+    },
+    "unit-tgi-model-family-batch-state": {
+      "bytes": 5970,
+      "category": "sop",
+      "content_sha256": "b55298a72793912443a10a9e3ed37bd38d3095dc3bd1852d3828e0c42187a610",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 925,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-model-family-batch-state.md",
+      "tier": "L2"
+    },
+    "unit-tgi-model-state-layout-and-backend-guards": {
+      "bytes": 7026,
+      "category": "sop",
+      "content_sha256": "995c689ad0ce417019829312eebe3b34cd0f219397acd249db5475b7160f77fd",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 1099,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-model-state-layout-and-backend-guards.md",
+      "tier": "L2"
+    },
+    "unit-tgi-multimodal-cache-and-cross-attention": {
+      "bytes": 6146,
+      "category": "sop",
+      "content_sha256": "30722f9b89626608b2961b12f34fe4427840015bd08ac1cbd03c5deb0f698a41",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 952,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-multimodal-cache-and-cross-attention.md",
+      "tier": "L2"
+    },
+    "unit-tgi-paged-allocation-and-chunk-admission": {
+      "bytes": 4285,
+      "category": "sop",
+      "content_sha256": "827af4185fc9f47f819a0517d121262c94cfe2845cbd76b67da3aa7a7aed5982",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 646,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-paged-allocation-and-chunk-admission.md",
+      "tier": "L2"
+    },
+    "unit-tgi-prefill-speculation-and-graph-eligibility": {
+      "bytes": 4859,
+      "category": "sop",
+      "content_sha256": "4ef2c50f8b4eb79b46bf02116e3106a73c56b1b2199c4f85b16ab9d1db3c1172",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 744,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-prefill-speculation-and-graph-eligibility.md",
+      "tier": "L2"
+    },
+    "unit-tgi-radix-release-and-eviction": {
+      "bytes": 3252,
+      "category": "sop",
+      "content_sha256": "1fedab58b21ac24e9826f56481c0077fdf9156100a4890347c48dd82dd12e726",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 469,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-radix-release-and-eviction.md",
+      "tier": "L2"
+    },
+    "unit-tgi-receiver-closure-and-cleanup-errors": {
+      "bytes": 3747,
+      "category": "sop",
+      "content_sha256": "b77dd0984217df703e9c0281352eebe1a670ad4f1608ddbaf90a40afafa30e01",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 542,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-receiver-closure-and-cleanup-errors.md",
+      "tier": "L2"
+    },
+    "unit-tgi-t5-cache-precision-and-return-contracts": {
+      "bytes": 5410,
+      "category": "sop",
+      "content_sha256": "032056ab8537ab79692971be4da5c28a42bb703757ed3a5ecd2c66c88341350d",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 827,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-t5-cache-precision-and-return-contracts.md",
+      "tier": "L2"
+    },
+    "unit-tgi-tokenizer-generation-and-image-limits": {
+      "bytes": 3765,
+      "category": "sop",
+      "content_sha256": "fe0943721f1a4e34c0fd842da05bfd0e074d4a3b4bd484bbe5387d2fa8e268a2",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 548,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-tokenizer-generation-and-image-limits.md",
+      "tier": "L2"
+    },
+    "unit-tgi-transformers-attention-and-forward-boundary": {
+      "bytes": 6239,
+      "category": "sop",
+      "content_sha256": "11b92bce5376cab469d035f4bd1db366ec8fed62cd1cc99480e28722abacbe69",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 988,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-transformers-attention-and-forward-boundary.md",
       "tier": "L2"
     },
     "unit-tgi-v3-cancellation-and-batch-reclamation": {
@@ -140,7 +381,19 @@
       "domain_path": "serving/tgi-v3",
       "estimated_tokens": 681,
       "evidence_strength": "single_observation",
+      "inherits_from": [],
       "path": "serving/tgi-v3/unit-tgi-v3-cancellation-and-batch-reclamation.md",
+      "tier": "L2"
+    },
+    "unit-tgi-vision-token-mask-and-connector-geometry": {
+      "bytes": 5939,
+      "category": "sop",
+      "content_sha256": "526b6338bf3b917b59f90a3153e053fa4ea8f5a2a2f9cfdb4089a69df9c55fed",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 923,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-vision-token-mask-and-connector-geometry.md",
       "tier": "L2"
     },
     "unit-vllm-cancellation-and-block-reclamation": {
@@ -150,6 +403,7 @@
       "domain_path": "serving/vllm",
       "estimated_tokens": 846,
       "evidence_strength": "single_observation",
+      "inherits_from": [],
       "path": "serving/vllm/unit-vllm-cancellation-and-block-reclamation.md",
       "tier": "L2"
     }

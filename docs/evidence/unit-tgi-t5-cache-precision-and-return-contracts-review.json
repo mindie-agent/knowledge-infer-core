@@ -1,0 +1,102 @@
+{
+  "index": 6,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "T5 cache shape, precision and return conventions are independent contracts",
+  "mechanism": "This TGI T5 implementation partitions attention heads, uses per-head relative position bias, concatenates self-attention past K/V and can reuse cross-attention K/V by source length. The standard stack constructs relative bias only for its first layer and forwards it to later blocks. Past-state cardinality is selected by encoder_hidden_states presence, while execution of cross-attention additionally requires a decoder. Both output modes contain logits; only return_dict=True includes the separate speculative-logits result.",
+  "corrections": [
+    "Correct constructor citation to 1016-1054, including the shared-head RuntimeError fallback; forward to 1056-1165 and generation/reorder to 1167-1227.",
+    "Use T5LayerFF:204-227 for dense-layer selection and residual; the float32 wo load/cast source does not itself quantify accuracy or throughput.",
+    "The local layer_norm helper is RMS-style, but T5LayerNorm can be replaced by apex FusedRMSNorm at 99-112; do not describe the helper as the unconditional runtime implementation.",
+    "The reorder implementation uses dimension 0 despite an adjacent comment saying the second position; cite code and retain the comment inconsistency.",
+    "VLM load_text_model forwards name to llama/mistral; it does not ignore name universally. Unsupported text/vision model types raise."
+  ],
+  "source_scope": "All corrected references read from pinned Git, with truncated block, constructor and file-tail ranges independently recovered. No T5 model execution or kernel timing performed.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/t5_modeling.py",
+      "line_start": 355,
+      "line_end": 501,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2c650751a4c03c1834e73473ecc8f93b12f3b9018486bb7aef33b45a26158421",
+      "range_sha256": "8effcf59ba23020b7342540f0bc20ace805c71fd3dd9125847b666852e24bfd5",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/t5_modeling.py:0-48525"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/t5_modeling.py#L355-L501"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/t5_modeling.py",
+      "line_start": 641,
+      "line_end": 716,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2c650751a4c03c1834e73473ecc8f93b12f3b9018486bb7aef33b45a26158421",
+      "range_sha256": "7c504ab7ed39278f97fd62f54ac87e308979f157b52164b4a331ca926247c493",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/t5_modeling.py:0-48525"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/t5_modeling.py#L641-L716"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/t5_modeling.py",
+      "line_start": 786,
+      "line_end": 808,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2c650751a4c03c1834e73473ecc8f93b12f3b9018486bb7aef33b45a26158421",
+      "range_sha256": "d3de035793e4ccae08aa0570c0878642589ea099a8b8b3ca972dcfe1f8058f99",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/t5_modeling.py:0-48525"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/t5_modeling.py#L786-L808"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/t5_modeling.py",
+      "line_start": 971,
+      "line_end": 981,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2c650751a4c03c1834e73473ecc8f93b12f3b9018486bb7aef33b45a26158421",
+      "range_sha256": "d6d04e599b889e5c3f951675211971412610a067304888e7a564ed90b955b64d",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/t5_modeling.py:0-48525"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/t5_modeling.py#L971-L981"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/t5_modeling.py",
+      "line_start": 1016,
+      "line_end": 1054,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2c650751a4c03c1834e73473ecc8f93b12f3b9018486bb7aef33b45a26158421",
+      "range_sha256": "be98f2050bbb81f349cfcdbe6d5e887a2f02b6537a523349c3ceae3286695696",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/t5_modeling.py:0-48525"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/t5_modeling.py#L1016-L1054"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/t5_modeling.py",
+      "line_start": 1148,
+      "line_end": 1165,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2c650751a4c03c1834e73473ecc8f93b12f3b9018486bb7aef33b45a26158421",
+      "range_sha256": "7c50a8a76d328664c6ee1128668e373d5f6f89476803e180f3964c578afc334b",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/t5_modeling.py:0-48525"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/t5_modeling.py#L1148-L1165"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "dbd81db13aa4ff7b34e30721d47e354764137ceada2e0d3d8eee60011a65f914",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "d21007cbaeedcf4d80c3fd5ed9b80d4ff6c54ca8aa7e4566046d3c193f7f5aba",
+    "original_receipt": "d376d13b655e65cd79d70b4987dcbc3fa775159d82d9617a5e773de0da924fcd",
+    "original_admission": "50658ca59a0cea091bbd3f053b458bbbb1bde07e29695508fb1fbba2a0f3960f"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "index": 7,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Prefill chunking, speculative tokens and decode graphs use separate eligibility checks",
+  "mechanism": "FlashCausalLMBatch maps requests to paged block/slot tables and requires at least one uncached token. An incomplete chunk requires speculate==0; prepare_for_prefill separately requires no speculative_ids. Concatenation retains speculative IDs only when all member batches have them. The forward path uses eager execution whenever cu_seqlen_prefill is present, and otherwise can replay the smallest captured decode graph covering the expanded batch. Warmup estimates bytes per KV block and rebuilds the cache from observed free memory.",
+  "corrections": [
+    "AST-verified methods: filter:485-687; concatenate:691-946; prepare_for_prefill:948-1175; warmup:1507-1684; forward:1726-1888. Replace overlapping approximate ranges.",
+    "The cache formula is bytes per block, not bytes per token. max_total_tokens=sum(batch.cache_lengths) is the no-chunking warmup fallback.",
+    "The prefix-cache condition permits flashinfer and both flashdecoding variants despite narrower error text.",
+    "Graph padding writes slot zero; the healthcheck block-0 reservation remains an external invariant, not proved by this model file.",
+    "GalacticaCausalLMBatch uses padded CausalLMBatch fields; do not generalize the Flash path to every model.",
+    "Drop unverified detailed claims about generation sampling on every rank from the compact accepted unit; no throughput gain follows from the code's TunableOp comment."
+  ],
+  "source_scope": "Critical construction, mutation, warmup, forward, context, globals and Galactica ranges read from pinned Git; method boundaries parsed from actual source. No CUDA/IPEX execution.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/flash_causal_lm.py",
+      "line_start": 244,
+      "line_end": 362,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "36b3a793f9d18d85002273404cd7c5be26fce78018ff649dc80625ae9ba53503",
+      "range_sha256": "9a93afd9e21f60587483047d0a54a62dc34a91eca02a6dfeb385a5fd0d45ffd6",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/flash_causal_lm.py:0-44440"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/flash_causal_lm.py#L244-L362"
+    },
+    {
+      "path": "server/text_generation_server/models/flash_causal_lm.py",
+      "line_start": 891,
+      "line_end": 952,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "36b3a793f9d18d85002273404cd7c5be26fce78018ff649dc80625ae9ba53503",
+      "range_sha256": "660fb8a0dab29b604f2c994e895a651dc56f605ad04cbcd59462440f4ebfb3fb",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/flash_causal_lm.py:0-44440"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/flash_causal_lm.py#L891-L952"
+    },
+    {
+      "path": "server/text_generation_server/models/flash_causal_lm.py",
+      "line_start": 1507,
+      "line_end": 1584,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "36b3a793f9d18d85002273404cd7c5be26fce78018ff649dc80625ae9ba53503",
+      "range_sha256": "1ca0c3d724ab4ea227c0b0ec2a913b3a790a5bfe538d89d1f95945d48a332f2d",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/flash_causal_lm.py:44440-93574"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/flash_causal_lm.py#L1507-L1584"
+    },
+    {
+      "path": "server/text_generation_server/models/flash_causal_lm.py",
+      "line_start": 1792,
+      "line_end": 1888,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "36b3a793f9d18d85002273404cd7c5be26fce78018ff649dc80625ae9ba53503",
+      "range_sha256": "5f04bc5ecfc8d8d55bb4f759630c065d1ae826fb87231aa9ace2cc46a53d7c7e",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/flash_causal_lm.py:44440-93574"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/flash_causal_lm.py#L1792-L1888"
+    },
+    {
+      "path": "server/text_generation_server/models/globals.py",
+      "line_start": 8,
+      "line_end": 28,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "02eacc5141c09a7ff633bfae66dbf8c7516e1d11c925bcb59c506a48421815b0",
+      "range_sha256": "2aed184cfc20c1025d35a2c8d909dc5ee97e69befb1d68f8604817a20c2bd829",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/globals.py:0-2411"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/globals.py#L8-L28"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "9848f237ba24bae0eb0465ddd46efead09f1c899c41d54ddbc3a7171d23860c5",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "d96e9878c82ddcfb5b02f8ddef69dfb0dc16d4e983d4ce9478c9325a1edf9592",
+    "original_receipt": "6cdbb9412547c5f579630fbe04e3e2fe74acbab07057d757dd5c51e6346abef7",
+    "original_admission": "788e430a726c98c80973fd1b401828824ea71bb46db8e40952f656609f460b7c"
+  }
+}

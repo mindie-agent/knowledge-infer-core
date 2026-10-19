@@ -1,0 +1,140 @@
+{
+  "index": 14,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "State layout and backend guards must be checked per model path",
+  "mechanism": "Mamba writes convolution/SSM results back to external InferenceParams and advances seqlen_offset; subsequent calls use the step path. MPT selects flash, Triton or Torch attention, keeps rank-sliced bias and enforces explicit model/sequence restrictions. NeoX applies rotary to a partial head dimension and its manual attention path grows K/V along the sequence dimension. MLLama builds variable-length cross-attention metadata and gathers/scatters only selected image-associated text rows.",
+  "corrections": [
+    "MPT's unequal query/key causal guard runs only when original_is_causal is true; do not apply it to every backend/configuration.",
+    "The MPT dtype/CUDA check belongs to its flash/Triton wrappers, not to NeoX.",
+    "MPT LPLayerNorm replaces normalized_shape with the loaded sharded weight shape, so its constructor argument alone does not prove a mismatch.",
+    "NeoX positions read past dimension -2 while its mask reads -1; this conflicts with the manual path's [batch,heads,sequence,head_dim] cache. The imported fused kernel's returned layout was not inspected.",
+    "MPT lists MultiQueryAttention but MPTBlock rejects that configuration; its self.head_dim references do not establish a reachable configured-model failure through MPTBlock.",
+    "MLLama projects K/V from the tensor unpacked from cross_attention_states, not from the whole tuple. The zero-padding slice at58-59 clears all entries when pad_patches==0; occurrence with a deployed configuration remains unverified.",
+    "Mamba step squeezes axis1 and does not provide a continued multi-token prefill path in this file; actual external kernel shape validation was not executed."
+  ],
+  "source_scope": "All 46 indexed source-reference ranges read from pinned Git, including manual cache construction and caller dimension reads. No imported native-kernel execution.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mamba_modeling.py",
+      "line_start": 94,
+      "line_end": 167,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "a769fd1f72b9b7d11b60850e10454ae688d7d373921b8ec3a049cb231d47aa88",
+      "range_sha256": "ad2490b60c6571f230ef327ee8d65b40feec1b1e865bad5d6728f760bc319ca2",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mamba_modeling.py:0-8825"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mamba_modeling.py#L94-L167"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mamba_modeling.py",
+      "line_start": 226,
+      "line_end": 237,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "a769fd1f72b9b7d11b60850e10454ae688d7d373921b8ec3a049cb231d47aa88",
+      "range_sha256": "8b48f9babe25d5041aa2b14fd1a68f8d7f53b324dbdd0aaeae5fc3f014bb7c79",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mamba_modeling.py:0-8825"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mamba_modeling.py#L226-L237"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mpt_modeling.py",
+      "line_start": 81,
+      "line_end": 91,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "598ff10c1eb30a57d9ddd3240a03d89b92bbf6ecca7e9d56264a6b5cc8356a63",
+      "range_sha256": "1d8191d97d2297a71d72c48ade585e0888a3c1c1db66432d4c14de79395f2930",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mpt_modeling.py:0-46878"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mpt_modeling.py#L81-L91"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mpt_modeling.py",
+      "line_start": 371,
+      "line_end": 378,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "598ff10c1eb30a57d9ddd3240a03d89b92bbf6ecca7e9d56264a6b5cc8356a63",
+      "range_sha256": "9145942e198113308e0b21cd4c75340be974fa437158f8fd774feb71f4c722d2",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mpt_modeling.py:0-46878"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mpt_modeling.py#L371-L378"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mpt_modeling.py",
+      "line_start": 867,
+      "line_end": 886,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "598ff10c1eb30a57d9ddd3240a03d89b92bbf6ecca7e9d56264a6b5cc8356a63",
+      "range_sha256": "655b3f1e991a340a13f01b759ce2181ae85aeaebda9ab1f408a13635fabe5239",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mpt_modeling.py:0-46878"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mpt_modeling.py#L867-L886"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/neox_modeling.py",
+      "line_start": 171,
+      "line_end": 218,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "81d6442a0aac3a24a718fb38e20200b786813cb6408a1afaaf353bb3b6c0625b",
+      "range_sha256": "80f8c57453bbf516e323271b14bb8f2febebf45ef6612dc7a9db388f9997c43c",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/neox_modeling.py:0-30637"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/neox_modeling.py#L171-L218"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/neox_modeling.py",
+      "line_start": 536,
+      "line_end": 561,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "81d6442a0aac3a24a718fb38e20200b786813cb6408a1afaaf353bb3b6c0625b",
+      "range_sha256": "0e4a2a2dde52455296b10dbcfb55af50ac730c7b04939141068dc407b2ef069d",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/neox_modeling.py:0-30637"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/neox_modeling.py#L536-L561"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mllama.py",
+      "line_start": 857,
+      "line_end": 885,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "7ff6e34db02da74ab5a26845b8a6137396a51668f3bdb2e5142cac482bad348d",
+      "range_sha256": "21f549da591ffd8815f8b32b762ed07eec3eef045ca2e4174797eee1d0952bca",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mllama.py:0-37903"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mllama.py#L857-L885"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/mllama.py",
+      "line_start": 970,
+      "line_end": 1027,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "7ff6e34db02da74ab5a26845b8a6137396a51668f3bdb2e5142cac482bad348d",
+      "range_sha256": "a0da31476aba5b3820a32e6ea0e1c25740c792921bf795ae5742d7d8d63ad0ce",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/mllama.py:0-37903"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/mllama.py#L970-L1027"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "a97826d22a17f94b346cf1782448b76a8b01be33f60b2bdb23bb0f39b2285e3b",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "4f704ec50a74eaa750f5167139a7408077a4ce67e48af35bf21a81a3641d4679",
+    "original_receipt": "be826fd102b3baae4e9cda32b087d76473fcec8c2c392bde24d048f4c7a29a0e",
+    "original_admission": "81e6640459312f3236e2c890b787994ff0728c21b83f2477d53d75e2fcd1d24a"
+  }
+}

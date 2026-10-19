@@ -1,0 +1,115 @@
+{
+  "index": 13,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Multimodal cache reuse still depends on image metadata and cross-attention scheduling",
+  "mechanism": "The legacy IDEFICS processor pads text and image slots and builds image-attention masks. Its decoder inserts gated cross-attention at multiples of cross_layer_interval, but creates floor(num_hidden_layers/interval) gated blocks. The no-images flag zeroes a residual gate after cross-attention computation; it does not skip that computation. Precomputed image_hidden_states still require pixel_values-derived image-count metadata, and image_attention_mask is dereferenced before the fallback check. LLaVA-NeXT instead projects/spatially unpads image features and merges them into token embeddings before paged decoder execution.",
+  "corrections": [
+    "For positive layer/interval counts with a non-divisible remainder, created gated-block count can be smaller than the indexed schedule; do not describe this as silently omitting layers.",
+    "IDEFICS cross-attention rejects past_key_value; ordinary decoder past and precomputed image features are different caches.",
+    "A generated image-token comment is not a guard: LLaVA merges whenever vision_embeds is non-None, and passes prefill_cache_indices=None into its decoder.",
+    "The k_layer_norm loader uses a q_layer_norm weight prefix; whether the sharing is intentional is unresolved.",
+    "SDPA receives dropout_p=self.dropout directly; no local evaluation-mode switch is shown. Runtime inference configurations were not inspected.",
+    "RMSNorm's IPEX/CUDA/ROCm/large-width branches and lack of a vision attention-mask argument are source facts, not device compatibility or performance measurements."
+  ],
+  "source_scope": "All 22 corrected references read from pinned Git; actual requests, generation expansion and imported-kernel behavior were not executed.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics_processing.py",
+      "line_start": 357,
+      "line_end": 414,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "35adab06e3fbc6d1fb87b72d02c0f319d58b233a77546639b1f1cef6be565bfe",
+      "range_sha256": "99a56ded4dcbdc86537746c549ef0daab13bacda41fd07540e6894d0328d6d33",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics_processing.py:0-18437"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics_processing.py#L357-L414"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics_modeling.py",
+      "line_start": 840,
+      "line_end": 874,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ecfbea81dc3e585f693cf96db1fbcaf96f23ba25b437a553c3eb0a75d371f6fa",
+      "range_sha256": "266b0e32a2dbfaa87404260f4fe1de040c0c210036a11ac36ad6470732435803",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics_modeling.py:0-39080"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics_modeling.py#L840-L874"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics_modeling.py",
+      "line_start": 1047,
+      "line_end": 1054,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ecfbea81dc3e585f693cf96db1fbcaf96f23ba25b437a553c3eb0a75d371f6fa",
+      "range_sha256": "73dd18e7e2c1087d4e456b179e2ba8babf6b8f0ce4680a4698b1b62e952fc33f",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics_modeling.py:39080-60940"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics_modeling.py#L1047-L1054"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics_modeling.py",
+      "line_start": 1321,
+      "line_end": 1342,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ecfbea81dc3e585f693cf96db1fbcaf96f23ba25b437a553c3eb0a75d371f6fa",
+      "range_sha256": "e23d7cc0fe6c2ab01262b62bc8638f2f9855d40ae282ea26f41a821a50839824",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics_modeling.py:39080-60940"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics_modeling.py#L1321-L1342"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics_modeling.py",
+      "line_start": 1190,
+      "line_end": 1258,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ecfbea81dc3e585f693cf96db1fbcaf96f23ba25b437a553c3eb0a75d371f6fa",
+      "range_sha256": "00a5b3cc553384cc742a775f5b023eafe3a4266249d1acd718185e39ef74999a",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics_modeling.py:39080-60940"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics_modeling.py#L1190-L1258"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/llava_next.py",
+      "line_start": 205,
+      "line_end": 252,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "f070f57572ee3687f6642e419957f6aac539326c81db1733bc31d805d9575930",
+      "range_sha256": "e557303b53d7e9bd44088c71d6d48a5499769378b2104d241da8ce78f1a1f190",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/llava_next.py:0-12459"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/llava_next.py#L205-L252"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/llava_next.py",
+      "line_start": 261,
+      "line_end": 303,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "f070f57572ee3687f6642e419957f6aac539326c81db1733bc31d805d9575930",
+      "range_sha256": "33c9a440447deb27fc18c8d483e9ebeeeeb7bf5713d0b7610cd169cd1a8694e1",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/llava_next.py:0-12459"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/llava_next.py#L261-L303"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "3ff788c56137901d12c2b3294a9d5176981745a410cab06573870d94c50ad278",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "cb16d494f0902dbeef0380d6b0cb768fbe9f99b0dbd4842a1063743a1ba351dd",
+    "original_receipt": "e2ecd34a6b662cae17781eaef3e5a007337854a3912ab0df5dc79a60043fbdc1",
+    "original_admission": "83969732894cab23af411df5add0b8b43023909b11637c95302091df196fec48"
+  }
+}

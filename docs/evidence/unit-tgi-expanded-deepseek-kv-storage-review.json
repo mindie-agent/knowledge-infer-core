@@ -1,0 +1,91 @@
+{
+  "index": 10,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Compressed attention projections do not imply a compressed runtime KV cache",
+  "mechanism": "The pinned DeepSeek V2 implementation expands compressed KV through kv_b_proj, combines non-RoPE and rotated key components, pads Q/K/V to a common head size, and stores the expanded keys and values. Its attention then separates prefill and paged decode. Gemma2 selects sliding layers by parity; Gemma3 uses sliding_window_pattern and per-layer rotary bases, with explicit masks consumed by its non-flashinfer SDPA prefill branch. GPT-2 instead adds learned position embeddings.",
+  "corrections": [
+    "DeepSeek V2 padding fields:171-173; rotary assembly:305-311; expanded store:313-330; MoE reduction:472-481. Config rejection ends at146.",
+    "DeepSeek V3 scoring/correction-bias arguments occur at455-456, outside the proposed ending454.",
+    "Gemma2 RMSNorm multiplication/downcast ends126; store starts256. Gemma3 sliding selection is475-485, not486-492; per-layer cos/sin is516-519.",
+    "Gemma3 projector constructor/forward is611-651; image-mask OR is741-751, not758-768.",
+    "Source comment and symbol names do not establish latent-cache memory savings, TP efficiency or speedup. Claims here describe this implementation only.",
+    "Gemma v1 scaling at426-435 and GPT-2 learned-position addition at450-452 are source facts; no numerical model equivalence test was run."
+  ],
+  "source_scope": "All 22 proposed references read and every truncated/misaligned substantive operation above recovered from pinned Git. Compact accepted mechanism omits unreviewed broad wrapper and ROCm-path generalizations.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_deepseek_v2_modeling.py",
+      "line_start": 270,
+      "line_end": 354,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "3e461783a0ecf52a52c16f618749fc32f56e6c51f7eae860ff00012e70c355c4",
+      "range_sha256": "c853c767ce1937a303fbbac33b8376589810396b568216593e66dc183a312857",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_deepseek_v2_modeling.py:0-22173"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_deepseek_v2_modeling.py#L270-L354"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_gemma2_modeling.py",
+      "line_start": 448,
+      "line_end": 451,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "22f72b1bf5672790d5dd4f49d3d5c8b6b974861a6c69a70ed966c518b150ac95",
+      "range_sha256": "896f631ac5b5b5e6935f4981a0d1a8e904ce7d63d70a465ac7c96900c4842e71",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_gemma2_modeling.py:0-18773"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_gemma2_modeling.py#L448-L451"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_gemma3_modeling.py",
+      "line_start": 475,
+      "line_end": 485,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ebae791a8a6b72260bf28914571a62374783286393ec7d5793694e0c4bc61055",
+      "range_sha256": "5525a251cee6ebc784fd4b9bb656ff05c8a669106c48e01187abcee94a26944b",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_gemma3_modeling.py:0-32728"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_gemma3_modeling.py#L475-L485"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_gemma3_modeling.py",
+      "line_start": 251,
+      "line_end": 295,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ebae791a8a6b72260bf28914571a62374783286393ec7d5793694e0c4bc61055",
+      "range_sha256": "99d45262a4457cb2747f60d91d5e8523a15703a1026d66bdd60eb2a4c2602801",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_gemma3_modeling.py:0-32728"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_gemma3_modeling.py#L251-L295"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_gpt2_modeling.py",
+      "line_start": 450,
+      "line_end": 452,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "8c73ee6a4b9a804e050de005354c3587f93ac3a87db2d502b4c2c6babedba048",
+      "range_sha256": "f0eab5e5c18f7272d97164e201842978f3bd5804ccd7d0cfd62e0745dda6fc84",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_gpt2_modeling.py:0-14575"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_gpt2_modeling.py#L450-L452"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "4627749e21250030d1be954328a3b929fee2f62ddc35fad2eac45ad82fc402f3",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "78dbee402021689becebac6341620803c33943b84f794f77700e0dd7e1af45cf",
+    "original_receipt": "07e7c33fb057aa84af46db1af31e07be0a01ef8e7f8299c8a3a2dedc496b66ba",
+    "original_admission": "eb667491576c6896d5620668c6a3fa602bdd9fa01f1cc6a152f414e5d80cc868"
+  }
+}

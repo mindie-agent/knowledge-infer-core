@@ -1,0 +1,116 @@
+{
+  "index": 9,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Replacing Transformers attention leaves a second contract at the model-forward boundary",
+  "mechanism": "The registered TGI text attention hook stores each layer's K/V into supplied slots and dispatches prefill to variable-length attention and decode to paged attention, while the bridge disables the Transformers cache. VLM text prefill can alternatively pad and use SDPA; vision is configured for SDPA. Image encoding is scheduled for token spans intersecting the current prefill window, with per-request encoder caching. These mechanisms require compatible forward signatures and model-specific mask/position methods.",
+  "corrections": [
+    "Device selection permits IPEX CPU when XPU is absent. Both Transformers loaders explicitly reject speculator.",
+    "The graph warmup always creates and captures a graph; its buffer reuse is not capture reuse.",
+    "The patched Transformers VLM _model_forward requires input_ids and has no attention_mask parameter; base VLM forward passes attention_mask and omits input_ids. Constructor:311-315 confirms the forward patch. This is a source-level interface mismatch; no deployed model was run.",
+    "Do not compare self.model.get_attention_mask directly with wrapper self.get_attention_mask: no mask-method patch is shown at 311-315, so the called model object's method remains unverified.",
+    "Restrict the prefix-caching rejection claim to VlmCausalLM.__init__:709-710. The Transformers constructor skips directly to Model via super(FlashCausalLM,self), so this guard cannot be assumed to run there.",
+    "The speculative branch leaves inputs_embeds unset, but loader-level speculator rejection limits reachable combinations.",
+    "Text-hook attention_mask is unused; adapter_data and prefill_cache_indices are accepted but unused in bridges. No general model-compatibility or performance claim follows."
+  ],
+  "source_scope": "Pinned text hook/loader/bridge and VLM SDPA, masks, constructor patch, image-window, cache-release, graph and forward ranges read; Qwen position implementation read. Dataclass boilerplate was not independently reviewed for this narrowed unit.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/transformers_flash_causal_lm.py",
+      "line_start": 20,
+      "line_end": 84,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "6d5a6fbe4cc9fbae907d711d759b90083a89a8ace768a3708a060ce43114b468",
+      "range_sha256": "308ec698b084def8261a53f725bd6d76b3e4ce45d75fbf82d741d10cee1aa5f6",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/transformers_flash_causal_lm.py:0-10757"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/transformers_flash_causal_lm.py#L20-L84"
+    },
+    {
+      "path": "server/text_generation_server/models/transformers_flash_causal_lm.py",
+      "line_start": 255,
+      "line_end": 290,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "6d5a6fbe4cc9fbae907d711d759b90083a89a8ace768a3708a060ce43114b468",
+      "range_sha256": "fa9901052a4e7cdb449a4bef615d55945c5a316132cc06ece2dd590c95175d0a",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/transformers_flash_causal_lm.py:0-10757"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/transformers_flash_causal_lm.py#L255-L290"
+    },
+    {
+      "path": "server/text_generation_server/models/transformers_flash_vlm.py",
+      "line_start": 69,
+      "line_end": 143,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "34a557f7f66803da4dd678dbff89fa823c2c505fda95d4dd3eccc8a5bf2b0c50",
+      "range_sha256": "505eb4720599dae51362a2703c8962adc911608aa3151ffcca38324ef70a98d2",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/transformers_flash_vlm.py:0-24489"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/transformers_flash_vlm.py#L69-L143"
+    },
+    {
+      "path": "server/text_generation_server/models/transformers_flash_vlm.py",
+      "line_start": 311,
+      "line_end": 315,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "34a557f7f66803da4dd678dbff89fa823c2c505fda95d4dd3eccc8a5bf2b0c50",
+      "range_sha256": "f30aab020e5f68a3593f37cc05a2181834217d72060d4842d8dd2a0e17e65462",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/transformers_flash_vlm.py:0-24489"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/transformers_flash_vlm.py#L311-L315"
+    },
+    {
+      "path": "server/text_generation_server/models/transformers_flash_vlm.py",
+      "line_start": 358,
+      "line_end": 415,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "34a557f7f66803da4dd678dbff89fa823c2c505fda95d4dd3eccc8a5bf2b0c50",
+      "range_sha256": "c8c6e4aa68aa235737db3bb24d2279f65da811ac350eef602973f15a49758407",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/transformers_flash_vlm.py:0-24489"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/transformers_flash_vlm.py#L358-L415"
+    },
+    {
+      "path": "server/text_generation_server/models/vlm_causal_lm.py",
+      "line_start": 551,
+      "line_end": 617,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "3cf5fedf20e6a3a859388a16cef285848c578ed770dbe6d9ec1c3d15630330a2",
+      "range_sha256": "d11ffab91d3c75e72777af554d70b67b4653eb746684b4e3384affdd8dd8b3f9",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/vlm_causal_lm.py:0-42270"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/vlm_causal_lm.py#L551-L617"
+    },
+    {
+      "path": "server/text_generation_server/models/vlm_causal_lm.py",
+      "line_start": 959,
+      "line_end": 1077,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "3cf5fedf20e6a3a859388a16cef285848c578ed770dbe6d9ec1c3d15630330a2",
+      "range_sha256": "ef6b1db157791d94472ee2c8d1494ce1aef47cf77c36ebb15c195a74cd37133b",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/vlm_causal_lm.py:0-42270"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/vlm_causal_lm.py#L959-L1077"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "1b49a71ff6956ddcf34d52e795c95b1cae835199d0497f58972b82c560a3c860",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "b85c4cb8c38647f8adf4ffb804ecf570061d538c7afdc81994970c170b0fadc6",
+    "original_receipt": "908976328d10727a4bbee16d808aff57dcd504d94cd7ab876e79bb113d15883f",
+    "original_admission": "ddb1dc62282f122845f02f216b4ca4ad7f0b39f6857d365367bf682eafdfbbdc"
+  }
+}

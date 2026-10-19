@@ -1,0 +1,115 @@
+{
+  "index": 11,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "KV-head topology and preprocessing configuration need executable-path checks",
+  "mechanism": "RW attention uses separate MQA/MHA and grouped-head mappings; its parallel-attention layer combines attention and MLP outputs before all-reduce. StarCoder2 applies prefill_cache_indices to both stored K/V rows and outer slots, while its KV-head count uses integer division by world size. Gemma3's processor constructs its own fixed image processor and expands image placeholders, but its Pan-and-Scan crop-description assignment does not update the text list later tokenized.",
+  "corrections": [
+    "StarCoder2 sequence-length clamping at603-610 is guarded by prefill_cache_indices is None and max_past is not None, not explicitly by decode mode. The comment alone does not prove prefill can never reach it.",
+    "StarCoder2 checks query-head divisibility but floor-divides KV heads; downstream accepted configurations and actual device failures were not tested.",
+    "RWLarge checks group/world-size compatibility; head/group division at268 has no local divisibility check.",
+    "Gemma3 processor rebinds prompt at166-170 without updating text before173-175. Images with text=None also reach text[0] at126; text=[] bypasses that operand and can reach placeholder generation.",
+    "A non-dict vision_config is replaced by a new SiglipVisionConfig at293-300. Do not infer effective settings from docstring examples.",
+    "SantaCoder's discarded initial bias slice at118 is overwritten at121; classify it as redundant source work without a measured performance claim."
+  ],
+  "source_scope": "All 19 proposed reference ranges read from pinned Git; compact mechanism excludes uninspected docstring-default and external-kernel claims.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_rw_modeling.py",
+      "line_start": 150,
+      "line_end": 175,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "07da53bfc44b00221c19a03da310308adedab8e2428e96556e4204c45204ae88",
+      "range_sha256": "9facff7fc20c8464230f7d38de09e9b768ce5a4e2e6c7ff18a9dd4011d9e9f8e",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_rw_modeling.py:0-21454"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_rw_modeling.py#L150-L175"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_rw_modeling.py",
+      "line_start": 249,
+      "line_end": 296,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "07da53bfc44b00221c19a03da310308adedab8e2428e96556e4204c45204ae88",
+      "range_sha256": "ae9bfb77d9ed9a5039c34a8e5901ca84e572febb88c57fa0945d1217468f704d",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_rw_modeling.py:0-21454"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_rw_modeling.py#L249-L296"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_rw_modeling.py",
+      "line_start": 442,
+      "line_end": 463,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "07da53bfc44b00221c19a03da310308adedab8e2428e96556e4204c45204ae88",
+      "range_sha256": "a9ac3285a7f03b3bf2573828b0916bae8787d2ff3f3b24630aca212d657e4250",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_rw_modeling.py:0-21454"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_rw_modeling.py#L442-L463"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_starcoder2_modeling.py",
+      "line_start": 244,
+      "line_end": 295,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "a4d492ae628a701fc5f7880f70243e46d6c5e07871686d53e5c1f7f23c5af964",
+      "range_sha256": "2995ead4e69afbb9e5253fb64f129f5747217e355d60b0cf16c2db4c70309cb1",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_starcoder2_modeling.py:0-20091"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_starcoder2_modeling.py#L244-L295"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/flash_starcoder2_modeling.py",
+      "line_start": 603,
+      "line_end": 610,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "a4d492ae628a701fc5f7880f70243e46d6c5e07871686d53e5c1f7f23c5af964",
+      "range_sha256": "341401b1c80b1aa9d90aebf1c470fc4f898e9c556366675cf72ae892bfde3bcb",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/flash_starcoder2_modeling.py:0-20091"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/flash_starcoder2_modeling.py#L603-L610"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/gemma3/processing_gemma3.py",
+      "line_start": 72,
+      "line_end": 103,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "7e6c6eba471991bf7f8115ee8d0fdd8c10664c14f6f234dc2e3ebf3729910dbb",
+      "range_sha256": "f1996f3a1a1a8dba21af300ad5ed019819bd9d9a679122e539c974d7c18eaecd",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/gemma3/processing_gemma3.py:0-7606"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/gemma3/processing_gemma3.py#L72-L103"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/gemma3/processing_gemma3.py",
+      "line_start": 151,
+      "line_end": 175,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "7e6c6eba471991bf7f8115ee8d0fdd8c10664c14f6f234dc2e3ebf3729910dbb",
+      "range_sha256": "9ae547d89ff457c69928bddf95d7d06fabe6908642efd82685a4bf1d21629f04",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/gemma3/processing_gemma3.py:0-7606"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/gemma3/processing_gemma3.py#L151-L175"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "2e39eaf6401ed81ecca9003b9ec425783a7201322b479ea75cd35925ce1d9ba1",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "c6d0b13e15f0c5ce6ef4e568cd7ed5fe4f39afb5aa34eaa544db25093e9a64c9",
+    "original_receipt": "584ba613fac7f2270bf3bf8af22e9a1c22edf230f084c6e9e8489410ad3ddf5e",
+    "original_admission": "ee0938ebd4802e5967bb4f59f289e66de00ce3b8a21af15391b4eef83da321b0"
+  }
+}

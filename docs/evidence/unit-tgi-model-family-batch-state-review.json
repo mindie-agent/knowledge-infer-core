@@ -1,0 +1,127 @@
+{
+  "index": 8,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Batch mutation must preserve each model family's state representation",
+  "mechanism": "TGI uses different state layouts for Idefics, encoder-decoder generation, Mamba and MLLama. Idefics filter/concatenate paths index both pixel values and image masks; Seq2Seq starts with BOS and no past state, then filters four per-layer past tensors after execution. Mamba allocates fixed convolution/SSM state, rejects tensor parallel world sizes above one and gates graph replay on non-prefill state. Incremental decoding withholds a growing suffix ending in U+FFFD.",
+  "corrections": [
+    "Seq2Seq from_pb sets past_key_values=None at 165; it does not populate four past tensors before the first forward.",
+    "Seq2Seq filter computes total_remaining_decode_tokens at 207-237 but its max_tokens expression uses only the last remaining_decode_tokens at 270-273; downstream enforcement and impact are unverified.",
+    "Include Idefics:799 for the rank condition and Mamba:721 for its corresponding condition. The per-row updates have different indentation.",
+    "Reject the reviewer's assertion that repeated MLLama image indices always receive distinct successive offsets: source 69-77 produces [0,1,1] for three repeated kept indices. The shown builder retains only the last image per request, so that synthetic shape's reachability is not established.",
+    "MLLama concatenation uses an image-entry count as offset. Preserve request/image-index alignment as unresolved; no production failure or performance outcome was reproduced.",
+    "Idefics text-only compatibility and token 32000 semantics are not established by these ranges."
+  ],
+  "source_scope": "All 21 corrected reference ranges read plus rank-condition, initial-state and accumulation definitions; source-level conclusions only.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/model.py",
+      "line_start": 144,
+      "line_end": 171,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "9c99339cf49ea6f0d9f7c03c52e051a9e761633059c3c954189fdcbbf20c40c1",
+      "range_sha256": "9cfc6d1cff1e6392c588f43154d3f978a39996b0b617b6250f40b61d17b74f9f",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/model.py:0-6547"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/model.py#L144-L171"
+    },
+    {
+      "path": "server/text_generation_server/models/idefics_causal_lm.py",
+      "line_start": 280,
+      "line_end": 303,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "7903540c7dce37712e7ee771775b6d11b24d95df99ab5740129581d89f6c231f",
+      "range_sha256": "f7fc8def24031ec3d36fbb36035f9ee1bf6fe9fa12d0b77959220823b7c121d3",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/idefics_causal_lm.py:0-34383"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/idefics_causal_lm.py#L280-L303"
+    },
+    {
+      "path": "server/text_generation_server/models/idefics_causal_lm.py",
+      "line_start": 404,
+      "line_end": 422,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "7903540c7dce37712e7ee771775b6d11b24d95df99ab5740129581d89f6c231f",
+      "range_sha256": "8326ff96d01c355ed5abb019619c55963c982f5543e0964c241be16b6caa9c12",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/idefics_causal_lm.py:0-34383"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/idefics_causal_lm.py#L404-L422"
+    },
+    {
+      "path": "server/text_generation_server/models/seq2seq_lm.py",
+      "line_start": 155,
+      "line_end": 165,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "6945e7bc737c3adc22c2eca905f4460cff173e8b23a0753b424b484ec6828cc6",
+      "range_sha256": "ffeba89d212b9c5f2e1e0f759a786b52d45a81479dfa98d368d0586b30443daa",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/seq2seq_lm.py:0-35073"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/seq2seq_lm.py#L155-L165"
+    },
+    {
+      "path": "server/text_generation_server/models/seq2seq_lm.py",
+      "line_start": 263,
+      "line_end": 273,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "6945e7bc737c3adc22c2eca905f4460cff173e8b23a0753b424b484ec6828cc6",
+      "range_sha256": "ddf051a39c703b0238cb74d4901476a7560b79e9e0f74031a6dc35389d2426c4",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/seq2seq_lm.py:0-35073"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/seq2seq_lm.py#L263-L273"
+    },
+    {
+      "path": "server/text_generation_server/models/mamba.py",
+      "line_start": 36,
+      "line_end": 74,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "42b356a359bc4fdfef44271e44c0845547a8d5b44d97fe8f2ae7f31b34737384",
+      "range_sha256": "3100e5e6a36838325b1ad16b26c556038b7654314cacc6dcce8eaf3f0b79c59d",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/mamba.py:0-29561"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/mamba.py#L36-L74"
+    },
+    {
+      "path": "server/text_generation_server/models/mamba.py",
+      "line_start": 417,
+      "line_end": 433,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "42b356a359bc4fdfef44271e44c0845547a8d5b44d97fe8f2ae7f31b34737384",
+      "range_sha256": "5675427a8eaaf78b1c5a2ff20015eee661ad13007737db150e902bb7700c3639",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/mamba.py:0-29561"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/mamba.py#L417-L433"
+    },
+    {
+      "path": "server/text_generation_server/models/mamba.py",
+      "line_start": 569,
+      "line_end": 614,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "42b356a359bc4fdfef44271e44c0845547a8d5b44d97fe8f2ae7f31b34737384",
+      "range_sha256": "abf8e3457a48e2edbadef692df1d88e386ac05197b4c0ba2c3153eedf25ebc1c",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/mamba.py:0-29561"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/mamba.py#L569-L614"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "b181492cde91de84286cc604bf6a00e2caf49f3c90cab9607f49736e013e151b",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "0dd58847d2dcfc3f784bc0bab451bf310d5e6004dff13dbc347bf6b325b47614",
+    "original_receipt": "52299a6c8126dbc4a1634eeabe62d55e2868a824c4aff16d1aa051a6e8460b3b",
+    "original_admission": "181556488469e5e82f1c46b4c3f782a478a9d38abe14a3f911e17eef81c368aa"
+  }
+}

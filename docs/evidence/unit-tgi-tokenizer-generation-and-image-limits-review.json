@@ -1,0 +1,78 @@
+{
+  "index": 4,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Tokenizer admission, generation reservation and image limits bound different resources",
+  "mechanism": "TGI validation sends requests through unbounded channels to blocking tokenizer workers; the Python tokenizer uses one worker. prepare_input encodes the full rewritten input before the retained token suffix and accounting are truncated. The current generation pass reserves at most DEFAULT_GENERATION_LENGTH while retaining a separate total-new-token request. HTTP image loading bounds encoded response bytes; the data-URI branch has no max_image_fetch_size check in this function.",
+  "corrections": [
+    "Do not claim the fetch byte cap is a decoded image-memory cap. Image-library default limits were not inspected.",
+    "The zero-worker constructor path can spin, but v2 CLI main.rs:147-150 rejects zero validation_workers; do not report this as a demonstrated deployed configuration bug.",
+    "Vertex join_all waits for all sibling futures before collecting the Result; a returned error does not make it cancel siblings.",
+    "Vertex maps errors returned from generate_internal to 500, but this unit does not establish every upstream validation-error path.",
+    "The caller's dropped reply does not cancel work already running in the blocking worker."
+  ],
+  "source_scope": "All 22 corrected reference ranges read; library decoding defaults and production concurrency were not executed.",
+  "supporting_ranges": [
+    {
+      "path": "router/src/validation.rs",
+      "line_start": 43,
+      "line_end": 88,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "43c9c3fee4e1bcd9cdd84c635f79a142b6f1c73d35702669759b0aaa9a8a28b7",
+      "range_sha256": "794358524f8a7a0cbda289f158aa4ab3bb0a28421c3048976a5fe982d2614b8a",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:router/src/validation.rs:0-32619"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/router/src/validation.rs#L43-L88"
+    },
+    {
+      "path": "router/src/validation.rs",
+      "line_start": 145,
+      "line_end": 199,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "43c9c3fee4e1bcd9cdd84c635f79a142b6f1c73d35702669759b0aaa9a8a28b7",
+      "range_sha256": "2a26efd8dbd5b83c74508eaab5c5f7221c2766c0bf3b312a41129b4731b45050",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:router/src/validation.rs:0-32619"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/router/src/validation.rs#L145-L199"
+    },
+    {
+      "path": "router/src/validation.rs",
+      "line_start": 570,
+      "line_end": 637,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "43c9c3fee4e1bcd9cdd84c635f79a142b6f1c73d35702669759b0aaa9a8a28b7",
+      "range_sha256": "4d413caba8c919df864a8b44bf89335fa37cb1f3ea1786b161deaa50f7993dfc",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:router/src/validation.rs:0-32619"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/router/src/validation.rs#L570-L637"
+    },
+    {
+      "path": "router/src/validation.rs",
+      "line_start": 812,
+      "line_end": 860,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "43c9c3fee4e1bcd9cdd84c635f79a142b6f1c73d35702669759b0aaa9a8a28b7",
+      "range_sha256": "9ec4748ec0e97fe2f48f525f1a03c4e3975b569d6c1a740b5fa43fcbde3ae3b1",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:router/src/validation.rs:0-32619"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/router/src/validation.rs#L812-L860"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "5648ae1dd36408bb3e53c38f053ccd5c8f69d82c132cbee2c9fb136bc3849914",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "a01207a1a55ab10e0a1bd513826702d96c23059feab779ec53f7373f2a2ec710",
+    "original_receipt": "b001dca36208765313627166fdbbdf131d872d5dfe17eeb3688e63876e3d2fda",
+    "original_admission": "a626ac47e855876393abe8c967ec5dec32976647b23215ccb5309bfcc58b2bba"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "index": 1,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Receiver closure is observed at batch boundaries, and cleanup calls can still fail",
+  "mechanism": "TGI v2 drops queued requests with closed response receivers and removes stopped entries after a prefill/decode result is dispatched. The current RPC is not explicitly preempted by those checks. filter_batch uses cardinality equality as a shortcut; otherwise it filters request IDs or clears the shard cache. In prefill/decode error handlers, cache cleanup is attempted and its Result is discarded before errors are sent to all affected entries.",
+  "corrections": [
+    "Replace statements that error cleanup succeeds with 'attempts clear_cache'; backend.rs:271 and 315-318 discard cleanup errors.",
+    "State that request-ID equality is an assumed invariant behind the size shortcut, not a demonstrated runtime bug.",
+    "build_server(false) concerns generated bindings only; it does not establish absence of server code elsewhere.",
+    "queue.rs contains unit-test source; no tests were executed in this review.",
+    "Additional source-level caveat: queue.rs:240-274 mutates token totals before rejecting an over-budget entry; batch.max_tokens at 334-338 can include that rejected entry when earlier entries remain. No throughput impact was measured."
+  ],
+  "source_scope": "Corrected runtime ranges read; test module presence checked, test suite not run.",
+  "supporting_ranges": [
+    {
+      "path": "backends/v2/src/backend.rs",
+      "line_start": 239,
+      "line_end": 356,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "616aa661dbfa5b42956ecf62164322cd77224952ec7fefa43ea293f46a122eed",
+      "range_sha256": "e04727fbea59fb4d1950bad2e04265eb37a9a9c2574bcb988fff37d81474f45f",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v2/src/backend.rs:0-19852"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v2/src/backend.rs#L239-L356"
+    },
+    {
+      "path": "backends/v2/src/backend.rs",
+      "line_start": 361,
+      "line_end": 394,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "616aa661dbfa5b42956ecf62164322cd77224952ec7fefa43ea293f46a122eed",
+      "range_sha256": "2fb69d54a3bd31c981aa960f02c47252a04ccb9a68fa9105d8eb48d7f027f070",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v2/src/backend.rs:0-19852"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v2/src/backend.rs#L361-L394"
+    },
+    {
+      "path": "backends/v2/src/queue.rs",
+      "line_start": 230,
+      "line_end": 274,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "201d4476af59711c340adb2ca49e32248fcb667117829d4fd6db1f42261b13d0",
+      "range_sha256": "1ed53e4c969814d562ca2273a63f8d9251c65741db935b0e5496d32fdeeb01fe",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v2/src/queue.rs:0-22724"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v2/src/queue.rs#L230-L274"
+    },
+    {
+      "path": "backends/v2/src/queue.rs",
+      "line_start": 309,
+      "line_end": 346,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "201d4476af59711c340adb2ca49e32248fcb667117829d4fd6db1f42261b13d0",
+      "range_sha256": "7b5101ffaa221ce72058b760bcfaa425074e9e0708065ffd79ff263df241646f",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v2/src/queue.rs:0-22724"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v2/src/queue.rs#L309-L346"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "85a9b637b0975999367def183c02a4a6520865f929fa16c50184f6ba7f162f7c",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "da7c5b0946524af27c19b9dfd660c8253e3ebd28acf469b60f5abba189b03fc7",
+    "original_receipt": "c4e0a5772dbca7f5b87216ce0e34bb09d126e840aabef8e16d5da62659fc1810",
+    "original_admission": "8fe6dfe1fc16193ce7ffd51707ba70b143f909abdd4f43c9646e49622be1ac70"
+  }
+}

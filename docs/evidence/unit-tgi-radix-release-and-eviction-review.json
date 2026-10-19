@@ -1,0 +1,66 @@
+{
+  "index": 3,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Radix prefix release returns reusable blocks without implying full eviction",
+  "mechanism": "TGI's radix allocator increments the matched prefix reference before reclaiming suffix blocks and undoes that reference if allocation fails. Freeing an allocation releases its reference, inserts aligned prefill content into the trie, returns duplicate-prefix blocks and releases non-prefill suffix blocks. Trie eviction selects unreferenced leaves and truncates a leaf when only part is needed; it can return fewer blocks than requested when reclaimable leaves are exhausted.",
+  "corrections": [
+    "Remove the false whole-node eviction overshoot claim: a whole leaf is removed only when its size is at most the remaining need; otherwise suffix truncation is exact.",
+    "The subtraction underflow condition is prefix_len > tokens, not any non-matching prefill.",
+    "hash(slice) special-cases a single-token slice, not an arbitrary one-block slice.",
+    "Hash-collision concerns remain source-level possibilities; no collision or runtime failure was reproduced.",
+    "Use narrow method ranges instead of the entire 1041-line file."
+  ],
+  "source_scope": "All corrected ranges plus allocate failure rollback and eviction loop read from pinned Git.",
+  "supporting_ranges": [
+    {
+      "path": "backends/v3/src/radix.rs",
+      "line_start": 88,
+      "line_end": 121,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "e50be29cef679fcf2ab0801754e40926b0ae1bd2590b48ac67e8ee7f4ccf7fed",
+      "range_sha256": "acd859086d2418a1ffb9b795a65554c569d667a8b5ed387238a3ebb5a84060e3",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/radix.rs:0-37687"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/radix.rs#L88-L121"
+    },
+    {
+      "path": "backends/v3/src/radix.rs",
+      "line_start": 157,
+      "line_end": 207,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "e50be29cef679fcf2ab0801754e40926b0ae1bd2590b48ac67e8ee7f4ccf7fed",
+      "range_sha256": "bc66a98b748cb26478336cb0dd0713cd4131e8a1c62d92890ae183588118c641",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/radix.rs:0-37687"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/radix.rs#L157-L207"
+    },
+    {
+      "path": "backends/v3/src/radix.rs",
+      "line_start": 368,
+      "line_end": 405,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "e50be29cef679fcf2ab0801754e40926b0ae1bd2590b48ac67e8ee7f4ccf7fed",
+      "range_sha256": "5546cc625a38c81e83fa5cf69aa8f7ee69db5716a104d1255d7a1ae0c5d822b3",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/radix.rs:0-37687"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/radix.rs#L368-L405"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "3299eb8ef46dd711014c587da8a266d560511c511a800d14cff792cfb0d439cc",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "12f8ba5c5859121b45e67927c10dbc61d8ba7abfdd2112815e1cf35a850b795a",
+    "original_receipt": "0eaecf8fd976c02b3ad49134e206b7993705050e500ad14779bbacbbf8a719bb",
+    "original_admission": "72a84d5751fe0c45eaf797bf71e1c42aaa4c380a06b4388e4007adf9b364e26c"
+  }
+}

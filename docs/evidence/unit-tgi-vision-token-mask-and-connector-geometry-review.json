@@ -1,0 +1,115 @@
+{
+  "index": 12,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Vision-token merging depends on batch masks and connector geometry",
+  "mechanism": "Idefics2/3 load vision and connector weights through an unquantized loader while preserving a separate text-model quantization configuration. Both filter tensor-valued padding images, run vision and connector stages, stack per-row features, then assign flattened image features into image-token embedding positions. Idefics2 uses learned Perceiver latents; Idefics3 folds a square patch grid with pixel shuffle before projection. Their text forwards pass paged-attention metadata but replace prefill_cache_indices with None.",
+  "corrections": [
+    "The all-zero test is a tensor equality heuristic, not a semantic test for black images.",
+    "When the initial pixel_attention_mask is None and a second row is processed, the loop uses the originally captured all_pixel_mask=None after mutating the local mask on the first row. Preserve this source-level failure path; actual caller reachability was not run.",
+    "torch.stack requires consistent connector-output shape across rows. Pixel shuffle requires a square sequence grid and compatible scale-factor divisibility.",
+    "Masked assignment does not explicitly check token/feature counts. Do not claim every mismatch necessarily raises; tensor broadcasting can also matter. Correctness requires aligned features and placeholder positions.",
+    "The loaded Perceiver latent count is not locally asserted equal to configured n_latents; do not turn configured intent into a verified output count.",
+    "Do not apply the separate legacy Idefics processor/config defaults to Idefics2/3 without caller evidence."
+  ],
+  "source_scope": "All 19 proposed reference ranges read at the pinned source revision; no multimodal model execution or mask fixture run.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics2.py",
+      "line_start": 685,
+      "line_end": 714,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "88db44766e80eb26494bbcd7ca92a9418df24f9dec18d30b32aa64718fbc5d73",
+      "range_sha256": "27b2fd2b4fc84fa0a9211aedd0194be04de4ce859b333a3e692561b00659b725",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics2.py:0-32005"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics2.py#L685-L714"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics2.py",
+      "line_start": 729,
+      "line_end": 734,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "88db44766e80eb26494bbcd7ca92a9418df24f9dec18d30b32aa64718fbc5d73",
+      "range_sha256": "d9b5f6b5a3bf92b5963c7ffd0e1544d9fda36ca9f471acbd1f3033f51390890f",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics2.py:0-32005"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics2.py#L729-L734"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics2.py",
+      "line_start": 747,
+      "line_end": 803,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "88db44766e80eb26494bbcd7ca92a9418df24f9dec18d30b32aa64718fbc5d73",
+      "range_sha256": "f9171d818a1393b18a7886b8be0f0c7db14d7157bec8d07f2e28c5d1c5e97b27",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics2.py:0-32005"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics2.py#L747-L803"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics2.py",
+      "line_start": 638,
+      "line_end": 661,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "88db44766e80eb26494bbcd7ca92a9418df24f9dec18d30b32aa64718fbc5d73",
+      "range_sha256": "601ba72590b1641d410f91cd03927d41da35478fca57bcd3558889cefc582f97",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics2.py:0-32005"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics2.py#L638-L661"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics3.py",
+      "line_start": 401,
+      "line_end": 420,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c91596251d1af235ebc214664a93024802f5c71053ada2a090bd88208c9d85b6",
+      "range_sha256": "140235a79e8647010abfb49467807c868df270a35fe04467ce406c2eff02afff",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics3.py:0-22735"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics3.py#L401-L420"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics3.py",
+      "line_start": 489,
+      "line_end": 545,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c91596251d1af235ebc214664a93024802f5c71053ada2a090bd88208c9d85b6",
+      "range_sha256": "fb473cabcdbc15777d7c89e9c32aa0970ad53410f8974390c7ecaa3dbffbc28b",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics3.py:0-22735"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics3.py#L489-L545"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/idefics3.py",
+      "line_start": 579,
+      "line_end": 595,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c91596251d1af235ebc214664a93024802f5c71053ada2a090bd88208c9d85b6",
+      "range_sha256": "f25d70b91e4d5b9787e20414ef3338c74b4d30f08b57ea21c26e90192853c77a",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/idefics3.py:0-22735"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/idefics3.py#L579-L595"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "449c29bae5445fb8f6e2d574325e134f9fe5704fc0220c1c6fc35402809fcb00",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "a2cd8ab216510fcc18529ad7fc9f6f3bb8ba2c5f24ebccb34b0f3f5446191424",
+    "original_receipt": "cc46154e414758bf4df0747797500570516b55a8a8e6f5d1538929a6d1b11199",
+    "original_admission": "050bda859c758ea5868ece30288a70f5a3c086a66271e2af6d9f2ac30c9e07e6"
+  }
+}

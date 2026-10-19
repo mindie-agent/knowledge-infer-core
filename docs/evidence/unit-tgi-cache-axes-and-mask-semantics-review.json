@@ -1,0 +1,115 @@
+{
+  "index": 15,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Cache axes and attention-mask meaning are part of each model's serving contract",
+  "mechanism": "OPT appends K/V along axis2 and reads its cached sequence length from shape[2], while Phi uses axis1 and shape[1]. OPT derives positions from the attention mask and combines causal/padding masks. Phi uses the mask only as a non-None flag for a fixed triangular penalty and disables that path for single-token steps. Qwen2.5 vision reorders tokens into windows, selects full or window attention by layer, merges patches, then restores ordering; Qwen2 uses full packed sequence boundaries for every vision block.",
+  "corrections": [
+    "Qwen2-VL locally divides config.embed_dim, not config.hidden_size, at74. Its separately assigned head_dim is not used in the shown attention shaping/scaling path; do not report a demonstrated shape failure from that assignment alone.",
+    "Phi does not read supplied padding-mask values, and its upper-triangular mask has no offset for a nonempty past. Do not infer generic cached multi-token correctness from one-token decode behavior.",
+    "Qwen2.5 restores order after the patch merger at811-813, not before.",
+    "Qwen processor expands both image and video placeholders, but the shown embedding merge replaces only image_token_id rows. Complete video handling remains dependent on external preprocessing/callers.",
+    "OPTForCausalLM directly reads decoder object attributes and returns a fixed two-tuple. Return-dict=False compatibility requires checking the decoder's actual return path; no runtime invocation was performed here.",
+    "SigLIP's attention accepts an additive mask and uses fp32 softmax, while its shown transformer forward supplies no mask. A pooling-head definition alone does not establish its use."
+  ],
+  "source_scope": "All 24 indexed source-reference ranges read from pinned Git; no model loading, cache replay or hardware benchmark executed.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/models/custom_modeling/opt_modeling.py",
+      "line_start": 210,
+      "line_end": 229,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c29f9a7106355d7655f9da4b8bb381243e25f33dda3844b400c8176077895a6e",
+      "range_sha256": "b8c97eb55945b69382f714e1d777031e3cf5d9609fd1b7f25918b5b4a29f310d",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/opt_modeling.py:0-34467"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/opt_modeling.py#L210-L229"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/opt_modeling.py",
+      "line_start": 498,
+      "line_end": 515,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c29f9a7106355d7655f9da4b8bb381243e25f33dda3844b400c8176077895a6e",
+      "range_sha256": "dc297bc475be8430e82cadcb4c58d5ca87462300d757f18f12391c0ba283b62b",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/opt_modeling.py:0-34467"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/opt_modeling.py#L498-L515"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/opt_modeling.py",
+      "line_start": 613,
+      "line_end": 627,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c29f9a7106355d7655f9da4b8bb381243e25f33dda3844b400c8176077895a6e",
+      "range_sha256": "275379815d2ad10bf649e7e47066fb68a37164b22eaa4f3f54c23415fa53f6fe",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/opt_modeling.py:0-34467"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/opt_modeling.py#L613-L627"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/phi_modeling.py",
+      "line_start": 164,
+      "line_end": 183,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "a42789973335e6357e9ec9fa1d5ae533fbcce530ac11bd8c7e0bbfeb182cd24a",
+      "range_sha256": "16c89b9f5780c32b0c5e03ac6c038067a67d601a7dd8d285551a7c1ea2c6b644",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/phi_modeling.py:0-11544"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/phi_modeling.py#L164-L183"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/phi_modeling.py",
+      "line_start": 273,
+      "line_end": 287,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "a42789973335e6357e9ec9fa1d5ae533fbcce530ac11bd8c7e0bbfeb182cd24a",
+      "range_sha256": "051023b7d38e92debbccddb38b4a3da26a24aa8ccf35d47f9bf88b7a1c188de4",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/phi_modeling.py:0-11544"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/phi_modeling.py#L273-L287"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/qwen2_5_vl.py",
+      "line_start": 774,
+      "line_end": 813,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "6b17b11c1d84ba03fe071053ec1a50d89c0d9a1316ae77a988541a76ff2a4203",
+      "range_sha256": "b24d3fc9b4ec6777f32d0864a1214d5fc3bf322a206038d17c1ddf945e36111f",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/qwen2_5_vl.py:0-39675"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/qwen2_5_vl.py#L774-L813"
+    },
+    {
+      "path": "server/text_generation_server/models/custom_modeling/qwen2_vl.py",
+      "line_start": 378,
+      "line_end": 386,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "ed3e7679a51b29a194daa18b80016a1a511bceb3262cb8f065ea568b6c71a47b",
+      "range_sha256": "68b41c11fa08026151d5b30d4ef8a385391a4c9456e5b7ba75f6c99b52f8fceb",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/models/custom_modeling/qwen2_vl.py:0-21860"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/models/custom_modeling/qwen2_vl.py#L378-L386"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "a0f1cc7566611f307c0dbb66033506febdbb1c11aeeee54a2b8070352f1b6620",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "8ecafbbd0177366507923d51a9f0b9bd292ec29a52bad9aabb8f4d2443af0322",
+    "original_receipt": "51073ebc917632f9b60d43280573f6e2692c3473ba872b33baa4db744b6d1c15",
+    "original_admission": "49904bd728a963c9fbbddf50690f7a04cea5d038c9379b5eb08642b936a22c1d"
+  }
+}

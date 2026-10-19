@@ -1,0 +1,92 @@
+{
+  "index": 2,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Paged allocation ownership and chunking have separate admission contracts",
+  "mechanism": "TGI v3 uses a serialized allocator for non-padding batches and attaches BlockAllocation ownership to each admitted entry. Dropping an owned allocation queues a free operation; it does not synchronously prove reclamation. Prefix-cached requests leave at least one token to compute. Chunking allows partial postfix admission and removes the min/max size limit from later concatenations, whereas the initial batch still receives max_batch_size.",
+  "corrections": [
+    "Zero-budget rejection belongs to Queue::next_batch:93-95; block rounding belongs to State::next_batch:264-265.",
+    "Include backend.rs:160 when citing waiting_tokens initialization.",
+    "Equal cardinality does not itself compare request IDs; the candidate already described the shortcut, so remove the reviewer claim that it was omitted.",
+    "Clone/Drop alone does not establish a duplicate-free execution path; observed call sites clone blocks/slots and move the allocation.",
+    "On RPC failure, clear_cache is attempted with its error discarded; do not describe successful cleanup.",
+    "Use block_allocator.rs:165-168 for the HPU extra slot, separate from 171-214 window and slot logic.",
+    "The no-allocator estimate is updated before rejecting a request; describe estimate overcount as source-derived, not a measured memory or scheduling impact."
+  ],
+  "source_scope": "All non-client corrected ranges plus symbol corrections read; shared client aggregation was independently read in records 0 and 1.",
+  "supporting_ranges": [
+    {
+      "path": "backends/v3/src/block_allocator.rs",
+      "line_start": 6,
+      "line_end": 25,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "887cd6b84ebed0c4acca77751c522c4265fb5666d6164beb18547941e2febc49",
+      "range_sha256": "1407afe2fb7e2f5416bf1a85fb57e8077dd58b4993fc38440abd09c44ae528fd",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/block_allocator.rs:0-6414"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/block_allocator.rs#L6-L25"
+    },
+    {
+      "path": "backends/v3/src/block_allocator.rs",
+      "line_start": 57,
+      "line_end": 84,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "887cd6b84ebed0c4acca77751c522c4265fb5666d6164beb18547941e2febc49",
+      "range_sha256": "7acff11033e6b63271f56942c8825c6e505bb8a9d7c42f14337723a05c8010b1",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/block_allocator.rs:0-6414"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/block_allocator.rs#L57-L84"
+    },
+    {
+      "path": "backends/v3/src/queue.rs",
+      "line_start": 287,
+      "line_end": 374,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "786ab05ed81bb8fe7689769ba40fe304347836cc53a75c31a2940465402ad5a9",
+      "range_sha256": "796d532e97dc3a53e02c1ab14b0bddcea9013299159f33ef5cedb9851010cc25",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/queue.rs:0-30292"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/queue.rs#L287-L374"
+    },
+    {
+      "path": "backends/v3/src/queue.rs",
+      "line_start": 491,
+      "line_end": 503,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "786ab05ed81bb8fe7689769ba40fe304347836cc53a75c31a2940465402ad5a9",
+      "range_sha256": "91ffd5995cd306074377c23429788c0290ee35146670b0ea2035327b886dd65a",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/queue.rs:0-30292"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/queue.rs#L491-L503"
+    },
+    {
+      "path": "backends/v3/src/backend.rs",
+      "line_start": 148,
+      "line_end": 205,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "2448b697b940e68d8f2f1252d4d5db226edda94c23c902e8cd094060c7d66dda",
+      "range_sha256": "e012db4a9a9a8ff88c35a64138cfa883e43e42bb29b56640566743a80f069a37",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/v3/src/backend.rs:0-23073"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/backend.rs#L148-L205"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "3c5baa488f71334067b02619d571cbd83d59d37fbe499253ef0fc6d1090e9662",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "ae0dfbe27173910125fc50562e591d568e67092256f8c813eb991d49e573a930",
+    "original_receipt": "dd02a4b6d71e0f5ad86bbbde383db59a92d6ddf7f4cfbb254cbe884e5c0d8f30",
+    "original_admission": "a891ed495a55f1d8df59b5060ff1631c047453664e3b020d0211a9ea3ffeb61a"
+  }
+}
