@@ -1,0 +1,80 @@
+{
+  "index": 30,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Storage backend registration and construction are separate gates",
+  "mechanism": "StorageBackendFactory.register_backend stores a loader closure and its module/class names without importing the module; duplicate names are logged and replaced. create_backend invokes that loader for a registered name. The loader imports the module, obtains the named attribute and requires a HiCacheStorage subclass. Construction then goes through _create_builtin_backend, which dispatches on literal names and uses different constructor signatures, including the HF3FS from_env_config path. An otherwise valid registered name with no recognized construction branch still raises Unknown built-in backend.\n\nDynamic loading is a separate route reached only when the requested name is exactly dynamic and extra_config is present. It requires backend_name, module_path and class_name, applies the same loader validation, and constructs the class with storage_config and the kwargs dictionary as the second positional argument. It does not pass mem_pool_host to that constructor. To extend this factory, inspect both the lazy-loading registration and the selected construction contract; adding a registry entry alone does not make an arbitrary name creatable.",
+  "corrections": [
+    "Class validation occurs when the loader runs, not at registration.",
+    "The dynamic branch is not a general fallback for any unknown name and does not forward the host pool as its second constructor argument."
+  ],
+  "omitted_claims": [
+    "Individual backend implementations, AIBrix test execution and backend deployment support are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 63,
+      "line_start": 16,
+      "path": "python/sglang/srt/mem_cache/storage/backend_factory.py",
+      "range_sha256": "46acbc4c37d3217f560e62013357078d67d2dcfedb20007150d29cbaa4d9305f",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "99a3585d4d715f74f1d4190a958c3e764dd0300d9b9d64cb955cd6705ca867a6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/backend_factory.py:0-9457"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L16-L63"
+    },
+    {
+      "line_end": 111,
+      "line_start": 65,
+      "path": "python/sglang/srt/mem_cache/storage/backend_factory.py",
+      "range_sha256": "0e21fd8727cd1f64c72593280aec036444684f5cbaf0cd47a5a3440bc62c1b98",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "99a3585d4d715f74f1d4190a958c3e764dd0300d9b9d64cb955cd6705ca867a6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/backend_factory.py:0-9457"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L65-L111"
+    },
+    {
+      "line_end": 150,
+      "line_start": 113,
+      "path": "python/sglang/srt/mem_cache/storage/backend_factory.py",
+      "range_sha256": "286a65fd0a72cb5be1f4851870ba38c8f8cf35358fbf01a63103c62d32b1773a",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "99a3585d4d715f74f1d4190a958c3e764dd0300d9b9d64cb955cd6705ca867a6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/backend_factory.py:0-9457"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L113-L150"
+    },
+    {
+      "line_end": 200,
+      "line_start": 152,
+      "path": "python/sglang/srt/mem_cache/storage/backend_factory.py",
+      "range_sha256": "75ba4c4c2b2f3aa3ac0f7b719488a8639d37aa8017ff8d517caa82f3398f98a9",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "99a3585d4d715f74f1d4190a958c3e764dd0300d9b9d64cb955cd6705ca867a6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/backend_factory.py:0-9457"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L152-L200"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "a127dbdebf57f8ce88cbcc9ca05994059cd1d40f8aa46d53f23d11aefb5f50b6",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "d8d257e08e82c96164f5b72c703c39a295a6c000b01eff83c13c1b4263289e86",
+    "original_receipt": "33c32c7104ecf6b70dc30c48974672cf4a0a216cce276ff38438635a7f028a7f",
+    "original_admission": "277f7f637a52e696ff99113dac81826adf6fd26dfad7c9b4608c3ca2bca905b7"
+  }
+}

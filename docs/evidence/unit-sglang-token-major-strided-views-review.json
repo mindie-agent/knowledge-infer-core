@@ -1,0 +1,81 @@
+{
+  "index": 26,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Token-major byte layouts create aliased strided views",
+  "mechanism": "DenseEntryLayout describes fixed byte spans inside each token entry. Validation requires entry_bytes to be 32-byte aligned; each part's offset, layer stride and row byte count must be 16-byte aligned. Every layer span must fit within the entry, and sorted spans must not overlap. build_dense_views additionally checks item-size divisibility and total raw-buffer bounds, then creates per-layer as_strided views whose slot stride is entry_bytes divided by the element size. These views alias the supplied raw storage rather than copying each layer into a separate allocation.\n\nThe Mamba view builder has different checks: convolution views check entry and anchor divisibility but integer-divide the initial convolution offset without a separate assertion for it; temporal views check their combined offset. Do not generalize dense-layout validation to every Mamba offset. paged_view groups slots using page stride equal to slot_stride times page_size and retains the slot stride inside a page, including page_size one. The HND helper permutes axes after that regrouping.",
+  "corrections": [
+    "Include the actual alignment constants with the validator citation.",
+    "Page stride is slot_stride multiplied by page_size, not always the original slot stride.",
+    "The empty layout/__init__.py source unit contributes no line-1 mechanism and is omitted."
+  ],
+  "omitted_claims": [
+    "Dense draft-region sizing and runtime aliasing or device-transfer tests are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 113,
+      "line_start": 20,
+      "path": "python/sglang/srt/mem_cache/layout/token_major.py",
+      "range_sha256": "9299e9ac8ec77c1c6e212556df4ae45bef577091b53bd7eea5eff9036198ebe8",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "5e98b0ca2e3c5a39c586c14d87edc1f596013ee672ae1ba64d3f6c6af43e6842",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/layout/token_major.py:0-10223"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/token_major.py#L20-L113"
+    },
+    {
+      "line_end": 153,
+      "line_start": 116,
+      "path": "python/sglang/srt/mem_cache/layout/token_major.py",
+      "range_sha256": "69ea396bddc04fd98aa390c75111fcb31a77ea28d253ae02dfacd4392eea6f30",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "5e98b0ca2e3c5a39c586c14d87edc1f596013ee672ae1ba64d3f6c6af43e6842",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/layout/token_major.py:0-10223"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/token_major.py#L116-L153"
+    },
+    {
+      "line_end": 258,
+      "line_start": 172,
+      "path": "python/sglang/srt/mem_cache/layout/token_major.py",
+      "range_sha256": "3ae4a973ec8ebcbb80df08421a0a0aedc5e91176ae49ca9180d199989150f4f6",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "5e98b0ca2e3c5a39c586c14d87edc1f596013ee672ae1ba64d3f6c6af43e6842",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/layout/token_major.py:0-10223"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/token_major.py#L172-L258"
+    },
+    {
+      "line_end": 43,
+      "line_start": 11,
+      "path": "python/sglang/srt/mem_cache/layout/paged_view.py",
+      "range_sha256": "8c0cc2a66879e7863228f0af4b92c812583192b5bc41ac390e33729d14d3f795",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d76b7579a430f3f28b4b79a6c5f8c45ab3dabca9a0e632b41c6ded2f4c72d5b2",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/layout/paged_view.py:0-1982"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/paged_view.py#L11-L43"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "25727bedc0e6411d069ab333f26e2fe950b736c24e86b2e42778a4f2cb5d64df",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "9f1f7be7b4ca146e6cac6b4e82bec18fd9a2a3204a8698c33ebe4a7f93d5fb98",
+    "original_receipt": "d8f37e43c51eba993145f5dca1489a104f448aabf7a433605d5423b790e74a48",
+    "original_admission": "c71f6612638b0b65acec313a298d8d2ab8c344d640ae5a1b7480993cc77399ff"
+  }
+}

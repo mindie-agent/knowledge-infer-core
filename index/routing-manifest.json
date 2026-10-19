@@ -1,22 +1,42 @@
 {
-  "build_elapsed_ms": 8.91870801569894,
+  "build_elapsed_ms": 16.578959010075778,
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-sglang-cgroup-host-memory-headroom": [],
+    "unit-sglang-checkpoint-request-rebind": [],
     "unit-sglang-decode-retraction-and-oom-abort": [],
+    "unit-sglang-disaggregated-abort-test-oracle": [],
+    "unit-sglang-dsa-index-and-tail-offload": [],
+    "unit-sglang-dsv4-swa-storage-selection": [],
     "unit-sglang-finish-precedence-and-kv-release": [],
+    "unit-sglang-full-eviction-loadback-accounting": [],
     "unit-sglang-generate-input-normalization": [],
+    "unit-sglang-hf3fs-batch-confirmation": [],
     "unit-sglang-hisparse-completion-and-allocation-release": [],
+    "unit-sglang-host-logical-physical-slot-geometry": [],
+    "unit-sglang-int8-mamba-checkpoint-state": [],
     "unit-sglang-internal-state-and-pool-invariants": [],
     "unit-sglang-kv-checkpoint-and-request-ownership": [],
+    "unit-sglang-kv-read-write-translation-boundary": [],
     "unit-sglang-manager-completion-and-ownership": [],
     "unit-sglang-metrics-and-output-rank-gates": [],
+    "unit-sglang-mha-layout-and-move-paths": [],
+    "unit-sglang-mooncake-restorable-stop-points": [],
+    "unit-sglang-nixl-staging-and-batch-results": [],
     "unit-sglang-overlap-copy-completion-boundary": [],
+    "unit-sglang-prefetch-completion-and-hybrid-gate": [],
+    "unit-sglang-priority-admission-test-oracles": [],
     "unit-sglang-queue-fallback-and-chunk-budgets": [],
     "unit-sglang-radix-reanchor-and-prefill-reservation": [],
     "unit-sglang-registry-identity-and-shutdown-drain": [],
     "unit-sglang-result-commit-and-flush-gates": [],
+    "unit-sglang-rust-treecore-binding-boundary": [],
     "unit-sglang-scheduler-abort-and-outstanding-work": [],
+    "unit-sglang-sparse-zero-selection-metadata": [],
+    "unit-sglang-storage-registration-construction": [],
     "unit-sglang-swa-offload-and-draft-ownership": [],
+    "unit-sglang-swa-span-attachment": [],
+    "unit-sglang-token-major-strided-views": [],
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
     "unit-sglang-tp-capacity-and-result-contracts": [],
     "unit-sglang-unified-memory-sink-and-envelope": [],
@@ -37,25 +57,45 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "b9603e5ed91700bac32da059abafaf75bed6785e31803b49b05033e2d17531e4",
-  "generation": "75c57fb5074fb2d1f394c68786f381d5367ea6804552214eb4065ad56ca88f63",
+  "digest": "4db9332007825baf35a44e2872a5507fdbc267b574c9a4fa46edaada536743dc",
+  "generation": "6531437fc753d113a9ac43b5833a39af8bfccd4d177b176611044eee77757b3e",
   "id_path": {
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+    "unit-sglang-cgroup-host-memory-headroom": "serving/sglang/unit-sglang-cgroup-host-memory-headroom.md",
+    "unit-sglang-checkpoint-request-rebind": "serving/sglang/unit-sglang-checkpoint-request-rebind.md",
     "unit-sglang-decode-retraction-and-oom-abort": "serving/sglang/unit-sglang-decode-retraction-and-oom-abort.md",
+    "unit-sglang-disaggregated-abort-test-oracle": "serving/sglang/unit-sglang-disaggregated-abort-test-oracle.md",
+    "unit-sglang-dsa-index-and-tail-offload": "serving/sglang/unit-sglang-dsa-index-and-tail-offload.md",
+    "unit-sglang-dsv4-swa-storage-selection": "serving/sglang/unit-sglang-dsv4-swa-storage-selection.md",
     "unit-sglang-finish-precedence-and-kv-release": "serving/sglang/unit-sglang-finish-precedence-and-kv-release.md",
+    "unit-sglang-full-eviction-loadback-accounting": "serving/sglang/unit-sglang-full-eviction-loadback-accounting.md",
     "unit-sglang-generate-input-normalization": "serving/sglang/unit-sglang-generate-input-normalization.md",
+    "unit-sglang-hf3fs-batch-confirmation": "serving/sglang/unit-sglang-hf3fs-batch-confirmation.md",
     "unit-sglang-hisparse-completion-and-allocation-release": "serving/sglang/unit-sglang-hisparse-completion-and-allocation-release.md",
+    "unit-sglang-host-logical-physical-slot-geometry": "serving/sglang/unit-sglang-host-logical-physical-slot-geometry.md",
+    "unit-sglang-int8-mamba-checkpoint-state": "serving/sglang/unit-sglang-int8-mamba-checkpoint-state.md",
     "unit-sglang-internal-state-and-pool-invariants": "serving/sglang/unit-sglang-internal-state-and-pool-invariants.md",
     "unit-sglang-kv-checkpoint-and-request-ownership": "serving/sglang/unit-sglang-kv-checkpoint-and-request-ownership.md",
+    "unit-sglang-kv-read-write-translation-boundary": "serving/sglang/unit-sglang-kv-read-write-translation-boundary.md",
     "unit-sglang-manager-completion-and-ownership": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
     "unit-sglang-metrics-and-output-rank-gates": "serving/sglang/unit-sglang-metrics-and-output-rank-gates.md",
+    "unit-sglang-mha-layout-and-move-paths": "serving/sglang/unit-sglang-mha-layout-and-move-paths.md",
+    "unit-sglang-mooncake-restorable-stop-points": "serving/sglang/unit-sglang-mooncake-restorable-stop-points.md",
+    "unit-sglang-nixl-staging-and-batch-results": "serving/sglang/unit-sglang-nixl-staging-and-batch-results.md",
     "unit-sglang-overlap-copy-completion-boundary": "serving/sglang/unit-sglang-overlap-copy-completion-boundary.md",
+    "unit-sglang-prefetch-completion-and-hybrid-gate": "serving/sglang/unit-sglang-prefetch-completion-and-hybrid-gate.md",
+    "unit-sglang-priority-admission-test-oracles": "serving/sglang/unit-sglang-priority-admission-test-oracles.md",
     "unit-sglang-queue-fallback-and-chunk-budgets": "serving/sglang/unit-sglang-queue-fallback-and-chunk-budgets.md",
     "unit-sglang-radix-reanchor-and-prefill-reservation": "serving/sglang/unit-sglang-radix-reanchor-and-prefill-reservation.md",
     "unit-sglang-registry-identity-and-shutdown-drain": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
     "unit-sglang-result-commit-and-flush-gates": "serving/sglang/unit-sglang-result-commit-and-flush-gates.md",
+    "unit-sglang-rust-treecore-binding-boundary": "serving/sglang/unit-sglang-rust-treecore-binding-boundary.md",
     "unit-sglang-scheduler-abort-and-outstanding-work": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
+    "unit-sglang-sparse-zero-selection-metadata": "serving/sglang/unit-sglang-sparse-zero-selection-metadata.md",
+    "unit-sglang-storage-registration-construction": "serving/sglang/unit-sglang-storage-registration-construction.md",
     "unit-sglang-swa-offload-and-draft-ownership": "serving/sglang/unit-sglang-swa-offload-and-draft-ownership.md",
+    "unit-sglang-swa-span-attachment": "serving/sglang/unit-sglang-swa-span-attachment.md",
+    "unit-sglang-token-major-strided-views": "serving/sglang/unit-sglang-token-major-strided-views.md",
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": "serving/sglang/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
     "unit-sglang-tp-capacity-and-result-contracts": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
     "unit-sglang-unified-memory-sink-and-envelope": "serving/sglang/unit-sglang-unified-memory-sink-and-envelope.md",
@@ -79,7 +119,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 35,
+  "unit_count": 55,
   "units": [
     {
       "category": "sop",
@@ -123,6 +163,94 @@
           "reclamation",
           "ownership",
           "cache"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:c362237a6481223a9a99a7b969883707c5280714e93d789cbc907801fb0aba48",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:54b516919de52d66ec37babdac160392bc2f4e037c1d9eb2081bc068f976ef0f",
+      "content_sha256": "54b516919de52d66ec37babdac160392bc2f4e037c1d9eb2081bc068f976ef0f",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-cgroup-host-memory-headroom",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-cgroup-host-memory-headroom.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-cgroup-host-memory-headroom-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/host_memory.py#L24-L38",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/host_memory.py#L41-L133",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/host_memory.py#L136-L162"
+        ],
+        "source_digest": "b91c2ae23a195e4526683c289db52f83813243d9dea4f07ebfc48e3286b84fc2",
+        "source_locator": "docs/evidence/unit-sglang-cgroup-host-memory-headroom-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Host-memory sizing through visible cgroup limits",
+      "token_estimate": 713,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "host-memory",
+          "sizing",
+          "through",
+          "visible",
+          "cgroup",
+          "limits"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:5755a8b7c751316d2a6422dffbeb92bd54f5e75d8337683c319b58813d9287ea",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:b24dda2aff1e74ed89c8e5125894dfdd37677d4cf6ed3761fc9b60d26467b67b",
+      "content_sha256": "b24dda2aff1e74ed89c8e5125894dfdd37677d4cf6ed3761fc9b60d26467b67b",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-checkpoint-request-rebind",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-checkpoint-request-rebind.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-checkpoint-request-rebind-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1126-L1163",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1164-L1299"
+        ],
+        "source_digest": "4902e9cd3b5c18dce3d2252ea4476eedac2f1a6f9a2d09c2e0ced5f711d5057e",
+        "source_locator": "docs/evidence/unit-sglang-checkpoint-request-rebind-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Checkpoint insertion and request ownership in UnifiedRadixCache",
+      "token_estimate": 665,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "checkpoint",
+          "insertion",
+          "and",
+          "request",
+          "ownership",
+          "in",
+          "unifiedradixcache"
         ]
       }
     },
@@ -179,6 +307,144 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:56134fd781c41e9a3aa0f5b0d9e9e57eb5e06ffeb165601ea36f47b38a505e0e",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:b3b07aa2f4bba466cf862161f0cb6db27c78eb3ab68376c9790004b2f85258ea",
+      "content_sha256": "b3b07aa2f4bba466cf862161f0cb6db27c78eb3ab68376c9790004b2f85258ea",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-disaggregated-abort-test-oracle",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-disaggregated-abort-test-oracle.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-disaggregated-abort-test-oracle-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/test/registered/disaggregation/test_disaggregation_chunked_prefill_abort.py#L17-L27",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/test/registered/disaggregation/test_disaggregation_chunked_prefill_abort.py#L37-L50",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/test/registered/disaggregation/test_disaggregation_chunked_prefill_abort.py#L53-L113"
+        ],
+        "source_digest": "f20238e1a928e4436bfe40ab238b658454f63073b5c64c8cd6257a8c93812d8d",
+        "source_locator": "docs/evidence/unit-sglang-disaggregated-abort-test-oracle-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Disaggregated abort test checks response shape and endpoint liveness",
+      "token_estimate": 765,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "disaggregated",
+          "abort",
+          "test",
+          "checks",
+          "response",
+          "shape",
+          "and",
+          "endpoint",
+          "liveness"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:bc60662df9b93ce4163c582c54399d01184c688151d8b707205ffad9eb1f88ec",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:5321a18c7b670e526af9f5ed3bc882d2520a34c5dfd029c5dc417a98c300d84b",
+      "content_sha256": "5321a18c7b670e526af9f5ed3bc882d2520a34c5dfd029c5dc417a98c300d84b",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-dsa-index-and-tail-offload",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-dsa-index-and-tail-offload.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-dsa-index-and-tail-offload-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5331-L5379",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5398-L5464",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5530-L5550",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5627-L5659"
+        ],
+        "source_digest": "d1cb403182f2fe27366bc2efaa2223436aec59d4673480ad24bd74c9582cb3de",
+        "source_locator": "docs/evidence/unit-sglang-dsa-index-and-tail-offload-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DSA index and compression state must accompany KV offload",
+      "token_estimate": 738,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "dsa",
+          "index",
+          "and",
+          "compression",
+          "state",
+          "must",
+          "accompany",
+          "kv",
+          "offload"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:d7173f52a5320c39251c91993a98ec207ba42081f7de6e258ba3ef53d2924521",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:740d63f50a203ca5d263a77d2aef529f34f3c53f8bc6c20042fb1d81cbec6bae",
+      "content_sha256": "740d63f50a203ca5d263a77d2aef529f34f3c53f8bc6c20042fb1d81cbec6bae",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-dsv4-swa-storage-selection",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-dsv4-swa-storage-selection.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-dsv4-swa-storage-selection-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py#L1131-L1245",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py#L1246-L1261"
+        ],
+        "source_digest": "ac1dd73c13851da6e19e72e205ca8b2cc2921b118f129c01bbb2fb0c1d49d98d",
+        "source_locator": "docs/evidence/unit-sglang-dsv4-swa-storage-selection-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek V4 SWA storage branch selection",
+      "token_estimate": 633,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "deepseek",
+          "v4",
+          "swa",
+          "storage",
+          "branch",
+          "selection"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:b60619a76dc4a3b6bc534f8860f5f86e32ee969ad8ff5e8b5b29cd84a35249b2",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -223,6 +489,52 @@
           "explicit",
           "state",
           "transitions"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:eb472fb01ca6ed739772a21899d2fc287d21594ee7aa624eb6058725ff611390",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:73c59e868398e988b9b5b6d0fc6aa8102fb0ff7690b874920a2d933199a96ab7",
+      "content_sha256": "73c59e868398e988b9b5b6d0fc6aa8102fb0ff7690b874920a2d933199a96ab7",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-full-eviction-loadback-accounting",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-full-eviction-loadback-accounting.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-full-eviction-loadback-accounting-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/components/full.py#L169-L196",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/components/full.py#L372-L463"
+        ],
+        "source_digest": "b2e734645bc65823be91b5a74aa87e76070688d3db4e2bcb01853e7c15531409",
+        "source_locator": "docs/evidence/unit-sglang-full-eviction-loadback-accounting-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Full cache eviction defers device clearing before load-back accounting",
+      "token_estimate": 651,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "full",
+          "cache",
+          "eviction",
+          "defers",
+          "device",
+          "clearing",
+          "before",
+          "load-back",
+          "accounting"
         ]
       }
     },
@@ -274,6 +586,54 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:96a0d981987bc74f3f852986a3da7cd55f9bffa84d8cbef7776c3ffe38b45988",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:c628cfdeb7946ef832cdbd251009aa0e49bcbb1ec6b5aae7155fdf76f6d95b78",
+      "content_sha256": "c628cfdeb7946ef832cdbd251009aa0e49bcbb1ec6b5aae7155fdf76f6d95b78",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-hf3fs-batch-confirmation",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-hf3fs-batch-confirmation.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-hf3fs-batch-confirmation-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py#L388-L434",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py#L436-L514",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py#L523-L537"
+        ],
+        "source_digest": "d8cda841c95013a57faef8adc0ee7a46862efade1231e24f4e2e3c32bdbdd1d1",
+        "source_locator": "docs/evidence/unit-sglang-hf3fs-batch-confirmation-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HF3FS batch writes distinguish existing pages from newly confirmed IO",
+      "token_estimate": 745,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "hf3fs",
+          "batch",
+          "writes",
+          "distinguish",
+          "existing",
+          "pages",
+          "from",
+          "newly",
+          "confirmed",
+          "io"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:165a6f2c59643d3fd450f6f2b17c1bc2641abb2cb01414e4cc78749346d37b57",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -318,6 +678,103 @@
           "for",
           "its",
           "producers"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:a18977c7b40e73aca165c2dce25d15b4df1401297f778d52adf9c3373afb3fe4",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:01a8389223385a9e6f15aa4c10a36bf8a0e330c5e5b9163ebdbf99c6cbb98dd3",
+      "content_sha256": "01a8389223385a9e6f15aa4c10a36bf8a0e330c5e5b9163ebdbf99c6cbb98dd3",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-host-logical-physical-slot-geometry",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-host-logical-physical-slot-geometry.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-host-logical-physical-slot-geometry-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/pool_host/base.py#L111-L150",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/pool_host/base.py#L193-L225",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/pool_host/base.py#L492-L567"
+        ],
+        "source_digest": "ea95502e0cef09a682b9291ac49c62152ebb25e2b59ae2c205bd772fdb4deae6",
+        "source_locator": "docs/evidence/unit-sglang-host-logical-physical-slot-geometry-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Host KV pages separate physical geometry from logical slots",
+      "token_estimate": 675,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "host",
+          "kv",
+          "pages",
+          "separate",
+          "physical",
+          "geometry",
+          "from",
+          "logical",
+          "slots"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:3929733c19f5cb7332b8e124f31afb0ae3ab26f46c3a0a0478cae6b563ba89d4",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:81ad76aaa5dd6dfa8922deaef2a72a60f82de2b1acc4121d5d87c714f3fc78c6",
+      "content_sha256": "81ad76aaa5dd6dfa8922deaef2a72a60f82de2b1acc4121d5d87c714f3fc78c6",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-int8-mamba-checkpoint-state",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-int8-mamba-checkpoint-state.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-int8-mamba-checkpoint-state-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L74-L139",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L143-L175",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L203-L226",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L239-L260",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L318-L330"
+        ],
+        "source_digest": "d6bbf8217d718462262673da0ec8d9796f6d165dbf9ecb70a8fe35712c215a62",
+        "source_locator": "docs/evidence/unit-sglang-int8-mamba-checkpoint-state-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Int8 Mamba checkpoints retain rounded scales and native convolution state",
+      "token_estimate": 830,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "int8",
+          "mamba",
+          "checkpoints",
+          "retain",
+          "rounded",
+          "scales",
+          "and",
+          "native",
+          "convolution",
+          "state"
         ]
       }
     },
@@ -417,6 +874,51 @@
           "from",
           "request",
           "allocation"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:729f2d7cfe4efa7a29261e4d50bf2675846108e342b960d8e60f3d48ee529375",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:03a9104a79d14d4b5c69981d59b45141ac68e1877c16c5c356854d4649e87f1c",
+      "content_sha256": "03a9104a79d14d4b5c69981d59b45141ac68e1877c16c5c356854d4649e87f1c",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-kv-read-write-translation-boundary",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-kv-read-write-translation-boundary.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-kv-read-write-translation-boundary-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/kv_index_translator.py#L121-L224"
+        ],
+        "source_digest": "f48fa5fb5bb8da2c067afcb1c6691637852e2aeb5584afbe32e674f63f51c447",
+        "source_locator": "docs/evidence/unit-sglang-kv-read-write-translation-boundary-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "KV read and write translations have different activation rules",
+      "token_estimate": 573,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "kv",
+          "read",
+          "and",
+          "write",
+          "translations",
+          "have",
+          "different",
+          "activation",
+          "rules"
         ]
       }
     },
@@ -528,6 +1030,147 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:944be094e9158e41a10c74252cc6fd1b2108b59964ad039be8171225ff1dc12f",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:eb42ca4fa0a2e0fea9e1015360790542b77c4ab2eb198234d4d7ccd2c2b190e0",
+      "content_sha256": "eb42ca4fa0a2e0fea9e1015360790542b77c4ab2eb198234d4d7ccd2c2b190e0",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-mha-layout-and-move-paths",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-mha-layout-and-move-paths.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-mha-layout-and-move-paths-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L2268-L2275",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L2276-L2342",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L2591-L2611",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L3430-L3469"
+        ],
+        "source_digest": "f941b72fb5e7065071fe516cf8f5e704b5c842698812852f2e3ff0fa5ef22e8b",
+        "source_locator": "docs/evidence/unit-sglang-mha-layout-and-move-paths-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MHA KV layout selection and move paths",
+      "token_estimate": 727,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "mha",
+          "kv",
+          "layout",
+          "selection",
+          "and",
+          "move",
+          "paths"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:b9279dc82b5a3a2c986a46521fed84d93956c8f45c314dad8a99af691c095d3c",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:04700dedc5e090305ee2dec4308c9ef60a2a04f681bdcea8ca50799d13990054",
+      "content_sha256": "04700dedc5e090305ee2dec4308c9ef60a2a04f681bdcea8ca50799d13990054",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-mooncake-restorable-stop-points",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-mooncake-restorable-stop-points.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-mooncake-restorable-stop-points-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py#L868-L949",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py#L951-L1041",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py#L1043-L1092"
+        ],
+        "source_digest": "5ea18048d724fbf7727cb7ad2afca7934994b20b373cbf401ea90e2a26d9b38d",
+        "source_locator": "docs/evidence/unit-sglang-mooncake-restorable-stop-points-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Mooncake v2 intersects restorable stop points across component pools",
+      "token_estimate": 778,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "mooncake",
+          "v2",
+          "intersects",
+          "restorable",
+          "stop",
+          "points",
+          "across",
+          "component",
+          "pools"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:09fc0640935d6073c7f012e98d289518cbebd6b3eb3d41bf3592143ed1d6263a",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:c1b701864dc2633ebc7f5c042cf77455aca9a3c2bfdd7b7b7f393be1b130b583",
+      "content_sha256": "c1b701864dc2633ebc7f5c042cf77455aca9a3c2bfdd7b7b7f393be1b130b583",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-nixl-staging-and-batch-results",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-nixl-staging-and-batch-results.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-nixl-staging-and-batch-results-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py#L343-L408",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py#L415-L457",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py#L753-L781"
+        ],
+        "source_digest": "9f3975c6ba00c5b4aafef7101ab6e69be16e59e45cd6c347ff665991837d7e9a",
+        "source_locator": "docs/evidence/unit-sglang-nixl-staging-and-batch-results-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "NIXL selects staging per host pool and reports batch-level results",
+      "token_estimate": 696,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "nixl",
+          "selects",
+          "staging",
+          "per",
+          "host",
+          "pool",
+          "and",
+          "reports",
+          "batch-level",
+          "results"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:99038d7bb9c7043e5fd3d095d9628c7cd69c746032e76778e676c63e69bfcfe5",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -574,6 +1217,95 @@
           "a",
           "narrower",
           "role"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:f22fcf34ad069f946fab55c932fc9b7a911df6d8679a995c50ae9a6b345216dc",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:e88f74475567f3b74f4bce57103b769fce4147a62a6ad78cffec1d8ca6f84cdf",
+      "content_sha256": "e88f74475567f3b74f4bce57103b769fce4147a62a6ad78cffec1d8ca6f84cdf",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-prefetch-completion-and-hybrid-gate",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-prefetch-completion-and-hybrid-gate.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-prefetch-completion-and-hybrid-gate-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L2360-L2473",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L2474-L2582"
+        ],
+        "source_digest": "b7d64d26617db3fdc94bc73fa995bf87374f806385160450f309e25ca32058fb",
+        "source_locator": "docs/evidence/unit-sglang-prefetch-completion-and-hybrid-gate-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Storage-prefetch completion ownership and hybrid acceptance",
+      "token_estimate": 682,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "storage-prefetch",
+          "completion",
+          "ownership",
+          "and",
+          "hybrid",
+          "acceptance"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:2f0fdd1f8ea03cda945c8eb0495ddf7d331c20710f03ca7002fbdbe208c6ebbb",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:31c7037a4fc9cd59ea9e32b7a63be98c549beb443ddfbb4cf1d7bf48c7899699",
+      "content_sha256": "31c7037a4fc9cd59ea9e32b7a63be98c549beb443ddfbb4cf1d7bf48c7899699",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-priority-admission-test-oracles",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-priority-admission-test-oracles.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-priority-admission-test-oracles-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/test/registered/scheduler/test_priority_scheduling.py#L38-L44",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/test/registered/scheduler/test_priority_scheduling.py#L57-L134",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/test/registered/scheduler/test_priority_scheduling.py#L395-L416"
+        ],
+        "source_digest": "687ab56f92e4247d09f31936c01e09e78c538aedbe80a08b933f59cd91b71b07",
+        "source_locator": "docs/evidence/unit-sglang-priority-admission-test-oracles-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Priority tests distinguish queued eviction from incoming rejection",
+      "token_estimate": 724,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "priority",
+          "tests",
+          "distinguish",
+          "queued",
+          "eviction",
+          "from",
+          "incoming",
+          "rejection"
         ]
       }
     },
@@ -777,6 +1509,54 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:174b9921891bcfb9a3768a9105e0293efc5e73cd99d9158bff0e5e08f378f84f",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:21b9bffce5bb5d9643d1c217c705a72606ca933377583b83b6d24b26cb51eb0b",
+      "content_sha256": "21b9bffce5bb5d9643d1c217c705a72606ca933377583b83b6d24b26cb51eb0b",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-rust-treecore-binding-boundary",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-rust-treecore-binding-boundary.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-rust-treecore-binding-boundary-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L371-L468",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L499-L503",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L625-L681",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L749-L758",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L787-L821",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L847-L848"
+        ],
+        "source_digest": "8aa27b5fadcd9dd113383ab09d2fe754012b58ea08c7b357fd309697ff720c80",
+        "source_locator": "docs/evidence/unit-sglang-rust-treecore-binding-boundary-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Rust TreeCore binding boundaries and Python orchestration",
+      "token_estimate": 855,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "rust",
+          "treecore",
+          "binding",
+          "boundaries",
+          "and",
+          "python",
+          "orchestration"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:a03c25c7a657c85d2bfb4e3bc1e60a68b311eb8b9257380bbe3485f66fa64b24",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -821,6 +1601,100 @@
           "respect",
           "outstanding",
           "work"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:7915fb26c82e8aaa9d74b529d2dc4027ba18006b6e31ebb06f437c291f883151",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:e8fc69becebd1c5e74359f33df3caba844177ac9414369dcfdafa11a529e1c1a",
+      "content_sha256": "e8fc69becebd1c5e74359f33df3caba844177ac9414369dcfdafa11a529e1c1a",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-sparse-zero-selection-metadata",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-sparse-zero-selection-metadata.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-sparse-zero-selection-metadata-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/sparsity/core/sparse_coordinator.py#L270-L276",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/sparsity/algorithms/base_algorithm.py#L293-L355",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/sparsity/backend/backend_adaptor.py#L110-L145"
+        ],
+        "source_digest": "9e362dace528a1317dc2d2fc1aa866b854ae5e7913cfc7fe85dc6acadf4fc12c",
+        "source_locator": "docs/evidence/unit-sglang-sparse-zero-selection-metadata-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Sparse selection can leave zero pages before metadata rewriting",
+      "token_estimate": 788,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "sparse",
+          "selection",
+          "can",
+          "leave",
+          "zero",
+          "pages",
+          "before",
+          "metadata",
+          "rewriting"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:176558107247c05ab24669a7b263afa48e3fe58d77656bdc6c28038e139db4a2",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:6e7f58d6fb745f60866584091c5c22befc9218b8c476b66f05ed08359d5439e3",
+      "content_sha256": "6e7f58d6fb745f60866584091c5c22befc9218b8c476b66f05ed08359d5439e3",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-storage-registration-construction",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-storage-registration-construction.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-storage-registration-construction-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L16-L63",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L65-L111",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L113-L150",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/backend_factory.py#L152-L200"
+        ],
+        "source_digest": "773a9b73577089641f9cc9be00954f818ea280601012f14b8741d803ece8943f",
+        "source_locator": "docs/evidence/unit-sglang-storage-registration-construction-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Storage backend registration and construction are separate gates",
+      "token_estimate": 769,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "storage",
+          "backend",
+          "registration",
+          "and",
+          "construction",
+          "are",
+          "separate",
+          "gates"
         ]
       }
     },
@@ -872,6 +1746,96 @@
           "retain",
           "asymmetric",
           "ownership"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:3dc19f4c21ac867e0685de2be4839fc2b660d5e4f239d867a83d2082e03df2e3",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:28b9e2f86c2ae58983bb69e690cf5da01f27cc5e0912fc5219da6d2a44335611",
+      "content_sha256": "28b9e2f86c2ae58983bb69e690cf5da01f27cc5e0912fc5219da6d2a44335611",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-swa-span-attachment",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-swa-span-attachment.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-swa-span-attachment-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/unified_tree_core.py#L2767-L2872",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/unified_tree_core_interface.py#L730-L756"
+        ],
+        "source_digest": "d3df7e9e119e6e925f7cdb1664b1c124b3c08bc12fed054e6019590fe70e29c2",
+        "source_locator": "docs/evidence/unit-sglang-swa-span-attachment-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "SWA window attachment mutates matched spans incrementally",
+      "token_estimate": 658,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "swa",
+          "window",
+          "attachment",
+          "mutates",
+          "matched",
+          "spans",
+          "incrementally"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:d9fbc772573580259e82493da77c651ab3cf7fab86a5588cc268f66797061a9d",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:5182326dd23d7c36db3eb13bcb7455328c5c8e5bc3d2797b71047be33239f9e0",
+      "content_sha256": "5182326dd23d7c36db3eb13bcb7455328c5c8e5bc3d2797b71047be33239f9e0",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-token-major-strided-views",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-token-major-strided-views.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-token-major-strided-views-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/token_major.py#L20-L113",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/token_major.py#L116-L153",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/token_major.py#L172-L258",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/layout/paged_view.py#L11-L43"
+        ],
+        "source_digest": "e5106e1e93f8c3470449fc80c90cffb92c967a5b340994a4131a4eb7df34d396",
+        "source_locator": "docs/evidence/unit-sglang-token-major-strided-views-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Token-major byte layouts create aliased strided views",
+      "token_estimate": 744,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "token-major",
+          "byte",
+          "layouts",
+          "create",
+          "aliased",
+          "strided",
+          "views"
         ]
       }
     },

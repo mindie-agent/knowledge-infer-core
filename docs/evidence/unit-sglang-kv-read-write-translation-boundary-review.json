@@ -1,0 +1,44 @@
+{
+  "index": 22,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "KV read and write translations have different activation rules",
+  "mechanism": "KVIndexTranslator enables its main translation mode when a supported unified allocator owns the supplied KV pool or a fused draft's host allocator is exactly that allocator. It captures the allocator's full virtual-to-physical table and uses translate_write_loc for writes. Under attention DCP greater than one, read_v2p is left unset so the consumer can select the rank's widened read IDs at the production site. A UnifiedSWA allocator registers the window space only when it routes window layers.\n\nMain translation mode being false does not imply identity writes. For a non-draft NPU DCP target, the constructor installs rank-local write localization. A static BaseSWAKVPool can additionally install full-to-SWA write mapping, composed with localization where needed; DeepSeekV4TokenToKVPool with request_window is excluded from that path. Reads remain in req_to_token in this mode and the comment assigns their mapping to the backends. Inspect the relevant IdSpace and read consumer separately when diagnosing address mismatches.",
+  "corrections": [
+    "Do not equate is_translating=False with identity write locations.",
+    "DCP read deferral and write localization are distinct contracts; this constructor does not prove downstream kernel handling."
+  ],
+  "omitted_claims": [
+    "Draft-SWA configurator alternatives, lazy read-plan caching and FP4 backend capability claims are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 224,
+      "line_start": 121,
+      "path": "python/sglang/srt/mem_cache/kv_index_translator.py",
+      "range_sha256": "2a7bcb6e98fd9890bb94172fe3ede07b2b45a707ac000d5249be3c79af51a3a5",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "45733c8260e2a33afcfc0133810104c5aa3bdf57d0cb46465627458cec3cc2be",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/kv_index_translator.py:0-29723"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/kv_index_translator.py#L121-L224"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "324e15541947ae97389f05f59545949af1d7413cd9ea2ed8e099d009cb6be43f",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "a44b47515cf8a1591e7c4850dbe5ee529927eb49d0aead942fb705c4bd02a394",
+    "original_receipt": "59e95c2fa07a29a23ec3da76f96357e8c11988d0093facaec4e8608f78d2b529",
+    "original_admission": "06ad3c8984bd46122c143942fb5c0d026ef4ac2659419e5cbbc8972567116f47"
+  }
+}

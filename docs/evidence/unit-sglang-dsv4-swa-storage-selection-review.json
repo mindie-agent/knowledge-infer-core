@@ -1,0 +1,56 @@
+{
+  "index": 20,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "DeepSeek V4 SWA storage branch selection",
+  "mechanism": "The DeepSeekV4TokenToKVPool SWA assignment is an ordered if/elif chain. Encoder replay on a non-draft worker creates a RequestWindow, with capacity based on the sliding window and draft-token allowance and workspace sized against chunk, graph and per-request requirements. Otherwise uses_draft_swa_ring selects a per-request ring. Otherwise _unified_kv creates DeepSeekV4UnifiedKVPool after asserting KVLayout.V4. The final branch creates the paged pool and switches its class to DeepSeekV4UniformFP8KVPool only when uniform_fp8 is set, asserting float8_e4m3fn in that case.\n\nThe request-window and draft-ring branches do not carry those layout assertions. After the chain, a non-HIP DSpark draft with a non-null swa_kv_pool separately allocates swa_valid_from. That row state can accompany ring or paged SWA; it is not a fifth mutually exclusive storage selection. The code also calculates needs_paged_swa_allocator separately, because a speculative draft without its own ring can still depend on the target's paged mapping.",
+  "corrections": [
+    "Keep the four storage assignments separate from the subsequent draft row-state allocation.",
+    "The V4 and fp8 assertions belong to specific branches; do not generalize them to RequestWindow or ring storage."
+  ],
+  "omitted_claims": [
+    "Per-ratio compression geometry, PP layer mapping, indexer pools and measured capacity effects are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 1245,
+      "line_start": 1131,
+      "path": "python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py",
+      "range_sha256": "ad7ba30328ed81150b8880453e05f00652a6771d26a68aeb2309d0436b8d50c7",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "95398355cabf8153a2d3d2d8c2cb398635f5665a6da826ca22ef8df72e346211",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py:31508-80659"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py#L1131-L1245"
+    },
+    {
+      "line_end": 1261,
+      "line_start": 1246,
+      "path": "python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py",
+      "range_sha256": "711dd1f511d1084fc3590f789c20f9b357be19c4fcf1d81ddf3b34ed01d97f74",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "95398355cabf8153a2d3d2d8c2cb398635f5665a6da826ca22ef8df72e346211",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py:31508-80659"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py#L1246-L1261"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "865485c1d6e1e31c5e9b672bb5af11875524a69516143973db694c9a6078f594",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "57306d47502667afc6f705e184740550866023393d4f6dd08644503005d77e48",
+    "original_receipt": "6540804e3814928f73f0d208d5d0991fa88b461ad904d7f985df416382f5db2b",
+    "original_admission": "426c8e942969751f6a7f7785046964ae4a83ac8955e7c015aaaf1836f9f1a69f"
+  }
+}

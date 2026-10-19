@@ -1,0 +1,56 @@
+{
+  "index": 34,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Full cache eviction defers device clearing before load-back accounting",
+  "mechanism": "FullComponent.evict_component queues a device tensor for freeing and subtracts reclaimable_tokens from the evictable ledger, but deliberately leaves its value reference in place. The comment assigns clearing to _cascade_evict because SWA's free operation still needs Full.value. Host eviction differs: it queues host_value and immediately clears that field. This is a component-ordering dependency, not evidence that every tree field is cleared at the same time.\n\nFor LOAD_BACK, build_hicache_transfers walks from the matching node toward its parents while nodes are device-evicted, requires each host value, and reverses the collected values and node IDs into root-first order. Its comment relies on Full device eviction being leaf-only. commit_hicache_transfer then slices the returned device indices by each node's host length, installs copied values, and credits either protected or evictable size according to lock_ref. The source defines ownership and ledger transitions; asynchronous completion and actual reclamation still depend on the surrounding controller.",
+  "corrections": [
+    "Distinguish deferred device clearing from immediate host clearing.",
+    "The parentward load-back walk carries a stated leaf-eviction precondition; do not generalize it to arbitrary component eviction."
+  ],
+  "omitted_claims": [
+    "Internal cascade-priority values, base-class design comments, controller drain ordering and measured reclamation are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 196,
+      "line_start": 169,
+      "path": "python/sglang/srt/mem_cache/unified_cache/components/full.py",
+      "range_sha256": "90dcdc793b9a8bc7b30e870a4e7bf6e5644ea16f097145c497787033de9126d0",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "77745f2e63c6bf928243d3eddffadeab4334a81fe80f245bb29a2d76ddb83cd9",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_cache/components/full.py:0-20812"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/components/full.py#L169-L196"
+    },
+    {
+      "line_end": 463,
+      "line_start": 372,
+      "path": "python/sglang/srt/mem_cache/unified_cache/components/full.py",
+      "range_sha256": "c4c1f84dcc8cc1b3e5c139e0074201076e0a795057b051a86183fe3b7970ec26",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "77745f2e63c6bf928243d3eddffadeab4334a81fe80f245bb29a2d76ddb83cd9",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_cache/components/full.py:0-20812"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/components/full.py#L372-L463"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "9bb11984c836164eb2c72b673f6b2ee052fa4533916920e93fca2cf85047c410",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "74a00d1011e1f4542c77f0be032d5d4b427d1f909b2bfb040c7322c4a73bd8aa",
+    "original_receipt": "e1c86ea6028855fb01b64eb64fbe400ccc10bef7bdea6f4e00d4ac473265bac1",
+    "original_admission": "0bf49e142d2756dd8d6d91c8d612aa81a3a5984526f4a6f91a47cb1487783b19"
+  }
+}

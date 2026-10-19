@@ -1,0 +1,68 @@
+{
+  "index": 33,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "NIXL selects staging per host pool and reports batch-level results",
+  "mechanism": "The NIXL backend initially enables zero-copy for page_first or page_first_direct host layouts. An absent kv_buffer represents a logical anchor and forces copy mode with a small marker buffer, using 4096 bytes when page alignment is required. When alignment is required for a physical pool, failed base/stride alignment also disables zero-copy. Copy mode allocates separate registered set and get bounce buffers using a dummy page's shape and dtype. Hybrid non-KV pools make a separate registration choice and retain it in their own context; they either register all hybrid buffers or allocate their own pair of bounce buffers.\n\nThe V1 _batch_xfer path computes one success value for the underlying transfer and repeats it across the result list. Reads use one result per key string, while writes use one per logical page. Thus that list does not expose independent per-page outcomes. These source branches establish staging and reporting behavior only; they do not prove absence of synchronization races, durability, or zero-copy performance on a particular backend.",
+  "corrections": [
+    "Call the allocations registered bounce buffers; their allocator implementation is not shown in this subset.",
+    "Repeated batch success is not a collection of separately observed page successes."
+  ],
+  "omitted_claims": [
+    "NIXL cleaner routing, other storage backends, v2 existence and hardware or filesystem acceptance are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 408,
+      "line_start": 343,
+      "path": "python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py",
+      "range_sha256": "53ad25dfecc837ab95e5c3fdfdd57662feae1422157e2ac8b62fb00b95991f21",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "ba8c190a1239eca826daae6c76935e5bd7de0461772e68746ac1a3730811a691",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py:0-39797"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py#L343-L408"
+    },
+    {
+      "line_end": 457,
+      "line_start": 415,
+      "path": "python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py",
+      "range_sha256": "66c0685563d09ac885ce08356d1587a641b21ab96e6db53ea22eab15bbcb4de6",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "ba8c190a1239eca826daae6c76935e5bd7de0461772e68746ac1a3730811a691",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py:0-39797"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py#L415-L457"
+    },
+    {
+      "line_end": 781,
+      "line_start": 753,
+      "path": "python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py",
+      "range_sha256": "c07bcdc80b82263bb629ba90185978d0c1b27c6707f6a7ab9ad52254cae02373",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "ba8c190a1239eca826daae6c76935e5bd7de0461772e68746ac1a3730811a691",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py:0-39797"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/nixl/hicache_nixl.py#L753-L781"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "9f081e10fde4ed39e69330d4822c91ba33928e17c9d373295bf47343841426ed",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "8a01c8d7a13127eada95a39158d187e15cb9dbae6d8c6e9858f47395399df2d2",
+    "original_receipt": "379871c1337ade41f9669b6c4b4124784af42ac480d1d42883efc448723d8e90",
+    "original_admission": "8a5b22569587cda52f8c27c1d0e477640ded4c25aa2e3f07fdf2798bafa3696b"
+  }
+}

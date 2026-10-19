@@ -1,0 +1,80 @@
+{
+  "index": 25,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "DSA index and compression state must accompany KV offload",
+  "mechanism": "The DSA pool derives index_page_size from attention page_size divided by index_kpool, with an additional DCP division in the replicated case. It requires index_head_dim 128 and checks platform-specific physical index-page sizes. A supplied skip_topk_layers list must already have layer_num entries; only the missing-list default becomes an all-false list. Skipped positions remain in the layer structure, and an all-skipped index cache is omitted from host declarations.\n\nCompression tails are allocated only when index_kpool is greater than one and compression is enabled, with max_running_requests required. Key and score tails use bf16, an extra request row and width index_kpool plus tail_extra_slots; skipped layers use zero-row placeholders. A nonempty tail write indexes modulo that actual width. A zero remainder performs no write, rather than explicitly clearing the buffer. get_cpu_copy and load_cpu_copy carry index cache and, when present, request tails alongside parent KV state. This coupling preserves the state the source identifies as needed across retraction; it is not an executed retraction-correctness result.",
+  "corrections": [
+    "A supplied skip list is length-checked, not automatically expanded.",
+    "The no-remainder tail branch does not clear storage; the no-carryover statement is a comment-level contract."
+  ],
+  "omitted_claims": [
+    "Detailed index quantization kernels, host-transfer implementations and platform acceptance are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 5379,
+      "line_start": 5331,
+      "path": "python/sglang/srt/mem_cache/memory_pool.py",
+      "range_sha256": "cef0e1fa3a403229f0a948be4b2f3ba85848ad0371daa16bfed173d7a6694f58",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f5b306efdaeb5c59ebad99032246014bba39a50bd7cb37f48ea488e201a53d5b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/memory_pool.py:219481-258962"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5331-L5379"
+    },
+    {
+      "line_end": 5464,
+      "line_start": 5398,
+      "path": "python/sglang/srt/mem_cache/memory_pool.py",
+      "range_sha256": "b2267d4160927f3853226d0da4a06794195d5d039303fb66127415e72ac9d99b",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f5b306efdaeb5c59ebad99032246014bba39a50bd7cb37f48ea488e201a53d5b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/memory_pool.py:219481-258962"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5398-L5464"
+    },
+    {
+      "line_end": 5550,
+      "line_start": 5530,
+      "path": "python/sglang/srt/mem_cache/memory_pool.py",
+      "range_sha256": "c22a510fe3cb854ef0b9b06e0cc26d086770058604b4bbe3d93f66bfc8e8080b",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f5b306efdaeb5c59ebad99032246014bba39a50bd7cb37f48ea488e201a53d5b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/memory_pool.py:219481-258962"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5530-L5550"
+    },
+    {
+      "line_end": 5659,
+      "line_start": 5627,
+      "path": "python/sglang/srt/mem_cache/memory_pool.py",
+      "range_sha256": "5afcf535f3844efef0238a44af4e6c6f9ca5beee998ee7139eb8ff615bf41a9a",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "f5b306efdaeb5c59ebad99032246014bba39a50bd7cb37f48ea488e201a53d5b",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/memory_pool.py:219481-258962"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/memory_pool.py#L5627-L5659"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "5e9e367a3192261a30e8ba31c7af0d5284fc6771d15e6b6e658f932ec1eea672",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "8ffa88a5592a388aaf02e4d5ac7808f125f727f614c7c3ae8e9ee3328658e237",
+    "original_receipt": "bad72de0bfbbe9ebf2c661cb1a0d839678e6a2cb40cf639656c0a18c7fc633e8",
+    "original_admission": "d5da4db70519d498a45c9e6646f22ce43829f0dac989660863de666343227b41"
+  }
+}

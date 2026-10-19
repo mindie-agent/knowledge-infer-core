@@ -1,0 +1,68 @@
+{
+  "index": 32,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Mooncake v2 intersects restorable stop points across component pools",
+  "mechanism": "MooncakeStore.batch_exists_v2 treats an absent physical kv_buffer as a logical anchor: all requested KV prefix lengths initially remain candidates. Otherwise it uses the existing KV prefix. For each side pool, a page exists only when all required components return existence state 1. ALL_PAGES keeps prefix lengths before the first missing page. TRAILING_PAGES evaluates the complete trailing window for each potential stop point, so its accepted set can contain holes. The method intersects these sets across pools and returns both the largest retained stop point and the full retained set. The comment requires callers to preserve that set for cross-rank intersection; the largest number alone cannot represent all valid stop points.\n\nThe v2 IO path batches component keys and buffer metadata across transfers. Sets first query existence, treat state 1 as already successful, and put only missing components; gets perform the read directly. Metadata generation selects pages with missing components and leaves zero placeholders for fully present pages. Partially missing pages retain metadata for all components, while IO submits only missing components. These contracts describe local batching and result representation, without establishing atomicity or measured RPC savings.",
+  "corrections": [
+    "A non-contiguous restorable set is intentional for trailing-window policies; do not mislabel the largest valid stop point as an unsafe prefix.",
+    "The full set is needed to describe valid stop points and the comment-described cross-rank intersection."
+  ],
+  "omitted_claims": [
+    "Group semantics internals, transfer atomicity and measured backend performance are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 949,
+      "line_start": 868,
+      "path": "python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py",
+      "range_sha256": "374cea286a912226e42bf3f818d3aaedf39c1bfeb0ca769922f1f3f4cc3fdf4a",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "a46927805094aa2a68d5b710c1065f86b9ec8e0378177891c60e11da5a550980",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py:13164-62200"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py#L868-L949"
+    },
+    {
+      "line_end": 1041,
+      "line_start": 951,
+      "path": "python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py",
+      "range_sha256": "a33a5218d2c9fdd976fbac927e5732a7f045214a3b012306ca59b64a06c8f268",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "a46927805094aa2a68d5b710c1065f86b9ec8e0378177891c60e11da5a550980",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py:13164-62200"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py#L951-L1041"
+    },
+    {
+      "line_end": 1092,
+      "line_start": 1043,
+      "path": "python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py",
+      "range_sha256": "6381d2b5de9ab9dece5d240fbb0ce9849e25633738e34a0a6b07c93b3199e64f",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "a46927805094aa2a68d5b710c1065f86b9ec8e0378177891c60e11da5a550980",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py:13164-62200"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/mooncake_store/mooncake_store.py#L1043-L1092"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "d32ff913df8243f4f4a47917d28f76091bde5fe506d14a1dec6d088cbacbfe14",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "69b8099d2acb8f02df8f203a656a3aa5446689fa69312fa08b05342e504f6bf1",
+    "original_receipt": "c15d86daa15ded86dfe47f94f5827352912582096d4d457caadd280c865338eb",
+    "original_admission": "85f544cd207b177083ec7a5a24f0d1416660d459c19612849667ba46f8d446a5"
+  }
+}

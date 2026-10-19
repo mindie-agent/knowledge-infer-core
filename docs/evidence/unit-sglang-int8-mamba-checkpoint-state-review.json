@@ -1,0 +1,93 @@
+{
+  "index": 23,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Int8 Mamba checkpoints retain rounded scales and native convolution state",
+  "mechanism": "Int8CheckpointStore stores temporal state as int8 data with one scale per head and key channel. Quantize computes amax across the value dimension in float32, floors it at 1e-8, divides by 127 and rounds that scale to the source-state dtype before dividing the float32 state by it. The result is rounded, clamped to -127 through 127 and cast to int8. Dequantize multiplies data and scale in float32 before converting to the requested output dtype. The early scale conversion makes quantization use the same rounded scale that dequantization receives.\n\nMambaCheckpointPool reserves an extra slot, retains convolution buffers in their native dtype and owns a separate checkpoint allocator. store_from_active quantizes temporal state and copies convolution state into the selected checkpoint; load_to_active restores both. clear resets slot allocation and deliberately leaves stored bytes untouched. The optional initialization path returns no pool unless enabled and chooses configured capacity or twice mamba_size. Those capacity and representation choices are source behavior, not evidence of a measured memory saving or numerical-accuracy bound.",
+  "corrections": [
+    "The scale is rounded before division, not merely when finally stored.",
+    "Checkpoint clearing resets allocation bookkeeping; it is not zeroization of qdata.",
+    "Convolution state remains native precision and must be included in any later memory or restore measurement."
+  ],
+  "omitted_claims": [
+    "Device-memory preflight, budget estimates and hardware quality/performance claims are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 139,
+      "line_start": 74,
+      "path": "python/sglang/srt/mem_cache/mamba_checkpoint_pool.py",
+      "range_sha256": "be2bf88a88cc7355f5d297c0e6d6bad25a1b860d31b13ca314296edde4836ab0",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3422cc4a2f79c2156a0303c3eb989c5a2d23c890734811eeb78329feb36cae17",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/mamba_checkpoint_pool.py:0-14777"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L74-L139"
+    },
+    {
+      "line_end": 175,
+      "line_start": 143,
+      "path": "python/sglang/srt/mem_cache/mamba_checkpoint_pool.py",
+      "range_sha256": "416540743666e7613ee2d698b171f29e3b3594a26f526f7bc8f3e834476c8e57",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3422cc4a2f79c2156a0303c3eb989c5a2d23c890734811eeb78329feb36cae17",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/mamba_checkpoint_pool.py:0-14777"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L143-L175"
+    },
+    {
+      "line_end": 226,
+      "line_start": 203,
+      "path": "python/sglang/srt/mem_cache/mamba_checkpoint_pool.py",
+      "range_sha256": "2c6eaa015f41f7d76fc0abfc97e1f2d6c285308d951fd58aed18ce928b4fe509",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3422cc4a2f79c2156a0303c3eb989c5a2d23c890734811eeb78329feb36cae17",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/mamba_checkpoint_pool.py:0-14777"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L203-L226"
+    },
+    {
+      "line_end": 260,
+      "line_start": 239,
+      "path": "python/sglang/srt/mem_cache/mamba_checkpoint_pool.py",
+      "range_sha256": "c33bf0b8dbf2f2110a44fbd22cdf361c9ad1355258e67f13595b6049feb8b8dd",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3422cc4a2f79c2156a0303c3eb989c5a2d23c890734811eeb78329feb36cae17",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/mamba_checkpoint_pool.py:0-14777"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L239-L260"
+    },
+    {
+      "line_end": 330,
+      "line_start": 318,
+      "path": "python/sglang/srt/mem_cache/mamba_checkpoint_pool.py",
+      "range_sha256": "8c69a1424d14ec62b07ea15fcb6edb77af906fa57b8ec9e6153677c33baa5092",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3422cc4a2f79c2156a0303c3eb989c5a2d23c890734811eeb78329feb36cae17",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/mamba_checkpoint_pool.py:0-14777"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/mamba_checkpoint_pool.py#L318-L330"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "f1bea1ceaf9c826146ff05db4e7edaa94ca2c926c9f35db713d9fca0334a4a27",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "6ad247903f134fe071f9c5d398ba7be85f222cd6d9224139acd67a5be4903a3d",
+    "original_receipt": "fbf3b326f7078565c419b20130b04084db75b389097e648f312cdf2aec1cbb9b",
+    "original_admission": "9f4b91c083f56c29822dc993e60d130f2c72bc52ed019cf47387e2628ce7de9d"
+  }
+}

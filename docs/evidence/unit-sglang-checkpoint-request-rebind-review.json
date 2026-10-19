@@ -1,0 +1,56 @@
+{
+  "index": 18,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Checkpoint insertion and request ownership in UnifiedRadixCache",
+  "mechanism": "checkpoint_into_tree first bounds the token prefix through component preparation and floor_cache_len, then page-aligns the key before inserting copied int64 KV indices. A disabled cache only performs component cleanup for a finished request; a nonpositive effective length also cleans up and returns. If insert reports rotation_tail_declined, this method cleans up and returns before rebinding the request or changing its tree lock. The comment explains that retaining the request's own pages avoids mixing rotation runs.\n\nThe prompt-boundary insert is an additional operation when the tree has exactly one BASE component and the prompt key is a strict nonempty prefix. It does not replace the subsequent ownership update. The normal path obtains indices from result.last_device_node, writes the unprotected portion of req_to_token, unlocks the old request lock, takes a new lock, and updates cache_protected_len and last_node. An opt-in flag can omit MAMBA from that new lock; its safety depends on the admission/COW ordering described in the comment and is not independently established by this method.",
+  "corrections": [
+    "Treat the prompt-boundary insertion as additive; the usual request rebind and lock migration still follow.",
+    "The rotation-tail branch and MAMBA lock comment establish local behavior and a stated precondition, not a concurrency or device-level proof."
+  ],
+  "omitted_claims": [
+    "Constructor and registry setup, eviction shortfalls, host backup, load-back and storage-prefetch protocols are outside this accepted subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 1163,
+      "line_start": 1126,
+      "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+      "range_sha256": "210218912c5ca92b3196ced1d3679dc60a442c73e5058456d98add97be4fdfac",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_radix_cache.py:0-49152"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1126-L1163"
+    },
+    {
+      "line_end": 1299,
+      "line_start": 1164,
+      "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+      "range_sha256": "65a83f78c8c4c9e8c87671ba43a72ca0f29dbf64bc877e24b61985df67e1db21",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_radix_cache.py:49152-98279"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1164-L1299"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "f886f129a57e6963b6c8a34c2d773ade4377827b4187d112b437e8f297b2dc0a",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "ee50a1c3d8ca56f5e63a8fa6304c2f5851f6dc7cea0fa5160734841a9d083c9f",
+    "original_receipt": "5d577c5130eb7a938824d09bab0ed122216085f41cad93f28ba3111fdd5be697",
+    "original_admission": "a5ce517ef3ab10e16dc931cf59760e12c731e12ce888ebc1dc34d0d54bfc73fe"
+  }
+}

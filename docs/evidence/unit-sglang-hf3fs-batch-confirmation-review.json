@@ -1,0 +1,69 @@
+{
+  "index": 31,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "HF3FS batch writes distinguish existing pages from newly confirmed IO",
+  "mechanism": "HiCacheHF3FS._batch_set returns scalar True immediately when skip_backup is enabled, before reserving or writing pages. Otherwise it reserves page indices, skips already-written entries and entries marked -1, and compacts new writes together with their source tensors. Results start from the reservation's is_written flags. New writes count as successful only when the future returns bytes_per_page; successful keys and short-write pages are then passed to confirm_write for confirmation or release. A raised future exception occurs before that confirmation path, so the shown code does not guarantee cleanup for every failure. A pre-existing page can report success without any local write in this call.\n\nThe V1 read path compacts hit offsets but leaves destination values unfiltered, slicing both with dense hit positions. If a miss precedes a later hit, the shown indexing can pair that hit's offset with an earlier destination tensor; prefix-shaped hits hide this discrepancy. This is a source-level conditional finding, not a reproduced storage-corruption result. batch_exists reports the leading existing prefix, adjusted for doubled MHA keys.",
+  "corrections": [
+    "skip_backup reports success without proving a local durable write.",
+    "Read offsets are hit-compacted while destinations remain full; the issue is their pairing, not merely the returned batch_indices.",
+    "Confirmation covers returned short writes but is bypassed by an uncaught future exception."
+  ],
+  "omitted_claims": [
+    "HF3FS server behavior, fault injection and the other storage backends grouped in this source record are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 434,
+      "line_start": 388,
+      "path": "python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py",
+      "range_sha256": "a2bea3ff3b6461da600336bab6d7be249d75f8e241f5b8ef081819299aa9860d",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "2a8640ec06470ed58ad60728e187d5d5fff86a8727209b0b785a5b20b1070d4e",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py:0-33796"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py#L388-L434"
+    },
+    {
+      "line_end": 514,
+      "line_start": 436,
+      "path": "python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py",
+      "range_sha256": "a74b6a5f0aed122fa3fb9e080ffa6ac895bfd7c5d55eaffc0e7946d15645a0eb",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "2a8640ec06470ed58ad60728e187d5d5fff86a8727209b0b785a5b20b1070d4e",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py:0-33796"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py#L436-L514"
+    },
+    {
+      "line_end": 537,
+      "line_start": 523,
+      "path": "python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py",
+      "range_sha256": "de8c21ba16eb74096a1cd6ea457f7f8f1b9728be7f477aed6754cd94b3d43567",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "2a8640ec06470ed58ad60728e187d5d5fff86a8727209b0b785a5b20b1070d4e",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py:0-33796"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/storage/hf3fs/storage_hf3fs.py#L523-L537"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "ca402a3d9d0bcd7db89d4b3e61531673fabf55c6ade122c5b72f8979cf9dfacc",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "c9491193e939f8e0349ba9f2a1fc81bf156128431ddee60e142e3ab7cb41f3c9",
+    "original_receipt": "e7ba4c4941d289171e8e5095b7f4921832cd2e55347bf9515aca923b1f90183f",
+    "original_admission": "28dce7f00a9b625b6965abe22d0747d97faba793eb869af2bdf1e4a4e550fa2f"
+  }
+}

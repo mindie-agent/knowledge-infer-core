@@ -1,0 +1,69 @@
+{
+  "index": 21,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Host-memory sizing through visible cgroup limits",
+  "mechanism": "available_host_memory_bytes starts from psutil's available RAM and, when _cgroup_memory_headroom returns a number, takes the smaller value. The helper resolves the process's cgroup membership against mounted cgroup filesystems and walks ancestors to the mount root. It considers memory.max and memory.high for cgroup v2 or memory.limit_in_bytes for v1, subtracts eligible file-page-cache credit from usage, clamps remaining capacity at zero and keeps the minimum discovered headroom. A nonzero or unreadable descendant memory.min disables that cache credit for v2; the reclaim target's own minimum is not checked by that descendant walk.\n\nMissing procfs or no discovered numeric limit can return no bound normally. Unresolved memberships raise RuntimeError. The caller catches only OSError and RuntimeError: automatic sizing then raises an explicit-sizing error unless allow_cgroup_fallback is enabled, in which case it logs and returns host available RAM. ValueError from path or numeric parsing is outside that catch. These branches describe a sizing estimate; including memory.high does not establish a hard OOM boundary or aggregate safety across ranks.",
+  "corrections": [
+    "Host available RAM can also be returned on the normal no-bound path; it is not exclusive to opt-in exception fallback.",
+    "The fallback catches a specific exception set and is not universal.",
+    "Do not turn a headroom estimate or memory.high inclusion into an OOM-prevention guarantee."
+  ],
+  "omitted_claims": [
+    "IndexKeyCache, HiCache configurator staging and automatic ratio derivation are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 38,
+      "line_start": 24,
+      "path": "python/sglang/srt/mem_cache/host_memory.py",
+      "range_sha256": "0fc4daf04444d7edc790da48164a0b181d0a6eb35e5a062110e4cd03060f9f80",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "98ad595e237cfb8e0c555fde8992eef590a709e1d8b250b315d858d115991640",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/host_memory.py:0-6381"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/host_memory.py#L24-L38"
+    },
+    {
+      "line_end": 133,
+      "line_start": 41,
+      "path": "python/sglang/srt/mem_cache/host_memory.py",
+      "range_sha256": "c55df957c7b21ff479a1725abd1f5aae27c33f0b5dee97a1547c2bd2c55b8cf7",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "98ad595e237cfb8e0c555fde8992eef590a709e1d8b250b315d858d115991640",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/host_memory.py:0-6381"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/host_memory.py#L41-L133"
+    },
+    {
+      "line_end": 162,
+      "line_start": 136,
+      "path": "python/sglang/srt/mem_cache/host_memory.py",
+      "range_sha256": "81082bb404a43ac93109d29534e69652bc273bcc200519fcf24b6aa5607f9be5",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "98ad595e237cfb8e0c555fde8992eef590a709e1d8b250b315d858d115991640",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/host_memory.py:0-6381"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/host_memory.py#L136-L162"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "a82d3ef2f7b802ae16493fd58fd929d98422ad90b3669f92a02d8486308148e4",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "fd454105421fed511657141fb6cb9e66a9951c22b4bc8f88420e99f1fd00d35e",
+    "original_receipt": "f92675bc455cbfb562e819184f63d4895c98f380f0016940baa504bec055a292",
+    "original_admission": "42412df6356413d9056d4df8e80fe81263158e8b794c9fbe4673b5bb80c40dd0"
+  }
+}

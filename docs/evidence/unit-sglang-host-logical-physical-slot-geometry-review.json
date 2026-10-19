@@ -1,0 +1,68 @@
+{
+  "index": 27,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Host KV pages separate physical geometry from logical slots",
+  "mechanism": "HostKVCache requires the supplied widened page width to be divisible by dcp_size and stores the quotient as its physical page size. Logical size and logical page size multiply the physical values back by dcp_size. Explicit host_size uses decimal gigabytes divided by bytes per token and, when a multi-rank initialized PP context is available, synchronizes the fixed capacity with a CPU-group MIN reduction. Ratio sizing instead scales device token capacity. The final page count is size divided by physical page size, floored, plus one: a nonaligned capacity rounds up, while an already aligned capacity gains a full page.\n\nclear initializes logical free-slot indices, usage flags and an empty deferred-release queue. alloc requires a multiple of logical_page_size, returns None if total availability is insufficient, merges deferred releases only when the immediate free list is too short, and marks selected slots used. free returns on empty input, asserts the supplied slots are in use, clears their flags and queues them for later reuse. This is slot bookkeeping, not a standalone concurrency or lease guarantee.",
+  "corrections": [
+    "The final rounding formula deliberately adds a page even at exact alignment.",
+    "Distinguish physical page width from widened logical allocation width."
+  ],
+  "omitted_claims": [
+    "Host allocator backend choice, CUDA registration and measured capacity are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 150,
+      "line_start": 111,
+      "path": "python/sglang/srt/mem_cache/pool_host/base.py",
+      "range_sha256": "5153cc646677a5b47b6263909a68f6b602ec5ee4ddbd457116d0f2c7e9fedc3a",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "e57a060e2fd54905a4f16c4e440bafb8356f1967713c8a50f2667b2057d65bf6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/pool_host/base.py:0-20347"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/pool_host/base.py#L111-L150"
+    },
+    {
+      "line_end": 225,
+      "line_start": 193,
+      "path": "python/sglang/srt/mem_cache/pool_host/base.py",
+      "range_sha256": "e6d4565ab620f43043165782078a115d386a5ee05b4a4ea969ecf0f7339d4198",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "e57a060e2fd54905a4f16c4e440bafb8356f1967713c8a50f2667b2057d65bf6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/pool_host/base.py:0-20347"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/pool_host/base.py#L193-L225"
+    },
+    {
+      "line_end": 567,
+      "line_start": 492,
+      "path": "python/sglang/srt/mem_cache/pool_host/base.py",
+      "range_sha256": "cf478a68f0303cde5ea0ad489b76c8e76bf467e24fcaf41086d2a70cc3eae6b4",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "e57a060e2fd54905a4f16c4e440bafb8356f1967713c8a50f2667b2057d65bf6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/pool_host/base.py:0-20347"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/pool_host/base.py#L492-L567"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "fd6eba3689ed9e86bce8e43147b6f29462c527ad55fab9aa6b3c5f92d97daa0c",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "34893113800aca8f14450d512831b56d2859244c6b60df551685ef8b03ee3af6",
+    "original_receipt": "3b1c3c1086c3f19cd3027f6ac5b225f086a48a0c359730a48635e0ddda692d30",
+    "original_admission": "1133e5fe4b54863a19c5862ab7bc16d9a7d03adaf55eb06a18d34dc16cd6f510"
+  }
+}

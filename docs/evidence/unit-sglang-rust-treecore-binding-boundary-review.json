@@ -1,0 +1,104 @@
+{
+  "index": 28,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Rust TreeCore binding boundaries and Python orchestration",
+  "mechanism": "RustUnifiedTreeCore rejects session radix caching, component-registry overrides and components outside FULL, SWA and MAMBA at construction. SWA requires a positive sliding window. The bigram binding is selected only for an EAGLE configuration without MAMBA; a bare cuda device resolves to the current device. The native initializer starts with write-back and HiCache disabled, but these are initial values rather than permanent capability exclusions.\n\nThe adapter exposes stepwise eviction: evict_device_next_node asks the native core to choose a candidate and returns a Python result containing node_id, progress and backup metadata for the surrounding loop. evict_device_leaf checks that the requested write-back mode agrees with the current configuration. match_prefix delegates its tree matching through one binding call, while insertion uses begin, optional resume and end calls to coordinate actions around the native operation. These Python entrypoints establish the ownership boundary and protocol shape; they do not reveal or verify the native Rust selection algorithm, memory safety or performance.",
+  "corrections": [
+    "Initial enable_hicache=False is mutable; set_hicache changes it later.",
+    "Describe native selection versus Python orchestration without treating the adapter as evidence for the Rust algorithm."
+  ],
+  "omitted_claims": [
+    "T-LRU arithmetic, storage integration and measured Rust speedups are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 468,
+      "line_start": 371,
+      "path": "python/sglang/srt/mem_cache/rust_tree_core/adapter.py",
+      "range_sha256": "4e375279c2ad34c338cde0de6cabebfb49f824ae3d4b70697fae358a20cf9cec",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d7be7ddf23cf0524d36dcfa0fbcc4d49c8946205c056504d4f9c48576adca1dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/rust_tree_core/adapter.py:0-47425"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L371-L468"
+    },
+    {
+      "line_end": 503,
+      "line_start": 499,
+      "path": "python/sglang/srt/mem_cache/rust_tree_core/adapter.py",
+      "range_sha256": "b3dc241fcb71c4fb570351ba5dbbf5d965a453e10cdbcf8ef648a88cd5b28015",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d7be7ddf23cf0524d36dcfa0fbcc4d49c8946205c056504d4f9c48576adca1dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/rust_tree_core/adapter.py:0-47425"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L499-L503"
+    },
+    {
+      "line_end": 681,
+      "line_start": 625,
+      "path": "python/sglang/srt/mem_cache/rust_tree_core/adapter.py",
+      "range_sha256": "1b773595ecec139a8c2b3ecca2f26cdd676711f1c14cc41acf740e0b505ebd3b",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d7be7ddf23cf0524d36dcfa0fbcc4d49c8946205c056504d4f9c48576adca1dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/rust_tree_core/adapter.py:0-47425"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L625-L681"
+    },
+    {
+      "line_end": 758,
+      "line_start": 749,
+      "path": "python/sglang/srt/mem_cache/rust_tree_core/adapter.py",
+      "range_sha256": "9aed1007f4dea092d3ac5847e3b41a5ed77a21a91453a16723fae35c7c9d3e18",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d7be7ddf23cf0524d36dcfa0fbcc4d49c8946205c056504d4f9c48576adca1dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/rust_tree_core/adapter.py:0-47425"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L749-L758"
+    },
+    {
+      "line_end": 821,
+      "line_start": 787,
+      "path": "python/sglang/srt/mem_cache/rust_tree_core/adapter.py",
+      "range_sha256": "04850efe93bbd057ac747f04385f639e3c96b672eb64e4a182c81307d21b968e",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d7be7ddf23cf0524d36dcfa0fbcc4d49c8946205c056504d4f9c48576adca1dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/rust_tree_core/adapter.py:0-47425"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L787-L821"
+    },
+    {
+      "line_end": 848,
+      "line_start": 847,
+      "path": "python/sglang/srt/mem_cache/rust_tree_core/adapter.py",
+      "range_sha256": "ff0a1f4bbdf847c68f3603a6c6ddc679ed1355cfaa9e123398c17c0c77bbbb9f",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "d7be7ddf23cf0524d36dcfa0fbcc4d49c8946205c056504d4f9c48576adca1dc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/rust_tree_core/adapter.py:0-47425"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/rust_tree_core/adapter.py#L847-L848"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "f64d666a3f5426baefb575b3cd61fdaced70d06b338e13a6a52d947c2c7e475b",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "a3be78bf3cf5cf0322c9027b3ef90e3fd49c2e445fdef83681ed9bdfcc5c133e",
+    "original_receipt": "9b483cc975504febb7aa83ccdbc0787849bb198cc2433143834ba8210bee42ee",
+    "original_admission": "6342b7d79fd010914cfc3bc060b6a4cf7d02d01f350886cc7efadb54125f795f"
+  }
+}

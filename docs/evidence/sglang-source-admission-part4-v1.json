@@ -1,0 +1,53 @@
+{
+  "schema_version": "mindie-reviewed-domain-admission/1",
+  "domain": "infer-core",
+  "validator_revision": "bfcc807ed1206c65f3c199dda6fefcba8013156a",
+  "editorial_packet_sha256": [
+    "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b"
+  ],
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "accepted_existing_unit_count": 35,
+  "admitted_unit_ids": [
+    "unit-sglang-checkpoint-request-rebind",
+    "unit-sglang-prefetch-completion-and-hybrid-gate",
+    "unit-sglang-dsv4-swa-storage-selection",
+    "unit-sglang-cgroup-host-memory-headroom",
+    "unit-sglang-kv-read-write-translation-boundary",
+    "unit-sglang-int8-mamba-checkpoint-state",
+    "unit-sglang-mha-layout-and-move-paths",
+    "unit-sglang-dsa-index-and-tail-offload",
+    "unit-sglang-token-major-strided-views",
+    "unit-sglang-host-logical-physical-slot-geometry",
+    "unit-sglang-rust-treecore-binding-boundary",
+    "unit-sglang-sparse-zero-selection-metadata",
+    "unit-sglang-storage-registration-construction",
+    "unit-sglang-hf3fs-batch-confirmation",
+    "unit-sglang-mooncake-restorable-stop-points",
+    "unit-sglang-nixl-staging-and-batch-results",
+    "unit-sglang-full-eviction-loadback-accounting",
+    "unit-sglang-swa-span-attachment",
+    "unit-sglang-disaggregated-abort-test-oracle",
+    "unit-sglang-priority-admission-test-oracles"
+  ],
+  "source_revisions": [
+    "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+  ],
+  "c6": "applied",
+  "correct_condition_query": "matched",
+  "mismatched_revision": "excluded",
+  "missing_revision": "excluded",
+  "exact_ref_readback": "matched",
+  "index": "generated_and_checked",
+  "existing_unit_bytes": "preserved",
+  "source_projection": "actual_single_pass_Gitleaks_and_deterministic_scan_unchanged",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "decision_preparation": "Deterministic projection of independently reviewed mechanism and corrections; no new model interpretation.",
+  "formal_publication": "Requires final contract/2 release pin and remote readback.",
+  "model_calls": 0,
+  "framework_execution": 0,
+  "npu_calls": 0,
+  "remote_writes": 0
+}

@@ -1,0 +1,57 @@
+{
+  "index": 19,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Storage-prefetch completion ownership and hybrid acceptance",
+  "mechanism": "_handle_prefetch_result owns the completed host span and, when acknowledged as done, the accompanying component transfers. A rejected hybrid result is already retired by _check_hybrid_prefetch_result. The handler resolves the gap between allocated and completed tokens; buffer mode then stages a bounce result for later admission. The normal cache path inserts the completed span, applies actions, commits PREFETCH transfers, frees the already-resident prefix and records completed_tokens minus prefix_len as loaded from storage. It resolves prefix_len immediately; the usable tail remains pending until admission proves L2-to-L1 load-back. A dropped insertion releases the completed span and transfers and records zero loaded tokens.\n\nThe hybrid gate removes KV-derived transfers before checking completeness. It rejects an incomplete result only when non-KV pool transfers remain: completed_tokens must match the expected hash-page span, and each transfer needs keys and a matching hit count. With no such transfer, partial completion can pass this gate. The comment describes an upstream cross-rank minimum; the helper itself performs no reduction.",
+  "corrections": [
+    "Hybrid completeness is conditional on non-KV transfers, not a blanket all-or-nothing policy for every layout.",
+    "Only the newly loaded tail remains unresolved after the normal insertion; the existing prefix is resolved locally.",
+    "Do not attribute the comment-described cross-rank reduction to this helper body."
+  ],
+  "omitted_claims": [
+    "Abort routing, acknowledgement pump ordering and other accounting helpers are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 2473,
+      "line_start": 2360,
+      "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+      "range_sha256": "e55cf5f3fa23e92dd1472bb66c375dbceb1c92e72e6be1145288ca86f7022d0d",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_radix_cache.py:98279-147379"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L2360-L2473"
+    },
+    {
+      "line_end": 2582,
+      "line_start": 2474,
+      "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+      "range_sha256": "195110b1e22ee36aa3f9f22429158239acd1b82d7cdecc80c10c1d60ea3167a0",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_radix_cache.py:98279-147379"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L2474-L2582"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "ad5ef1aa691b13c1fd905ecf1cdab57d5421ec5ca690b63c15d5074ec497731c",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "3889ea32a3511ec519819a90c0dadc92601d18f4d5c978ba12c858efd635f1e5",
+    "original_receipt": "97f254d49597e3387522ad73210afa2334af2b2112711c0d369d2ebd88ca9e7e",
+    "original_admission": "4ac655c053838d60433e6cf5513a0180da18cf10fbd8708ad3d858fdf8b2f8e3"
+  }
+}

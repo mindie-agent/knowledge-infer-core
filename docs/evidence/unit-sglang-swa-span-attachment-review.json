@@ -1,0 +1,56 @@
+{
+  "index": 35,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "SWA window attachment mutates matched spans incrementally",
+  "mechanism": "_walk_span follows matching children until the requested end, stopping at a missing child, a device-evicted child with no backup, or a zero-length match. It yields a matched segment before checking whether that segment covers only part of the child key; a partial match is therefore yielded once before the walk stops. swa_tombstone_ranges clips these spans to the requested interval, skips live SWA values and merges adjacent missing ranges.\n\nattach_swa_window checks tensor length and materializes the structural walk, then processes each segment: it asserts the SWA value is still absent, splits at segment boundaries and installs a cloned value through set_component_device_value. It asserts final coverage only after those mutations. Materializing the walk does not prevalidate all tombstone states, and no rollback appears in this method. If a later assertion fails after an earlier segment was attached, earlier mutations can remain. That is a conditional control-flow consequence, not a reproduced failure; callers must satisfy the whole-span matching and tombstone preconditions before invoking this operation.",
+  "corrections": [
+    "A partial child span is yielded before termination.",
+    "Do not describe attachment as an all-or-nothing transaction merely because the structural walk is materialized first."
+  ],
+  "omitted_claims": [
+    "Tree sanity checks, canary walks, Rust alternatives and observed concurrency failures are outside this subset."
+  ],
+  "source_scope": "Independently read the listed exact Git ranges and manually authored the corrected mechanism. Only this named subset is accepted; other original model claims and unread bytes are not accepted. No framework or hardware execution was performed.",
+  "supporting_ranges": [
+    {
+      "line_end": 2872,
+      "line_start": 2767,
+      "path": "python/sglang/srt/mem_cache/unified_cache/unified_tree_core.py",
+      "range_sha256": "acc50b7b111dfb12ab3bceb680e8482ceded3c75952e478d5dd36ebce248d41d",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "8567b7b07ec2c94d5cde8831444911f2f985e246e354887d600a4edc44802424",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_cache/unified_tree_core.py:112885-139897"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/unified_tree_core.py#L2767-L2872"
+    },
+    {
+      "line_end": 756,
+      "line_start": 730,
+      "path": "python/sglang/srt/mem_cache/unified_cache/unified_tree_core_interface.py",
+      "range_sha256": "4501bb172122dcb9a9caf7c7b7eb049defb45c7ff8fa2d5536018ac7b56b57cb",
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "e7838cc95822a693e79993bc26b4d2b7a3c5dadfeb532e9065d46ae7853568bc",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_cache/unified_tree_core_interface.py:0-26887"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_cache/unified_tree_core_interface.py#L730-L756"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "d9d2a45cd41b34a2f6e7c79237507a7191020e57aab67cb64bbd4687ac14d281",
+  "adoption_boundary": "Use as an inspection procedure for the pinned SGLang source and the named path only. Source control flow and test oracles are not a reproduced execution result or measured performance benefit.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "root_editorial_approval_sha256": "00d4c9d6a9940fc66cdce8023307bd89cf16442d5d55b82379809a6d8d1efb3b",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "c2afcb0152e0dfbd1adb313231b6d4fb448835dc3f050a681bdf1a6fe5ef9850",
+    "original_receipt": "7c0f52b4ddeb3aa32be0c7bf88c79686059ee757a915d44100ef680ccb24ce82",
+    "original_admission": "379008b90994d4299a0b1e5e7a05009ace9cbbeb72e2f6c1e98bf725bc7bf8f6"
+  }
+}
