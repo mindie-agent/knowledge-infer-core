@@ -5,14 +5,20 @@
     "unit-sglang-finish-precedence-and-kv-release": [],
     "unit-sglang-generate-input-normalization": [],
     "unit-sglang-hisparse-completion-and-allocation-release": [],
+    "unit-sglang-internal-state-and-pool-invariants": [],
+    "unit-sglang-kv-checkpoint-and-request-ownership": [],
     "unit-sglang-manager-completion-and-ownership": [],
+    "unit-sglang-metrics-and-output-rank-gates": [],
     "unit-sglang-overlap-copy-completion-boundary": [],
     "unit-sglang-queue-fallback-and-chunk-budgets": [],
+    "unit-sglang-radix-reanchor-and-prefill-reservation": [],
     "unit-sglang-registry-identity-and-shutdown-drain": [],
     "unit-sglang-result-commit-and-flush-gates": [],
     "unit-sglang-scheduler-abort-and-outstanding-work": [],
+    "unit-sglang-swa-offload-and-draft-ownership": [],
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
     "unit-sglang-tp-capacity-and-result-contracts": [],
+    "unit-sglang-unified-memory-sink-and-envelope": [],
     "unit-tgi-cache-axes-and-mask-semantics": [],
     "unit-tgi-expanded-deepseek-kv-storage": [],
     "unit-tgi-kv-head-topology-and-preprocessing": [],
@@ -30,12 +36,12 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "fb123e97b4f6fac5c185274a16a49bb07ea113e17a7026f3ae432fdf5ae65b5b",
+  "digest": "64e27c8af28cfcb1c1305e86a156f9958b8f2609360d9b0c79f202e711702952",
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 137576,
-      "estimated_tokens": 20886,
+      "bytes": 164645,
+      "estimated_tokens": 24967,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -44,14 +50,20 @@
         "unit-sglang-finish-precedence-and-kv-release",
         "unit-sglang-generate-input-normalization",
         "unit-sglang-hisparse-completion-and-allocation-release",
+        "unit-sglang-internal-state-and-pool-invariants",
+        "unit-sglang-kv-checkpoint-and-request-ownership",
         "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-metrics-and-output-rank-gates",
         "unit-sglang-overlap-copy-completion-boundary",
         "unit-sglang-queue-fallback-and-chunk-budgets",
+        "unit-sglang-radix-reanchor-and-prefill-reservation",
         "unit-sglang-registry-identity-and-shutdown-drain",
         "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-swa-offload-and-draft-ownership",
         "unit-sglang-tokenizer-dispatch-and-abort-boundary",
         "unit-sglang-tp-capacity-and-result-contracts",
+        "unit-sglang-unified-memory-sink-and-envelope",
         "unit-tgi-cache-axes-and-mask-semantics",
         "unit-tgi-expanded-deepseek-kv-storage",
         "unit-tgi-kv-head-topology-and-preprocessing",
@@ -69,13 +81,13 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 29
+      "units": 35
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 137576,
-        "estimated_tokens": 20886,
+        "bytes": 164645,
+        "estimated_tokens": 24967,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
@@ -86,14 +98,20 @@
           "unit-sglang-finish-precedence-and-kv-release",
           "unit-sglang-generate-input-normalization",
           "unit-sglang-hisparse-completion-and-allocation-release",
+          "unit-sglang-internal-state-and-pool-invariants",
+          "unit-sglang-kv-checkpoint-and-request-ownership",
           "unit-sglang-manager-completion-and-ownership",
+          "unit-sglang-metrics-and-output-rank-gates",
           "unit-sglang-overlap-copy-completion-boundary",
           "unit-sglang-queue-fallback-and-chunk-budgets",
+          "unit-sglang-radix-reanchor-and-prefill-reservation",
           "unit-sglang-registry-identity-and-shutdown-drain",
           "unit-sglang-result-commit-and-flush-gates",
           "unit-sglang-scheduler-abort-and-outstanding-work",
+          "unit-sglang-swa-offload-and-draft-ownership",
           "unit-sglang-tokenizer-dispatch-and-abort-boundary",
           "unit-sglang-tp-capacity-and-result-contracts",
+          "unit-sglang-unified-memory-sink-and-envelope",
           "unit-tgi-cache-axes-and-mask-semantics",
           "unit-tgi-expanded-deepseek-kv-storage",
           "unit-tgi-kv-head-topology-and-preprocessing",
@@ -111,17 +129,17 @@
           "unit-tgi-vision-token-mask-and-connector-geometry",
           "unit-vllm-cancellation-and-block-reclamation"
         ],
-        "units": 29
+        "units": 35
       }
     ]
   },
-  "index_build_elapsed_ms": 10.97070798277855,
-  "index_digest": "aca8fbf37b51280e90d2e1738084ad72ffd28f35ae681944420a8f8ebc2d5bd9",
+  "index_build_elapsed_ms": 8.91870801569894,
+  "index_digest": "b9603e5ed91700bac32da059abafaf75bed6785e31803b49b05033e2d17531e4",
   "leaves": [
     {
       "automatic": false,
-      "bytes": 53166,
-      "estimated_tokens": 8004,
+      "bytes": 80235,
+      "estimated_tokens": 12085,
       "exceeds": [
         "estimated_tokens"
       ],
@@ -134,16 +152,22 @@
         "unit-sglang-finish-precedence-and-kv-release",
         "unit-sglang-generate-input-normalization",
         "unit-sglang-hisparse-completion-and-allocation-release",
+        "unit-sglang-internal-state-and-pool-invariants",
+        "unit-sglang-kv-checkpoint-and-request-ownership",
         "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-metrics-and-output-rank-gates",
         "unit-sglang-overlap-copy-completion-boundary",
         "unit-sglang-queue-fallback-and-chunk-budgets",
+        "unit-sglang-radix-reanchor-and-prefill-reservation",
         "unit-sglang-registry-identity-and-shutdown-drain",
         "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-swa-offload-and-draft-ownership",
         "unit-sglang-tokenizer-dispatch-and-abort-boundary",
-        "unit-sglang-tp-capacity-and-result-contracts"
+        "unit-sglang-tp-capacity-and-result-contracts",
+        "unit-sglang-unified-memory-sink-and-envelope"
       ],
-      "units": 13
+      "units": 19
     },
     {
       "automatic": false,
@@ -204,8 +228,8 @@
   "two_level_subtrees": [
     {
       "automatic": false,
-      "bytes": 53166,
-      "estimated_tokens": 8004,
+      "bytes": 80235,
+      "estimated_tokens": 12085,
       "exceeds": [],
       "kind": "subtree",
       "path": "serving/sglang",
@@ -216,16 +240,22 @@
         "unit-sglang-finish-precedence-and-kv-release",
         "unit-sglang-generate-input-normalization",
         "unit-sglang-hisparse-completion-and-allocation-release",
+        "unit-sglang-internal-state-and-pool-invariants",
+        "unit-sglang-kv-checkpoint-and-request-ownership",
         "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-metrics-and-output-rank-gates",
         "unit-sglang-overlap-copy-completion-boundary",
         "unit-sglang-queue-fallback-and-chunk-budgets",
+        "unit-sglang-radix-reanchor-and-prefill-reservation",
         "unit-sglang-registry-identity-and-shutdown-drain",
         "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-swa-offload-and-draft-ownership",
         "unit-sglang-tokenizer-dispatch-and-abort-boundary",
-        "unit-sglang-tp-capacity-and-result-contracts"
+        "unit-sglang-tp-capacity-and-result-contracts",
+        "unit-sglang-unified-memory-sink-and-envelope"
       ],
-      "units": 13
+      "units": 19
     },
     {
       "automatic": false,
@@ -280,7 +310,7 @@
       "units": 1
     }
   ],
-  "unit_count": 29,
+  "unit_count": 35,
   "units": {
     "unit-sglang-cancellation-and-cache-ownership": {
       "bytes": 4223,
@@ -337,6 +367,28 @@
       "path": "serving/sglang/unit-sglang-hisparse-completion-and-allocation-release.md",
       "tier": "L2"
     },
+    "unit-sglang-internal-state-and-pool-invariants": {
+      "bytes": 4752,
+      "category": "sop",
+      "content_sha256": "72b795d0b8072de71cb34cc3220c503a87e43a74ac11c5b10e4514aea085d964",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 731,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-internal-state-and-pool-invariants.md",
+      "tier": "L2"
+    },
+    "unit-sglang-kv-checkpoint-and-request-ownership": {
+      "bytes": 3933,
+      "category": "sop",
+      "content_sha256": "1271aefffa92483c1049d177b4e0b937de3bb894a93549d6d81c608700197abf",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 602,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-kv-checkpoint-and-request-ownership.md",
+      "tier": "L2"
+    },
     "unit-sglang-manager-completion-and-ownership": {
       "bytes": 7081,
       "category": "sop",
@@ -346,6 +398,17 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
+      "tier": "L2"
+    },
+    "unit-sglang-metrics-and-output-rank-gates": {
+      "bytes": 4488,
+      "category": "sop",
+      "content_sha256": "563bb856409fcc86e57fb5ba7a532e4c6030ef04fb43f1585c3d9f6e3a0bbfc5",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 673,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-metrics-and-output-rank-gates.md",
       "tier": "L2"
     },
     "unit-sglang-overlap-copy-completion-boundary": {
@@ -368,6 +431,17 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/sglang/unit-sglang-queue-fallback-and-chunk-budgets.md",
+      "tier": "L2"
+    },
+    "unit-sglang-radix-reanchor-and-prefill-reservation": {
+      "bytes": 3905,
+      "category": "sop",
+      "content_sha256": "ad1d15d17e923fc21b0092cf8f57644836a89fd3681098d3cad537cfbd9778cf",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 583,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-radix-reanchor-and-prefill-reservation.md",
       "tier": "L2"
     },
     "unit-sglang-registry-identity-and-shutdown-drain": {
@@ -403,6 +477,17 @@
       "path": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
       "tier": "L2"
     },
+    "unit-sglang-swa-offload-and-draft-ownership": {
+      "bytes": 4562,
+      "category": "sop",
+      "content_sha256": "9b3154d40b6e01dcd72f4131814e91f53b4f823ba0abd319cd94d629f2b4136e",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 682,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-swa-offload-and-draft-ownership.md",
+      "tier": "L2"
+    },
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": {
       "bytes": 4001,
       "category": "sop",
@@ -423,6 +508,17 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
+      "tier": "L2"
+    },
+    "unit-sglang-unified-memory-sink-and-envelope": {
+      "bytes": 5429,
+      "category": "sop",
+      "content_sha256": "fa1e99c5676ae145d507f711a2baba4e2d9b6fc336358646f1dd849f164ee908",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 810,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/sglang/unit-sglang-unified-memory-sink-and-envelope.md",
       "tier": "L2"
     },
     "unit-tgi-cache-axes-and-mask-semantics": {

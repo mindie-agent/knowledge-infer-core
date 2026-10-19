@@ -1,0 +1,88 @@
+{
+  "index": 12,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Internal-state updates validate before applying while pool invariants remain mode-specific",
+  "mechanism": "SchedulerInternalStateController validates every requested update before its apply loop and catches UpdateRejected only during validation. The apply loop can directly mutate worker state before a later handler fails; no rollback is shown. DFlash acceptance-threshold relaxation is rejected while an unfinished request carries a sampling mask, including running and PP batches, waiting and grammar queues, chunked requests, and decode preallocation, transfer, retracted and held-rebootstrap queues. The generic pool identity adds available, evictable, protected, session-held and uncached tokens. Hybrid-SSM total capacity comes from req_to_token_pool.schedulable_token_capacity. Page-interleaved sharding uses aggregate free pages and checks alignment; the separate legacy DCP branch tolerates a residual mismatch. SWA request-ring token conservation is skipped, and the request-pool check instead compares free slots plus session-held requests with size plus preallocation headroom.",
+  "corrections": [
+    "Validate-then-apply is not an atomic transaction.",
+    "The sampling-mask function actually begins at line 255 and its final queue branches and predicate end at 282; the model review range 252-279 was still incomplete.",
+    "Conservation exceptions are explicit mode conditions, not evidence that every residual represents a leak."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/internal_state.py",
+      "line_start": 147,
+      "line_end": 167,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3879413625ca0991e3a64ca6a969a67afd1209aeb5c5760c4ab4ba7f46e98184",
+      "range_sha256": "4e1fa847c7d761a98abd27f2ade97aba772a77216e2d3f7bd550d1986d4c3937",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/internal_state.py:0-13068"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/internal_state.py#L147-L167"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/internal_state.py",
+      "line_start": 195,
+      "line_end": 215,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3879413625ca0991e3a64ca6a969a67afd1209aeb5c5760c4ab4ba7f46e98184",
+      "range_sha256": "be4757ee556ac97728518ed34518ea601294fabde87314e7149db6d0b05b5808",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/internal_state.py:0-13068"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/internal_state.py#L195-L215"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/internal_state.py",
+      "line_start": 255,
+      "line_end": 282,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "3879413625ca0991e3a64ca6a969a67afd1209aeb5c5760c4ab4ba7f46e98184",
+      "range_sha256": "c54fc7b8f1e6164779406b1f4484b254c2078343dbc640450fae2634b2a431ad",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/internal_state.py:0-13068"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/internal_state.py#L255-L282"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/invariant_checker.py",
+      "line_start": 78,
+      "line_end": 194,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "c6556e0a52001c9d592910d693bb4f4804331ba8e8f503206e10845b79c0ae24",
+      "range_sha256": "1bd589d99ad45a95fc45609ec5979365f65588d17f0cf342e72a120de0f8cd0d",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/invariant_checker.py:0-21594"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/invariant_checker.py#L78-L194"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/invariant_checker.py",
+      "line_start": 428,
+      "line_end": 450,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "c6556e0a52001c9d592910d693bb4f4804331ba8e8f503206e10845b79c0ae24",
+      "range_sha256": "715d7e65065c698c80b8d367b4636bcd2d70152f0d48072007020892fa61a357",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/invariant_checker.py:0-21594"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/invariant_checker.py#L428-L450"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "b9af7d6b0f0b338af93a3bfbcacbffc539734833b2fb13b0c07d6d9a51bd58a9",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "56bb260b6d7d6aeb63c7200971a4236c88e31e07957c7825516e6d50b08b3fee",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "70fa378faa336eafc36c2f14dfaaf2c3d8afaa63202fd9301fb4b0a184e1f06d",
+    "original_receipt": "31512360284c6a2a4ffc3a2cddc7e33af8bf1a645664fb119452ac619e642bbe",
+    "original_admission": "fba583683b0b99b2c83b60df6a0487ffd4ed6d5263aa33afd23258d586decb6e"
+  }
+}

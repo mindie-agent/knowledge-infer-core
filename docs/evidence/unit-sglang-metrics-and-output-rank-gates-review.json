@@ -1,0 +1,88 @@
+{
+  "index": 13,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Forward metrics and finished output retain their rank, timing and beam gates",
+  "mechanism": "Forward-pass metrics initialization is conditional on observability enablement, attention-TP rank zero and the final PP rank. This initialization always installs or reuses a DeviceTimer and sets _fpm_uses_device_timer true. The emit method contains a monotonic fallback, but the shown normal initialization does not make that fallback reachable; a zero accumulated device time suppresses emission. Output-stream acceptance applies its beam gate before its finished-request branch, so only a finished beam leader passes that gate. Nonterminal streaming uses unsent-token thresholds and may suppress a stop-string prefix. Ordinary full-pool usage subtracts both available and evictable capacity; the shown hybrid-SWA statistics path additionally clamps full and SWA usage when HiSparse is enabled.",
+  "corrections": [
+    "Do not describe the monotonic fallback as an observed normal FPM execution path.",
+    "Finished requests are still subject to the earlier beam gate.",
+    "HiSparse clamping in the hybrid-SWA statistics path is not a universal clamp on all pool-reporting functions."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/metrics_reporter.py",
+      "line_start": 362,
+      "line_end": 412,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "000fd1810f797d96db1134329517a4742a49875eb2c70cdd2de74b98980b7b44",
+      "range_sha256": "936c0bdb4785dc88f3d3cfad3c87f15f50b2384bb675ea54904c7b8d14ef920d",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/metrics_reporter.py:0-49142"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/metrics_reporter.py#L362-L412"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/metrics_reporter.py",
+      "line_start": 1174,
+      "line_end": 1206,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "000fd1810f797d96db1134329517a4742a49875eb2c70cdd2de74b98980b7b44",
+      "range_sha256": "12a618f9bc519987e072e53066a7c49b8641fcc57ee206411241c30051facd56",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/metrics_reporter.py:49142-63584"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/metrics_reporter.py#L1174-L1206"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/output_streamer.py",
+      "line_start": 421,
+      "line_end": 461,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "4c5ffeb710f1777b442ff9bf29078ce06898ccf76adbf06916652362b62ffc39",
+      "range_sha256": "a501d012f0925c2b0c06e27ced06d8554a7b7e7e5e4075dfbfd120bb6af9e292",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/output_streamer.py:0-34540"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/output_streamer.py#L421-L461"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/pool_stats_observer.py",
+      "line_start": 235,
+      "line_end": 245,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "0b30790622a6dc84a878f265e10aa458551c11c943187c0d49f6f10d32260926",
+      "range_sha256": "6f5c0a331a0b1a19485e76fab9e4d19c8f7016c9e49bfebab1852834804bf326",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/pool_stats_observer.py:0-14378"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/pool_stats_observer.py#L235-L245"
+    },
+    {
+      "path": "python/sglang/srt/managers/scheduler_components/pool_stats_observer.py",
+      "line_start": 315,
+      "line_end": 327,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "0b30790622a6dc84a878f265e10aa458551c11c943187c0d49f6f10d32260926",
+      "range_sha256": "c1a39cbf99e9054d6a8c81dad315e44bb72db1a7a824d0f307a4aaaaf07efdb4",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/managers/scheduler_components/pool_stats_observer.py:0-14378"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/pool_stats_observer.py#L315-L327"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "94925abe266da302aec660e6f5950ee989a1b22c31711dc73b235340dab03c0a",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "56bb260b6d7d6aeb63c7200971a4236c88e31e07957c7825516e6d50b08b3fee",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "fa87d2b6b4f6afe98d002a47035f7eadaa0e266f1795e5faef4febf7b9782d13",
+    "original_receipt": "af882f1c7ed24633278b00a586fe7425c6436a1c72cfe38ba7f85933d634d2aa",
+    "original_admission": "31001a2ad05ce0be0ea226275d8649d87986a44eed7cb43ad804d59255402ab8"
+  }
+}

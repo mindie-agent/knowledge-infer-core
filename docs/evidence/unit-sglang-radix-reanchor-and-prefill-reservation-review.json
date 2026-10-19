@@ -1,0 +1,76 @@
+{
+  "index": 15,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Radix checkpoint reanchors ownership and prefill reserves future capacity separately",
+  "mechanism": "RadixCache.checkpoint excludes an already-evicted SWA prefix, inserts the eligible key, rematches it and rewrites the request row to the tree-owned indices. The protected length is only the cached aligned prefix; a partial page remains request-owned. It releases the old lock and locks the new last node. Lock-reference transitions move token counts between evictable and protected categories only at zero-to-one and one-to-zero boundaries. PrefillBudget admits its total-token check only when requested total is strictly less than remaining total, while immediate paged allocation uses a less-than-or-equal comparison against both current and total capacity. reserve page-aligns the extension, adds an extra page and optional extra tokens to both offsets, and charges max_new_tokens only to total_offset. These inequalities and headroom charges serve distinct admission decisions.",
+  "corrections": [
+    "Do not treat partial-page tokens outside cache_protected_len as tree-owned.",
+    "Do not replace the two admission inequalities with one generic available-capacity rule.",
+    "The selected subset does not verify page-interleaved communication or backend integration."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/mem_cache/radix_cache.py",
+      "line_start": 510,
+      "line_end": 543,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "eea7015fcf678167ac7296b08c8dc568ccbe42a4bb106da23b33a7c59debec01",
+      "range_sha256": "8a182864af25328c6320f6a258f96f621c09c9aec41b5ed6df04cc09d386f6ba",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/radix_cache.py:0-31391"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/radix_cache.py#L510-L543"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/radix_cache.py",
+      "line_start": 582,
+      "line_end": 616,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "eea7015fcf678167ac7296b08c8dc568ccbe42a4bb106da23b33a7c59debec01",
+      "range_sha256": "ef8e7c00151dc1461f434fb03f9aff6cd544571fe068f5b3cc9859ea02eb1a4d",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/radix_cache.py:0-31391"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/radix_cache.py#L582-L616"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/prefill_budget.py",
+      "line_start": 91,
+      "line_end": 140,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "b1d64e648d958aeb82fe60c8acacbe9ecd4d0c83ca2ea8a058eaaaf0b488e07e",
+      "range_sha256": "1ae6fc4b3e772662fab75bcc898c4ce3f25f5b97abe6d0c13e647685081e2606",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/prefill_budget.py:0-16041"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/prefill_budget.py#L91-L140"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/prefill_budget.py",
+      "line_start": 156,
+      "line_end": 168,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "b1d64e648d958aeb82fe60c8acacbe9ecd4d0c83ca2ea8a058eaaaf0b488e07e",
+      "range_sha256": "81106a62693358040771b92b9fbce3d6322363ea3b5ae2036cde6111a3fd0c6d",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/prefill_budget.py:0-16041"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/prefill_budget.py#L156-L168"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "42a018da450f5c0bc8596a7298dfd7b4254342c42252af93af875637c87fe771",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "56bb260b6d7d6aeb63c7200971a4236c88e31e07957c7825516e6d50b08b3fee",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "e87daf34d8e1f6e0b0b0309038a7d4b4f37286280ff2730e841e9fde4d471119",
+    "original_receipt": "8a43773b6bd23c1ffffd6bae4d86fded11aaa62d6e6b0e9730937f7e5925a556",
+    "original_admission": "1996c9a229691cb237576d7d8b244932abd95d08a36e67c426e9740652e5910d"
+  }
+}

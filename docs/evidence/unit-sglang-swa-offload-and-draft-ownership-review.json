@@ -1,0 +1,100 @@
+{
+  "index": 16,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "SWA offload masks and fused draft wrappers retain asymmetric ownership",
+  "mechanism": "SWAKVPool owns layer-transfer waiting and clears the inner pools' counters to avoid duplicate waits. Its CPU-copy path saves only SWA indices greater than zero, preserving a mask because zero is a dummy slot and tail-only allocations leave some full indices unmapped. Restore intersects that saved selection with the new mapping and skips an empty resulting SWA set. UnifiedDraftSWAKVPool routes full-to-SWA translation through the host allocator; its overridden key/value/KV getters do not wait, but the inherited scale-buffer getter still calls _wait_for_layer. Therefore storing a transfer counter can matter on the scale path. bind_fused_draft deduplicates families in placement.hosts order and applies binders in that order, despite the docstring saying registry order.",
+  "corrections": [
+    "The draft wrapper's counter is not universally ineffective: inherited scale access still waits.",
+    "CPU restore uses old and new mapping membership, rather than blindly replaying saved SWA rows.",
+    "Use actual host-placement order rather than the binder-order docstring; no runtime offload or compaction test was performed."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/mem_cache/swa_memory_pool.py",
+      "line_start": 159,
+      "line_end": 167,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "14f2b1daebdc9d872b5786cfc0beed26a413bb41717b70a737a4cb4c31951dfc",
+      "range_sha256": "436bce0e72f0a397bdb49e2ecc2ce5af86d84548b97c22d81dd99105a5a23004",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/swa_memory_pool.py:0-17062"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/swa_memory_pool.py#L159-L167"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/swa_memory_pool.py",
+      "line_start": 240,
+      "line_end": 251,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "14f2b1daebdc9d872b5786cfc0beed26a413bb41717b70a737a4cb4c31951dfc",
+      "range_sha256": "8c9ebb3d1f8597b80203ee1899ca48d9e5a319a7a50d19d7b83361894b975bf7",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/swa_memory_pool.py:0-17062"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/swa_memory_pool.py#L240-L251"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/swa_memory_pool.py",
+      "line_start": 368,
+      "line_end": 424,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "14f2b1daebdc9d872b5786cfc0beed26a413bb41717b70a737a4cb4c31951dfc",
+      "range_sha256": "faa0270483fc3edb50203ad648c66190aba4334a3f30b9561d54275f2ae062d7",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/swa_memory_pool.py:0-17062"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/swa_memory_pool.py#L368-L424"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_draft_pool.py",
+      "line_start": 221,
+      "line_end": 231,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "72d782e0e72d39231d512bb8d1cb1f93175e36043c2f4227842417cb7dd010ab",
+      "range_sha256": "6b6c72041ed88c9d8541c6f6d5c000b7c72219b3793fe5e61f6830e457258869",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_draft_pool.py:0-25164"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_draft_pool.py#L221-L231"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_draft_pool.py",
+      "line_start": 256,
+      "line_end": 266,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "72d782e0e72d39231d512bb8d1cb1f93175e36043c2f4227842417cb7dd010ab",
+      "range_sha256": "33b5e53ff5c7436a6949b92bc48e0b71644d5b96b6666e02793c8ca08482d58c",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_draft_pool.py:0-25164"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_draft_pool.py#L256-L266"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_draft_pool.py",
+      "line_start": 520,
+      "line_end": 543,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "72d782e0e72d39231d512bb8d1cb1f93175e36043c2f4227842417cb7dd010ab",
+      "range_sha256": "772bc9ada1e38c9cef64a859beae60b6632e183a2f15e5f722c08dfba0f78745",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_draft_pool.py:0-25164"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_draft_pool.py#L520-L543"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "68b0a0c8ba13ebcde065ab6bfd27596439225612089a52c267e36938c7e488c7",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "56bb260b6d7d6aeb63c7200971a4236c88e31e07957c7825516e6d50b08b3fee",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "6e271896ea5730c61c8df9e1adb1f529a74be4dd92567135afc3faeb74f52e28",
+    "original_receipt": "2f5b6f8c12251457a1d6ec52d920b7fdbbeb9ff5efb3b877f84463e6560811c5",
+    "original_admission": "8149f398fddfa86a17bac579087e75fbfced83544dbf690e5440ec1ba84c0d14"
+  }
+}

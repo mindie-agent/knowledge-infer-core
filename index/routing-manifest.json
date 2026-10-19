@@ -1,19 +1,25 @@
 {
-  "build_elapsed_ms": 10.97070798277855,
+  "build_elapsed_ms": 8.91870801569894,
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-decode-retraction-and-oom-abort": [],
     "unit-sglang-finish-precedence-and-kv-release": [],
     "unit-sglang-generate-input-normalization": [],
     "unit-sglang-hisparse-completion-and-allocation-release": [],
+    "unit-sglang-internal-state-and-pool-invariants": [],
+    "unit-sglang-kv-checkpoint-and-request-ownership": [],
     "unit-sglang-manager-completion-and-ownership": [],
+    "unit-sglang-metrics-and-output-rank-gates": [],
     "unit-sglang-overlap-copy-completion-boundary": [],
     "unit-sglang-queue-fallback-and-chunk-budgets": [],
+    "unit-sglang-radix-reanchor-and-prefill-reservation": [],
     "unit-sglang-registry-identity-and-shutdown-drain": [],
     "unit-sglang-result-commit-and-flush-gates": [],
     "unit-sglang-scheduler-abort-and-outstanding-work": [],
+    "unit-sglang-swa-offload-and-draft-ownership": [],
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
     "unit-sglang-tp-capacity-and-result-contracts": [],
+    "unit-sglang-unified-memory-sink-and-envelope": [],
     "unit-tgi-cache-axes-and-mask-semantics": [],
     "unit-tgi-expanded-deepseek-kv-storage": [],
     "unit-tgi-kv-head-topology-and-preprocessing": [],
@@ -31,22 +37,28 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "aca8fbf37b51280e90d2e1738084ad72ffd28f35ae681944420a8f8ebc2d5bd9",
-  "generation": "98af57e3cf1f0c6219dd8d9186917d7746e39d2d749ed27ed237ec11cd162767",
+  "digest": "b9603e5ed91700bac32da059abafaf75bed6785e31803b49b05033e2d17531e4",
+  "generation": "75c57fb5074fb2d1f394c68786f381d5367ea6804552214eb4065ad56ca88f63",
   "id_path": {
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
     "unit-sglang-decode-retraction-and-oom-abort": "serving/sglang/unit-sglang-decode-retraction-and-oom-abort.md",
     "unit-sglang-finish-precedence-and-kv-release": "serving/sglang/unit-sglang-finish-precedence-and-kv-release.md",
     "unit-sglang-generate-input-normalization": "serving/sglang/unit-sglang-generate-input-normalization.md",
     "unit-sglang-hisparse-completion-and-allocation-release": "serving/sglang/unit-sglang-hisparse-completion-and-allocation-release.md",
+    "unit-sglang-internal-state-and-pool-invariants": "serving/sglang/unit-sglang-internal-state-and-pool-invariants.md",
+    "unit-sglang-kv-checkpoint-and-request-ownership": "serving/sglang/unit-sglang-kv-checkpoint-and-request-ownership.md",
     "unit-sglang-manager-completion-and-ownership": "serving/sglang/unit-sglang-manager-completion-and-ownership.md",
+    "unit-sglang-metrics-and-output-rank-gates": "serving/sglang/unit-sglang-metrics-and-output-rank-gates.md",
     "unit-sglang-overlap-copy-completion-boundary": "serving/sglang/unit-sglang-overlap-copy-completion-boundary.md",
     "unit-sglang-queue-fallback-and-chunk-budgets": "serving/sglang/unit-sglang-queue-fallback-and-chunk-budgets.md",
+    "unit-sglang-radix-reanchor-and-prefill-reservation": "serving/sglang/unit-sglang-radix-reanchor-and-prefill-reservation.md",
     "unit-sglang-registry-identity-and-shutdown-drain": "serving/sglang/unit-sglang-registry-identity-and-shutdown-drain.md",
     "unit-sglang-result-commit-and-flush-gates": "serving/sglang/unit-sglang-result-commit-and-flush-gates.md",
     "unit-sglang-scheduler-abort-and-outstanding-work": "serving/sglang/unit-sglang-scheduler-abort-and-outstanding-work.md",
+    "unit-sglang-swa-offload-and-draft-ownership": "serving/sglang/unit-sglang-swa-offload-and-draft-ownership.md",
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": "serving/sglang/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
     "unit-sglang-tp-capacity-and-result-contracts": "serving/sglang/unit-sglang-tp-capacity-and-result-contracts.md",
+    "unit-sglang-unified-memory-sink-and-envelope": "serving/sglang/unit-sglang-unified-memory-sink-and-envelope.md",
     "unit-tgi-cache-axes-and-mask-semantics": "serving/tgi/unit-tgi-cache-axes-and-mask-semantics.md",
     "unit-tgi-expanded-deepseek-kv-storage": "serving/tgi/unit-tgi-expanded-deepseek-kv-storage.md",
     "unit-tgi-kv-head-topology-and-preprocessing": "serving/tgi/unit-tgi-kv-head-topology-and-preprocessing.md",
@@ -67,7 +79,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 29,
+  "unit_count": 35,
   "units": [
     {
       "category": "sop",
@@ -311,6 +323,105 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:84f22d0e3e5273154ad67f09bb21c841010b66b238da23dd90ba46b692144c3d",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:72b795d0b8072de71cb34cc3220c503a87e43a74ac11c5b10e4514aea085d964",
+      "content_sha256": "72b795d0b8072de71cb34cc3220c503a87e43a74ac11c5b10e4514aea085d964",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-internal-state-and-pool-invariants",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-internal-state-and-pool-invariants.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-internal-state-and-pool-invariants-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/internal_state.py#L147-L167",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/internal_state.py#L195-L215",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/internal_state.py#L255-L282",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/invariant_checker.py#L78-L194",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/invariant_checker.py#L428-L450"
+        ],
+        "source_digest": "c7730f04973d4c395ee368700dd8a52a7815cf6ff25c746e66db3ae33599b818",
+        "source_locator": "docs/evidence/unit-sglang-internal-state-and-pool-invariants-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Internal-state updates validate before applying while pool invariants remain mode-specific",
+      "token_estimate": 731,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "internal-state",
+          "updates",
+          "validate",
+          "before",
+          "applying",
+          "while",
+          "pool",
+          "invariants",
+          "remain",
+          "mode-specific"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:c03aebeb176e606c0cd9256ed31d446ca147faa74f6b2268c403fd3a2009090d",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:1271aefffa92483c1049d177b4e0b937de3bb894a93549d6d81c608700197abf",
+      "content_sha256": "1271aefffa92483c1049d177b4e0b937de3bb894a93549d6d81c608700197abf",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-kv-checkpoint-and-request-ownership",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-kv-checkpoint-and-request-ownership.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-kv-checkpoint-and-request-ownership-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/common.py#L270-L279",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/common.py#L395-L439",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/allocation.py#L175-L201",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/allocation.py#L219-L246"
+        ],
+        "source_digest": "a381be620b52f773432d4ca8f1e60fec68876671ec79d620e7e0c34c5c71fc4a",
+        "source_locator": "docs/evidence/unit-sglang-kv-checkpoint-and-request-ownership-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "KV checkpoint and release separate tree ownership from request allocation",
+      "token_estimate": 602,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "kv",
+          "checkpoint",
+          "and",
+          "release",
+          "separate",
+          "tree",
+          "ownership",
+          "from",
+          "request",
+          "allocation"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:21f717e7f07d8279685a8f75ff6a36a40a94454dc589e3edcd86c3cf83233428",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -361,6 +472,57 @@
           "and",
           "ownership",
           "conditions"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:c98432d3b5e683922d88081a36a64bb83f6190860c7875064d0ef6e978d48dba",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:563bb856409fcc86e57fb5ba7a532e4c6030ef04fb43f1585c3d9f6e3a0bbfc5",
+      "content_sha256": "563bb856409fcc86e57fb5ba7a532e4c6030ef04fb43f1585c3d9f6e3a0bbfc5",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-metrics-and-output-rank-gates",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-metrics-and-output-rank-gates.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-metrics-and-output-rank-gates-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/metrics_reporter.py#L362-L412",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/metrics_reporter.py#L1174-L1206",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/output_streamer.py#L421-L461",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/pool_stats_observer.py#L235-L245",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler_components/pool_stats_observer.py#L315-L327"
+        ],
+        "source_digest": "7530583780a5592599350cea4f5c0650f14062154134bad7091069b61c8d80de",
+        "source_locator": "docs/evidence/unit-sglang-metrics-and-output-rank-gates-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Forward metrics and finished output retain their rank, timing and beam gates",
+      "token_estimate": 673,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "forward",
+          "metrics",
+          "and",
+          "finished",
+          "output",
+          "retain",
+          "their",
+          "rank",
+          "timing",
+          "beam",
+          "gates"
         ]
       }
     },
@@ -462,6 +624,55 @@
           "distinct",
           "selection",
           "behavior"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:e833808c717e485442d198db57f4d9c6b90bcd76891d8f83ddf938df5ba1a089",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:ad1d15d17e923fc21b0092cf8f57644836a89fd3681098d3cad537cfbd9778cf",
+      "content_sha256": "ad1d15d17e923fc21b0092cf8f57644836a89fd3681098d3cad537cfbd9778cf",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-radix-reanchor-and-prefill-reservation",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-radix-reanchor-and-prefill-reservation.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-radix-reanchor-and-prefill-reservation-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/radix_cache.py#L510-L543",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/radix_cache.py#L582-L616",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/prefill_budget.py#L91-L140",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/prefill_budget.py#L156-L168"
+        ],
+        "source_digest": "f1ac24a9709a95b027cf2c242d99335eb7df1279bf9e72bb799f0cebcc23fd61",
+        "source_locator": "docs/evidence/unit-sglang-radix-reanchor-and-prefill-reservation-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Radix checkpoint reanchors ownership and prefill reserves future capacity separately",
+      "token_estimate": 583,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "radix",
+          "checkpoint",
+          "reanchors",
+          "ownership",
+          "and",
+          "prefill",
+          "reserves",
+          "future",
+          "capacity",
+          "separately"
         ]
       }
     },
@@ -615,6 +826,57 @@
     },
     {
       "category": "sop",
+      "closure_digest": "sha256:65e7ea54d68fe35b2ae50dd8a9485ea0df53183de85c21dc164f1cb5e1390416",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:9b3154d40b6e01dcd72f4131814e91f53b4f823ba0abd319cd94d629f2b4136e",
+      "content_sha256": "9b3154d40b6e01dcd72f4131814e91f53b4f823ba0abd319cd94d629f2b4136e",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-swa-offload-and-draft-ownership",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-swa-offload-and-draft-ownership.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-swa-offload-and-draft-ownership-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/swa_memory_pool.py#L159-L167",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/swa_memory_pool.py#L240-L251",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/swa_memory_pool.py#L368-L424",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_draft_pool.py#L221-L231",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_draft_pool.py#L256-L266",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_draft_pool.py#L520-L543"
+        ],
+        "source_digest": "ca8d189a00b60d1e1c579203f3353d54bb3010ea1f5bbcb986f78f4ceff3c76c",
+        "source_locator": "docs/evidence/unit-sglang-swa-offload-and-draft-ownership-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "SWA offload masks and fused draft wrappers retain asymmetric ownership",
+      "token_estimate": 682,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "swa",
+          "offload",
+          "masks",
+          "and",
+          "fused",
+          "draft",
+          "wrappers",
+          "retain",
+          "asymmetric",
+          "ownership"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "closure_digest": "sha256:0853183a10cf0a30896ffb30b1d47056c3e58b1f4dc1b282fef22d8b782c0b2f",
       "conditions": {
         "repository": "sgl-project/sglang",
@@ -708,6 +970,60 @@
           "types",
           "are",
           "conditional",
+          "contracts"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:0a213d1b4ada2c37ff898c6e6909e0b99a1898819967da13e86087040f6490d8",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:fa1e99c5676ae145d507f711a2baba4e2d9b6fc336358646f1dd849f164ee908",
+      "content_sha256": "fa1e99c5676ae145d507f711a2baba4e2d9b6fc336358646f1dd849f164ee908",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-unified-memory-sink-and-envelope",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-unified-memory-sink-and-envelope.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-sglang-unified-memory-sink-and-envelope-review.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L350-L368",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L388-L409",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L533-L542",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L883-L903",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1013-L1025",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1041-L1068",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1240-L1257",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1545-L1567"
+        ],
+        "source_digest": "4f905a2b091ccbc14f71f88398fb5d6f9de20060dd0f59e065a4cb38d4adf159",
+        "source_locator": "docs/evidence/unit-sglang-unified-memory-sink-and-envelope-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Unified memory reserves a physical sink and exposes mode-specific envelope contracts",
+      "token_estimate": 810,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "unified",
+          "memory",
+          "reserves",
+          "a",
+          "physical",
+          "sink",
+          "and",
+          "exposes",
+          "mode-specific",
+          "envelope",
           "contracts"
         ]
       }

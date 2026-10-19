@@ -1,0 +1,76 @@
+{
+  "index": 14,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "KV checkpoint and release separate tree ownership from request allocation",
+  "mechanism": "checkpoint_kv_cache requires an unfinished request, optionally publishes through tree_cache.checkpoint and advances prefix_len even when insertion is skipped. release_kv_cache first handles a Mamba-only allocation or a streaming session that claims the row. On the normal path it optionally checkpoints owned KV, requiring a finished request for a Mamba tree, then frees only the request-owned suffix after cache_protected_len, unlocks the tree, releases overallocation, calls on_release, frees the request row and marks KV released. Paged extension computes a conservative demand with per-request page and shard headroom, passes that estimate to get_extend_allocation_demand and evicts the returned demand, which need not equal the conservative estimate. The subsequent allocator result is checked and a missing allocation raises a visible prefill OOM error.",
+  "corrections": [
+    "The conservative estimate is an input to the allocator demand function, not necessarily the exact eviction request.",
+    "A checkpoint preserves a tree-owned prefix; releasing a request must not free that protected prefix.",
+    "Whole-file citations were replaced with the specific ownership and allocation branches; native hashing and speculative allocation claims are not included in this subset."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/mem_cache/common.py",
+      "line_start": 270,
+      "line_end": 279,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "31855ecda6410c78966952c3d19b1b6556f13a23b7378cc05df51320ba2e43f1",
+      "range_sha256": "61d4ff19b3d53de61588d552f1d074fdf7a15ddcac4edd1714f0175c1695db3c",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/common.py:0-18389"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/common.py#L270-L279"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/common.py",
+      "line_start": 395,
+      "line_end": 439,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "31855ecda6410c78966952c3d19b1b6556f13a23b7378cc05df51320ba2e43f1",
+      "range_sha256": "90e19434d1fa8c220ddc6bf9349fcbf831e46de1310d92156887a113045435f9",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/common.py:0-18389"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/common.py#L395-L439"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/allocation.py",
+      "line_start": 175,
+      "line_end": 201,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "5d1a6e591debfd92a97e4eea8d997c7a758d5d743461920421d55bdb24af5052",
+      "range_sha256": "9f4f307cf455b3e4c207443f485c2329e9071e5067d19f0ad02faea1a0225fb0",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/allocation.py:0-30485"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/allocation.py#L175-L201"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/allocation.py",
+      "line_start": 219,
+      "line_end": 246,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "5d1a6e591debfd92a97e4eea8d997c7a758d5d743461920421d55bdb24af5052",
+      "range_sha256": "c167655f1a4f5b7389ce9984bb4e8d1247bd0dd8fb2ed1d10630f23012a3749c",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/allocation.py:0-30485"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/allocation.py#L219-L246"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "c14afd519e6da9df552bd2528f6e925729dad0a59b58f71b3ac485198ed2763e",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "56bb260b6d7d6aeb63c7200971a4236c88e31e07957c7825516e6d50b08b3fee",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "8ba99ce6c0724883502520308cca625100aa2858ec546320027c789d6535c20b",
+    "original_receipt": "e96821b07d52e8cfdf5a50914cd7908d1ab12def61a066246bb7a0343dfd85c7",
+    "original_admission": "e4930254a4ab9ba74d34954bc75107d72327603dc8f56a60cfb9966c0867792c"
+  }
+}

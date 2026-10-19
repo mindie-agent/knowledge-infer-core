@@ -1,0 +1,124 @@
+{
+  "index": 17,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-core",
+  "level": "L2",
+  "title": "Unified memory reserves a physical sink and exposes mode-specific envelope contracts",
+  "mechanism": "Unified memory reserves a slot-zero sink equal to the maximum of one entry for every sub-pool and one whole page for non-Mamba sub-pools. A sub-pool must have a real slot above that floor. Unfused Mamba entry_bytes returns the raw host-entry bytes, whereas fused draft state is aligned through a separate path. MHA physical page moves assert a zero sub-pool anchor before copying; the shown MLA move and zero helpers do not perform that anchor assertion, although MLA transfer registration does. This is a source-level check asymmetry, not a demonstrated corruption. MLA and Mamba transfer metadata use the raw buffer pointer and envelope stride, with Mamba per-tensor state metadata empty. The factory feasibility helper rejects a byte budget below the sum of its itemized single-request floor; its livelock rationale is a source invariant, not a reproduced runtime event.",
+  "corrections": [
+    "Do not describe all Mamba entries as uniformly aligned.",
+    "Zero-anchor checks are path-specific; their asymmetry alone does not establish an actual device fault.",
+    "The accepted ranges do not prove MultiEndedAllocator compaction order or inter-stream synchronization."
+  ],
+  "source_scope": "Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.",
+  "supporting_ranges": [
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 350,
+      "line_end": 368,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "d4c27140a081827fb353ab6e5d3557987f3cb5e21f230d6a3af68380220e92c8",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:0-14427"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L350-L368"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 388,
+      "line_end": 409,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "1bca0708d7026d4990cb1e4eeb114069919a8c1f9c45add2078d4e0d68a11e03",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:14427-62664"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L388-L409"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 533,
+      "line_end": 542,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "5e28574897cc9a7b3ce731d5e371f0fdd354a485a10630d0291bdaa0635a85d6",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:14427-62664"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L533-L542"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 883,
+      "line_end": 903,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "094d751fcf390e99828c748a6d7d72dddfc5f01cd0077f37cbf103c2614f2448",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:14427-62664"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L883-L903"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 1013,
+      "line_end": 1025,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "c731be656e18d384b0c27dc3b013fb9fe25903b4e024b92e17505b03ec794f48",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:14427-62664"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1013-L1025"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 1041,
+      "line_end": 1068,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "af9e56fadb7ce32e068dee118aebb6a5360c39c985628b1979ff0f29aa2c35c2",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:14427-62664"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1041-L1068"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 1240,
+      "line_end": 1257,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "7a89145465675e450615a8a1b35bb8c9a9442073736d52c6abcf60540de10a5d",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:14427-62664"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1240-L1257"
+    },
+    {
+      "path": "python/sglang/srt/mem_cache/unified_memory_pool.py",
+      "line_start": 1545,
+      "line_end": 1567,
+      "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+      "source_sha256": "563c0d4ebdbcded68e1ba1ad551865e0cfb4c407634024c22ab1fba24151d4a6",
+      "range_sha256": "c9b332ee9d024dd2cc393cdd71dff9ad6da7f2acf75a61d25b299d2c02699499",
+      "unit_ids": [
+        "source:sglang:8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043:python/sglang/srt/mem_cache/unified_memory_pool.py:62664-101821"
+      ],
+      "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_memory_pool.py#L1545-L1567"
+    }
+  ],
+  "source_revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "accepted_body_sha256": "fe86dc518dc735a214fb1987c2fa31a9c2babcc4aa865999ab138bb67c15d1ff",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "sgl-project/sglang",
+  "editorial_packet_sha256": "56bb260b6d7d6aeb63c7200971a4236c88e31e07957c7825516e6d50b08b3fee",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "e4416a58fd7c361f551f8d846a86999e5e901a43ab01d92e769958be5dce441a",
+    "original_receipt": "dcdf6fe8382b8e910b52124242d5153ab8aa33ab9b3fb97f8a4840a15ef64e04",
+    "original_admission": "6b414fcb63590f7c8b0e6688456261999a9569b586c9993b3ea3ca4f6eb3ae1c"
+  }
+}
