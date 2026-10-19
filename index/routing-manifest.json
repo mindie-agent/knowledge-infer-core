@@ -1,0 +1,162 @@
+{
+  "closure": {
+    "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-tgi-v3-cancellation-and-batch-reclamation": [],
+    "unit-vllm-cancellation-and-block-reclamation": []
+  },
+  "digest": "77a42de81da38e712aaa8d3c52168701fc1fcd8aa3ee326330282fea5b6db799",
+  "generation": "acd4e19b4bdb5b5ce1fcc7741a8e1f0926f35a50071e2d99d3b3f92473dc9506",
+  "id_path": {
+    "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+    "unit-tgi-v3-cancellation-and-batch-reclamation": "serving/tgi-v3/unit-tgi-v3-cancellation-and-batch-reclamation.md",
+    "unit-vllm-cancellation-and-block-reclamation": "serving/vllm/unit-vllm-cancellation-and-block-reclamation.md"
+  },
+  "query_budget_excludes_build": true,
+  "schema_version": "mindie-routing-manifest/1",
+  "token_estimator": "utf8_bytes_div_4_ceiling",
+  "unit_count": 3,
+  "units": [
+    {
+      "category": "sop",
+      "closure_digest": "sha256:4d725f21f4e65cdb575e90c600a61aebd42e88c15e964cc0d476f6f589b692bb",
+      "conditions": {
+        "repository": "sgl-project/sglang",
+        "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
+      },
+      "content_digest": "sha256:6eb78ac9a351459ca5c30dc1cebf4e30662a80eb53a420b0b4726ec6ce1b1ad4",
+      "content_sha256": "6eb78ac9a351459ca5c30dc1cebf4e30662a80eb53a420b0b4726ec6ce1b1ad4",
+      "domain_path": "serving/sglang",
+      "evidence_strength": "single_observation",
+      "id": "unit-sglang-cancellation-and-cache-ownership",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/sglang-reviewed-source.json",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L2253-L2277",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L5548-L5689",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3713-L3763",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1126-L1297",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1379-L1386",
+          "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L354-L364"
+        ],
+        "source_digest": "216aeb7c82a645720df20329dd096ce2a51e8733856f5905a7d433840309511f",
+        "source_locator": "docs/evidence/sglang-reviewed-source.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Trace SGLang abort state, cache ownership and local asynchronous drains",
+      "token_estimate": 625,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "sglang",
+          "cancellation",
+          "reclamation",
+          "ownership",
+          "cache"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:4f3511bc3d8985ee45a1b16313e8a1e51b39f370fb39b8d0dd3c74d563d3ea21",
+      "conditions": {
+        "repository": "huggingface/text-generation-inference",
+        "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
+      },
+      "content_digest": "sha256:7b1feec659814f4c38d98c258195805f967b465fb137c22e7b241428c87b1147",
+      "content_sha256": "7b1feec659814f4c38d98c258195805f967b465fb137c22e7b241428c87b1147",
+      "domain_path": "serving/tgi-v3",
+      "evidence_strength": "single_observation",
+      "id": "unit-tgi-v3-cancellation-and-batch-reclamation",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/tgi-v3/unit-tgi-v3-cancellation-and-batch-reclamation.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/text-generation-inference-reviewed-source.json",
+          "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/backend.rs#L1-L572",
+          "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L84-L89",
+          "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L91-L98",
+          "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/block_allocator.rs#L1-L221",
+          "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/radix.rs#L1-L1041",
+          "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/client/sharded_client.rs#L1-L259"
+        ],
+        "source_digest": "8519a8d038aa254aa7c718c55e57d58d9357a4d46c48cc365d8232c7258233d4",
+        "source_locator": "docs/evidence/text-generation-inference-reviewed-source.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Trace TGI v3 channel closure, cached batches and shard result handling",
+      "token_estimate": 681,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "text-generation-inference",
+          "cancellation",
+          "reclamation",
+          "ownership",
+          "cache"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "closure_digest": "sha256:11855d2bbbc19949854399292fbe97fdab89390fa9ffa2b118b70a2aa830c02c",
+      "conditions": {
+        "repository": "vllm-project/vllm",
+        "revision": "752a3a504485790a2e8491cacbb35c137339ad34"
+      },
+      "content_digest": "sha256:c727bac94c37140e958b7164975c02a831827612b0126554e16e0306fb441578",
+      "content_sha256": "c727bac94c37140e958b7164975c02a831827612b0126554e16e0306fb441578",
+      "domain_path": "serving/vllm",
+      "evidence_strength": "single_observation",
+      "id": "unit-vllm-cancellation-and-block-reclamation",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/vllm/unit-vllm-cancellation-and-block-reclamation.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/vllm-reviewed-source.json",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2036-L2097",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2099-L2116",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2130-L2143",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2145-L2157",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2352-L2385",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2474-L2501",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2118-L2121",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L1499-L1517",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/block_pool.py#L614-L635",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/block_pool.py#L542-L572",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/block_pool.py#L574-L595",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/single_type_kv_cache_manager.py#L402-L410",
+          "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/single_type_kv_cache_manager.py#L384-L400"
+        ],
+        "source_digest": "4aa96aa6375feeb4dd9349a7cdfe7866897ea0355a9b336819de46ea6873f6bf",
+        "source_locator": "docs/evidence/vllm-reviewed-source.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Trace vLLM v1 cancellation, deferred block return and cache ownership",
+      "token_estimate": 846,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "vllm",
+          "cancellation",
+          "reclamation",
+          "ownership",
+          "cache"
+        ]
+      }
+    }
+  ]
+}

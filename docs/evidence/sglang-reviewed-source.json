@@ -1,0 +1,132 @@
+{
+  "parent_acceptance_sha256": "5fae1e866e6365bccd842863a485fbd20c5e7e8eb3e8294553e2319a55a20529",
+  "implementation": "SGLang",
+  "repository": "sgl-project/sglang",
+  "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+  "reviewed_conclusions": [
+    {
+      "conclusion_id": "cancel-then-verify-reclamation",
+      "accepted_claim": "At the pinned SGLang revision, abort_request records an in-flight chunked request for later handling, removes waiting requests directly, and marks running requests via to_finish. Its host-staged decode branch preserves the destination and prepares abort instead of invoking receiver.abort on that branch. The code and comments do not establish immediate termination of every already-launched device operation.",
+      "source_refs": [
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/managers/tokenizer_manager.py",
+          "git_blob_oid": "807eef50e48af1b0bed0c35d298f1a5844067888",
+          "source_sha256": "8ec0f948dfa68fa545616f34c28c7f9fc9d120c1c1d2ebf300cba506ddef1986",
+          "content_sha256": "f4822939e280a0aaffc00ac74cc2d510b701478ec75b1bb2eae473efd9435b7a",
+          "line_start": 2253,
+          "line_end": 2277,
+          "byte_start": 96506,
+          "byte_end": 97554,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/tokenizer_manager.py#L2253-L2277"
+        },
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/managers/scheduler.py",
+          "git_blob_oid": "30d0506c1b0d2851ceb2a323fbce34ab32492bdf",
+          "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+          "content_sha256": "f99696f79922b8e737526b71e9d6ccd9d82ee46f3170d4b919fc051c70f46209",
+          "line_start": 5548,
+          "line_end": 5689,
+          "byte_start": 243359,
+          "byte_end": 251098,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L5548-L5689"
+        },
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/managers/scheduler.py",
+          "git_blob_oid": "30d0506c1b0d2851ceb2a323fbce34ab32492bdf",
+          "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+          "content_sha256": "356b8a6fdd68e4eab144222d083217f854de59676a7e056414053bc4901b0db5",
+          "line_start": 3713,
+          "line_end": 3763,
+          "byte_start": 157245,
+          "byte_end": 159934,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L3713-L3763"
+        }
+      ]
+    },
+    {
+      "conclusion_id": "request-cache-pool-ownership",
+      "accepted_claim": "At the pinned SGLang revision, checkpoint rewrites request-to-token mappings, moves the request lock, and runs component cleanup. Session reference registration requires enable_session_radix_cache, is_finished, and a finish reason that is not FINISH_ABORT. _drain_device_frees dispatches FreeComponentDeviceSlot actions, whose downstream implementation is outside this accepted subset.",
+      "source_refs": [
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+          "git_blob_oid": "597e5369185e630a0004fd2d6983785797f53a5c",
+          "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+          "content_sha256": "3a20fa5c0617352cc19485b47d5fc54b429288fe6deb62747ed95f4fd7ffd098",
+          "line_start": 1126,
+          "line_end": 1297,
+          "byte_start": 47551,
+          "byte_end": 55089,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1126-L1297"
+        },
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+          "git_blob_oid": "597e5369185e630a0004fd2d6983785797f53a5c",
+          "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+          "content_sha256": "fdaafd0efcf976acd114d391b6d95b3723856fb7d4982f1d67370cd3ba560ebd",
+          "line_start": 1379,
+          "line_end": 1386,
+          "byte_start": 58468,
+          "byte_end": 58828,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L1379-L1386"
+        }
+      ]
+    },
+    {
+      "conclusion_id": "async-and-shard-completion-boundaries",
+      "accepted_claim": "At the pinned SGLang revision, _drain_async_work waits on each handle in its own work_list and then clears that list. This proves the inspected list is waited on in that method; it does not establish global completion of every cache, scheduler, transfer or rank operation. The host-staged abort path explicitly retains the host destination.",
+      "source_refs": [
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/managers/scheduler.py",
+          "git_blob_oid": "30d0506c1b0d2851ceb2a323fbce34ab32492bdf",
+          "source_sha256": "fc96ed4b680fdf55621a5397f844cfd4cbd30213f44eec8a888b7cce75cafe60",
+          "content_sha256": "f99696f79922b8e737526b71e9d6ccd9d82ee46f3170d4b919fc051c70f46209",
+          "line_start": 5548,
+          "line_end": 5689,
+          "byte_start": 243359,
+          "byte_end": 251098,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/managers/scheduler.py#L5548-L5689"
+        },
+        {
+          "source_id": "sglang",
+          "repo_url": "https://github.com/sgl-project/sglang",
+          "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043",
+          "path": "python/sglang/srt/mem_cache/unified_radix_cache.py",
+          "git_blob_oid": "597e5369185e630a0004fd2d6983785797f53a5c",
+          "source_sha256": "fe8b2abe96833858189504538e5c1c3047295b64e741d8f4d7aa326e900541f1",
+          "content_sha256": "bb8039e1d2b871616ce3a7d07ab948a5ebb03a2ee90705123e9092c36d63de8d",
+          "line_start": 354,
+          "line_end": 364,
+          "byte_start": 12750,
+          "byte_end": 13196,
+          "url": "https://github.com/sgl-project/sglang/blob/8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043/python/sglang/srt/mem_cache/unified_radix_cache.py#L354-L364"
+        }
+      ]
+    }
+  ],
+  "evidence_scope": "Static source observations at the pinned revision; no framework execution or performance measurement.",
+  "excluded_inferences": [
+    "Immediate kernel interruption",
+    "Physical device-memory deallocation",
+    "Cross-version invariance",
+    "Global quiescence",
+    "Reproduced distributed or memory-safety fault"
+  ]
+}

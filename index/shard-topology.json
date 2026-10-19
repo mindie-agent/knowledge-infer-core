@@ -1,0 +1,157 @@
+{
+  "closure": {
+    "unit-sglang-cancellation-and-cache-ownership": [],
+    "unit-tgi-v3-cancellation-and-batch-reclamation": [],
+    "unit-vllm-cancellation-and-block-reclamation": []
+  },
+  "digest": "4cdf4ea777eb859c1f937d8c4eab64402485169ecfd63cced5eeb470241ee4d6",
+  "federation": {
+    "corpus": {
+      "automatic": false,
+      "bytes": 14691,
+      "estimated_tokens": 2152,
+      "kind": "federation",
+      "path": ".",
+      "unit_ids": [
+        "unit-sglang-cancellation-and-cache-ownership",
+        "unit-tgi-v3-cancellation-and-batch-reclamation",
+        "unit-vllm-cancellation-and-block-reclamation"
+      ],
+      "units": 3
+    },
+    "domains": [
+      {
+        "automatic": false,
+        "bytes": 14691,
+        "estimated_tokens": 2152,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "serving",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-sglang-cancellation-and-cache-ownership",
+          "unit-tgi-v3-cancellation-and-batch-reclamation",
+          "unit-vllm-cancellation-and-block-reclamation"
+        ],
+        "units": 3
+      }
+    ]
+  },
+  "index_digest": "77a42de81da38e712aaa8d3c52168701fc1fcd8aa3ee326330282fea5b6db799",
+  "leaves": [
+    {
+      "automatic": false,
+      "bytes": 4223,
+      "estimated_tokens": 625,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/sglang",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-sglang-cancellation-and-cache-ownership"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 4544,
+      "estimated_tokens": 681,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/tgi-v3",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-tgi-v3-cancellation-and-batch-reclamation"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5924,
+      "estimated_tokens": 846,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/vllm",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-cancellation-and-block-reclamation"
+      ],
+      "units": 1
+    }
+  ],
+  "schema": "mindie-shard-topology/1",
+  "two_level_subtrees": [
+    {
+      "automatic": false,
+      "bytes": 4223,
+      "estimated_tokens": 625,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/sglang",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-sglang-cancellation-and-cache-ownership"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 4544,
+      "estimated_tokens": 681,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/tgi-v3",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-tgi-v3-cancellation-and-batch-reclamation"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5924,
+      "estimated_tokens": 846,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/vllm",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-cancellation-and-block-reclamation"
+      ],
+      "units": 1
+    }
+  ],
+  "unit_count": 3,
+  "units": {
+    "unit-sglang-cancellation-and-cache-ownership": {
+      "bytes": 4223,
+      "category": "sop",
+      "content_sha256": "6eb78ac9a351459ca5c30dc1cebf4e30662a80eb53a420b0b4726ec6ce1b1ad4",
+      "domain_path": "serving/sglang",
+      "estimated_tokens": 625,
+      "evidence_strength": "single_observation",
+      "path": "serving/sglang/unit-sglang-cancellation-and-cache-ownership.md",
+      "tier": "L2"
+    },
+    "unit-tgi-v3-cancellation-and-batch-reclamation": {
+      "bytes": 4544,
+      "category": "sop",
+      "content_sha256": "7b1feec659814f4c38d98c258195805f967b465fb137c22e7b241428c87b1147",
+      "domain_path": "serving/tgi-v3",
+      "estimated_tokens": 681,
+      "evidence_strength": "single_observation",
+      "path": "serving/tgi-v3/unit-tgi-v3-cancellation-and-batch-reclamation.md",
+      "tier": "L2"
+    },
+    "unit-vllm-cancellation-and-block-reclamation": {
+      "bytes": 5924,
+      "category": "sop",
+      "content_sha256": "c727bac94c37140e958b7164975c02a831827612b0126554e16e0306fb441578",
+      "domain_path": "serving/vllm",
+      "estimated_tokens": 846,
+      "evidence_strength": "single_observation",
+      "path": "serving/vllm/unit-vllm-cancellation-and-block-reclamation.md",
+      "tier": "L2"
+    }
+  }
+}

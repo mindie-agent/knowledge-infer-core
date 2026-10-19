@@ -1,0 +1,118 @@
+{
+  "parent_acceptance_sha256": "5fae1e866e6365bccd842863a485fbd20c5e7e8eb3e8294553e2319a55a20529",
+  "implementation": "TGI v3",
+  "repository": "huggingface/text-generation-inference",
+  "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "reviewed_conclusions": [
+    {
+      "conclusion_id": "cancel-then-verify-reclamation",
+      "accepted_claim": "At the pinned TGI v3 revision, the response channel is attached to a queued Entry. In the inspected prefill path, client.prefill returns before send_responses observes channel closure and filter_send_generations removes entries; filter_batch then updates or clears the next cached batch. This is not a pre-forward cancellation acknowledgement.",
+      "source_refs": [
+        {
+          "source_id": "text-generation-inference",
+          "repo_url": "https://github.com/huggingface/text-generation-inference",
+          "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+          "path": "backends/v3/src/backend.rs",
+          "git_blob_oid": "98e8d76f09fa7b8dcfed618c8f4978f7a598e60c",
+          "source_sha256": "2448b697b940e68d8f2f1252d4d5db226edda94c23c902e8cd094060c7d66dda",
+          "content_sha256": "2448b697b940e68d8f2f1252d4d5db226edda94c23c902e8cd094060c7d66dda",
+          "line_start": 1,
+          "line_end": 572,
+          "byte_start": 0,
+          "byte_end": 23073,
+          "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/backend.rs#L1-L572"
+        }
+      ]
+    },
+    {
+      "conclusion_id": "request-cache-pool-ownership",
+      "accepted_claim": "At the pinned TGI revision, FilterBatch pops, filters and reinserts cached batch state. SimpleAllocator.free extends a free-block list; RadixAllocator.free decreases a prefix reference, may insert uncached prefill tokens into the trie, returns duplicate/non-prefill blocks to its free list, and leaves retained prefix blocks to later trie eviction. These are ownership and allocator observations, not measured HBM release.",
+      "source_refs": [
+        {
+          "source_id": "text-generation-inference",
+          "repo_url": "https://github.com/huggingface/text-generation-inference",
+          "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+          "path": "server/text_generation_server/server.py",
+          "git_blob_oid": "87c51eb90283dea8f0cef8d00f50ae8910515e67",
+          "source_sha256": "b461eef4bfd166ade3ab02d5e5ccc141e86c2d50f071dee45026c04a6b40bf38",
+          "content_sha256": "8b74d16c9b99f09cb63b978307d3fb33c15574a050240d3657332cce079b1695",
+          "line_start": 84,
+          "line_end": 89,
+          "byte_start": 2755,
+          "byte_end": 2976,
+          "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L84-L89"
+        },
+        {
+          "source_id": "text-generation-inference",
+          "repo_url": "https://github.com/huggingface/text-generation-inference",
+          "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+          "path": "server/text_generation_server/server.py",
+          "git_blob_oid": "87c51eb90283dea8f0cef8d00f50ae8910515e67",
+          "source_sha256": "b461eef4bfd166ade3ab02d5e5ccc141e86c2d50f071dee45026c04a6b40bf38",
+          "content_sha256": "d96747f1c1d7503357a3d7c9968ca0fab662477c62625808d36b586e71afd559",
+          "line_start": 91,
+          "line_end": 98,
+          "byte_start": 2977,
+          "byte_end": 3361,
+          "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L91-L98"
+        },
+        {
+          "source_id": "text-generation-inference",
+          "repo_url": "https://github.com/huggingface/text-generation-inference",
+          "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+          "path": "backends/v3/src/block_allocator.rs",
+          "git_blob_oid": "c8b2920414e1e1b03c4b872de906b6b863e06977",
+          "source_sha256": "887cd6b84ebed0c4acca77751c522c4265fb5666d6164beb18547941e2febc49",
+          "content_sha256": "887cd6b84ebed0c4acca77751c522c4265fb5666d6164beb18547941e2febc49",
+          "line_start": 1,
+          "line_end": 221,
+          "byte_start": 0,
+          "byte_end": 6414,
+          "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/block_allocator.rs#L1-L221"
+        },
+        {
+          "source_id": "text-generation-inference",
+          "repo_url": "https://github.com/huggingface/text-generation-inference",
+          "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+          "path": "backends/v3/src/radix.rs",
+          "git_blob_oid": "aea69693f96203a16b3948935248525fb354dc0e",
+          "source_sha256": "e50be29cef679fcf2ab0801754e40926b0ae1bd2590b48ac67e8ee7f4ccf7fed",
+          "content_sha256": "e50be29cef679fcf2ab0801754e40926b0ae1bd2590b48ac67e8ee7f4ccf7fed",
+          "line_start": 1,
+          "line_end": 1041,
+          "byte_start": 0,
+          "byte_end": 37687,
+          "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/radix.rs#L1-L1041"
+        }
+      ]
+    },
+    {
+      "conclusion_id": "async-and-shard-completion-boundaries",
+      "accepted_claim": "At the pinned TGI revision, ShardedClient.clear_cache joins all shard futures and collects Result values, whereas filter_batch joins the futures but returns only the last Result. Joining all futures and propagating every shard error are different properties. No reproduced distributed failure, memory-safety failure or global-quiescence guarantee is claimed.",
+      "source_refs": [
+        {
+          "source_id": "text-generation-inference",
+          "repo_url": "https://github.com/huggingface/text-generation-inference",
+          "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+          "path": "backends/v3/src/client/sharded_client.rs",
+          "git_blob_oid": "4701c56005ff630e8aef58196dff5821dc01cb2a",
+          "source_sha256": "cde090ea108e8c5f9cb133b99ef5aa79054fabada71afd8f7cfdf6bbe11c0da4",
+          "content_sha256": "cde090ea108e8c5f9cb133b99ef5aa79054fabada71afd8f7cfdf6bbe11c0da4",
+          "line_start": 1,
+          "line_end": 259,
+          "byte_start": 0,
+          "byte_end": 8970,
+          "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/v3/src/client/sharded_client.rs#L1-L259"
+        }
+      ]
+    }
+  ],
+  "evidence_scope": "Static source observations at the pinned revision; no framework execution or performance measurement.",
+  "excluded_inferences": [
+    "Immediate kernel interruption",
+    "Physical device-memory deallocation",
+    "Cross-version invariance",
+    "Global quiescence",
+    "Reproduced distributed or memory-safety fault"
+  ]
+}

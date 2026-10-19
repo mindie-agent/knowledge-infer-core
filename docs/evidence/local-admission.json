@@ -1,0 +1,45 @@
+{
+  "parent_acceptance_sha256": "5fae1e866e6365bccd842863a485fbd20c5e7e8eb3e8294553e2319a55a20529",
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "admitted_unit_ids": [
+    "unit-vllm-cancellation-and-block-reclamation",
+    "unit-sglang-cancellation-and-cache-ownership",
+    "unit-tgi-v3-cancellation-and-batch-reclamation"
+  ],
+  "generation_scope": "Explicit local admission and export only.",
+  "decision_preparation": "Prepared from the independently reviewed source subset; no additional model call.",
+  "runtime_base_commit": "62f66e471bf12c6d8541c79697325612ac018d23",
+  "runtime_working_source_sha256": {
+    "mindie_knowledge/graded/distill.py": "16bb40a3ba4941b209f4e677204f904b5d84cfa7d32a59cee9d2707fbe56a8bb",
+    "mindie_knowledge/graded/units.py": "7746e5d5a077618a2c1da589cd51851effe8cd45aeadd3c063fc09633798d7c5",
+    "mindie_knowledge/graded/publication.py": "103a50a62433dce920dd2095987808e6215d3b54e49f057aead3c3386b6b4dbf",
+    "mindie_knowledge/graded/conditions.py": "6ea8a14fb33209131eaa4162c013957559d84d29b53e7ff5ce9c33aa64c1e70e",
+    "mindie_knowledge/redact.py": "3ec596ccef8c1eb2b54986a5b57c7b9635294e3922345b49cb4d33f8f1c9b8cd"
+  },
+  "redaction": "Actual Gitleaks through prepare_request, followed by the existing deterministic proposal scan.",
+  "selected_sources": [
+    {
+      "path": "docs/evidence/vllm-reviewed-source.json",
+      "source_digest": "4aa96aa6375feeb4dd9349a7cdfe7866897ea0355a9b336819de46ea6873f6bf",
+      "redacted_sha256": "4aa96aa6375feeb4dd9349a7cdfe7866897ea0355a9b336819de46ea6873f6bf"
+    },
+    {
+      "path": "docs/evidence/sglang-reviewed-source.json",
+      "source_digest": "216aeb7c82a645720df20329dd096ce2a51e8733856f5905a7d433840309511f",
+      "redacted_sha256": "216aeb7c82a645720df20329dd096ce2a51e8733856f5905a7d433840309511f"
+    },
+    {
+      "path": "docs/evidence/text-generation-inference-reviewed-source.json",
+      "source_digest": "8519a8d038aa254aa7c718c55e57d58d9357a4d46c48cc365d8232c7258233d4",
+      "redacted_sha256": "8519a8d038aa254aa7c718c55e57d58d9357a4d46c48cc365d8232c7258233d4"
+    }
+  ],
+  "formal_publication": "Pending an exact reviewed contract/2 runtime pin; no publication contract or remote was invented.",
+  "model_calls": 0,
+  "framework_execution": 0,
+  "npu_calls": 0,
+  "remote_writes": 0
+}

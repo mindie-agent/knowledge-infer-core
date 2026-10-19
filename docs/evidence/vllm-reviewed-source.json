@@ -1,0 +1,256 @@
+{
+  "parent_acceptance_sha256": "5fae1e866e6365bccd842863a485fbd20c5e7e8eb3e8294553e2319a55a20529",
+  "implementation": "vLLM v1",
+  "repository": "vllm-project/vllm",
+  "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+  "reviewed_conclusions": [
+    {
+      "conclusion_id": "cancel-then-verify-reclamation",
+      "accepted_claim": "At the pinned vLLM revision, finish_requests removes valid requests from scheduling queues, sets terminal status, and calls _free_request. Remote-KV receive state and connector return values can delay _free_blocks. _free_blocks calls _free_request_blocks, which either frees immediately or queues blocks behind a processed-step fence; update_from_output advances that fence before draining deferred frees.",
+      "source_refs": [
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "6385885c87f276ca6a5aefdc55469673965ddfdd8505a3f92cfc1802ecf05c30",
+          "line_start": 2036,
+          "line_end": 2097,
+          "byte_start": 97433,
+          "byte_end": 100059,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2036-L2097"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "c1abfbf414ae2ef95c4d8fd7728e58dead9b1e491144883ec347eea09993c10c",
+          "line_start": 2099,
+          "line_end": 2116,
+          "byte_start": 100060,
+          "byte_end": 100779,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2099-L2116"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "4e1f2eb187f3af9b4bbf50cfc6267ff997ef5168147908956ac44bcbc91bf376",
+          "line_start": 2130,
+          "line_end": 2143,
+          "byte_start": 101147,
+          "byte_end": 101835,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2130-L2143"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "527bf357771442ac874b048aa1cb3b694f4280e8fd5fc169a32bf33c97ba1121",
+          "line_start": 2145,
+          "line_end": 2157,
+          "byte_start": 101836,
+          "byte_end": 102438,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2145-L2157"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "35f2ada4aa06da0a1d8b7e487e31ff4f14a5831d2373fecda039d7f521152fa3",
+          "line_start": 2352,
+          "line_end": 2385,
+          "byte_start": 110841,
+          "byte_end": 112263,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2352-L2385"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "17caa15190caede9733f355e87da42c8c62bd70fc1abfd7ca0f2a92648d67b0a",
+          "line_start": 2474,
+          "line_end": 2501,
+          "byte_start": 116214,
+          "byte_end": 117572,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2474-L2501"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "b24b618a274d6f5cfed0225ad9298a22bbc64135ff71ae2ebbebf9f817082be3",
+          "line_start": 2118,
+          "line_end": 2121,
+          "byte_start": 100780,
+          "byte_end": 100952,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2118-L2121"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "95ea872b16694c5dffca0b4ce209886aed0ddb217f273a065ef9aa0a0fda08f7",
+          "line_start": 1499,
+          "line_end": 1517,
+          "byte_start": 71911,
+          "byte_end": 72910,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L1499-L1517"
+        }
+      ]
+    },
+    {
+      "conclusion_id": "request-cache-pool-ownership",
+      "accepted_claim": "At the pinned vLLM revision, pop_blocks_for_free removes request bookkeeping without returning blocks to the pool. BlockPool.free_blocks decrements references and requeues zero-reference non-null blocks. Cached hashes are evicted when get_new_blocks selects a block with caching enabled; these methods do not demonstrate physical device-memory deallocation.",
+      "source_refs": [
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/block_pool.py",
+          "git_blob_oid": "81ac05f36589f145c7b2e9706e77dfe81d61eb5b",
+          "source_sha256": "3fc5dfe0ab7ccc6206f6eb7886b2aad15384f92708e6b9f7e5ec7838b7379abe",
+          "content_sha256": "12a61c9f2fd6f96de2928520d8eae358ba3e4301ca7e6432101ff0afb6414008",
+          "line_start": 614,
+          "line_end": 635,
+          "byte_start": 24863,
+          "byte_end": 25869,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/block_pool.py#L614-L635"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/block_pool.py",
+          "git_blob_oid": "81ac05f36589f145c7b2e9706e77dfe81d61eb5b",
+          "source_sha256": "3fc5dfe0ab7ccc6206f6eb7886b2aad15384f92708e6b9f7e5ec7838b7379abe",
+          "content_sha256": "ea37a4877e4f8296a7991949836458793d635f6550fabcc898aa5123d543bcc9",
+          "line_start": 542,
+          "line_end": 572,
+          "byte_start": 22202,
+          "byte_end": 23371,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/block_pool.py#L542-L572"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/block_pool.py",
+          "git_blob_oid": "81ac05f36589f145c7b2e9706e77dfe81d61eb5b",
+          "source_sha256": "3fc5dfe0ab7ccc6206f6eb7886b2aad15384f92708e6b9f7e5ec7838b7379abe",
+          "content_sha256": "84aa55d24b100ea0f864ce6de5b846335fce7d07e6771aab0f8df935f2e079a7",
+          "line_start": 574,
+          "line_end": 595,
+          "byte_start": 23372,
+          "byte_end": 24141,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/block_pool.py#L574-L595"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/single_type_kv_cache_manager.py",
+          "git_blob_oid": "642fe3e6a0863cb0eb183e536bfff9acde86cfb0",
+          "source_sha256": "26d78d1bd457f7e26debaeb2918734c7b1f0ca2830c4d90b054dff7c940741b1",
+          "content_sha256": "e55712e696dd9c09fa0109f5bafa308ae83ca8d8421d04388027385630ea9dee",
+          "line_start": 402,
+          "line_end": 410,
+          "byte_start": 17127,
+          "byte_end": 17456,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/single_type_kv_cache_manager.py#L402-L410"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/single_type_kv_cache_manager.py",
+          "git_blob_oid": "642fe3e6a0863cb0eb183e536bfff9acde86cfb0",
+          "source_sha256": "26d78d1bd457f7e26debaeb2918734c7b1f0ca2830c4d90b054dff7c940741b1",
+          "content_sha256": "7db188789955cc23ba39030096205cb8f6ab2a904ec57b507bf3c87376590c9a",
+          "line_start": 384,
+          "line_end": 400,
+          "byte_start": 16389,
+          "byte_end": 17126,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/single_type_kv_cache_manager.py#L384-L400"
+        }
+      ]
+    },
+    {
+      "conclusion_id": "async-and-shard-completion-boundaries",
+      "accepted_claim": "At the pinned vLLM revision, finished_recving and finished_sending connector outputs drive separate scheduler branches; finished receiving may mark a waiting request ready or free a terminal request. Deferred block-pool return additionally depends on the processed-step fence.",
+      "source_refs": [
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "4e1f2eb187f3af9b4bbf50cfc6267ff997ef5168147908956ac44bcbc91bf376",
+          "line_start": 2130,
+          "line_end": 2143,
+          "byte_start": 101147,
+          "byte_end": 101835,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2130-L2143"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "527bf357771442ac874b048aa1cb3b694f4280e8fd5fc169a32bf33c97ba1121",
+          "line_start": 2145,
+          "line_end": 2157,
+          "byte_start": 101836,
+          "byte_end": 102438,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2145-L2157"
+        },
+        {
+          "source_id": "vllm",
+          "repo_url": "https://github.com/vllm-project/vllm",
+          "revision": "752a3a504485790a2e8491cacbb35c137339ad34",
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "git_blob_oid": "8e01035ae68792759cfe96161e67b51c3210679d",
+          "source_sha256": "e25d4c9a95abdbe8e516714ed02574d929ca0d5e8c11c4cc73b84d3a3b905443",
+          "content_sha256": "17caa15190caede9733f355e87da42c8c62bd70fc1abfd7ca0f2a92648d67b0a",
+          "line_start": 2474,
+          "line_end": 2501,
+          "byte_start": 116214,
+          "byte_end": 117572,
+          "url": "https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/v1/core/sched/scheduler.py#L2474-L2501"
+        }
+      ]
+    }
+  ],
+  "evidence_scope": "Static source observations at the pinned revision; no framework execution or performance measurement.",
+  "excluded_inferences": [
+    "Immediate kernel interruption",
+    "Physical device-memory deallocation",
+    "Cross-version invariance",
+    "Global quiescence",
+    "Reproduced distributed or memory-safety fault"
+  ]
+}
