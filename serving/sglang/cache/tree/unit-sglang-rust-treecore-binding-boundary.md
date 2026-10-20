@@ -41,7 +41,7 @@ RustUnifiedTreeCore rejects session radix caching, component-registry overrides 
 
 The adapter exposes stepwise eviction: evict_device_next_node asks the native core to choose a candidate and returns a Python result containing node_id, progress and backup metadata for the surrounding loop. evict_device_leaf checks that the requested write-back mode agrees with the current configuration. match_prefix delegates its tree matching through one binding call, while insertion uses begin, optional resume and end calls to coordinate actions around the native operation. These Python entrypoints establish the ownership boundary and protocol shape; they do not reveal or verify the native Rust selection algorithm, memory safety or performance.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Initial enable_hicache=False is mutable; set_hicache changes it later.
 - Describe native selection versus Python orchestration without treating the adapter as evidence for the Rust algorithm.

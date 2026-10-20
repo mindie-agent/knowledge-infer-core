@@ -40,7 +40,7 @@ triggers:
 ---
 At the pinned SGLang revision, speculative HiSparse swap-in is restricted by its explicit enablement, speculative algorithm and draft-window checks. Ready-prefix accounting waits for the request-specific backup event before publishing the backed-up prefix. request_finished first waits for pending swap-in and backup work, then frees the persistent and scratch device allocations currently owned by the request. It uses allocated length rather than sequence length for the owned device range, clears the full request-to-token mapping, frees host allocation and resets request bookkeeping. These operations establish an ordering and ownership contract in the source; they do not establish a measured device cleanup duration or prove that every sparse-cache path uses identical synchronization.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Retain waits for both swap-in and backup instead of treating a logical request finish as immediate safe reuse.
 - Use the actual allocated range and current persistent/scratch union; do not substitute the live sequence length.

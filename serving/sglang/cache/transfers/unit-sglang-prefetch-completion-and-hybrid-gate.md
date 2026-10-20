@@ -36,7 +36,7 @@ _handle_prefetch_result owns the completed host span and, when acknowledged as d
 
 The hybrid gate removes KV-derived transfers before checking completeness. It rejects an incomplete result only when non-KV pool transfers remain: completed_tokens must match the expected hash-page span, and each transfer needs keys and a matching hit count. With no such transfer, partial completion can pass this gate. The comment describes an upstream cross-rank minimum; the helper itself performs no reduction.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Hybrid completeness is conditional on non-KV transfers, not a blanket all-or-nothing policy for every layout.
 - Only the newly loaded tail remains unresolved after the normal insertion; the existing prefix is resolved locally.

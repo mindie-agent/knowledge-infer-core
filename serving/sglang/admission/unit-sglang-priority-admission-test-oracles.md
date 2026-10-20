@@ -39,7 +39,7 @@ The priority-scheduling tests configure one running slot, three queued slots and
 
 Queue pressure has two separately asserted outcomes. Behind a priority-one holder, queued priorities two, three and four are later displaced by priorities five, six and seven: the displaced requests expect HTTP 503 with the higher-priority-abort message, while new requests succeed and finish seven, six, five. Behind a priority-seven holder with six, five and four queued, incoming three, two and one instead expect HTTP 503 with the queue-full message. These are explicit test oracles for selected workloads; they do not expose the scheduler's comparator, prove a general victim-selection rule, or establish that this test suite passed on the current environment.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Describe the asserted scenarios and finish order without promoting them to a full comparator or victim-selection implementation.
 - The response helper uses zip; this subset does not claim exhaustive cardinality validation for other cases.

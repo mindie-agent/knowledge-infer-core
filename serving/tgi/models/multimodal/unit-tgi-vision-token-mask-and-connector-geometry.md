@@ -42,7 +42,7 @@ triggers:
 ---
 Idefics2/3 load vision and connector weights through an unquantized loader while preserving a separate text-model quantization configuration. Both filter tensor-valued padding images, run vision and connector stages, stack per-row features, then assign flattened image features into image-token embedding positions. Idefics2 uses learned Perceiver latents; Idefics3 folds a square patch grid with pixel shuffle before projection. Their text forwards pass paged-attention metadata but replace prefill_cache_indices with None.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The all-zero test is a tensor equality heuristic, not a semantic test for black images.
 - When the initial pixel_attention_mask is None and a second row is processed, the loop uses the originally captured all_pixel_mask=None after mutating the local mask on the first row. Preserve this source-level failure path; actual caller reachability was not run.

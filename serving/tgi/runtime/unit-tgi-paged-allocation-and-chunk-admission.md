@@ -40,7 +40,7 @@ triggers:
 ---
 TGI v3 uses a serialized allocator for non-padding batches and attaches BlockAllocation ownership to each admitted entry. Dropping an owned allocation queues a free operation; it does not synchronously prove reclamation. Prefix-cached requests leave at least one token to compute. Chunking allows partial postfix admission and removes the min/max size limit from later concatenations, whereas the initial batch still receives max_batch_size.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Zero-budget rejection belongs to Queue::next_batch:93-95; block rounding belongs to State::next_batch:264-265.
 - Include backend.rs:160 when citing waiting_tokens initialization.

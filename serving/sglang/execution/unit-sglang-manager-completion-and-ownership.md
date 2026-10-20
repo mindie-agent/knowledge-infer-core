@@ -46,7 +46,7 @@ triggers:
 ---
 At the pinned SGLang revision, HostCopyDone.query reports completion even when a copy failed; synchronize waits and rethrows a stored error. The copy worker signals completion in finally after waiting for the producer event and using its private stream, while shutdown only joins for the requested timeout without a post-join liveness check. FanOutCommunicator queueing calls share an untagged event and result list, clear them only after the wait returns, and count received responses against fan_out. Cancellation of a waiter does not itself correlate late responses or clear this shared state. HiCache _page_transfer continues producing one PrefetchAck per storage batch after cooperative termination or a failed batch; the consumer MIN-reduces completed token counts across completion groups. DPBudget speculatively increments requests and estimated input tokens; refresh is throttled to 20 ms and total_tokens_scheduler charges len(input_ids). This is a dispatch heuristic, not an observed completion cost. Follow-bootstrap routing takes bootstrap_room modulo the entire worker list without checking active status at that point; elastic activation asserts that its socket was already bound, so an inactive slot does not necessarily mean a None socket.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Completion is not copy success; destination validity requires the error-bearing synchronization path.
 - Untagged shared communicator state does not prove that an actual race occurred in a running service.

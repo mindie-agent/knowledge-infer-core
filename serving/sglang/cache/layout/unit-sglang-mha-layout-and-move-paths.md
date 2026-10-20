@@ -39,7 +39,7 @@ MHATokenToKVPool treats an explicit kv_cache_layout as a label and disables the 
 
 move_kv_cache returns immediately for a zero-layer pool, calls the optional out-of-bounds detection helper, and handles HND by converting source and target slots into page/offset coordinates for assignment. The other path selects configured native movement or the tiled-copy implementation. The latter returns for empty locations and otherwise requires _kv_copy_config. These branches explain which movement implementation is reached; merely calling maybe_detect_oob does not establish that bounds checks are always active.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Name the configured native branch without inferring an environment-setting origin from this method alone.
 - Preserve the optional nature of the out-of-bounds helper.

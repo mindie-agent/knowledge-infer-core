@@ -41,7 +41,7 @@ triggers:
 ---
 RW attention uses separate MQA/MHA and grouped-head mappings; its parallel-attention layer combines attention and MLP outputs before all-reduce. StarCoder2 applies prefill_cache_indices to both stored K/V rows and outer slots, while its KV-head count uses integer division by world size. Gemma3's processor constructs its own fixed image processor and expands image placeholders, but its Pan-and-Scan crop-description assignment does not update the text list later tokenized.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - StarCoder2 sequence-length clamping at603-610 is guarded by prefill_cache_indices is None and max_past is not None, not explicitly by decode mode. The comment alone does not prove prefill can never reach it.
 - StarCoder2 checks query-head divisibility but floor-divides KV heads; downstream accepted configurations and actual device failures were not tested.

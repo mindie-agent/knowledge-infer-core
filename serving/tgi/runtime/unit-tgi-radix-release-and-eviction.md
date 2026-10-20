@@ -39,7 +39,7 @@ triggers:
 ---
 TGI's radix allocator increments the matched prefix reference before reclaiming suffix blocks and undoes that reference if allocation fails. Freeing an allocation releases its reference, inserts aligned prefill content into the trie, returns duplicate-prefix blocks and releases non-prefill suffix blocks. Trie eviction selects unreferenced leaves and truncates a leaf when only part is needed; it can return fewer blocks than requested when reclaimable leaves are exhausted.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Remove the false whole-node eviction overshoot claim: a whole leaf is removed only when its size is at most the remaining need; otherwise suffix truncation is exact.
 - The subtraction underflow condition is prefix_len > tokens, not any non-matching prefill.

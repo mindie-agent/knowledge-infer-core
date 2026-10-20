@@ -42,7 +42,7 @@ triggers:
 ---
 Forward-pass metrics initialization is conditional on observability enablement, attention-TP rank zero and the final PP rank. This initialization always installs or reuses a DeviceTimer and sets _fpm_uses_device_timer true. The emit method contains a monotonic fallback, but the shown normal initialization does not make that fallback reachable; a zero accumulated device time suppresses emission. Output-stream acceptance applies its beam gate before its finished-request branch, so only a finished beam leader passes that gate. Nonterminal streaming uses unsent-token thresholds and may suppress a stop-string prefix. Ordinary full-pool usage subtracts both available and evictable capacity; the shown hybrid-SWA statistics path additionally clamps full and SWA usage when HiSparse is enabled.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not describe the monotonic fallback as an observed normal FPM execution path.
 - Finished requests are still subject to the earlier beam gate.

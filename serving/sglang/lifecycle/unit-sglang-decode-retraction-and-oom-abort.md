@@ -43,7 +43,7 @@ triggers:
 ---
 ScheduleBatch.release_req conditionally backs up decode KV to host, then releases request ownership, evicts as required and resets request state. During decode retraction the loop avoids retracting the last remaining request. If memory still cannot satisfy that last request, a separate path marks it aborted for out-of-memory and removes it through batch filtering; an empty batch is therefore a valid resulting state. filter_batch explicitly clears the request list when the retained index set is empty. Avoiding the final normal retraction is not an unconditional guarantee that one request survives.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Replace the always-keep-one assertion with the separate last-request OOM-abort behavior.
 - Host backup is conditional and should not be assumed for every request release.

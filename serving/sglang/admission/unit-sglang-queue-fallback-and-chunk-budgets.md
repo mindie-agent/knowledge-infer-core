@@ -41,7 +41,7 @@ triggers:
 ---
 The configured LPM or HRRN policy can return an active FCFS policy when the waiting queue exceeds its configured threshold. However, calc_priority checks the configured self.policy for the explicit FCFS sorting branch; the active-policy fallback reaches a pass branch and preserves existing queue order. Thus the threshold fallback is not evidence of a newly sorted FCFS queue. Prefill budget evaluation distinguishes NO_TOKEN for memory or Mamba exhaustion from OTHER for input, diffusion-model or chunk limits. Replay can reduce the effective chunk limit, and later alignment rounds a permitted chunk down to the required boundary; a successful budget check need not admit the full remaining request.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not equate the active fallback label with execution of the configured-FCFS sort.
 - Keep memory/token exhaustion separate from other scheduling-budget limits.

@@ -46,7 +46,7 @@ triggers:
 ---
 Unified memory reserves a slot-zero sink equal to the maximum of one entry for every sub-pool and one whole page for non-Mamba sub-pools. A sub-pool must have a real slot above that floor. Unfused Mamba entry_bytes returns the raw host-entry bytes, whereas fused draft state is aligned through a separate path. MHA physical page moves assert a zero sub-pool anchor before copying; the shown MLA move and zero helpers do not perform that anchor assertion, although MLA transfer registration does. This is a source-level check asymmetry, not a demonstrated corruption. MLA and Mamba transfer metadata use the raw buffer pointer and envelope stride, with Mamba per-tensor state metadata empty. The factory feasibility helper rejects a byte budget below the sum of its itemized single-request floor; its livelock rationale is a source invariant, not a reproduced runtime event.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not describe all Mamba entries as uniformly aligned.
 - Zero-anchor checks are path-specific; their asymmetry alone does not establish an actual device fault.

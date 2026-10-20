@@ -42,7 +42,7 @@ triggers:
 ---
 SchedulerInternalStateController validates every requested update before its apply loop and catches UpdateRejected only during validation. The apply loop can directly mutate worker state before a later handler fails; no rollback is shown. DFlash acceptance-threshold relaxation is rejected while an unfinished request carries a sampling mask, including running and PP batches, waiting and grammar queues, chunked requests, and decode preallocation, transfer, retracted and held-rebootstrap queues. The generic pool identity adds available, evictable, protected, session-held and uncached tokens. Hybrid-SSM total capacity comes from req_to_token_pool.schedulable_token_capacity. Page-interleaved sharding uses aggregate free pages and checks alignment; the separate legacy DCP branch tolerates a residual mismatch. SWA request-ring token conservation is skipped, and the request-pool check instead compares free slots plus session-held requests with size plus preallocation headroom.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Validate-then-apply is not an atomic transaction.
 - The sampling-mask function actually begins at line 255 and its final queue branches and predicate end at 282; the model review range 252-279 was still incomplete.

@@ -41,7 +41,7 @@ The DSA pool derives index_page_size from attention page_size divided by index_k
 
 Compression tails are allocated only when index_kpool is greater than one and compression is enabled, with max_running_requests required. Key and score tails use bf16, an extra request row and width index_kpool plus tail_extra_slots; skipped layers use zero-row placeholders. A nonempty tail write indexes modulo that actual width. A zero remainder performs no write, rather than explicitly clearing the buffer. get_cpu_copy and load_cpu_copy carry index cache and, when present, request tails alongside parent KV state. This coupling preserves the state the source identifies as needed across retraction; it is not an executed retraction-correctness result.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - A supplied skip list is length-checked, not automatically expanded.
 - The no-remainder tail branch does not clear storage; the no-carryover statement is a comment-level contract.

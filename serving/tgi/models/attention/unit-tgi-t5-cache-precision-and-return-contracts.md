@@ -42,7 +42,7 @@ triggers:
 ---
 This TGI T5 implementation partitions attention heads, uses per-head relative position bias, concatenates self-attention past K/V and can reuse cross-attention K/V by source length. The standard stack constructs relative bias only for its first layer and forwards it to later blocks. Past-state cardinality is selected by encoder_hidden_states presence, while execution of cross-attention additionally requires a decoder. Both output modes contain logits; only return_dict=True includes the separate speculative-logits result.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Correct constructor citation to 1016-1054, including the shared-head RuntimeError fallback; forward to 1056-1165 and generation/reorder to 1167-1227.
 - Use T5LayerFF:204-227 for dense-layer selection and residual; the float32 wo load/cast source does not itself quantify accuracy or throughput.

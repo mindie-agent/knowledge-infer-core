@@ -37,7 +37,7 @@ _walk_span follows matching children until the requested end, stopping at a miss
 
 attach_swa_window checks tensor length and materializes the structural walk, then processes each segment: it asserts the SWA value is still absent, splits at segment boundaries and installs a cloned value through set_component_device_value. It asserts final coverage only after those mutations. Materializing the walk does not prevalidate all tombstone states, and no rollback appears in this method. If a later assertion fails after an earlier segment was attached, earlier mutations can remain. That is a conditional control-flow consequence, not a reproduced failure; callers must satisfy the whole-span matching and tombstone preconditions before invoking this operation.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - A partial child span is yielded before termination.
 - Do not describe attachment as an all-or-nothing transaction merely because the structural walk is materialized first.

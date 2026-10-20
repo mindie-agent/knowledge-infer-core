@@ -39,7 +39,7 @@ triggers:
 ---
 TokenizerManager normalizes incoming request IDs, rejects duplicates against both the live registry and the new batch, creates states, then installs them together. Failure cleanup checks object identity: a different state under the same rid is left untouched, and that early continue also skips encoder_dispatch_ready removal and notification. A matching dispatched state is aborted and retained for the scheduler response; an undelivered state is deleted locally and its LoRA release helper is called. Abort echoes ignore health-check requests and missing rids, then mark a found state finished, build terminal output, delete it, release LoRA and notify the event. Graceful shutdown first waits for the registry to drain in five-second intervals without a request-drain deadline unless unhealthy or forced shutdown triggers the force-exit handler. Only after that loop does it send ShutdownReq and apply the scheduler-exit deadline; scheduler polling uses blocking time.sleep inside the async coroutine.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Registry presence does not by itself mean active model execution.
 - The identity guard does not always drain encoder_dispatch_ready; the mismatch branch deliberately skips that later action.

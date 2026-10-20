@@ -41,7 +41,7 @@ triggers:
 ---
 The pinned DeepSeek V2 implementation expands compressed KV through kv_b_proj, combines non-RoPE and rotated key components, pads Q/K/V to a common head size, and stores the expanded keys and values. Its attention then separates prefill and paged decode. Gemma2 selects sliding layers by parity; Gemma3 uses sliding_window_pattern and per-layer rotary bases, with explicit masks consumed by its non-flashinfer SDPA prefill branch. GPT-2 instead adds learned position embeddings.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - DeepSeek V2 padding fields:171-173; rotary assembly:305-311; expanded store:313-330; MoE reduction:472-481. Config rejection ends at146.
 - DeepSeek V3 scoring/correction-bias arguments occur at455-456, outside the proposed ending454.

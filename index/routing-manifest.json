@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 14.469375018961728,
+  "build_elapsed_ms": 10.226708953268826,
   "closure": {
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-cgroup-host-memory-headroom": [],
@@ -57,8 +57,7 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "digest": "96bfffec7791a4d7c663a6a7373a31ef1728c749893ad7c1a4e6055c33ca3ae3",
-  "generation": "1f64dfc2f7504e8a796e635954e1cea25b27f737b1979757f5e73ca658011526",
+  "generation": "761c9e7b92f13e0cdc54feb08da16c4762aaf611f41d4256845a4b940ad5c050",
   "id_path": {
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/lifecycle/unit-sglang-cancellation-and-cache-ownership.md",
     "unit-sglang-cgroup-host-memory-headroom": "serving/sglang/cache/memory/unit-sglang-cgroup-host-memory-headroom.md",
@@ -123,13 +122,10 @@
   "units": [
     {
       "category": "sop",
-      "closure_digest": "sha256:4d725f21f4e65cdb575e90c600a61aebd42e88c15e964cc0d476f6f589b692bb",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:6eb78ac9a351459ca5c30dc1cebf4e30662a80eb53a420b0b4726ec6ce1b1ad4",
-      "content_sha256": "6eb78ac9a351459ca5c30dc1cebf4e30662a80eb53a420b0b4726ec6ce1b1ad4",
       "domain_path": "serving/sglang/lifecycle",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-cancellation-and-cache-ownership",
@@ -168,13 +164,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:c362237a6481223a9a99a7b969883707c5280714e93d789cbc907801fb0aba48",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:54b516919de52d66ec37babdac160392bc2f4e037c1d9eb2081bc068f976ef0f",
-      "content_sha256": "54b516919de52d66ec37babdac160392bc2f4e037c1d9eb2081bc068f976ef0f",
       "domain_path": "serving/sglang/cache/memory",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-cgroup-host-memory-headroom",
@@ -196,7 +189,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Host-memory sizing through visible cgroup limits",
-      "token_estimate": 713,
+      "token_estimate": 710,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -212,13 +205,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:5755a8b7c751316d2a6422dffbeb92bd54f5e75d8337683c319b58813d9287ea",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:b24dda2aff1e74ed89c8e5125894dfdd37677d4cf6ed3761fc9b60d26467b67b",
-      "content_sha256": "b24dda2aff1e74ed89c8e5125894dfdd37677d4cf6ed3761fc9b60d26467b67b",
       "domain_path": "serving/sglang/cache/checkpoints",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-checkpoint-request-rebind",
@@ -239,7 +229,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Checkpoint insertion and request ownership in UnifiedRadixCache",
-      "token_estimate": 665,
+      "token_estimate": 662,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -256,13 +246,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:142335944ad1894c4f9cd1213b8114b51e654a1004812ad65a798e419cdb330c",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:1ed2253c8c69d3383d4db7e4b7aabd96285e4dcdc04bc4ea4a6761d80691b496",
-      "content_sha256": "1ed2253c8c69d3383d4db7e4b7aabd96285e4dcdc04bc4ea4a6761d80691b496",
       "domain_path": "serving/sglang/lifecycle",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-decode-retraction-and-oom-abort",
@@ -284,7 +271,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Decode retraction preserves the final request only until its explicit OOM abort path",
-      "token_estimate": 466,
+      "token_estimate": 463,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -307,13 +294,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:56134fd781c41e9a3aa0f5b0d9e9e57eb5e06ffeb165601ea36f47b38a505e0e",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:b3b07aa2f4bba466cf862161f0cb6db27c78eb3ab68376c9790004b2f85258ea",
-      "content_sha256": "b3b07aa2f4bba466cf862161f0cb6db27c78eb3ab68376c9790004b2f85258ea",
       "domain_path": "serving/sglang/tests/cancellation",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-disaggregated-abort-test-oracle",
@@ -335,7 +319,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Disaggregated abort test checks response shape and endpoint liveness",
-      "token_estimate": 765,
+      "token_estimate": 761,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -354,13 +338,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:bc60662df9b93ce4163c582c54399d01184c688151d8b707205ffad9eb1f88ec",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:5321a18c7b670e526af9f5ed3bc882d2520a34c5dfd029c5dc417a98c300d84b",
-      "content_sha256": "5321a18c7b670e526af9f5ed3bc882d2520a34c5dfd029c5dc417a98c300d84b",
       "domain_path": "serving/sglang/cache/transfers",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-dsa-index-and-tail-offload",
@@ -383,7 +364,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "DSA index and compression state must accompany KV offload",
-      "token_estimate": 738,
+      "token_estimate": 735,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -402,13 +383,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:d7173f52a5320c39251c91993a98ec207ba42081f7de6e258ba3ef53d2924521",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:740d63f50a203ca5d263a77d2aef529f34f3c53f8bc6c20042fb1d81cbec6bae",
-      "content_sha256": "740d63f50a203ca5d263a77d2aef529f34f3c53f8bc6c20042fb1d81cbec6bae",
       "domain_path": "serving/sglang/cache/layout",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-dsv4-swa-storage-selection",
@@ -429,7 +407,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "DeepSeek V4 SWA storage branch selection",
-      "token_estimate": 633,
+      "token_estimate": 629,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -445,13 +423,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:b60619a76dc4a3b6bc534f8860f5f86e32ee969ad8ff5e8b5b29cd84a35249b2",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:64a0112e1b436338bbe00d8aed27f3879b53f8729d05b6c88a1df753ebf9539a",
-      "content_sha256": "64a0112e1b436338bbe00d8aed27f3879b53f8729d05b6c88a1df753ebf9539a",
       "domain_path": "serving/sglang/lifecycle",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-finish-precedence-and-kv-release",
@@ -473,7 +448,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Request finish precedence and KV ownership release are explicit state transitions",
-      "token_estimate": 492,
+      "token_estimate": 488,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -494,13 +469,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:eb472fb01ca6ed739772a21899d2fc287d21594ee7aa624eb6058725ff611390",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:73c59e868398e988b9b5b6d0fc6aa8102fb0ff7690b874920a2d933199a96ab7",
-      "content_sha256": "73c59e868398e988b9b5b6d0fc6aa8102fb0ff7690b874920a2d933199a96ab7",
       "domain_path": "serving/sglang/cache/transfers",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-full-eviction-loadback-accounting",
@@ -521,7 +493,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Full cache eviction defers device clearing before load-back accounting",
-      "token_estimate": 651,
+      "token_estimate": 647,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -540,13 +512,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:3f856e2c6d62537e54131c16d04e7b3ecf1598aa767c6f741bcbe793acd9d753",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:7098cb5ce2a39cb218876137015b2dffaed0cb46229effe841a747013117cab6",
-      "content_sha256": "7098cb5ce2a39cb218876137015b2dffaed0cb46229effe841a747013117cab6",
       "domain_path": "serving/sglang/admission",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-generate-input-normalization",
@@ -568,7 +537,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "GenerateReqInput normalization is not an exactly-one input-form contract",
-      "token_estimate": 458,
+      "token_estimate": 395,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -586,13 +555,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:96a0d981987bc74f3f852986a3da7cd55f9bffa84d8cbef7776c3ffe38b45988",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:c628cfdeb7946ef832cdbd251009aa0e49bcbb1ec6b5aae7155fdf76f6d95b78",
-      "content_sha256": "c628cfdeb7946ef832cdbd251009aa0e49bcbb1ec6b5aae7155fdf76f6d95b78",
       "domain_path": "serving/sglang/storage",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-hf3fs-batch-confirmation",
@@ -614,7 +580,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "HF3FS batch writes distinguish existing pages from newly confirmed IO",
-      "token_estimate": 745,
+      "token_estimate": 742,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -634,13 +600,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:165a6f2c59643d3fd450f6f2b17c1bc2641abb2cb01414e4cc78749346d37b57",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:3fd06aea25000c1770eb168b594970d47cd3bfa746b4c02ed38fa9bfde38df82",
-      "content_sha256": "3fd06aea25000c1770eb168b594970d47cd3bfa746b4c02ed38fa9bfde38df82",
       "domain_path": "serving/sglang/cache/transfers",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-hisparse-completion-and-allocation-release",
@@ -662,7 +625,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "HiSparse completion releases the current allocation after waiting for its producers",
-      "token_estimate": 552,
+      "token_estimate": 548,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -683,13 +646,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:a18977c7b40e73aca165c2dce25d15b4df1401297f778d52adf9c3373afb3fe4",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:01a8389223385a9e6f15aa4c10a36bf8a0e330c5e5b9163ebdbf99c6cbb98dd3",
-      "content_sha256": "01a8389223385a9e6f15aa4c10a36bf8a0e330c5e5b9163ebdbf99c6cbb98dd3",
       "domain_path": "serving/sglang/cache/memory",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-host-logical-physical-slot-geometry",
@@ -711,7 +671,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Host KV pages separate physical geometry from logical slots",
-      "token_estimate": 675,
+      "token_estimate": 671,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -730,13 +690,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:3929733c19f5cb7332b8e124f31afb0ae3ab26f46c3a0a0478cae6b563ba89d4",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:81ad76aaa5dd6dfa8922deaef2a72a60f82de2b1acc4121d5d87c714f3fc78c6",
-      "content_sha256": "81ad76aaa5dd6dfa8922deaef2a72a60f82de2b1acc4121d5d87c714f3fc78c6",
       "domain_path": "serving/sglang/cache/checkpoints",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-int8-mamba-checkpoint-state",
@@ -760,7 +717,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Int8 Mamba checkpoints retain rounded scales and native convolution state",
-      "token_estimate": 830,
+      "token_estimate": 827,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -780,13 +737,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:84f22d0e3e5273154ad67f09bb21c841010b66b238da23dd90ba46b692144c3d",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:72b795d0b8072de71cb34cc3220c503a87e43a74ac11c5b10e4514aea085d964",
-      "content_sha256": "72b795d0b8072de71cb34cc3220c503a87e43a74ac11c5b10e4514aea085d964",
       "domain_path": "serving/sglang/cache/memory",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-internal-state-and-pool-invariants",
@@ -810,7 +764,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Internal-state updates validate before applying while pool invariants remain mode-specific",
-      "token_estimate": 731,
+      "token_estimate": 727,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -830,13 +784,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:c03aebeb176e606c0cd9256ed31d446ca147faa74f6b2268c403fd3a2009090d",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:1271aefffa92483c1049d177b4e0b937de3bb894a93549d6d81c608700197abf",
-      "content_sha256": "1271aefffa92483c1049d177b4e0b937de3bb894a93549d6d81c608700197abf",
       "domain_path": "serving/sglang/cache/checkpoints",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-kv-checkpoint-and-request-ownership",
@@ -859,7 +810,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "KV checkpoint and release separate tree ownership from request allocation",
-      "token_estimate": 602,
+      "token_estimate": 599,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -879,13 +830,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:729f2d7cfe4efa7a29261e4d50bf2675846108e342b960d8e60f3d48ee529375",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:03a9104a79d14d4b5c69981d59b45141ac68e1877c16c5c356854d4649e87f1c",
-      "content_sha256": "03a9104a79d14d4b5c69981d59b45141ac68e1877c16c5c356854d4649e87f1c",
       "domain_path": "serving/sglang/cache/layout",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-kv-read-write-translation-boundary",
@@ -905,7 +853,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "KV read and write translations have different activation rules",
-      "token_estimate": 573,
+      "token_estimate": 570,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -924,13 +872,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:21f717e7f07d8279685a8f75ff6a36a40a94454dc589e3edcd86c3cf83233428",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:9c6aef9758b7de34514000f36205c6e80023419413cd2aebdef19e9f8af48f6a",
-      "content_sha256": "9c6aef9758b7de34514000f36205c6e80023419413cd2aebdef19e9f8af48f6a",
       "domain_path": "serving/sglang/execution",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-manager-completion-and-ownership",
@@ -960,7 +905,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "SGLang manager completion signals retain distinct success and ownership conditions",
-      "token_estimate": 1119,
+      "token_estimate": 1116,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -979,13 +924,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:c98432d3b5e683922d88081a36a64bb83f6190860c7875064d0ef6e978d48dba",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:563bb856409fcc86e57fb5ba7a532e4c6030ef04fb43f1585c3d9f6e3a0bbfc5",
-      "content_sha256": "563bb856409fcc86e57fb5ba7a532e4c6030ef04fb43f1585c3d9f6e3a0bbfc5",
       "domain_path": "serving/sglang/execution",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-metrics-and-output-rank-gates",
@@ -1009,7 +951,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Forward metrics and finished output retain their rank, timing and beam gates",
-      "token_estimate": 673,
+      "token_estimate": 670,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1030,13 +972,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:944be094e9158e41a10c74252cc6fd1b2108b59964ad039be8171225ff1dc12f",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:eb42ca4fa0a2e0fea9e1015360790542b77c4ab2eb198234d4d7ccd2c2b190e0",
-      "content_sha256": "eb42ca4fa0a2e0fea9e1015360790542b77c4ab2eb198234d4d7ccd2c2b190e0",
       "domain_path": "serving/sglang/cache/layout",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-mha-layout-and-move-paths",
@@ -1059,7 +998,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "MHA KV layout selection and move paths",
-      "token_estimate": 727,
+      "token_estimate": 723,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1076,13 +1015,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:b9279dc82b5a3a2c986a46521fed84d93956c8f45c314dad8a99af691c095d3c",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:04700dedc5e090305ee2dec4308c9ef60a2a04f681bdcea8ca50799d13990054",
-      "content_sha256": "04700dedc5e090305ee2dec4308c9ef60a2a04f681bdcea8ca50799d13990054",
       "domain_path": "serving/sglang/storage",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-mooncake-restorable-stop-points",
@@ -1104,7 +1040,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Mooncake v2 intersects restorable stop points across component pools",
-      "token_estimate": 778,
+      "token_estimate": 775,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1123,13 +1059,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:09fc0640935d6073c7f012e98d289518cbebd6b3eb3d41bf3592143ed1d6263a",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:c1b701864dc2633ebc7f5c042cf77455aca9a3c2bfdd7b7b7f393be1b130b583",
-      "content_sha256": "c1b701864dc2633ebc7f5c042cf77455aca9a3c2bfdd7b7b7f393be1b130b583",
       "domain_path": "serving/sglang/storage",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-nixl-staging-and-batch-results",
@@ -1151,7 +1084,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "NIXL selects staging per host pool and reports batch-level results",
-      "token_estimate": 696,
+      "token_estimate": 692,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1171,13 +1104,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:99038d7bb9c7043e5fd3d095d9628c7cd69c746032e76778e676c63e69bfcfe5",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:7d7c1ef50be6cf224723254bcf2bf21a7f64ea03728f91d1a720e15ac70f96bd",
-      "content_sha256": "7d7c1ef50be6cf224723254bcf2bf21a7f64ea03728f91d1a720e15ac70f96bd",
       "domain_path": "serving/sglang/execution",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-overlap-copy-completion-boundary",
@@ -1198,7 +1128,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Overlap CPU consumers wait on copy completion while stream ordering has a narrower role",
-      "token_estimate": 424,
+      "token_estimate": 421,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1222,13 +1152,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:f22fcf34ad069f946fab55c932fc9b7a911df6d8679a995c50ae9a6b345216dc",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:e88f74475567f3b74f4bce57103b769fce4147a62a6ad78cffec1d8ca6f84cdf",
-      "content_sha256": "e88f74475567f3b74f4bce57103b769fce4147a62a6ad78cffec1d8ca6f84cdf",
       "domain_path": "serving/sglang/cache/transfers",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-prefetch-completion-and-hybrid-gate",
@@ -1249,7 +1176,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Storage-prefetch completion ownership and hybrid acceptance",
-      "token_estimate": 682,
+      "token_estimate": 678,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1265,13 +1192,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:2f0fdd1f8ea03cda945c8eb0495ddf7d331c20710f03ca7002fbdbe208c6ebbb",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:31c7037a4fc9cd59ea9e32b7a63be98c549beb443ddfbb4cf1d7bf48c7899699",
-      "content_sha256": "31c7037a4fc9cd59ea9e32b7a63be98c549beb443ddfbb4cf1d7bf48c7899699",
       "domain_path": "serving/sglang/admission",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-priority-admission-test-oracles",
@@ -1293,7 +1217,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Priority tests distinguish queued eviction from incoming rejection",
-      "token_estimate": 724,
+      "token_estimate": 721,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1311,13 +1235,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:fa156cd0eaa4803dd70eb7ed43a703495575adaef3ac9a20ed7c554360d4971a",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:d2579ec7e7d565decbdc18c257af5fe1b78de504bed188170c63b4db4c8ed558",
-      "content_sha256": "d2579ec7e7d565decbdc18c257af5fe1b78de504bed188170c63b4db4c8ed558",
       "domain_path": "serving/sglang/admission",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-queue-fallback-and-chunk-budgets",
@@ -1341,7 +1262,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Scheduler queue fallback and chunk budgets retain distinct selection behavior",
-      "token_estimate": 595,
+      "token_estimate": 592,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1361,13 +1282,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:e833808c717e485442d198db57f4d9c6b90bcd76891d8f83ddf938df5ba1a089",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:ad1d15d17e923fc21b0092cf8f57644836a89fd3681098d3cad537cfbd9778cf",
-      "content_sha256": "ad1d15d17e923fc21b0092cf8f57644836a89fd3681098d3cad537cfbd9778cf",
       "domain_path": "serving/sglang/cache/checkpoints",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-radix-reanchor-and-prefill-reservation",
@@ -1390,7 +1308,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Radix checkpoint reanchors ownership and prefill reserves future capacity separately",
-      "token_estimate": 583,
+      "token_estimate": 580,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1410,13 +1328,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:a05cb132239968c10a7f7cfe37fe3db8fb0afc5492f404d7c99b6c58f448ce57",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:b45a32ec68dd8e03f633753a960262e05c2ce339100e2bc1d5b00d8440802792",
-      "content_sha256": "b45a32ec68dd8e03f633753a960262e05c2ce339100e2bc1d5b00d8440802792",
       "domain_path": "serving/sglang/admission",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-registry-identity-and-shutdown-drain",
@@ -1438,7 +1353,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Tokenizer registry identity guards protect newer requests during failure cleanup",
-      "token_estimate": 600,
+      "token_estimate": 596,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1458,13 +1373,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:7658aad45eeca0a63d729b85eb9bee2d5160fbb91d664888d80115a8b529b0d8",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:d6c4646166a7cf8dff87acfca0c3fa9dfcf5818e8d1f24e88d283095735899a8",
-      "content_sha256": "d6c4646166a7cf8dff87acfca0c3fa9dfcf5818e8d1f24e88d283095735899a8",
       "domain_path": "serving/sglang/lifecycle",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-result-commit-and-flush-gates",
@@ -1488,7 +1400,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Scheduler result commit, KV release and flush completion use separate gates",
-      "token_estimate": 658,
+      "token_estimate": 654,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1509,13 +1421,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:174b9921891bcfb9a3768a9105e0293efc5e73cd99d9158bff0e5e08f378f84f",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:21b9bffce5bb5d9643d1c217c705a72606ca933377583b83b6d24b26cb51eb0b",
-      "content_sha256": "21b9bffce5bb5d9643d1c217c705a72606ca933377583b83b6d24b26cb51eb0b",
       "domain_path": "serving/sglang/cache/tree",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-rust-treecore-binding-boundary",
@@ -1540,7 +1449,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Rust TreeCore binding boundaries and Python orchestration",
-      "token_estimate": 855,
+      "token_estimate": 852,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1557,13 +1466,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:a03c25c7a657c85d2bfb4e3bc1e60a68b311eb8b9257380bbe3485f66fa64b24",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:64be14ed54ddfeb3a17790cf7f22fcb9a483733e4b8e722f02a89ec7b7726d4b",
-      "content_sha256": "64be14ed54ddfeb3a17790cf7f22fcb9a483733e4b8e722f02a89ec7b7726d4b",
       "domain_path": "serving/sglang/lifecycle",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-scheduler-abort-and-outstanding-work",
@@ -1586,7 +1492,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Scheduler abort admission and resource release must respect outstanding work",
-      "token_estimate": 650,
+      "token_estimate": 647,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1606,13 +1512,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:7915fb26c82e8aaa9d74b529d2dc4027ba18006b6e31ebb06f437c291f883151",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:e8fc69becebd1c5e74359f33df3caba844177ac9414369dcfdafa11a529e1c1a",
-      "content_sha256": "e8fc69becebd1c5e74359f33df3caba844177ac9414369dcfdafa11a529e1c1a",
       "domain_path": "serving/sglang/cache/sparsity",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-sparse-zero-selection-metadata",
@@ -1634,7 +1537,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Sparse selection can leave zero pages before metadata rewriting",
-      "token_estimate": 788,
+      "token_estimate": 785,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1653,13 +1556,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:176558107247c05ab24669a7b263afa48e3fe58d77656bdc6c28038e139db4a2",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:6e7f58d6fb745f60866584091c5c22befc9218b8c476b66f05ed08359d5439e3",
-      "content_sha256": "6e7f58d6fb745f60866584091c5c22befc9218b8c476b66f05ed08359d5439e3",
       "domain_path": "serving/sglang/storage",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-storage-registration-construction",
@@ -1682,7 +1582,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Storage backend registration and construction are separate gates",
-      "token_estimate": 769,
+      "token_estimate": 766,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1700,13 +1600,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:65e7ea54d68fe35b2ae50dd8a9485ea0df53183de85c21dc164f1cb5e1390416",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:9b3154d40b6e01dcd72f4131814e91f53b4f823ba0abd319cd94d629f2b4136e",
-      "content_sha256": "9b3154d40b6e01dcd72f4131814e91f53b4f823ba0abd319cd94d629f2b4136e",
       "domain_path": "serving/sglang/cache/transfers",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-swa-offload-and-draft-ownership",
@@ -1731,7 +1628,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "SWA offload masks and fused draft wrappers retain asymmetric ownership",
-      "token_estimate": 682,
+      "token_estimate": 679,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1751,13 +1648,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:3dc19f4c21ac867e0685de2be4839fc2b660d5e4f239d867a83d2082e03df2e3",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:28b9e2f86c2ae58983bb69e690cf5da01f27cc5e0912fc5219da6d2a44335611",
-      "content_sha256": "28b9e2f86c2ae58983bb69e690cf5da01f27cc5e0912fc5219da6d2a44335611",
       "domain_path": "serving/sglang/cache/tree",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-swa-span-attachment",
@@ -1778,7 +1672,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "SWA window attachment mutates matched spans incrementally",
-      "token_estimate": 658,
+      "token_estimate": 655,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1795,13 +1689,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:d9fbc772573580259e82493da77c651ab3cf7fab86a5588cc268f66797061a9d",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:5182326dd23d7c36db3eb13bcb7455328c5c8e5bc3d2797b71047be33239f9e0",
-      "content_sha256": "5182326dd23d7c36db3eb13bcb7455328c5c8e5bc3d2797b71047be33239f9e0",
       "domain_path": "serving/sglang/cache/layout",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-token-major-strided-views",
@@ -1824,7 +1715,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Token-major byte layouts create aliased strided views",
-      "token_estimate": 744,
+      "token_estimate": 740,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1841,13 +1732,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:0853183a10cf0a30896ffb30b1d47056c3e58b1f4dc1b282fef22d8b782c0b2f",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:526d78059cd37349c0b31a1fcd9cd83c4cab3bf0c5545df8cdd8dc8d6da9135f",
-      "content_sha256": "526d78059cd37349c0b31a1fcd9cd83c4cab3bf0c5545df8cdd8dc8d6da9135f",
       "domain_path": "serving/sglang/admission",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-tokenizer-dispatch-and-abort-boundary",
@@ -1870,7 +1758,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Tokenizer dispatch bookkeeping and abort requests have separate completion boundaries",
-      "token_estimate": 601,
+      "token_estimate": 598,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1890,13 +1778,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:3c170defa7edc5143b9e745e4bf0b0789947915e5b314fb641dcdc8f9276d18b",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:332d8f12e90715fe24236a2daed8635214538a826e334bbdfa2ed5797fa1aea4",
-      "content_sha256": "332d8f12e90715fe24236a2daed8635214538a826e334bbdfa2ed5797fa1aea4",
       "domain_path": "serving/sglang/execution",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-tp-capacity-and-result-contracts",
@@ -1921,7 +1806,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "TP-worker capacity reports and token-result types are conditional contracts",
-      "token_estimate": 764,
+      "token_estimate": 760,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1940,13 +1825,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:0a213d1b4ada2c37ff898c6e6909e0b99a1898819967da13e86087040f6490d8",
       "conditions": {
         "repository": "sgl-project/sglang",
         "revision": "8e7601ae4a48c1127afd1bcdccf0a0ad61dbf043"
       },
-      "content_digest": "sha256:fa1e99c5676ae145d507f711a2baba4e2d9b6fc336358646f1dd849f164ee908",
-      "content_sha256": "fa1e99c5676ae145d507f711a2baba4e2d9b6fc336358646f1dd849f164ee908",
       "domain_path": "serving/sglang/cache/memory",
       "evidence_strength": "single_observation",
       "id": "unit-sglang-unified-memory-sink-and-envelope",
@@ -1973,7 +1855,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Unified memory reserves a physical sink and exposes mode-specific envelope contracts",
-      "token_estimate": 810,
+      "token_estimate": 806,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -1994,13 +1876,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:31b06390ee3be1d17df2229155cb5612279ac8155a83790a95b96b68099f72a5",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:84e883d393262dbd8d2b3990089b3969dea71f7a35f34352990884b7741c97c3",
-      "content_sha256": "84e883d393262dbd8d2b3990089b3969dea71f7a35f34352990884b7741c97c3",
       "domain_path": "serving/tgi/models/attention",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-cache-axes-and-mask-semantics",
@@ -2026,7 +1905,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Cache axes and attention-mask meaning are part of each model's serving contract",
-      "token_estimate": 960,
+      "token_estimate": 956,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2049,13 +1928,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:316e5a2af88d97b8af044f99ecd1e82e7e61905d34a675efc72f8ba122169400",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:1ffc6b3a1abe27fe2386ec32e62d577a59361cd72fdd779a2ebec9020bfb219c",
-      "content_sha256": "1ffc6b3a1abe27fe2386ec32e62d577a59361cd72fdd779a2ebec9020bfb219c",
       "domain_path": "serving/tgi/models/attention",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-expanded-deepseek-kv-storage",
@@ -2079,7 +1955,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Compressed attention projections do not imply a compressed runtime KV cache",
-      "token_estimate": 781,
+      "token_estimate": 777,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2099,13 +1975,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:6f9f570384a8587d6095be92ac8df15c2ad500e53090b82bb5624573dc51bc80",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:a2aaf5f7f3a1d6e91061f2a051c93375c91601ce1b4dbd6fe3102ea780cff652",
-      "content_sha256": "a2aaf5f7f3a1d6e91061f2a051c93375c91601ce1b4dbd6fe3102ea780cff652",
       "domain_path": "serving/tgi/models/topology",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-kv-head-topology-and-preprocessing",
@@ -2131,7 +2004,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "KV-head topology and preprocessing configuration need executable-path checks",
-      "token_estimate": 951,
+      "token_estimate": 947,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2149,13 +2022,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:558a382bca355e74cf516bb4c86de0419f76984585a1dc51a25642efda4bf087",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:b55298a72793912443a10a9e3ed37bd38d3095dc3bd1852d3828e0c42187a610",
-      "content_sha256": "b55298a72793912443a10a9e3ed37bd38d3095dc3bd1852d3828e0c42187a610",
       "domain_path": "serving/tgi/models/forward",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-model-family-batch-state",
@@ -2182,7 +2052,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Batch mutation must preserve each model family's state representation",
-      "token_estimate": 925,
+      "token_estimate": 921,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2202,13 +2072,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:c0032a4b8300ad95886bd4a477c4ec2bbc0c2cc776f88977aae7c938f062cd92",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:995c689ad0ce417019829312eebe3b34cd0f219397acd249db5475b7160f77fd",
-      "content_sha256": "995c689ad0ce417019829312eebe3b34cd0f219397acd249db5475b7160f77fd",
       "domain_path": "serving/tgi/models/forward",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-model-state-layout-and-backend-guards",
@@ -2236,7 +2103,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "State layout and backend guards must be checked per model path",
-      "token_estimate": 1099,
+      "token_estimate": 1096,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2257,13 +2124,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:3234f04350a13be18a04cc8a6f4852b4656c7fa06a546cdf1366f763fa34c64e",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:30722f9b89626608b2961b12f34fe4427840015bd08ac1cbd03c5deb0f698a41",
-      "content_sha256": "30722f9b89626608b2961b12f34fe4427840015bd08ac1cbd03c5deb0f698a41",
       "domain_path": "serving/tgi/models/multimodal",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-multimodal-cache-and-cross-attention",
@@ -2289,7 +2153,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Multimodal cache reuse still depends on image metadata and cross-attention scheduling",
-      "token_estimate": 952,
+      "token_estimate": 949,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2310,13 +2174,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:094b8e7ddf2fa695135fe147600f17e8f258fe71f206a20de969f99a03ed6f91",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:827af4185fc9f47f819a0517d121262c94cfe2845cbd76b67da3aa7a7aed5982",
-      "content_sha256": "827af4185fc9f47f819a0517d121262c94cfe2845cbd76b67da3aa7a7aed5982",
       "domain_path": "serving/tgi/runtime",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-paged-allocation-and-chunk-admission",
@@ -2340,7 +2201,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Paged allocation ownership and chunking have separate admission contracts",
-      "token_estimate": 646,
+      "token_estimate": 642,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2359,13 +2220,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:a2c87ebba28660bdfb37e635e5d051feb7fec1c9123213ed8785ea49a92478af",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:4ef2c50f8b4eb79b46bf02116e3106a73c56b1b2199c4f85b16ab9d1db3c1172",
-      "content_sha256": "4ef2c50f8b4eb79b46bf02116e3106a73c56b1b2199c4f85b16ab9d1db3c1172",
       "domain_path": "serving/tgi/runtime",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-prefill-speculation-and-graph-eligibility",
@@ -2389,7 +2247,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Prefill chunking, speculative tokens and decode graphs use separate eligibility checks",
-      "token_estimate": 744,
+      "token_estimate": 741,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2410,13 +2268,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:743073c318efb1b64d2e11a7e35a33426354879f5a9e952e43237f169523c276",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:1fedab58b21ac24e9826f56481c0077fdf9156100a4890347c48dd82dd12e726",
-      "content_sha256": "1fedab58b21ac24e9826f56481c0077fdf9156100a4890347c48dd82dd12e726",
       "domain_path": "serving/tgi/runtime",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-radix-release-and-eviction",
@@ -2438,7 +2293,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Radix prefix release returns reusable blocks without implying full eviction",
-      "token_estimate": 469,
+      "token_estimate": 465,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2458,13 +2313,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:18988a04e189f9877f244e6a342c1074dac7e6c0e6ffc31521a119de61f0b81b",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:b77dd0984217df703e9c0281352eebe1a670ad4f1608ddbaf90a40afafa30e01",
-      "content_sha256": "b77dd0984217df703e9c0281352eebe1a670ad4f1608ddbaf90a40afafa30e01",
       "domain_path": "serving/tgi/runtime",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-receiver-closure-and-cleanup-errors",
@@ -2487,7 +2339,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Receiver closure is observed at batch boundaries, and cleanup calls can still fail",
-      "token_estimate": 542,
+      "token_estimate": 539,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2510,13 +2362,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:396e63aa6ed5e03099025589a2032257c7d3176c51d2cc1cd7b2be663a55b9aa",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:032056ab8537ab79692971be4da5c28a42bb703757ed3a5ecd2c66c88341350d",
-      "content_sha256": "032056ab8537ab79692971be4da5c28a42bb703757ed3a5ecd2c66c88341350d",
       "domain_path": "serving/tgi/models/attention",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-t5-cache-precision-and-return-contracts",
@@ -2541,7 +2390,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "T5 cache shape, precision and return conventions are independent contracts",
-      "token_estimate": 827,
+      "token_estimate": 823,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2561,13 +2410,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:928f34db1efe67f5f199c850ccc7501265c5b4547ec0f1ea1d32d1045de97170",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:fe0943721f1a4e34c0fd842da05bfd0e074d4a3b4bd484bbe5387d2fa8e268a2",
-      "content_sha256": "fe0943721f1a4e34c0fd842da05bfd0e074d4a3b4bd484bbe5387d2fa8e268a2",
       "domain_path": "serving/tgi/runtime",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-tokenizer-generation-and-image-limits",
@@ -2590,7 +2436,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Tokenizer admission, generation reservation and image limits bound different resources",
-      "token_estimate": 548,
+      "token_estimate": 544,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2610,13 +2456,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:4c28cf12e95e046ce13179f18868724db50475c5dd5d45f95c9545c3562af983",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:11b92bce5376cab469d035f4bd1db366ec8fed62cd1cc99480e28722abacbe69",
-      "content_sha256": "11b92bce5376cab469d035f4bd1db366ec8fed62cd1cc99480e28722abacbe69",
       "domain_path": "serving/tgi/models/forward",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-transformers-attention-and-forward-boundary",
@@ -2642,7 +2485,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Replacing Transformers attention leaves a second contract at the model-forward boundary",
-      "token_estimate": 988,
+      "token_estimate": 985,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2663,13 +2506,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:4f3511bc3d8985ee45a1b16313e8a1e51b39f370fb39b8d0dd3c74d563d3ea21",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:7b1feec659814f4c38d98c258195805f967b465fb137c22e7b241428c87b1147",
-      "content_sha256": "7b1feec659814f4c38d98c258195805f967b465fb137c22e7b241428c87b1147",
       "domain_path": "serving/tgi-v3",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-v3-cancellation-and-batch-reclamation",
@@ -2708,13 +2548,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:a0416f71b9cdfac4bc5835ad2535fafe48401906d25cbd6fea97ca7a5b73f0ef",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:526b6338bf3b917b59f90a3153e053fa4ea8f5a2a2f9cfdb4089a69df9c55fed",
-      "content_sha256": "526b6338bf3b917b59f90a3153e053fa4ea8f5a2a2f9cfdb4089a69df9c55fed",
       "domain_path": "serving/tgi/models/multimodal",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-vision-token-mask-and-connector-geometry",
@@ -2740,7 +2577,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Vision-token merging depends on batch masks and connector geometry",
-      "token_estimate": 923,
+      "token_estimate": 919,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -2759,13 +2596,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:11855d2bbbc19949854399292fbe97fdab89390fa9ffa2b118b70a2aa830c02c",
       "conditions": {
         "repository": "vllm-project/vllm",
         "revision": "752a3a504485790a2e8491cacbb35c137339ad34"
       },
-      "content_digest": "sha256:c727bac94c37140e958b7164975c02a831827612b0126554e16e0306fb441578",
-      "content_sha256": "c727bac94c37140e958b7164975c02a831827612b0126554e16e0306fb441578",
       "domain_path": "serving/vllm",
       "evidence_strength": "single_observation",
       "id": "unit-vllm-cancellation-and-block-reclamation",

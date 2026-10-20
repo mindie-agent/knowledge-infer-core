@@ -46,7 +46,7 @@ triggers:
 ---
 OPT appends K/V along axis2 and reads its cached sequence length from shape[2], while Phi uses axis1 and shape[1]. OPT derives positions from the attention mask and combines causal/padding masks. Phi uses the mask only as a non-None flag for a fixed triangular penalty and disables that path for single-token steps. Qwen2.5 vision reorders tokens into windows, selects full or window attention by layer, merges patches, then restores ordering; Qwen2 uses full packed sequence boundaries for every vision block.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Qwen2-VL locally divides config.embed_dim, not config.hidden_size, at74. Its separately assigned head_dim is not used in the shown attention shaping/scaling path; do not report a demonstrated shape failure from that assignment alone.
 - Phi does not read supplied padding-mask values, and its upper-triangular mask has no offset for a nonempty past. Do not infer generic cached multi-token correctness from one-token decode behavior.

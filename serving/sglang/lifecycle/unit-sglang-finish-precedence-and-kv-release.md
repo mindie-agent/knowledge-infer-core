@@ -40,7 +40,7 @@ triggers:
 ---
 Req detaches its owned KV allocation from request bookkeeping before returning the owned range, including the speculative tail. Finish evaluation first honors a deferred to_finish reason, then invalid vocabulary output, stop strings, EOS, length and grammar completion in that order. Resetting for retraction asserts that KV has already been released and clears execution state before the request is reused. The shown offload helper backs up KV but does not itself free the request allocation; the load path clears its backup reference after restoring it. Consequently finish, offload, free and retraction reset must not be collapsed into one operation.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Preserve the actual finish-reason precedence instead of treating all terminal conditions as interchangeable.
 - A successful offload backup is not evidence that the device allocation has been released.
