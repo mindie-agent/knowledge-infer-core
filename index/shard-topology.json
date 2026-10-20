@@ -3,6 +3,67 @@
     "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": [],
     "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": [],
     "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": [],
+    "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms": [],
+    "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms": [],
+    "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms": [],
+    "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms": [],
+    "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+    ],
+    "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-cgroup-host-memory-headroom": [],
     "unit-sglang-checkpoint-request-rebind": [],
@@ -62,14 +123,34 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 268240,
-      "estimated_tokens": 42455,
+      "bytes": 389557,
+      "estimated_tokens": 57733,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
         "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership",
         "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow",
+        "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop",
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+        "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop",
+        "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop",
+        "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop",
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop",
+        "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop",
+        "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop",
+        "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop",
+        "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow",
+        "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop",
         "unit-sglang-cancellation-and-cache-ownership",
         "unit-sglang-cgroup-host-memory-headroom",
         "unit-sglang-checkpoint-request-rebind",
@@ -126,9 +207,41 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 58
+      "units": 78
     },
     "domains": [
+      {
+        "automatic": false,
+        "bytes": 121317,
+        "estimated_tokens": 15278,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "infer-core",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+          "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+          "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow",
+          "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop",
+          "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+          "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop",
+          "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+          "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop",
+          "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop",
+          "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop",
+          "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+          "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+          "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop",
+          "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop",
+          "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop",
+          "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop",
+          "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop",
+          "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+          "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow",
+          "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop"
+        ],
+        "units": 20
+      },
       {
         "automatic": false,
         "bytes": 268240,
@@ -201,8 +314,268 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 13.106375001370907,
+  "index_build_elapsed_ms": 19.111209083348513,
   "leaves": [
+    {
+      "automatic": false,
+      "bytes": 5452,
+      "estimated_tokens": 643,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/concepts/frameworks-and-platforms/executors-and-serving",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5592,
+      "estimated_tokens": 702,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5689,
+      "estimated_tokens": 671,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5029,
+      "estimated_tokens": 658,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/concepts/models-and-modules/dit-vae-and-hstu",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6294,
+      "estimated_tokens": 774,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/concepts/models-and-modules/linear-ssm-and-mhc",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6361,
+      "estimated_tokens": 761,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/concepts/models-and-modules/mla-dsa-indexer",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6243,
+      "estimated_tokens": 783,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/interventions-and-cases/e2e-case-studies",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6719,
+      "estimated_tokens": 810,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/interventions-and-cases/intervention-playbooks",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5464,
+      "estimated_tokens": 690,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-communication-and-parallel/hccl-and-mc2-domains",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5979,
+      "estimated_tokens": 688,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-communication-and-parallel/hybrid-slicing-and-cp",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5924,
+      "estimated_tokens": 718,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-communication-and-parallel/multistream-and-overlap",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6911,
+      "estimated_tokens": 867,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-compute-fusion/attention-and-mla",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6394,
+      "estimated_tokens": 783,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-compute-fusion/operator-and-backend",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 7016,
+      "estimated_tokens": 854,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-compute-fusion/superkernel-and-graph",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6309,
+      "estimated_tokens": 827,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-memory-and-kv/paged-kv-and-cp",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5863,
+      "estimated_tokens": 776,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5526,
+      "estimated_tokens": 827,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/runbooks/precision-and-runtime/determinism-and-nonfinite",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5795,
+      "estimated_tokens": 931,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/runbooks/precision-and-runtime/profiling-and-latency-spikes",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6329,
+      "estimated_tokens": 740,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/training-and-alignment/concepts/parallel-and-memory",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6428,
+      "estimated_tokens": 775,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/training-and-alignment/concepts/rlhf-post-training",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow"
+      ],
+      "units": 1
+    },
     {
       "automatic": false,
       "bytes": 6614,
@@ -506,6 +879,122 @@
   "two_level_subtrees": [
     {
       "automatic": false,
+      "bytes": 16733,
+      "estimated_tokens": 2016,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/concepts/frameworks-and-platforms",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "units": 3
+    },
+    {
+      "automatic": false,
+      "bytes": 17684,
+      "estimated_tokens": 2193,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/concepts/models-and-modules",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "units": 3
+    },
+    {
+      "automatic": false,
+      "bytes": 12962,
+      "estimated_tokens": 1593,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/optimizations/interventions-and-cases",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow",
+        "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 17367,
+      "estimated_tokens": 2096,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/optimizations/rules-communication-and-parallel",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop",
+        "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop",
+        "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop"
+      ],
+      "units": 3
+    },
+    {
+      "automatic": false,
+      "bytes": 20321,
+      "estimated_tokens": 2504,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/optimizations/rules-compute-fusion",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop",
+        "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop",
+        "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop"
+      ],
+      "units": 3
+    },
+    {
+      "automatic": false,
+      "bytes": 12172,
+      "estimated_tokens": 1603,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/optimizations/rules-memory-and-kv",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop",
+        "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11321,
+      "estimated_tokens": 1758,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/runbooks/precision-and-runtime",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop",
+        "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 12757,
+      "estimated_tokens": 1515,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/training-and-alignment/concepts",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+        "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
       "bytes": 18384,
       "estimated_tokens": 3319,
       "exceeds": [],
@@ -521,80 +1010,95 @@
     },
     {
       "automatic": false,
-      "bytes": 165454,
-      "estimated_tokens": 26305,
+      "bytes": 75727,
+      "estimated_tokens": 11721,
       "exceeds": [],
       "kind": "subtree",
       "path": "serving/sglang",
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
         "unit-sglang-cancellation-and-cache-ownership",
-        "unit-sglang-cgroup-host-memory-headroom",
-        "unit-sglang-checkpoint-request-rebind",
         "unit-sglang-decode-retraction-and-oom-abort",
-        "unit-sglang-disaggregated-abort-test-oracle",
-        "unit-sglang-dsa-index-and-tail-offload",
-        "unit-sglang-dsv4-swa-storage-selection",
         "unit-sglang-finish-precedence-and-kv-release",
-        "unit-sglang-full-eviction-loadback-accounting",
         "unit-sglang-generate-input-normalization",
         "unit-sglang-hf3fs-batch-confirmation",
+        "unit-sglang-manager-completion-and-ownership",
+        "unit-sglang-metrics-and-output-rank-gates",
+        "unit-sglang-mooncake-restorable-stop-points",
+        "unit-sglang-nixl-staging-and-batch-results",
+        "unit-sglang-overlap-copy-completion-boundary",
+        "unit-sglang-priority-admission-test-oracles",
+        "unit-sglang-queue-fallback-and-chunk-budgets",
+        "unit-sglang-registry-identity-and-shutdown-drain",
+        "unit-sglang-result-commit-and-flush-gates",
+        "unit-sglang-scheduler-abort-and-outstanding-work",
+        "unit-sglang-storage-registration-construction",
+        "unit-sglang-tokenizer-dispatch-and-abort-boundary",
+        "unit-sglang-tp-capacity-and-result-contracts"
+      ],
+      "units": 18
+    },
+    {
+      "automatic": false,
+      "bytes": 85200,
+      "estimated_tokens": 13823,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/sglang/cache",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-sglang-cgroup-host-memory-headroom",
+        "unit-sglang-checkpoint-request-rebind",
+        "unit-sglang-dsa-index-and-tail-offload",
+        "unit-sglang-dsv4-swa-storage-selection",
+        "unit-sglang-full-eviction-loadback-accounting",
         "unit-sglang-hisparse-completion-and-allocation-release",
         "unit-sglang-host-logical-physical-slot-geometry",
         "unit-sglang-int8-mamba-checkpoint-state",
         "unit-sglang-internal-state-and-pool-invariants",
         "unit-sglang-kv-checkpoint-and-request-ownership",
         "unit-sglang-kv-read-write-translation-boundary",
-        "unit-sglang-manager-completion-and-ownership",
-        "unit-sglang-metrics-and-output-rank-gates",
         "unit-sglang-mha-layout-and-move-paths",
-        "unit-sglang-mooncake-restorable-stop-points",
-        "unit-sglang-nixl-staging-and-batch-results",
-        "unit-sglang-overlap-copy-completion-boundary",
         "unit-sglang-prefetch-completion-and-hybrid-gate",
-        "unit-sglang-priority-admission-test-oracles",
-        "unit-sglang-queue-fallback-and-chunk-budgets",
         "unit-sglang-radix-reanchor-and-prefill-reservation",
-        "unit-sglang-registry-identity-and-shutdown-drain",
-        "unit-sglang-result-commit-and-flush-gates",
         "unit-sglang-rust-treecore-binding-boundary",
-        "unit-sglang-scheduler-abort-and-outstanding-work",
         "unit-sglang-sparse-zero-selection-metadata",
-        "unit-sglang-storage-registration-construction",
         "unit-sglang-swa-offload-and-draft-ownership",
         "unit-sglang-swa-span-attachment",
         "unit-sglang-token-major-strided-views",
-        "unit-sglang-tokenizer-dispatch-and-abort-boundary",
-        "unit-sglang-tp-capacity-and-result-contracts",
         "unit-sglang-unified-memory-sink-and-envelope"
       ],
-      "units": 39
+      "units": 20
     },
     {
       "automatic": false,
-      "bytes": 73934,
-      "estimated_tokens": 11304,
+      "bytes": 4527,
+      "estimated_tokens": 761,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/sglang/tests",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-sglang-disaggregated-abort-test-oracle"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 19878,
+      "estimated_tokens": 2931,
       "exceeds": [],
       "kind": "subtree",
       "path": "serving/tgi",
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
-        "unit-tgi-cache-axes-and-mask-semantics",
-        "unit-tgi-expanded-deepseek-kv-storage",
-        "unit-tgi-kv-head-topology-and-preprocessing",
-        "unit-tgi-model-family-batch-state",
-        "unit-tgi-model-state-layout-and-backend-guards",
-        "unit-tgi-multimodal-cache-and-cross-attention",
         "unit-tgi-paged-allocation-and-chunk-admission",
         "unit-tgi-prefill-speculation-and-graph-eligibility",
         "unit-tgi-radix-release-and-eviction",
         "unit-tgi-receiver-closure-and-cleanup-errors",
-        "unit-tgi-t5-cache-precision-and-return-contracts",
-        "unit-tgi-tokenizer-generation-and-image-limits",
-        "unit-tgi-transformers-attention-and-forward-boundary",
-        "unit-tgi-vision-token-mask-and-connector-geometry"
+        "unit-tgi-tokenizer-generation-and-image-limits"
       ],
-      "units": 14
+      "units": 5
     },
     {
       "automatic": false,
@@ -611,6 +1115,27 @@
     },
     {
       "automatic": false,
+      "bytes": 54056,
+      "estimated_tokens": 8373,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/tgi/models",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-tgi-cache-axes-and-mask-semantics",
+        "unit-tgi-expanded-deepseek-kv-storage",
+        "unit-tgi-kv-head-topology-and-preprocessing",
+        "unit-tgi-model-family-batch-state",
+        "unit-tgi-model-state-layout-and-backend-guards",
+        "unit-tgi-multimodal-cache-and-cross-attention",
+        "unit-tgi-t5-cache-precision-and-return-contracts",
+        "unit-tgi-transformers-attention-and-forward-boundary",
+        "unit-tgi-vision-token-mask-and-connector-geometry"
+      ],
+      "units": 9
+    },
+    {
+      "automatic": false,
       "bytes": 5924,
       "estimated_tokens": 846,
       "exceeds": [],
@@ -623,7 +1148,7 @@
       "units": 1
     }
   ],
-  "unit_count": 58,
+  "unit_count": 78,
   "units": {
     "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": {
       "bytes": 5580,
@@ -656,6 +1181,262 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/cann-recipes-infer/cache/unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms": {
+      "bytes": 5592,
+      "category": "axiom",
+      "content_sha256": "4d4d8381c4afd11a507ac86e90e661deb7aeccef6ad7e3374f51222f983aca42",
+      "domain_path": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels",
+      "estimated_tokens": 702,
+      "evidence_strength": "hardware_spec",
+      "inherits_from": [],
+      "path": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels/unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms": {
+      "bytes": 5452,
+      "category": "axiom",
+      "content_sha256": "850e3f79694b87eb3751174640e6c201d9b38762b6314bebb6babffea214f26a",
+      "domain_path": "infer-core/concepts/frameworks-and-platforms/executors-and-serving",
+      "estimated_tokens": 643,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/concepts/frameworks-and-platforms/executors-and-serving/unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow": {
+      "bytes": 6243,
+      "category": "workflow",
+      "content_sha256": "bd55f7ab1c9420dd0ae6ab0f263b11a6eea688405fd408cabf9f34c24fed0e94",
+      "domain_path": "infer-core/optimizations/interventions-and-cases/e2e-case-studies",
+      "estimated_tokens": 783,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "path": "infer-core/optimizations/interventions-and-cases/e2e-case-studies/unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow.md",
+      "tier": "L3"
+    },
+    "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop": {
+      "bytes": 5526,
+      "category": "sop",
+      "content_sha256": "ccd21443e03628412d6694a2eee33aff199e21ba6c67924ea8157563ecd0c633",
+      "domain_path": "infer-core/runbooks/precision-and-runtime/determinism-and-nonfinite",
+      "estimated_tokens": 827,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/runbooks/precision-and-runtime/determinism-and-nonfinite/unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms": {
+      "bytes": 5029,
+      "category": "axiom",
+      "content_sha256": "def2b39fdb6ae4dc8a19b8a5cc364cc31f49d1c1070ff28d2941463693a3342c",
+      "domain_path": "infer-core/concepts/models-and-modules/dit-vae-and-hstu",
+      "estimated_tokens": 658,
+      "evidence_strength": "software_contract",
+      "inherits_from": [],
+      "path": "infer-core/concepts/models-and-modules/dit-vae-and-hstu/unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop": {
+      "bytes": 5924,
+      "category": "sop",
+      "content_sha256": "1acd07bb6e7476aeffd630e40d8602b91def597a230cadafe1707f86372e00bb",
+      "domain_path": "infer-core/optimizations/rules-communication-and-parallel/multistream-and-overlap",
+      "estimated_tokens": 718,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-communication-and-parallel/multistream-and-overlap/unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms": {
+      "bytes": 6294,
+      "category": "axiom",
+      "content_sha256": "0b683e194be22adacaa0973ba4ad06602ab6e605e827c69597ef02b2970b3f03",
+      "domain_path": "infer-core/concepts/models-and-modules/linear-ssm-and-mhc",
+      "estimated_tokens": 774,
+      "evidence_strength": "software_contract",
+      "inherits_from": [],
+      "path": "infer-core/concepts/models-and-modules/linear-ssm-and-mhc/unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop": {
+      "bytes": 6719,
+      "category": "sop",
+      "content_sha256": "1710ad57e6037496c6b34bf94069b126566812c3999d83330c80a0347503e7e7",
+      "domain_path": "infer-core/optimizations/interventions-and-cases/intervention-playbooks",
+      "estimated_tokens": 810,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/optimizations/interventions-and-cases/intervention-playbooks/unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop": {
+      "bytes": 5464,
+      "category": "sop",
+      "content_sha256": "175676e0095c4276b7c7519c3eb36b5fcbfb8cbd66035f537e4385745154b9e9",
+      "domain_path": "infer-core/optimizations/rules-communication-and-parallel/hccl-and-mc2-domains",
+      "estimated_tokens": 690,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-communication-and-parallel/hccl-and-mc2-domains/unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop": {
+      "bytes": 5979,
+      "category": "sop",
+      "content_sha256": "0087fa95cd892f953036dbd4d698abc2123fed99840682d81658ad67001d4504",
+      "domain_path": "infer-core/optimizations/rules-communication-and-parallel/hybrid-slicing-and-cp",
+      "estimated_tokens": 688,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-communication-and-parallel/hybrid-slicing-and-cp/unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms": {
+      "bytes": 6329,
+      "category": "axiom",
+      "content_sha256": "a2f48a1a615e1c782800020e0c6de7ccc6acaf31f52e5d84c8623a2de02d66fe",
+      "domain_path": "infer-core/training-and-alignment/concepts/parallel-and-memory",
+      "estimated_tokens": 740,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/training-and-alignment/concepts/parallel-and-memory/unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms": {
+      "bytes": 6361,
+      "category": "axiom",
+      "content_sha256": "ce67490f1067aab9b68f313c3770d8ac902efafe11d3659bd114d3bb5126336e",
+      "domain_path": "infer-core/concepts/models-and-modules/mla-dsa-indexer",
+      "estimated_tokens": 761,
+      "evidence_strength": "software_contract",
+      "inherits_from": [],
+      "path": "infer-core/concepts/models-and-modules/mla-dsa-indexer/unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop": {
+      "bytes": 5795,
+      "category": "sop",
+      "content_sha256": "9c7c9cdff9398393416158f716ac56556d456ec9ab089d1d5753408c76dc807b",
+      "domain_path": "infer-core/runbooks/precision-and-runtime/profiling-and-latency-spikes",
+      "estimated_tokens": 931,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/runbooks/precision-and-runtime/profiling-and-latency-spikes/unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop": {
+      "bytes": 6394,
+      "category": "sop",
+      "content_sha256": "e10b6da34aa9e2709a1b2046e611538da565cbb33e2131bafed1852b7440a4f0",
+      "domain_path": "infer-core/optimizations/rules-compute-fusion/operator-and-backend",
+      "estimated_tokens": 783,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-compute-fusion/operator-and-backend/unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop": {
+      "bytes": 6309,
+      "category": "sop",
+      "content_sha256": "2ce64d4a4f43965545e0d8e62d812f647e309754f4fcc7603b7967b6ee45f246",
+      "domain_path": "infer-core/optimizations/rules-memory-and-kv/paged-kv-and-cp",
+      "estimated_tokens": 827,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-memory-and-kv/paged-kv-and-cp/unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop": {
+      "bytes": 7016,
+      "category": "sop",
+      "content_sha256": "4b469c31639d184bb052f289f485e80abd56ba780e4ef2b05780729b15cdbd99",
+      "domain_path": "infer-core/optimizations/rules-compute-fusion/superkernel-and-graph",
+      "estimated_tokens": 854,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-compute-fusion/superkernel-and-graph/unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop": {
+      "bytes": 6911,
+      "category": "sop",
+      "content_sha256": "b78d2ab13a8ed0570f45dc3fcd243f0f1c98743eed8c9eabcde3ada4333f37c2",
+      "domain_path": "infer-core/optimizations/rules-compute-fusion/attention-and-mla",
+      "estimated_tokens": 867,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-compute-fusion/attention-and-mla/unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop.md",
+      "tier": "L2"
+    },
+    "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms": {
+      "bytes": 5689,
+      "category": "axiom",
+      "content_sha256": "b6fd72ea92346c8e9f2a097e62d4c93a11ef40192437e1bc3133aa01cb320ba2",
+      "domain_path": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies",
+      "estimated_tokens": 671,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies/unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms.md",
+      "tier": "L1"
+    },
+    "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow": {
+      "bytes": 6428,
+      "category": "workflow",
+      "content_sha256": "ddc8640423c5c6f62a16db509fbcebdacbb04d517f7c89d055638ccb4496d669",
+      "domain_path": "infer-core/training-and-alignment/concepts/rlhf-post-training",
+      "estimated_tokens": 775,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms"
+      ],
+      "path": "infer-core/training-and-alignment/concepts/rlhf-post-training/unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow.md",
+      "tier": "L3"
+    },
+    "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop": {
+      "bytes": 5863,
+      "category": "sop",
+      "content_sha256": "ede609ee3c969f427abdb9d6899eba761fb77df34b6967e5a5335afc0cd027e6",
+      "domain_path": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload",
+      "estimated_tokens": 776,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload/unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop.md",
       "tier": "L2"
     },
     "unit-sglang-cancellation-and-cache-ownership": {

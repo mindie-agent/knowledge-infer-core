@@ -1,9 +1,70 @@
 {
-  "build_elapsed_ms": 13.106375001370907,
+  "build_elapsed_ms": 19.111209083348513,
   "closure": {
     "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": [],
     "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": [],
     "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": [],
+    "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms": [],
+    "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms": [],
+    "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms": [],
+    "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms": [],
+    "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+    ],
+    "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-cgroup-host-memory-headroom": [],
     "unit-sglang-checkpoint-request-rebind": [],
@@ -60,11 +121,31 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "generation": "0969b26703e530fe206fefd77bb63b37d76117ae45db51719cc857b519a2f67a",
+  "generation": "f4580e9d6542eaf741823d5987b5bc4d07242e8756c1758dbd32fef70915750f",
   "id_path": {
     "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers.md",
     "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership.md",
     "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": "serving/cann-recipes-infer/cache/unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment.md",
+    "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels/unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms.md",
+    "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms": "infer-core/concepts/frameworks-and-platforms/executors-and-serving/unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms.md",
+    "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow": "infer-core/optimizations/interventions-and-cases/e2e-case-studies/unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow.md",
+    "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop": "infer-core/runbooks/precision-and-runtime/determinism-and-nonfinite/unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop.md",
+    "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms": "infer-core/concepts/models-and-modules/dit-vae-and-hstu/unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms.md",
+    "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop": "infer-core/optimizations/rules-communication-and-parallel/multistream-and-overlap/unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop.md",
+    "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms": "infer-core/concepts/models-and-modules/linear-ssm-and-mhc/unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms.md",
+    "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop": "infer-core/optimizations/interventions-and-cases/intervention-playbooks/unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop.md",
+    "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop": "infer-core/optimizations/rules-communication-and-parallel/hccl-and-mc2-domains/unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop.md",
+    "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop": "infer-core/optimizations/rules-communication-and-parallel/hybrid-slicing-and-cp/unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop.md",
+    "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms": "infer-core/training-and-alignment/concepts/parallel-and-memory/unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms.md",
+    "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms": "infer-core/concepts/models-and-modules/mla-dsa-indexer/unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms.md",
+    "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop": "infer-core/runbooks/precision-and-runtime/profiling-and-latency-spikes/unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop.md",
+    "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop": "infer-core/optimizations/rules-compute-fusion/operator-and-backend/unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop.md",
+    "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop": "infer-core/optimizations/rules-memory-and-kv/paged-kv-and-cp/unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop.md",
+    "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop": "infer-core/optimizations/rules-compute-fusion/superkernel-and-graph/unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop.md",
+    "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop": "infer-core/optimizations/rules-compute-fusion/attention-and-mla/unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop.md",
+    "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies/unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms.md",
+    "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow": "infer-core/training-and-alignment/concepts/rlhf-post-training/unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow.md",
+    "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload/unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop.md",
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/lifecycle/unit-sglang-cancellation-and-cache-ownership.md",
     "unit-sglang-cgroup-host-memory-headroom": "serving/sglang/cache/memory/unit-sglang-cgroup-host-memory-headroom.md",
     "unit-sglang-checkpoint-request-rebind": "serving/sglang/cache/checkpoints/unit-sglang-checkpoint-request-rebind.md",
@@ -124,7 +205,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 58,
+  "unit_count": 78,
   "units": [
     {
       "category": "sop",
@@ -261,6 +342,1199 @@
           "calculate_fixed_block_memory_bytes",
           "_alloc_aligned_hbm_tensor",
           "HIXL"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels",
+      "evidence_strength": "hardware_spec",
+      "id": "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels/unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/platforms/atlas_a3.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/platforms/ascend_950.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/ascendc.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/pypto.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/tilelang.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/torchair.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/autofuse.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/quantization/fp8_attention.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/quantization/mxfp8_a8w8.md"
+        ],
+        "source_digest": "4361535e38e21d6dd1225c9853fec4d8ec1fa7b079807f87f8a7b486b54b9c56",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/concepts/platforms/atlas_a3.md",
+        "source_type": "cannbot_platform_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Ascend platform hardware contracts (Atlas A2, Atlas A3, Ascend 950) and kernel/compiler DSL boundaries (AscendC, PyPTO, TileLang, TorchAir, AutoFuse)",
+      "token_estimate": 702,
+      "triggers": {
+        "error_signatures": [
+          "FP8 or MXFP8/MXFP4 kernel throws RuntimeError on Ascend910B or Ascend910_93 because native FP8/microscaling requires Ascend 950",
+          "PyPTO operator fails in eager or ACLGraph mode because PyPTO only supports TorchAir GE Graph lowering",
+          "TileLang operator fails under TorchAir GE Graph because TileLang only supports eager and ACLGraph capture"
+        ],
+        "keywords": [
+          "Atlas_A3",
+          "Ascend910_93",
+          "Ascend_950",
+          "950PR",
+          "950DT",
+          "AscendC",
+          "PyPTO",
+          "TileLang",
+          "TorchAir",
+          "AutoFuse",
+          "MXFP8",
+          "HiFloat8"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/concepts/frameworks-and-platforms/executors-and-serving",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/concepts/frameworks-and-platforms/executors-and-serving/unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/cann_executor.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/kv_cache_manager.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/online_pd_inference.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/mm_inference_launch.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/frameworks/sglang.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/hixl.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/cann_shmem.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/online_weight_split.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/inference_config.md"
+        ],
+        "source_digest": "61733f6bd867914c8706a3e07ae69afcaf1b5fcfc4393a496830f873911b6ee9",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/concepts/frameworks/cann_executor.md",
+        "source_type": "cannbot_concept_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Execution model invariants of CANN Executor, SGLang, Online PD Disaggregation, KVCacheManager, HIXL, and CANN SHMEM",
+      "token_estimate": 643,
+      "triggers": {
+        "error_signatures": [
+          "Disaggregated PD serving deadlocks when Prefill ZMQ push and HIXL one-sided RDMA KV transfer mismatch block indices",
+          "CANN SHMEM symmetric heap allocation fails when symmetric memory pool size is not identical across all PE ranks",
+          "Online weight splitting OOMs on rank 0 when full unsharded safetensors tensor is loaded onto NPU before TP/EP slicing"
+        ],
+        "keywords": [
+          "cann_executor",
+          "kv_cache_manager",
+          "online_pd_inference",
+          "HIXL",
+          "cann_shmem",
+          "online_weight_split",
+          "InferenceConfig",
+          "mm_inference_launch"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/interventions-and-cases/e2e-case-studies",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/interventions-and-cases/e2e-case-studies/unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/cases/afd_attn_ffn_disaggregation.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/cases/ascendc_attention_op_tiling_budget.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/cases/dsa_decode_memory_budget_indexer_cache.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/cases/mla_prefill_flash_attention_ntd_layout.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/cases/moe_multi_stream_limit_core_num.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/models/qwen3_next_atlas_a3_deployment.md",
+          "https://gitcode.com/cann/cannbot/blob/d0f8c40ebc208fa17323781c89e4ec6ea16e4c52/plugins-official/model-infer-optimize/workflows/optimize-workflow.md",
+          "https://gitcode.com/cann/cannbot/blob/d0f8c40ebc208fa17323781c89e4ec6ea16e4c52/plugins-official/model-infer-optimize/workflows/sota-approach-workflow.md"
+        ],
+        "source_digest": "aabf0334488819efdfb926a1cadeafb9fe678531a5d39244eb2b6481e81d7a4a",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/cases/afd_attn_ffn_disaggregation.md",
+        "source_type": "cannbot_case_study_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "End-to-end optimization case studies & SOTA workflow: AFD disaggregation, AscendC L1/L0/UB tiling budgets, DSA Indexer memory budgeting, and MLA NTD prefill",
+      "token_estimate": 783,
+      "triggers": {
+        "error_signatures": [
+          "AscendC fused attention or indexer kernel overflows UB or L1 SRAM when double-buffering is omitted from tiling byte budget",
+          "DSA long-context decode OOMs because Lightning Indexer k_idx cache was excluded from KVCacheManager block sizing",
+          "MLA prefill FlashAttention incurs expensive NPU transdata copies when intermediate tensors mismatch NTD/TND layout"
+        ],
+        "keywords": [
+          "afd_attn_ffn_disaggregation",
+          "ascendc_attention_op_tiling_budget",
+          "dsa_decode_memory_budget_indexer_cache",
+          "mla_prefill_flash_attention_ntd_layout",
+          "qwen3_next_atlas_a3_deployment",
+          "sota-approach-workflow"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/runbooks/precision-and-runtime/determinism-and-nonfinite",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/runbooks/precision-and-runtime/determinism-and-nonfinite/unit-infer-core-deterministic-execution-msprobe-and-nonfinite-triage-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-train-precision-determinism/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-train-precision-nonfinite/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-train-precision-numerical-mismatch/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-precision-debug/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/training_debug_observability.md"
+        ],
+        "source_digest": "07a5914482d5c620b0cd21dc1b1b5569c9f9c61aed265d2eac57bf12f29a7a5c",
+        "source_locator": "cann/cannbot-skills@f305e200aa4b1e1fed73cd21ff1f083b8df25a1e:model/model-train-precision-determinism/SKILL.md",
+        "source_type": "cannbot_skill_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Precision & determinism triage across Ascend engines: HCCL/LCC/MatMul deterministic flags, msprobe layerwise bisect, and NaN/Inf overflow isolation",
+      "token_estimate": 827,
+      "triggers": {
+        "error_signatures": [
+          "Two identical NPU inference or training runs with fixed seed diverge bit-by-bit after AllReduce or MatMul K-axis reduction",
+          "Layer output suddenly emits NaN or Inf during FP16/BF16/W8A8 attention or MoE forward pass",
+          "NPU fused operator output cosine similarity drops below 0.99 against CPU FP32 golden reference"
+        ],
+        "keywords": [
+          "HCCL_DETERMINISTIC",
+          "LCC_DETERMINISTIC",
+          "CLOSE_MATMUL_K_SHIFT",
+          "CUBLAS_WORKSPACE_CONFIG",
+          "msprobe",
+          "PrecisionDebugger",
+          "use_deterministic_algorithms",
+          "cosine_similarity"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/concepts/models-and-modules/dit-vae-and-hstu",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "infer-core/concepts/models-and-modules/dit-vae-and-hstu/unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/dit.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/vae.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/hunyuan_video.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/wan2_2_i2v.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/sana_video.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/hunyuan_image_3.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/hstu.md"
+        ],
+        "source_digest": "aea8ed29e406ede50ce46bc948f4049f088521d7b3f6bd5b98b81559267fea70",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/concepts/modules/dit.md",
+        "source_type": "cannbot_concept_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Architectural invariants of Diffusion Transformers (DiT), 3D Causal VAE, and HSTU generative recommenders on Ascend NPU",
+      "token_estimate": 658,
+      "triggers": {
+        "error_signatures": [
+          "Video DiT full 3D spatiotemporal attention OOMs or dominates denoising step time at 720p/1080p resolution",
+          "3D Causal VAE spatial slice parallel produces visible seam artifacts at patch boundaries when conv halo context is omitted",
+          "HSTU generative recommender fails or OOMs on massive categorical embedding tables and jagged user-action sequences"
+        ],
+        "keywords": [
+          "Diffusion Transformer",
+          "adaLN-Zero",
+          "HunyuanVideo",
+          "Wan2.2-I2V",
+          "Sana-Video",
+          "HunyuanImage-3.0",
+          "HSTU",
+          "CausalVAE"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-communication-and-parallel/multistream-and-overlap",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-communication-and-parallel/multistream-and-overlap/unit-infer-core-dual-stream-core-balance-vector-cube-and-microbatch-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/decode_multi_stream_overlap_core_balance.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/gmm_swigluquant_vector_core_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/hccl_aiv_expansion_vs_prefill_micro_batch.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/hide_moe_attention_tp_ep_comm.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/multi_stream.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/prefill_micro_batch.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/ring_attention_overlap.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-multi-stream/SKILL.md"
+        ],
+        "source_digest": "d2ebeef1969801c2e1feb6bdd9a4beb71f79c9d6caba21a15efe558f8816b406",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/decode_multi_stream_overlap_core_balance.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 3A (Multi-Stream & Overlap): Cube-vs-Vector core complementarity, dual-stream core budgeting, and AIV collective vs micro-batch rules",
+      "token_estimate": 718,
+      "triggers": {
+        "error_signatures": [
+          "Placing two Cube-heavy MatMul kernels on concurrent NPU streams yields zero wall-clock overlap without limit_core_num",
+          "Enabling HCCL AIV mode (HCCL_OP_EXPANSION_MODE=AIV) during prefill dual-stream micro-batching causes severe AIV vector core contention",
+          "Cross-stream tensor consumed without wait_tensor or record_stream produces intermittent numerical corruption"
+        ],
+        "keywords": [
+          "decode_multi_stream_overlap_core_balance",
+          "gmm_swigluquant_vector_core_parallel",
+          "hccl_aiv_expansion_vs_prefill_micro_batch",
+          "HCCL_OP_EXPANSION_MODE",
+          "limit_core_num",
+          "npu_stream_switch",
+          "wait_tensor"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/concepts/models-and-modules/linear-ssm-and-mhc",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "infer-core/concepts/models-and-modules/linear-ssm-and-mhc/unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/gated_deltanet.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/gated_attention.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/mhc.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/recurrent_gated_delta_rule.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/mambav2_rmsnormgated.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/mhc_hcpre_hcpost.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/qwen3_next.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/qwen3_5_moe.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/longcat_flash.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/gemma4_26b_a4b.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/gpt_oss.md"
+        ],
+        "source_digest": "42fa927021ab81f5af9083f8a5527f87010e99b9f5c2eae7f3773c8a28b01f73",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/concepts/modules/gated_deltanet.md",
+        "source_type": "cannbot_concept_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Architectural invariants of Gated DeltaNet (GDN), Mamba2 SSM, Manifold-Constrained Hyper-Connections (mHC), and hybrid MoE models",
+      "token_estimate": 774,
+      "triggers": {
+        "error_signatures": [
+          "Hybrid Gated DeltaNet + Full Attention model corrupts recurrent state S_t when prefill chunking or decode padding mutates state in place",
+          "mHC manifold-constrained hyper-connection residual stream diverges when HcPre/HcPost mixing matrices lose doubly-stochastic normalization",
+          "LongCat-Flash zero-compute identity experts or GPT-OSS clamped SwiGLU fail on generic MoE fused operators"
+        ],
+        "keywords": [
+          "Gated DeltaNet",
+          "recurrent_gated_delta_rule",
+          "mambav2_rmsnormgated",
+          "HcPre",
+          "HcPost",
+          "Manifold-Constrained Hyper-Connections",
+          "Qwen3-Next",
+          "Qwen3.5-MoE",
+          "LongCat-Flash",
+          "Gemma-4-26B-A4B",
+          "GPT-OSS"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/interventions-and-cases/intervention-playbooks",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/optimizations/interventions-and-cases/intervention-playbooks/unit-infer-core-graph-multistream-sparse-cp-and-dit-interventions-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/aclgraph_decode_steady_state_skip_guard_reinplace.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/aclgraph_print_bisect_silent_hang.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/sfa_dsa_cp_cross_group_kv_allgather.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/qwen3_next_gdn_context_parallel_zeco.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/kvp_longseq_decode.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/ring_attention_comm_compute_overlap_lse_merge.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/upstream_dit_video_monkeypatch_npu_adaptation.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/video_dit_fp8_mxfp8_quantization.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/vae_multicard_spatial_parallel.md"
+        ],
+        "source_digest": "76c746cb7a38840cb53d89afb66a82b95b49a831b9ecb8682e39364749a5f660",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/guides/experience/interventions/aclgraph_decode_steady_state_skip_guard_reinplace.md",
+        "source_type": "cannbot_intervention_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Distilled intervention playbooks: ACLGraph steady-state guard skip, print-bisect for silent graph hangs, SFA-CP cross-group KV AllGather, and KVP/ZeCO long-context",
+      "token_estimate": 810,
+      "triggers": {
+        "error_signatures": [
+          "ACLGraph capture hangs silently without traceback or plog error code inside complex custom model forward",
+          "Combining DSA/SFA sparse attention with Context Parallelism (CP) fails because topk_indices reference global KV blocks absent on local CP rank",
+          "Steady-state ACLGraph decode incurs host CPU overhead from redundant Dynamo guard evaluation and reinplace passes"
+        ],
+        "keywords": [
+          "aclgraph_decode_steady_state_skip_guard",
+          "aclgraph_print_bisect_silent_hang",
+          "sfa_dsa_cp_cross_group_kv_allgather",
+          "qwen3_next_gdn_context_parallel_zeco",
+          "kvp_longseq_decode",
+          "upstream_dit_video_monkeypatch",
+          "video_dit_fp8_mxfp8"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-communication-and-parallel/hccl-and-mc2-domains",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-communication-and-parallel/hccl-and-mc2-domains/unit-infer-core-hccl-comm-groups-mc2-domain-and-collective-prep-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/hccl_comm_group_construction_pitfalls.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/mc2_dedicated_comm_domain.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/tensor_prep_before_hccl_collective.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/moe_dispatch_combine_comm_quant.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/online_gloo_cpu_comm_domain_env_bringup.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/multi_instance_online_master_addr.md"
+        ],
+        "source_digest": "43a292297411b28be128d06d48645b83ceb86a7a5650b049ecf9d0d1cb8de052",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/hccl_comm_group_construction_pitfalls.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 3B (HCCL & MC2 Domains): Dedicated MC2 communication group, concurrent-stream group isolation, and pre-collective tensor prep",
+      "token_estimate": 690,
+      "triggers": {
+        "error_signatures": [
+          "Reusing the standard EP or TP HCCL process group for MC2 npu_moe_distribute_dispatch_v2 causes HCCL state corruption or hang",
+          "RowParallelLinear adds bias before AllReduce across TP ranks, multiplying the bias term by tp_size",
+          "Two concurrent NPU streams issuing collectives on the same HCCL group deadlock on hardware notify registers"
+        ],
+        "keywords": [
+          "hccl_comm_group_construction",
+          "mc2_dedicated_comm_domain",
+          "tensor_prep_before_hccl_collective",
+          "moe_dispatch_combine_comm_quant",
+          "get_ backend_group",
+          "hcomm_info"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-communication-and-parallel/hybrid-slicing-and-cp",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop",
+      "inherits_from": [
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-communication-and-parallel/hybrid-slicing-and-cp/unit-infer-core-hybrid-dp-tp-ep-sp-cp-and-embedding-sharding-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/prefill_mla_dp_vs_sp_tp_sp_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/dp_attention_tp_oproj_mlp_hybrid.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/local_tp_memory_heavy_projections.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/long_seq_prefill_context_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/generative_recommender_vocab_parallel_embedding.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/ascend_deploy_parallel_variant_and_nondefault_platform.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/prefill_decode_cluster_scale_mismatch.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-impl/SKILL.md"
+        ],
+        "source_digest": "61a9d68953d234b21da5e6e9b66ff8ef0c4dfe38ba600358cce4ab6adbf68686",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/prefill_mla_dp_vs_sp_tp_sp_parallel.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 3C (Hybrid Parallel Slicing): MLA DP vs SP-TP-SP, selective local TP on O_proj/MLP/LM_Head, and VocabParallel Embedding",
+      "token_estimate": 688,
+      "triggers": {
+        "error_signatures": [
+          "Pure DP Attention replicates heavy O_proj, dense MLP, and LM_Head weights on every card and OOMs or bottlenecks decode bandwidth",
+          "Low-concurrency long-sequence MLA prefill leaves DP ranks idle when SP-TP-SP or CP is not enabled",
+          "Prefill and Decode default YAML configs assume different cluster card counts and fail on smaller validation nodes"
+        ],
+        "keywords": [
+          "prefill_mla_dp_vs_sp_tp_sp",
+          "dp_attention_tp_oproj_mlp_hybrid",
+          "local_tp_memory_heavy_projections",
+          "long_seq_prefill_context_parallel",
+          "vocab_parallel_embedding",
+          "attn_dp_size",
+          "mlp_tp_size"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/training-and-alignment/concepts/parallel-and-memory",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/training-and-alignment/concepts/parallel-and-memory/unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/torchtitan_5d_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/dualpipev.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/fsdp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/context_parallel_train.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/custom_cp_dsa.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/quantization/hif8.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/recomputation.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/optimizer_memory.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/chunk_loss.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/swap_attention.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/moe_comm_overlap.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-train-oom-analysis/SKILL.md"
+        ],
+        "source_digest": "6b918115bffa0531bfceb639c830e2fe45ba4ffc56c68a04bb94a13218e47fda",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/training/concepts/parallelism/torchtitan_5d_parallel.md",
+        "source_type": "cannbot_training_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Ascend LLM/MoE training invariants: MindSpeed & TorchTitan 5D Parallelism, DualPipeV zero-bubble, FSDP2/LayerZeRO, selective recomputation, and HiF8/MXFP8",
+      "token_estimate": 740,
+      "triggers": {
+        "error_signatures": [
+          "Large-vocabulary LM Head cross-entropy materializes full [B, S, V] FP32 logits tensor and triggers training HBM OOM",
+          "Pipeline Parallel 1F1B schedule suffers high bubble ratio on large MoE pretraining without DualPipeV dW split",
+          "MoE AllToAll dispatch/combine blocks backward pass compute when cross-microbatch overlap is disabled"
+        ],
+        "keywords": [
+          "torchtitan_5d_parallel",
+          "MindSpeed",
+          "DualPipeV",
+          "FSDP2",
+          "LayerZeRO",
+          "Reuse-FP32-Param",
+          "Chunk_Loss",
+          "Swap_Attention",
+          "HiF8",
+          "SFAG",
+          "SLIG",
+          "SMLA"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/concepts/models-and-modules/mla-dsa-indexer",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "infer-core/concepts/models-and-modules/mla-dsa-indexer/unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/mla.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/dsa.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/lightning_indexer.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/modules/sparse_flash_attention.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/mla_prolog.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/lightning_indexer.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/indexer_prolog.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/sparse_attn_sharedkv.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/kernels/compressor.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/deepseek_v3_2_exp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/deepseek_v4.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/models/glm_5.md"
+        ],
+        "source_digest": "824e310c0fe4543d190175300df450edc5067286897c3125f58a6d3c73e2671c",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/concepts/modules/mla.md",
+        "source_type": "cannbot_concept_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Architectural invariants of MLA, DeepSeek Sparse Attention (DSA), Lightning Indexer, and Compressor KV kernels on Ascend NPU",
+      "token_estimate": 761,
+      "triggers": {
+        "error_signatures": [
+          "MLA decode without weight absorption expands latent kv_lora_rank=512 into full per-head K/V and exhausts HBM bandwidth",
+          "DSA sparse attention top-k gather reads out-of-bounds KV slots when Lightning Indexer block stride mismatches SFA block_table",
+          "DeepSeek-V4 SparseAttnSharedKV or Compressor C4A/C128A fails on mismatched latent nope/rope dimension split"
+        ],
+        "keywords": [
+          "Multi-head Latent Attention",
+          "DeepSeek Sparse Attention",
+          "Lightning Indexer",
+          "npu_mla_prolog",
+          "indexer_prolog",
+          "SparseAttnSharedKV",
+          "GatherSelectionKvCache",
+          "Compressor",
+          "q_lora_rank",
+          "kv_lora_rank",
+          "qk_rope_head_dim"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/runbooks/precision-and-runtime/profiling-and-latency-spikes",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/runbooks/precision-and-runtime/profiling-and-latency-spikes/unit-infer-core-npu-profiling-kernel-breakdown-and-latency-spike-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-perf-breakdown/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-profiling/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-runtime-debug/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-recommend-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/plugins-community/triton-optimizer/skills/triton-npu-optimize/SKILL.md"
+        ],
+        "source_digest": "3c23d1a7a1893f705c16e3ecc89e40e7eda1460a478d9527acf8309fb7ffcaf9",
+        "source_locator": "cann/cannbot-skills@f305e200aa4b1e1fed73cd21ff1f083b8df25a1e:model/model-infer-perf-breakdown/SKILL.md",
+        "source_type": "cannbot_skill_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "NPU profiling, kernel breakdown, and tail-latency spike diagnosis across Ascend inference engines and Triton-NPU kernels",
+      "token_estimate": 931,
+      "triggers": {
+        "error_signatures": [
+          "Profiler trace shows large gaps between AICore kernels or unexpected TransData/Cast insertions",
+          "Triton-NPU kernel suffers high scalar latency or low MTE2/UB bandwidth utilization",
+          "Periodic P99 TPOT latency spikes occur during steady-state serving on Ascend NPU"
+        ],
+        "keywords": [
+          "model-infer-perf-breakdown",
+          "model-infer-profiling",
+          "triton-npu-optimize",
+          "kernel_details.csv",
+          "step_trace_time.csv",
+          "aic_mac_ratio",
+          "aiv_vec_ratio",
+          "mte2_ratio"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-compute-fusion/operator-and-backend",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-compute-fusion/operator-and-backend/unit-infer-core-operator-backend-selection-dit-rewrite-and-lora-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/op_backend_selection_ascendc_pypto_tilelang.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/fused_op_hardware_conditional_fallback.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/ascendc_custom_op_out_of_band_dtype.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/torchless_lowprec_dtype_acl_override.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/dit_cnn_operator_algebraic_rewrite_npu.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/dit_mxfp_lowbit_quant_conv_as_linear.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/multi_lora_bgmv_ascendc_vector_kernel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/structural_isomorphic_model_reuse_stack.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-harmony/SKILL.md"
+        ],
+        "source_digest": "394e708cea357026073c630bc104dda12d08f93bd7fd5276c81888d71e59353a",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/op_backend_selection_ascendc_pypto_tilelang.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 1C (Operator Backends & Rewrites): AscendC priority, out-of-band FP8/HiF8 dtypes, DiT 1x1-conv algebraic rewrite, and Multi-LoRA BGMV",
+      "token_estimate": 783,
+      "triggers": {
+        "error_signatures": [
+          "PyTorch custom op schema rejects HiFloat8 or sub-byte quantized tensor because torch.dtype has no native enum",
+          "DiT 1x1 Conv2d / Conv3d layers execute slowly on NPU vector/im2col path instead of Cube MatMul",
+          "Fused operator crashes when M or N dimension exceeds 65535 hardware axis ceiling without fallback"
+        ],
+        "keywords": [
+          "op_backend_selection_ascendc",
+          "ascendc_custom_op_out_of_band_dtype",
+          "torchless_lowprec_dtype_acl_override",
+          "dit_cnn_operator_algebraic_rewrite",
+          "multi_lora_bgmv_ascendc",
+          "structural_isomorphic_model_reuse"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-memory-and-kv/paged-kv-and-cp",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-memory-and-kv/paged-kv-and-cp/unit-infer-core-paged-kv-scatter-hybrid-cp-and-zigzag-write-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/hybrid_kv_cache_context_parallel_block_size_alignment.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/ascend_paged_attention_kv_cache.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/paged_kv_cache_write_scatter_update_vs_scatter_nd.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/graph_mode_kvcache_inplace_mla_prolog_adaptation.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/mla_prolog_zigzag_cp_kv_write.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/causal_cp_prefill_zigzag_actual_seqlens.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-kvcache/SKILL.md"
+        ],
+        "source_digest": "07904b865eb3f639ee0ed60bff07df34f9cced9eb00db0004d7c5940670499c2",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/hybrid_kv_cache_context_parallel_block_size_alignment.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 2A (Paged KV & CP Memory): Stage-specific KV scatter ops, hybrid block-size LCM alignment, and ZigZag-CP two-segment KV write",
+      "token_estimate": 827,
+      "triggers": {
+        "error_signatures": [
+          "Hybrid KV cache model with multiple block_size groups fails assertion when Context Parallelism (DCP/PCP) is enabled",
+          "MLA-prolog under ZigZag-CP prefill corrupts paged KV cache when writing both non-contiguous zigzag segments via a single slot_mapping",
+          "Decode single-token KV update incurs high launch/indexing overhead when using contiguous-range scatter_update_ instead of scatter_nd_update_"
+        ],
+        "keywords": [
+          "hybrid_kv_cache_context_parallel",
+          "paged_kv_cache_write_scatter",
+          "npu_scatter_nd_update_",
+          "scatter_update_",
+          "mla_prolog_zigzag_cp_kv_write",
+          "causal_cp_prefill_zigzag"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-compute-fusion/superkernel-and-graph",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-compute-fusion/superkernel-and-graph/unit-infer-core-superkernel-ge-graph-autofuse-and-pattern-pass-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/superkernel_decode_ge_graph_fusion_scope.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/superkernel_scope_segmented_gated.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/superkernel_ascendc_relocatable_binary.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/graph_mode_decode_only_compile_backends.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/graph_mode_enable_decision_profiling.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/torchair_cache_compile_persisted_graph.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/graph_fusion_register_replacement_guardrails.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/inductor_autofuse_partial_compile_scope.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/staged_single_card_optimize_pipeline.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-superkernel/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-graph-mode/SKILL.md"
+        ],
+        "source_digest": "9c38ba1c67b72106b4caf789b9d3dc22ef99df109ad8e63992d3dd5d7f5909dd",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/superkernel_decode_ge_graph_fusion_scope.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 1B (Graph & SuperKernel): Segmented SuperKernel scopes, relocatable AscendC binaries, TorchAir pattern passes, and AutoFuse",
+      "token_estimate": 854,
+      "triggers": {
+        "error_signatures": [
+          "Wrapping an entire Transformer layer in one SuperKernel scope fails or skips custom AscendC operators",
+          "Custom AscendC kernel inside SuperKernel scope is excluded from fusion because --op_relocatable_kernel_binary=true was omitted at build time",
+          "torchair register_replacement pattern pass matches across stream boundaries or wrong head_dim and corrupts graph execution"
+        ],
+        "keywords": [
+          "superkernel_decode_ge_graph",
+          "superkernel_scope_segmented",
+          "op_relocatable_kernel_binary",
+          "register_replacement",
+          "cache_compile",
+          "inductor_autofuse",
+          "dcci_disable"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-compute-fusion/attention-and-mla",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-compute-fusion/attention-and-mla/unit-infer-core-tnd-layout-fia-mla-absorb-and-prolog-fusion-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/tnd_packed_sequence_standard_and_bsnd_shim.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/attention_compressor_tnd_layout_migration.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/attention_to_fia_sparse_mode_sink_window.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/bidirectional_attention_fia_non_causal_full.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/mla_weight_absorption_latent_kv.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/mla_prolog_v3_prefill_seqlen_doc.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/mlapo_fused_preprocess_w8a8_non_cp_gate.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/dsa_sparse_prefill_mla_scheme_by_seqlen.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/sfaa_nonpa_qkv_layout_constraint.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-fusion/SKILL.md"
+        ],
+        "source_digest": "f8d90c7a7b67c01e34de99d1fb82efc2a7862a72890a9af88f05d7debbc559fa",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/tnd_packed_sequence_standard_and_bsnd_shim.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 1A (Attention & MLA Fusion): TND packed layout, FIA sparse_mode mapping, MLA weight absorption, and MLAPO gating",
+      "token_estimate": 867,
+      "triggers": {
+        "error_signatures": [
+          "BSND attention layout pads variable-length batch to max_seq_len and wastes AICore compute or crashes on ragged TND inputs",
+          "MLAPO fused decode preprocess silently falls back per layer when quantization is not W8A8 or SFA-CP is enabled",
+          "Non-PagedAttention SparseFlashAttention fails with host tiling GRAPH_FAILED when Q and KV layouts differ"
+        ],
+        "keywords": [
+          "tnd_packed_sequence_standard",
+          "attention_to_fia_sparse_mode",
+          "mla_weight_absorption",
+          "mlapo_fused_preprocess",
+          "dsa_sparse_prefill_mla_scheme",
+          "sfaa_nonpa_qkv_layout",
+          "actual_seq_qlen"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies/unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/sp_tp_sp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/context_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/zigzag_cp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/ring_attention.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/ulysses.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/kvp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/expert_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/embedding_tp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/cfg_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/vae_patch_parallel.md"
+        ],
+        "source_digest": "7f2fc6c0da1ef933205630f010d9326e957feaaaf98de1ac5d0256df29253a0d",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/concepts/parallelism/sp_tp_sp.md",
+        "source_type": "cannbot_concept_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Parallelism topology invariants on Ascend NPU: TP, DP, EP, ZigZag/Ring/Ulysses CP, SP-TP-SP, KVP, and CFG/VAE Patch Parallelism",
+      "token_estimate": 671,
+      "triggers": {
+        "error_signatures": [
+          "Naive contiguous sequence slicing in causal prefill CP leaves early ranks idle while the final rank computes full context",
+          "MLA AllReduce across TP ranks during long prefill saturates HCCS bandwidth when SP-TP-SP ReduceScatter/AllGather is omitted",
+          "Ulysses sequence parallel fails when attention head count is not divisible by ulysses_size"
+        ],
+        "keywords": [
+          "SP-TP-SP",
+          "ZigZag_CP",
+          "Ring_Attention",
+          "Ulysses",
+          "KV_Parallel",
+          "CFG_Parallel",
+          "VAE_Patch_Parallel",
+          "Embedding_TP"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/training-and-alignment/concepts/rlhf-post-training",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow",
+      "inherits_from": [
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/training-and-alignment/concepts/rlhf-post-training/unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/train_rollout_switch.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/grpo_dapo.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/rollout_rebalance.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/partial_rollout.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/sam_speculative.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/transferdock_data_scheduling.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/agent_rl_loop.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/techniques/length_aware_resampler.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/guides/recipes/deepseek_r1_rl.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/guides/recipes/qwen3_rl.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/guides/recipes/qwen3_code_toolcall_rl.md"
+        ],
+        "source_digest": "8a9681360ff19b2484b52c955f6f9c96ecc2f6e054e5460aa8a74b85107bde15",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/training/concepts/techniques/train_rollout_switch.md",
+        "source_type": "cannbot_training_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend RLHF/Post-Training workflow: veRL/MindSpeed-RL GRPO/DAPO, co-located Train/Rollout resharding, Partial Rollout, and SAM speculative decoding",
+      "token_estimate": 775,
+      "triggers": {
+        "error_signatures": [
+          "Co-located veRL + MindSpeed + vLLM-Ascend GRPO training OOMs during Train-to-Rollout transition when optimizer states and rollout KV cache coexist in HBM",
+          "Long-tail reasoning rollout sequences (32K+ tokens) stall synchronous RL step barriers across DP workers",
+          "Multi-turn tool-calling Code RL blocks NPU workers on synchronous sandbox execution"
+        ],
+        "keywords": [
+          "train_rollout_switch",
+          "veRL",
+          "MindSpeed-RL",
+          "GRPO",
+          "DAPO",
+          "rollout_rebalance",
+          "partial_rollout",
+          "SAM_speculative",
+          "TransferDock",
+          "ScaleBox"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "ascend-inference-and-training",
+        "npu_platform": [
+          "Atlas_A2",
+          "Atlas_A3",
+          "Ascend_950",
+          "Ascend_310P"
+        ]
+      },
+      "domain_path": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload",
+      "evidence_strength": "software_contract",
+      "id": "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload/unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/decode_weight_prefetch_ordering.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/weight_nz_mc2_mm_all_reduce_exclusion.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/weight_nz.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/weight_prefetch.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/taylorseer_predictive_dit_cache.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/guides/experience/interventions/video_dit_taylorseer_cache_offload.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-prefetch/SKILL.md"
+        ],
+        "source_digest": "7d35bdbbc906c282478d711815c6098b6a751c98669b240dddba90c4a3aec6f3",
+        "source_locator": "cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/rules/decode_weight_prefetch_ordering.md",
+        "source_type": "cannbot_optimization_rule_distillation",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Inference optimization rules Part 2B (Weight Prefetch, NZ Format, & Cache Offload): Bandwidth-ordered npu_prefetch, MC2 RowParallel NZ exclusion, and TaylorSeer offload",
+      "token_estimate": 776,
+      "triggers": {
+        "error_signatures": [
+          "npu_prefetch evicts active L2 cache lines or provides zero speedup when anchored on a short pointwise dependency kernel",
+          "Enabling FRACTAL_NZ globally breaks or slows down RowParallelLinear layers using MC2 npu_mm_all_reduce_base",
+          "Video DiT TaylorSeer multi-order derivative feature cache OOMs NPU HBM on high-resolution video generation"
+        ],
+        "keywords": [
+          "decode_weight_prefetch_ordering",
+          "npu_prefetch",
+          "weight_nz_mc2_mm_all_reduce_exclusion",
+          "FRACTAL_NZ",
+          "npu_mm_all_reduce_base",
+          "taylorseer_predictive_dit_cache"
         ]
       }
     },
