@@ -1,6 +1,9 @@
 {
-  "build_elapsed_ms": 10.226708953268826,
+  "build_elapsed_ms": 13.106375001370907,
   "closure": {
+    "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": [],
+    "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": [],
+    "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": [],
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-cgroup-host-memory-headroom": [],
     "unit-sglang-checkpoint-request-rebind": [],
@@ -57,8 +60,11 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "generation": "761c9e7b92f13e0cdc54feb08da16c4762aaf611f41d4256845a4b940ad5c050",
+  "generation": "0969b26703e530fe206fefd77bb63b37d76117ae45db51719cc857b519a2f67a",
   "id_path": {
+    "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers.md",
+    "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership.md",
+    "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": "serving/cann-recipes-infer/cache/unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment.md",
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/lifecycle/unit-sglang-cancellation-and-cache-ownership.md",
     "unit-sglang-cgroup-host-memory-headroom": "serving/sglang/cache/memory/unit-sglang-cgroup-host-memory-headroom.md",
     "unit-sglang-checkpoint-request-rebind": "serving/sglang/cache/checkpoints/unit-sglang-checkpoint-request-rebind.md",
@@ -118,8 +124,146 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 55,
+  "unit_count": 58,
   "units": [
+    {
+      "category": "sop",
+      "conditions": {
+        "repository": "cann/cann-recipes-infer",
+        "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b"
+      },
+      "domain_path": "serving/cann-recipes-infer/execution",
+      "evidence_strength": "single_observation",
+      "id": "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cann-recipes-infer-reviewed-source.json",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/stream_utils.py#L25-L100",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/common_utils.py#L50-L120",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/graph_utils.py#L21-L122"
+        ],
+        "source_digest": "ab761d3c2e830b80993d1dbda55723e92ed9e98db52ed9e59a99dc4c136113a6",
+        "source_locator": "docs/evidence/cann-recipes-infer-reviewed-source.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Dual-mode Eager and FX-Graph wrappers for NPU multi-stream switching, dependency events, SuperKernel scope, and L2 prefetch",
+      "token_estimate": 979,
+      "triggers": {
+        "error_signatures": [
+          "torch.fx.symbolic_trace fails on torch.npu.stream context manager or stream.wait_Stream",
+          "Tensor freed by primary stream caching allocator while secondary stream kernel is still executing",
+          "SuperKernel scope or DCCI disable pass fails to attach during FX graph compilation"
+        ],
+        "keywords": [
+          "cann-recipes-infer",
+          "stream_utils",
+          "npu_stream_switch",
+          "wait_tensor",
+          "record_stream",
+          "superkernel_scope",
+          "dcci_disable_on_kernel",
+          "npu_prefetch"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "repository": "cann/cann-recipes-infer",
+        "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b"
+      },
+      "domain_path": "serving/cann-recipes-infer/execution",
+      "evidence_strength": "single_observation",
+      "id": "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cann-recipes-infer-reviewed-source.json",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/forward_metadata.py#L18-L135",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/forward_data_info/forward_data_info.py#L38-L412",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/engine/execution_engine.py#L50-L286",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/common_utils.py#L290-L329"
+        ],
+        "source_digest": "899e46172cab0f4bab6ee5551d9b7d093ae9fc75941114dae299d6b0cc2dfddb",
+        "source_locator": "docs/evidence/cann-recipes-infer-reviewed-source.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Packed TND ForwardMetaData construction, Context Parallel slot ownership, and IQR step-latency filtering",
+      "token_estimate": 1088,
+      "triggers": {
+        "error_signatures": [
+          "TypeError in npu_fused_infer_attention_score when actual_seq_lengths is Tensor instead of list",
+          "Context Parallel non-owner rank fails Mamba recurrent state lookup after prefill cleanup",
+          "Prefill CP slot_mapping overwrites persistent KV cache blocks with temporary compute slots"
+        ],
+        "keywords": [
+          "cann-recipes-infer",
+          "ForwardMetaData",
+          "PrefillCPMetaData",
+          "ForwardDataInfo",
+          "get_request_owner_manager_keys",
+          "actual_seq_lengths_kv",
+          "process_infer_time"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "repository": "cann/cann-recipes-infer",
+        "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b"
+      },
+      "domain_path": "serving/cann-recipes-infer/cache",
+      "evidence_strength": "single_observation",
+      "id": "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "serving/cann-recipes-infer/cache/unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cann-recipes-infer-reviewed-source.json",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/kv_cache/kv_cache_manager.py#L45-L225",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/kv_cache/single_type_kv_cache_manager.py#L29-L410",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/kv_cache/cache_utils.py#L276-L706"
+        ],
+        "source_digest": "e22a56b2d9fef942da72244840eb3a4b85d40663270485d013a9f79f10868abc",
+        "source_locator": "docs/evidence/cann-recipes-infer-reviewed-source.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Hybrid FullAttention, SlidingWindow, and Mamba block budgeting with 2 MiB HIXL-aligned HBM allocation",
+      "token_estimate": 1252,
+      "triggers": {
+        "error_signatures": [
+          "Not enough NPU memory to allocate the minimum required blocks",
+          "Requested to allocate more blocks than available",
+          "Block size is less than Mamba state token requirement"
+        ],
+        "keywords": [
+          "cann-recipes-infer",
+          "kv_cache_manager",
+          "FullAttentionManager",
+          "SlidingWindowManager",
+          "MambaManager",
+          "calculate_fixed_block_memory_bytes",
+          "_alloc_aligned_hbm_tensor",
+          "HIXL"
+        ]
+      }
+    },
     {
       "category": "sop",
       "conditions": {

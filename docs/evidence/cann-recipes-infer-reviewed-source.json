@@ -1,0 +1,108 @@
+{
+  "schema_version": "mindie-reviewed-domain-admission/1",
+  "domain": "infer-core",
+  "implementation": "CANN-Recipes-Infer",
+  "repository": "cann/cann-recipes-infer",
+  "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "admitted_unit_ids": [
+    "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment",
+    "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
+    "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership"
+  ],
+  "source_refs": [
+    {
+      "source_id": "cann-recipes-infer-kv-cache-manager",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/core/kv_cache/kv_cache_manager.py",
+      "source_sha256": "990a1d9ba37751ac9e4914bc76031994756c3c779dfbcd1d2a32fce008e80945",
+      "line_start": 45,
+      "line_end": 225,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/kv_cache/kv_cache_manager.py#L45-L225"
+    },
+    {
+      "source_id": "cann-recipes-infer-single-type-kv-cache-manager",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/core/kv_cache/single_type_kv_cache_manager.py",
+      "source_sha256": "7ebdb8c5ad774ca107f1cd746032155f82a29524a3fd3930e226906f9bd813f8",
+      "line_start": 29,
+      "line_end": 410,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/kv_cache/single_type_kv_cache_manager.py#L29-L410"
+    },
+    {
+      "source_id": "cann-recipes-infer-cache-utils",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/core/kv_cache/cache_utils.py",
+      "source_sha256": "e22a56b2d9fef942da72244840eb3a4b85d40663270485d013a9f79f10868abc",
+      "line_start": 46,
+      "line_end": 706,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/kv_cache/cache_utils.py#L46-L706"
+    },
+    {
+      "source_id": "cann-recipes-infer-stream-utils",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/utils/stream_utils.py",
+      "source_sha256": "ab761d3c2e830b80993d1dbda55723e92ed9e98db52ed9e59a99dc4c136113a6",
+      "line_start": 25,
+      "line_end": 100,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/stream_utils.py#L25-L100"
+    },
+    {
+      "source_id": "cann-recipes-infer-common-utils",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/utils/common_utils.py",
+      "source_sha256": "38761fdc52337d29bdb3d3846e3df6fec9873e31cf26e133e70b47080f39f52b",
+      "line_start": 50,
+      "line_end": 329,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/common_utils.py#L50-L329"
+    },
+    {
+      "source_id": "cann-recipes-infer-graph-utils",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/utils/graph_utils.py",
+      "source_sha256": "774e4d6b9abdb6b9db9f3a43ab9bf72e37999133167768b5304432c16e7500f5",
+      "line_start": 21,
+      "line_end": 122,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/graph_utils.py#L21-L122"
+    },
+    {
+      "source_id": "cann-recipes-infer-forward-metadata",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/utils/forward_metadata.py",
+      "source_sha256": "5142bc82d488d5b4d8a5ff12bc303f47b19b9cc3351f424a41eb05f1358487bb",
+      "line_start": 18,
+      "line_end": 135,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/utils/forward_metadata.py#L18-L135"
+    },
+    {
+      "source_id": "cann-recipes-infer-forward-data-info",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/core/forward_data_info/forward_data_info.py",
+      "source_sha256": "899e46172cab0f4bab6ee5551d9b7d093ae9fc75941114dae299d6b0cc2dfddb",
+      "line_start": 38,
+      "line_end": 412,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/forward_data_info/forward_data_info.py#L38-L412"
+    },
+    {
+      "source_id": "cann-recipes-infer-execution-engine",
+      "repo_url": "https://gitcode.com/cann/cann-recipes-infer",
+      "revision": "3c9266727c2a25bd17d503ad37d189a134ff364b",
+      "path": "executor/core/engine/execution_engine.py",
+      "source_sha256": "63b883428ecace6780949270dfa50e6840f2242cc94b22f2db646cfbd8a8eaca",
+      "line_start": 50,
+      "line_end": 286,
+      "url": "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/executor/core/engine/execution_engine.py#L50-L286"
+    }
+  ]
+}
