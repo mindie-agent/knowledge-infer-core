@@ -41,7 +41,7 @@ triggers:
 ---
 TpModelWorker seed selection first honors an explicit seed, then reuses the elastic joiner's configured seed, then broadcasts a PP-speculative draft worker's seed inside its TP group, otherwise using the world group. The source explains that first PP stages do not construct that draft worker and cannot join its world broadcast. Memory-pool validation uses effective logical token capacity directly, but get_worker_info multiplies it by page_interleave_shard_size before computing the reported request limit and subtracting the input reserve. EAGLE alone reserves output slots using max(top_k * num_steps, max_speculative_num_draft_tokens); these excerpts do not establish one combined admission formula. Delayed sampling finalizes elastic CUDA-graph scaling inside its deferred callback and returns before the immediate/prefill-only finalization line. Prefill-only execution creates dummy zero token IDs as a tensor, so GenerationBatchResult.has_sampled_token_ids, which only tests isinstance(torch.Tensor), cannot prove that sampling actually happened. extra_keep_alive_refs is a documented two-iteration lifetime handoff to the scheduler, not a demonstrated drain protocol.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not include delayed sampling in the branch that reaches the later immediate finalization call.
 - Distinguish memory-pool validation from reported capacity instead of silently equating their formulas.

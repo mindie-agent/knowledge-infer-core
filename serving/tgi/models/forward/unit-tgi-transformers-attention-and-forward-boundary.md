@@ -45,7 +45,7 @@ triggers:
 ---
 The registered TGI text attention hook stores each layer's K/V into supplied slots and dispatches prefill to variable-length attention and decode to paged attention, while the bridge disables the Transformers cache. VLM text prefill can alternatively pad and use SDPA; vision is configured for SDPA. Image encoding is scheduled for token spans intersecting the current prefill window, with per-request encoder caching. These mechanisms require compatible forward signatures and model-specific mask/position methods.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Device selection permits IPEX CPU when XPU is absent. Both Transformers loaders explicitly reject speculator.
 - The graph warmup always creates and captures a graph; its buffer reuse is not capture reuse.

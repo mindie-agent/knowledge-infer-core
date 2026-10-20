@@ -39,7 +39,7 @@ FullComponent.evict_component queues a device tensor for freeing and subtracts r
 
 For LOAD_BACK, build_hicache_transfers walks from the matching node toward its parents while nodes are device-evicted, requires each host value, and reverses the collected values and node IDs into root-first order. Its comment relies on Full device eviction being leaf-only. commit_hicache_transfer then slices the returned device indices by each node's host length, installs copied values, and credits either protected or evictable size according to lock_ref. The source defines ownership and ledger transitions; asynchronous completion and actual reclamation still depend on the surrounding controller.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Distinguish deferred device clearing from immediate host clearing.
 - The parentward load-back walk carries a stated leaf-eviction precondition; do not generalize it to arbitrary component eviction.

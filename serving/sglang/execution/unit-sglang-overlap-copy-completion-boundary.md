@@ -43,7 +43,7 @@ triggers:
 ---
 The overlap confidence-copy path schedules a device-to-host copy after its producer dependency and records a completion event; the CPU consumer queries completion before using that copied confidence. These excerpts contain no wait for a previous occupant when a ring slot is selected, so a complete slot-reuse lifetime proof cannot be inferred. resolve_seq_lens_cpu can skip the initial event wait when stream_ordered is set, but a private device-to-host copy still has its own completion wait before CPU use. When CPU sequence lengths are unnecessary it returns None; otherwise the selected path synchronizes the transfer before returning host values.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - A producer stream dependency and a CPU-visible copy completion are separate boundaries.
 - Do not infer safe ring-buffer slot reuse from the confidence consumer check alone.

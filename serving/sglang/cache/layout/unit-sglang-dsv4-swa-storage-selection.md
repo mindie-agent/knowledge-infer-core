@@ -36,7 +36,7 @@ The DeepSeekV4TokenToKVPool SWA assignment is an ordered if/elif chain. Encoder 
 
 The request-window and draft-ring branches do not carry those layout assertions. After the chain, a non-HIP DSpark draft with a non-null swa_kv_pool separately allocates swa_valid_from. That row state can accompany ring or paged SWA; it is not a fifth mutually exclusive storage selection. The code also calculates needs_paged_swa_allocator separately, because a speculative draft without its own ring can still depend on the target's paged mapping.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Keep the four storage assignments separate from the subsequent draft row-state allocation.
 - The V4 and fp8 assertions belong to specific branches; do not generalize them to RequestWindow or ring storage.

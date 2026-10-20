@@ -40,7 +40,7 @@ StorageBackendFactory.register_backend stores a loader closure and its module/cl
 
 Dynamic loading is a separate route reached only when the requested name is exactly dynamic and extra_config is present. It requires backend_name, module_path and class_name, applies the same loader validation, and constructs the class with storage_config and the kwargs dictionary as the second positional argument. It does not pass mem_pool_host to that constructor. To extend this factory, inspect both the lazy-loading registration and the selected construction contract; adding a registry entry alone does not make an arbitrary name creatable.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Class validation occurs when the loader runs, not at registration.
 - The dynamic branch is not a general fallback for any unknown name and does not forward the host pool as its second constructor argument.

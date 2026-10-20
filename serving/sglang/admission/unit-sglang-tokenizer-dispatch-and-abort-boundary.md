@@ -41,7 +41,7 @@ triggers:
 ---
 TokenizerManager prepares multimodal and positional-embedding transports, dispatches to the scheduler, marks the request state as dispatched, and only then sets its local dispatched flag. The finally block cancels prepared transports only while that flag remains false; this records local control flow, not a scheduler acknowledgement. An Engine request with no HTTP request object waits on its state event without the HTTP polling timeout, whereas an HTTP request periodically checks disconnect state. Single-request abort rejects an empty rid, deduplicates live states with abort_sent, and resets that flag if scheduler dispatch raises. abort_all bypasses the per-state lookup and deduplication. LoRA release has its own lora_released flag and schedules at most one release task when LoRA is enabled and the request carries a LoRA path.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Use actual narrow boundaries 1781-1822, 1936-1944 and 2253-2272 rather than the approximate review endpoints.
 - A local dispatched flag does not prove remote acceptance or downstream KV release.

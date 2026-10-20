@@ -40,7 +40,7 @@ triggers:
 ---
 RadixCache.checkpoint excludes an already-evicted SWA prefix, inserts the eligible key, rematches it and rewrites the request row to the tree-owned indices. The protected length is only the cached aligned prefix; a partial page remains request-owned. It releases the old lock and locks the new last node. Lock-reference transitions move token counts between evictable and protected categories only at zero-to-one and one-to-zero boundaries. PrefillBudget admits its total-token check only when requested total is strictly less than remaining total, while immediate paged allocation uses a less-than-or-equal comparison against both current and total capacity. reserve page-aligns the extension, adds an extra page and optional extra tokens to both offsets, and charges max_new_tokens only to total_offset. These inequalities and headroom charges serve distinct admission decisions.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not treat partial-page tokens outside cache_protected_len as tree-owned.
 - Do not replace the two admission inequalities with one generic available-capacity rule.

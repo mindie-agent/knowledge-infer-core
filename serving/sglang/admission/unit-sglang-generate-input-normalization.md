@@ -37,13 +37,9 @@ triggers:
 ---
 GenerateReqInput normalization at the pinned revision rejects an all-empty input and a simultaneous text/input_ids/input_embeds triple. The actual predicates still allow pairs. In the text branch it clears input_embeds but does not clear input_ids, so the excerpts do not support an exactly-one-form invariant. Bootstrap normalization expands a scalar bootstrap_room across a batch with per-item offsets in the shown branch. __getitem__ constructs and caches a per-request object by indexing selected normalized fields; this is not a fresh general validation pass and it does not prove every field has been independently shape-checked.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
-- Replace the candidate exactly-one claim with the two actual rejection predicates.
-- Distinguish bootstrap normalization from per-item extraction.
-- No end-to-end multimodal, streaming or transport conformance was tested.
-
-Evidence scope: Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.
+- Manually read the listed exact Git ranges for the final corrected mechanism. All other model claims remain research notes; no runtime experiment.
 
 This unit is a source-derived inspection procedure at the exact repository revision in conditions. It does not establish a reproduced hardware outcome or measured performance benefit.
 

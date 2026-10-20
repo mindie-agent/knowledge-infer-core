@@ -43,7 +43,7 @@ triggers:
 ---
 FlashCausalLMBatch maps requests to paged block/slot tables and requires at least one uncached token. An incomplete chunk requires speculate==0; prepare_for_prefill separately requires no speculative_ids. Concatenation retains speculative IDs only when all member batches have them. The forward path uses eager execution whenever cu_seqlen_prefill is present, and otherwise can replay the smallest captured decode graph covering the expanded batch. Warmup estimates bytes per KV block and rebuilds the cache from observed free memory.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - AST-verified methods: filter:485-687; concatenate:691-946; prepare_for_prefill:948-1175; warmup:1507-1684; forward:1726-1888. Replace overlapping approximate ranges.
 - The cache formula is bytes per block, not bytes per token. max_total_tokens=sum(batch.cache_lengths) is the no-chunking warmup fallback.

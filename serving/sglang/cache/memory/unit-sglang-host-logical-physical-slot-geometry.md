@@ -40,7 +40,7 @@ HostKVCache requires the supplied widened page width to be divisible by dcp_size
 
 clear initializes logical free-slot indices, usage flags and an empty deferred-release queue. alloc requires a multiple of logical_page_size, returns None if total availability is insufficient, merges deferred releases only when the immediate free list is too short, and marks selected slots used. free returns on empty input, asserts the supplied slots are in use, clears their flags and queues them for later reuse. This is slot bookkeeping, not a standalone concurrency or lease guarantee.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The final rounding formula deliberately adds a page even at exact alignment.
 - Distinguish physical page width from widened logical allocation width.

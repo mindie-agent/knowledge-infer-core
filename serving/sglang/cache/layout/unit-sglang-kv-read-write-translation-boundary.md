@@ -38,7 +38,7 @@ KVIndexTranslator enables its main translation mode when a supported unified all
 
 Main translation mode being false does not imply identity writes. For a non-draft NPU DCP target, the constructor installs rank-local write localization. A static BaseSWAKVPool can additionally install full-to-SWA write mapping, composed with localization where needed; DeepSeekV4TokenToKVPool with request_window is excluded from that path. Reads remain in req_to_token in this mode and the comment assigns their mapping to the backends. Inspect the relevant IdSpace and read consumer separately when diagnosing address mismatches.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not equate is_translating=False with identity write locations.
 - DCP read deferral and write localization are distinct contracts; this constructor does not prove downstream kernel handling.

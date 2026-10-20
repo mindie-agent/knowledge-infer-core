@@ -43,7 +43,7 @@ Int8CheckpointStore stores temporal state as int8 data with one scale per head a
 
 MambaCheckpointPool reserves an extra slot, retains convolution buffers in their native dtype and owns a separate checkpoint allocator. store_from_active quantizes temporal state and copies convolution state into the selected checkpoint; load_to_active restores both. clear resets slot allocation and deliberately leaves stored bytes untouched. The optional initialization path returns no pool unless enabled and chooses configured capacity or twice mamba_size. Those capacity and representation choices are source behavior, not evidence of a measured memory saving or numerical-accuracy bound.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The scale is rounded before division, not merely when finally stored.
 - Checkpoint clearing resets allocation bookkeeping; it is not zeroization of qdata.

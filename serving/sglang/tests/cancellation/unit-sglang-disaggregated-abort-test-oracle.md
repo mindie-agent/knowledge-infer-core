@@ -40,7 +40,7 @@ The chunked-prefill abort test launches with max-running-requests four and chunk
 
 The response oracle accepts HTTP 200 only when finish_reason.type is abort, or HTTP 500/503 when the body contains abort case-insensitively. Finally, health endpoints on the load balancer, prefill role and decode role must return 200. The test therefore expresses an abort-response and liveness contract. It does not check KV or Mamba reclamation, a subsequent successful generation, or scheduler evidence that the abort actually arrived mid-chunk. The test source was inspected here; it was not executed as an acceptance run.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The test name does not establish the scheduler phase at which cancellation arrived.
 - Health responses and an abort-shaped result do not prove resource reclamation or readiness for a subsequent generation.

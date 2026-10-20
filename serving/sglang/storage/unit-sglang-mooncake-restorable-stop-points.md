@@ -40,7 +40,7 @@ MooncakeStore.batch_exists_v2 treats an absent physical kv_buffer as a logical a
 
 The v2 IO path batches component keys and buffer metadata across transfers. Sets first query existence, treat state 1 as already successful, and put only missing components; gets perform the read directly. Metadata generation selects pages with missing components and leaves zero placeholders for fully present pages. Partially missing pages retain metadata for all components, while IO submits only missing components. These contracts describe local batching and result representation, without establishing atomicity or measured RPC savings.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - A non-contiguous restorable set is intentional for trailing-window policies; do not mislabel the largest valid stop point as an unsafe prefix.
 - The full set is needed to describe valid stop points and the comment-described cross-rank intersection.

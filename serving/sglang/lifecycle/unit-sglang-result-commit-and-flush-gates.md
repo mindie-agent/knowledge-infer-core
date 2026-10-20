@@ -42,7 +42,7 @@ triggers:
 ---
 The result processor commits the shown prefill state only when a request is unfinished, not retracted and has no in-flight chunks; a separate condition controls the KV checkpoint. Chunk acceptance similarly excludes already finished requests. Abort handling chooses offload or direct release from its actual mask and configuration, while the later lookahead assertion is conditional on a Mamba mask being present. FlushWrapper rejects a second pending flush request, attempts immediate completion when no timeout was supplied or the scheduler is idle, and otherwise defers until idle or the deadline. A deferred return value is not by itself a successful cache flush.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Discard the original empty __init__.py line-1 citation because that file has no line 1.
 - Do not generalize the conditional Mamba lookahead assertion to every request.

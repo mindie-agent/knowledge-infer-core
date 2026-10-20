@@ -40,7 +40,7 @@ triggers:
 ---
 The scheduler rejects an incoming request when the waiting queue is full unless priority scheduling finds a strictly lower-priority queued victim; equal victim priorities use later queue-entry time first. Waiting-timeout polling scans the waiting queue, whereas running-timeout polling deduplicates request IDs and skips already finished or to_finish requests. It emits AbortReq objects rather than directly removing requests; the source states that ranks must drop the same requests in the same iteration. Chunked-prefill abort is deferred to process_pending_chunked_abort: if the request has moved, the marker is dropped only when finished or no longer holding KV, otherwise abort is retried at the new location. For the still-current chunked request, sender/bootstrap metadata and KV are released before clearing the chunked marker. During decode, finishing in-flight requests are filtered, and KV pressure with such pending completions skips a decode step instead of immediately retracting the remaining requests. Pending offload copies are drained before the later retraction path.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Finished/to_finish/deduplication skips belong only to running-timeout polling.
 - The same-iteration rank requirement and overlap drain description are source invariants; no distributed execution was performed.

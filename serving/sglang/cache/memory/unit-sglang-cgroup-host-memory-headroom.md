@@ -37,7 +37,7 @@ available_host_memory_bytes starts from psutil's available RAM and, when _cgroup
 
 Missing procfs or no discovered numeric limit can return no bound normally. Unresolved memberships raise RuntimeError. The caller catches only OSError and RuntimeError: automatic sizing then raises an explicit-sizing error unless allow_cgroup_fallback is enabled, in which case it logs and returns host available RAM. ValueError from path or numeric parsing is outside that catch. These branches describe a sizing estimate; including memory.high does not establish a hard OOM boundary or aggregate safety across ranks.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Host available RAM can also be returned on the normal no-bound path; it is not exclusive to opt-in exception fallback.
 - The fallback catches a specific exception set and is not universal.

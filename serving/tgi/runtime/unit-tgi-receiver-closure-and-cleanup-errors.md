@@ -44,7 +44,7 @@ triggers:
 ---
 TGI v2 drops queued requests with closed response receivers and removes stopped entries after a prefill/decode result is dispatched. The current RPC is not explicitly preempted by those checks. filter_batch uses cardinality equality as a shortcut; otherwise it filters request IDs or clears the shard cache. In prefill/decode error handlers, cache cleanup is attempted and its Result is discarded before errors are sent to all affected entries.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Replace statements that error cleanup succeeds with 'attempts clear_cache'; backend.rs:271 and 315-318 discard cleanup errors.
 - State that request-ID equality is an assumed invariant behind the size shortcut, not a demonstrated runtime bug.

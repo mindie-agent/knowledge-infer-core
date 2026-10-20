@@ -46,7 +46,7 @@ triggers:
 ---
 Mamba writes convolution/SSM results back to external InferenceParams and advances seqlen_offset; subsequent calls use the step path. MPT selects flash, Triton or Torch attention, keeps rank-sliced bias and enforces explicit model/sequence restrictions. NeoX applies rotary to a partial head dimension and its manual attention path grows K/V along the sequence dimension. MLLama builds variable-length cross-attention metadata and gathers/scatters only selected image-associated text rows.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - MPT's unequal query/key causal guard runs only when original_is_causal is true; do not apply it to every backend/configuration.
 - The MPT dtype/CUDA check belongs to its flash/Triton wrappers, not to NeoX.

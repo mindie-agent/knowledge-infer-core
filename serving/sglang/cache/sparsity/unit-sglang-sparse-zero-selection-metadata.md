@@ -40,7 +40,7 @@ The sparse coordinator gates requests by stored prompt length against min_sparse
 
 FlashAttentionAdaptor returns the current metadata unchanged when its saved original metadata is absent (self._original_metadata is None) or no row is sparse. Otherwise it copies the saved original page table and sequence lengths into the current metadata, writes page-table entries only where sparse_mask and valid_mask both hold, and replaces sparse sequence lengths using valid_lengths times page_size minus the partial-page adjustment. Under the source-level condition of a sparse row with zero valid lengths, the formula yields zero for an aligned final page or a negative adjustment otherwise, while no selected page-table entry is updated. This is an arithmetic consequence of the shown branches, not an observed backend failure; callers and workload reachability require separate validation.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The short-history branch returns an empty selection; it does not implement a dense fallback.
 - Keep the zero-length metadata consequence explicitly conditional and source-derived.

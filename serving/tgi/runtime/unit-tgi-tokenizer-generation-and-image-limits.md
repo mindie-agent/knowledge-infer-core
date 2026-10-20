@@ -41,7 +41,7 @@ triggers:
 ---
 TGI validation sends requests through unbounded channels to blocking tokenizer workers; the Python tokenizer uses one worker. prepare_input encodes the full rewritten input before the retained token suffix and accounting are truncated. The current generation pass reserves at most DEFAULT_GENERATION_LENGTH while retaining a separate total-new-token request. HTTP image loading bounds encoded response bytes; the data-URI branch has no max_image_fetch_size check in this function.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Do not claim the fetch byte cap is a decoded image-memory cap. Image-library default limits were not inspected.
 - The zero-worker constructor path can spin, but v2 CLI main.rs:147-150 rejects zero validation_workers; do not report this as a demonstrated deployed configuration bug.

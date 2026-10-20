@@ -41,7 +41,7 @@ The NIXL backend initially enables zero-copy for page_first or page_first_direct
 
 The V1 _batch_xfer path computes one success value for the underlying transfer and repeats it across the result list. Reads use one result per key string, while writes use one per logical page. Thus that list does not expose independent per-page outcomes. These source branches establish staging and reporting behavior only; they do not prove absence of synchronization races, durability, or zero-copy performance on a particular backend.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Call the allocations registered bounce buffers; their allocator implementation is not shown in this subset.
 - Repeated batch success is not a collection of separately observed page successes.

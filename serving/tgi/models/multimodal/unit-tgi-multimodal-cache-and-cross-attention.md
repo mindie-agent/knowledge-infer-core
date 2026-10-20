@@ -45,7 +45,7 @@ triggers:
 ---
 The legacy IDEFICS processor pads text and image slots and builds image-attention masks. Its decoder inserts gated cross-attention at multiples of cross_layer_interval, but creates floor(num_hidden_layers/interval) gated blocks. The no-images flag zeroes a residual gate after cross-attention computation; it does not skip that computation. Precomputed image_hidden_states still require pixel_values-derived image-count metadata, and image_attention_mask is dereferenced before the fallback check. LLaVA-NeXT instead projects/spatially unpads image features and merges them into token embeddings before paged decoder execution.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - For positive layer/interval counts with a non-divisible remainder, created gated-block count can be smaller than the indexed schedule; do not describe this as silently omitting layers.
 - IDEFICS cross-attention rejects past_key_value; ordinary decoder past and precomputed image features are different caches.

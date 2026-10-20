@@ -37,7 +37,7 @@ checkpoint_into_tree first bounds the token prefix through component preparation
 
 The prompt-boundary insert is an additional operation when the tree has exactly one BASE component and the prompt key is a strict nonempty prefix. It does not replace the subsequent ownership update. The normal path obtains indices from result.last_device_node, writes the unprotected portion of req_to_token, unlocks the old request lock, takes a new lock, and updates cache_protected_len and last_node. An opt-in flag can omit MAMBA from that new lock; its safety depends on the admission/COW ordering described in the comment and is not independently established by this method.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Treat the prompt-boundary insertion as additive; the usual request rebind and lock migration still follow.
 - The rotation-tail branch and MAMBA lock comment establish local behavior and a stated precondition, not a concurrency or device-level proof.

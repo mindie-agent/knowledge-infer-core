@@ -40,7 +40,7 @@ triggers:
 ---
 checkpoint_kv_cache requires an unfinished request, optionally publishes through tree_cache.checkpoint and advances prefix_len even when insertion is skipped. release_kv_cache first handles a Mamba-only allocation or a streaming session that claims the row. On the normal path it optionally checkpoints owned KV, requiring a finished request for a Mamba tree, then frees only the request-owned suffix after cache_protected_len, unlocks the tree, releases overallocation, calls on_release, frees the request row and marks KV released. Paged extension computes a conservative demand with per-request page and shard headroom, passes that estimate to get_extend_allocation_demand and evicts the returned demand, which need not equal the conservative estimate. The subsequent allocator result is checked and a missing allocation raises a visible prefill OOM error.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The conservative estimate is an input to the allocator demand function, not necessarily the exact eviction request.
 - A checkpoint preserves a tree-owned prefix; releasing a request must not free that protected prefix.

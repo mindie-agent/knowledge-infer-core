@@ -44,7 +44,7 @@ triggers:
 ---
 TGI uses different state layouts for Idefics, encoder-decoder generation, Mamba and MLLama. Idefics filter/concatenate paths index both pixel values and image masks; Seq2Seq starts with BOS and no past state, then filters four per-layer past tensors after execution. Mamba allocates fixed convolution/SSM state, rejects tensor parallel world sizes above one and gates graph replay on non-prefill state. Incremental decoding withholds a growing suffix ending in U+FFFD.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Seq2Seq from_pb sets past_key_values=None at 165; it does not populate four past tensors before the first forward.
 - Seq2Seq filter computes total_remaining_decode_tokens at 207-237 but its max_tokens expression uses only the last remaining_decode_tokens at 270-273; downstream enforcement and impact are unverified.

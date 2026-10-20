@@ -39,7 +39,7 @@ DenseEntryLayout describes fixed byte spans inside each token entry. Validation 
 
 The Mamba view builder has different checks: convolution views check entry and anchor divisibility but integer-divide the initial convolution offset without a separate assertion for it; temporal views check their combined offset. Do not generalize dense-layout validation to every Mamba offset. paged_view groups slots using page stride equal to slot_stride times page_size and retains the slot stride inside a page, including page_size one. The HND helper permutes axes after that regrouping.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Include the actual alignment constants with the validator citation.
 - Page stride is slot_stride multiplied by page_size, not always the original slot stride.

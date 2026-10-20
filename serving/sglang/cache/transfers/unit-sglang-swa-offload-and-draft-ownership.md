@@ -42,7 +42,7 @@ triggers:
 ---
 SWAKVPool owns layer-transfer waiting and clears the inner pools' counters to avoid duplicate waits. Its CPU-copy path saves only SWA indices greater than zero, preserving a mask because zero is a dummy slot and tail-only allocations leave some full indices unmapped. Restore intersects that saved selection with the new mapping and skips an empty resulting SWA set. UnifiedDraftSWAKVPool routes full-to-SWA translation through the host allocator; its overridden key/value/KV getters do not wait, but the inherited scale-buffer getter still calls _wait_for_layer. Therefore storing a transfer counter can matter on the scale path. bind_fused_draft deduplicates families in placement.hosts order and applies binders in that order, despite the docstring saying registry order.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - The draft wrapper's counter is not universally ineffective: inherited scale access still waits.
 - CPU restore uses old and new mapping membership, rather than blindly replaying saved SWA rows.

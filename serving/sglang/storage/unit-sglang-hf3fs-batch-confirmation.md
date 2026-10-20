@@ -41,7 +41,7 @@ HiCacheHF3FS._batch_set returns scalar True immediately when skip_backup is enab
 
 The V1 read path compacts hit offsets but leaves destination values unfiltered, slicing both with dense hit positions. If a miss precedes a later hit, the shown indexing can pair that hit's offset with an earlier destination tensor; prefix-shaped hits hide this discrepancy. This is a source-level conditional finding, not a reproduced storage-corruption result. batch_exists reports the leading existing prefix, adjusted for doubled MHA keys.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - skip_backup reports success without proving a local durable write.
 - Read offsets are hit-compacted while destinations remain full; the issue is their pairing, not merely the returned batch_indices.
