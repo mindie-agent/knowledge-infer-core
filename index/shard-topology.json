@@ -1,5 +1,8 @@
 {
   "closure": {
+    "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": [],
+    "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": [],
+    "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": [],
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-cgroup-host-memory-headroom": [],
     "unit-sglang-checkpoint-request-rebind": [],
@@ -59,11 +62,14 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 249856,
-      "estimated_tokens": 39136,
+      "bytes": 268240,
+      "estimated_tokens": 42455,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
+        "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
+        "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership",
+        "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment",
         "unit-sglang-cancellation-and-cache-ownership",
         "unit-sglang-cgroup-host-memory-headroom",
         "unit-sglang-checkpoint-request-rebind",
@@ -120,18 +126,21 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 55
+      "units": 58
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 249856,
-        "estimated_tokens": 39136,
+        "bytes": 268240,
+        "estimated_tokens": 42455,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
+          "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership",
+          "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment",
           "unit-sglang-cancellation-and-cache-ownership",
           "unit-sglang-cgroup-host-memory-headroom",
           "unit-sglang-checkpoint-request-rebind",
@@ -188,12 +197,39 @@
           "unit-tgi-vision-token-mask-and-connector-geometry",
           "unit-vllm-cancellation-and-block-reclamation"
         ],
-        "units": 55
+        "units": 58
       }
     ]
   },
-  "index_build_elapsed_ms": 10.226708953268826,
+  "index_build_elapsed_ms": 13.106375001370907,
   "leaves": [
+    {
+      "automatic": false,
+      "bytes": 6614,
+      "estimated_tokens": 1252,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/cann-recipes-infer/cache",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 11770,
+      "estimated_tokens": 2067,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/cann-recipes-infer/execution",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
+        "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership"
+      ],
+      "units": 2
+    },
     {
       "automatic": false,
       "bytes": 19125,
@@ -470,6 +506,21 @@
   "two_level_subtrees": [
     {
       "automatic": false,
+      "bytes": 18384,
+      "estimated_tokens": 3319,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/cann-recipes-infer",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers",
+        "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership",
+        "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment"
+      ],
+      "units": 3
+    },
+    {
+      "automatic": false,
       "bytes": 165454,
       "estimated_tokens": 26305,
       "exceeds": [],
@@ -572,8 +623,41 @@
       "units": 1
     }
   ],
-  "unit_count": 55,
+  "unit_count": 58,
   "units": {
+    "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": {
+      "bytes": 5580,
+      "category": "sop",
+      "content_sha256": "ed380a97c539f6e20b32a149d2eea8f4c0172782eb9f3dac0a69c20e3048b1aa",
+      "domain_path": "serving/cann-recipes-infer/execution",
+      "estimated_tokens": 979,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers.md",
+      "tier": "L2"
+    },
+    "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": {
+      "bytes": 6190,
+      "category": "sop",
+      "content_sha256": "e39a5f2079f237d2c82c3ff68591519a4b7f9ca8aeb08076128259a0a7b6f111",
+      "domain_path": "serving/cann-recipes-infer/execution",
+      "estimated_tokens": 1088,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership.md",
+      "tier": "L2"
+    },
+    "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": {
+      "bytes": 6614,
+      "category": "sop",
+      "content_sha256": "e4283931fd931b52000a4d232649e4d08123d7c055037af4de16636eb84dd7b4",
+      "domain_path": "serving/cann-recipes-infer/cache",
+      "estimated_tokens": 1252,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/cann-recipes-infer/cache/unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment.md",
+      "tier": "L2"
+    },
     "unit-sglang-cancellation-and-cache-ownership": {
       "bytes": 4233,
       "category": "sop",
