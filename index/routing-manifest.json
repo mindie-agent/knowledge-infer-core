@@ -1,9 +1,80 @@
 {
-  "build_elapsed_ms": 19.111209083348513,
+  "build_elapsed_ms": 34.63520796503872,
   "closure": {
+    "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-agent-skills-parallel-analysis-kvcache-quantization-and-accuracy-debug": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-bailing-25-and-ling-30-flash-pypto-megakernel-inference-recipe": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-cann-recipes-executor-multimodal-and-online-serving-architecture": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
     "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": [],
     "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": [],
     "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": [],
+    "unit-cann-recipes-module-blockwise-sparse-cache-and-ulysses-sp": [
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-cann-recipes-module-fuse-moe-gmm-linear-and-mxfp8-quantization": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-deepseek-r1-and-v32-exp-prefill-decode-sfa-optimization": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-deepseek-v32-exp-sparse-flash-attention-and-indexer-recipe": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-deepseek-v4-flash-tilelang-inductor-and-single-npu-moe-offload": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-deepseek-v4-mhc-autofuse-and-shmem-symmetric-memory-recipe": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms"
+    ],
+    "unit-deepseek-v4-mhc-sinkhorn-knopp-and-shmem-collectives-deep-dive": [
+      "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-gemma4-and-hy3-agentic-four-stage-npu-optimization-recipe": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-glm5-and-glm52-moe-inference-and-kv-expert-offload-recipe": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-hstu-generative-recommendation-ragged-tnd-and-rab-optimization": [
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
+    "unit-hunyuan-video-and-hunyuan-image3-dit-moe-parallel-cache-recipe": [
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
     "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms": [],
     "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
@@ -65,6 +136,51 @@
     "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
     ],
+    "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+    ],
+    "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe": [
+      "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe": [
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
+    "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-msprobe-nan-overflow-detection-and-deterministic-alignment-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
+    "unit-qwen35-moe-qwen3-moe-qwen3-next-and-dense-optimization-recipe": [
+      "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
+    "unit-rl-rollout-inference-engine-mismatch-and-spike-root-cause-sop": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+      "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms"
+    ],
+    "unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe": [
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+    ],
     "unit-sglang-cancellation-and-cache-ownership": [],
     "unit-sglang-cgroup-host-memory-headroom": [],
     "unit-sglang-checkpoint-request-rebind": [],
@@ -104,6 +220,11 @@
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": [],
     "unit-sglang-tp-capacity-and-result-contracts": [],
     "unit-sglang-unified-memory-sink-and-envelope": [],
+    "unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe": [
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+      "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+      "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+    ],
     "unit-tgi-cache-axes-and-mask-semantics": [],
     "unit-tgi-expanded-deepseek-kv-storage": [],
     "unit-tgi-kv-head-topology-and-preprocessing": [],
@@ -121,11 +242,27 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "generation": "f4580e9d6542eaf741823d5987b5bc4d07242e8756c1758dbd32fef70915750f",
+  "generation": "bb6267c263033c881c20dd21d65475cb9cc635dc93d45885c5992b01eb5953db",
   "id_path": {
+    "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": "infer-core/recipes-design/skills-fusion-graph-and-stream/unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook.md",
+    "unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow": "infer-core/recipes-design/skills-migrator-and-sota/unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow.md",
+    "unit-agent-skills-parallel-analysis-kvcache-quantization-and-accuracy-debug": "infer-core/recipes-design/skills-parallel-kv-quant-debug/unit-agent-skills-parallel-analysis-kvcache-quantization-and-accuracy-debug.md",
+    "unit-bailing-25-and-ling-30-flash-pypto-megakernel-inference-recipe": "infer-core/models/glm-longcat-bailing/bailing-and-ling-flash/unit-bailing-25-and-ling-30-flash-pypto-megakernel-inference-recipe.md",
+    "unit-cann-recipes-executor-multimodal-and-online-serving-architecture": "infer-core/recipes-design/executor-and-online-serving/unit-cann-recipes-executor-multimodal-and-online-serving-architecture.md",
     "unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-multi-stream-superkernel-and-prefetch-wrappers.md",
     "unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership": "serving/cann-recipes-infer/execution/unit-cann-recipes-infer-packed-tnd-forward-metadata-and-cp-ownership.md",
     "unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment": "serving/cann-recipes-infer/cache/unit-cann-recipes-infer-paged-kv-mamba-swa-block-budget-and-hixl-alignment.md",
+    "unit-cann-recipes-module-blockwise-sparse-cache-and-ulysses-sp": "infer-core/acceleration-modules/dit-sparse-cache-and-sp/unit-cann-recipes-module-blockwise-sparse-cache-and-ulysses-sp.md",
+    "unit-cann-recipes-module-fuse-moe-gmm-linear-and-mxfp8-quantization": "infer-core/acceleration-modules/moe-gmm-linear-and-mxquant/unit-cann-recipes-module-fuse-moe-gmm-linear-and-mxfp8-quantization.md",
+    "unit-deepseek-r1-and-v32-exp-prefill-decode-sfa-optimization": "infer-core/models/deepseek-recipes/r1-and-v32-exp/unit-deepseek-r1-and-v32-exp-prefill-decode-sfa-optimization.md",
+    "unit-deepseek-v32-exp-sparse-flash-attention-and-indexer-recipe": "infer-core/models/deepseek-recipes/r1-and-v32-exp/unit-deepseek-v32-exp-sparse-flash-attention-and-indexer-recipe.md",
+    "unit-deepseek-v4-flash-tilelang-inductor-and-single-npu-moe-offload": "infer-core/models/deepseek-recipes/v4-flash-tilelang-offload/unit-deepseek-v4-flash-tilelang-inductor-and-single-npu-moe-offload.md",
+    "unit-deepseek-v4-mhc-autofuse-and-shmem-symmetric-memory-recipe": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem/unit-deepseek-v4-mhc-autofuse-and-shmem-symmetric-memory-recipe.md",
+    "unit-deepseek-v4-mhc-sinkhorn-knopp-and-shmem-collectives-deep-dive": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem/unit-deepseek-v4-mhc-sinkhorn-knopp-and-shmem-collectives-deep-dive.md",
+    "unit-gemma4-and-hy3-agentic-four-stage-npu-optimization-recipe": "infer-core/models/emerging-llm-and-rec/gemma4-and-hy3-agentic/unit-gemma4-and-hy3-agentic-four-stage-npu-optimization-recipe.md",
+    "unit-glm5-and-glm52-moe-inference-and-kv-expert-offload-recipe": "infer-core/models/glm-longcat-bailing/glm5-and-glm52-offload/unit-glm5-and-glm52-moe-inference-and-kv-expert-offload-recipe.md",
+    "unit-hstu-generative-recommendation-ragged-tnd-and-rab-optimization": "infer-core/models/emerging-llm-and-rec/hstu-generative-rec/unit-hstu-generative-recommendation-ragged-tnd-and-rab-optimization.md",
+    "unit-hunyuan-video-and-hunyuan-image3-dit-moe-parallel-cache-recipe": "infer-core/models/multimodal-dit-video/hunyuan-video-and-image3/unit-hunyuan-video-and-hunyuan-image3-dit-moe-parallel-cache-recipe.md",
     "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms": "infer-core/concepts/frameworks-and-platforms/hardware-and-kernels/unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms.md",
     "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms": "infer-core/concepts/frameworks-and-platforms/executors-and-serving/unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms.md",
     "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow": "infer-core/optimizations/interventions-and-cases/e2e-case-studies/unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow.md",
@@ -146,6 +283,16 @@
     "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms": "infer-core/concepts/frameworks-and-platforms/parallelism-topologies/unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms.md",
     "unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow": "infer-core/training-and-alignment/concepts/rlhf-post-training/unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow.md",
     "unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop": "infer-core/optimizations/rules-memory-and-kv/prefetch-and-offload/unit-infer-core-weight-prefetch-nz-exclusion-and-kv-offload-sop.md",
+    "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe": "infer-core/models/kimi-and-qwen-recipes/kimi-k3-and-k2-thinking/unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe.md",
+    "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design": "infer-core/recipes-design/kvcache-mtp-and-packed-tnd/unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design.md",
+    "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic/unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe.md",
+    "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": "infer-core/quantization-and-accuracy/quant-accuracy-tuning/unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator.md",
+    "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe": "infer-core/quantization-and-accuracy/dit-quantization-tuning/unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe.md",
+    "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop": "infer-core/quantization-and-accuracy/msmodelslim-adaptation/unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop.md",
+    "unit-msprobe-nan-overflow-detection-and-deterministic-alignment-sop": "infer-core/quantization-and-accuracy/msprobe-nan-and-determinism/unit-msprobe-nan-overflow-detection-and-deterministic-alignment-sop.md",
+    "unit-qwen35-moe-qwen3-moe-qwen3-next-and-dense-optimization-recipe": "infer-core/models/kimi-and-qwen-recipes/qwen35-qwen3-moe-and-dense/unit-qwen35-moe-qwen3-moe-qwen3-next-and-dense-optimization-recipe.md",
+    "unit-rl-rollout-inference-engine-mismatch-and-spike-root-cause-sop": "infer-core/quantization-and-accuracy/rl-spike-and-speculators/unit-rl-rollout-inference-engine-mismatch-and-spike-root-cause-sop.md",
+    "unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe": "infer-core/models/multimodal-dit-video/sana-wan22-and-magihuman/unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe.md",
     "unit-sglang-cancellation-and-cache-ownership": "serving/sglang/lifecycle/unit-sglang-cancellation-and-cache-ownership.md",
     "unit-sglang-cgroup-host-memory-headroom": "serving/sglang/cache/memory/unit-sglang-cgroup-host-memory-headroom.md",
     "unit-sglang-checkpoint-request-rebind": "serving/sglang/cache/checkpoints/unit-sglang-checkpoint-request-rebind.md",
@@ -185,6 +332,7 @@
     "unit-sglang-tokenizer-dispatch-and-abort-boundary": "serving/sglang/admission/unit-sglang-tokenizer-dispatch-and-abort-boundary.md",
     "unit-sglang-tp-capacity-and-result-contracts": "serving/sglang/execution/unit-sglang-tp-capacity-and-result-contracts.md",
     "unit-sglang-unified-memory-sink-and-envelope": "serving/sglang/cache/memory/unit-sglang-unified-memory-sink-and-envelope.md",
+    "unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe": "infer-core/models/emerging-llm-and-rec/step3p7-gpt-oss-and-pangu/unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe.md",
     "unit-tgi-cache-axes-and-mask-semantics": "serving/tgi/models/attention/unit-tgi-cache-axes-and-mask-semantics.md",
     "unit-tgi-expanded-deepseek-kv-storage": "serving/tgi/models/attention/unit-tgi-expanded-deepseek-kv-storage.md",
     "unit-tgi-kv-head-topology-and-preprocessing": "serving/tgi/models/topology/unit-tgi-kv-head-topology-and-preprocessing.md",
@@ -205,8 +353,315 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 78,
+  "unit_count": 105,
   "units": [
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Operator fusion, static graph capture, and multi-stream overlap in PyTorch NPU inference"
+        ]
+      },
+      "domain_path": "infer-core/recipes-design/skills-fusion-graph-and-stream",
+      "evidence_strength": "software_contract",
+      "id": "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/recipes-design/skills-fusion-graph-and-stream/unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-fusion/SKILL.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-graph/SKILL.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-stream-overlap/SKILL.md"
+        ],
+        "source_digest": "2b05edf8d1fba841902fc0e420eb3e1d0bf753924771906a490dd5f164b6e815",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:.agents/skills/model-infer-fusion/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Agentic Playbook for Operator Fusion, ACLGraph/TorchAir Capture, and Multi-Stream Overlap",
+      "token_estimate": 786,
+      "triggers": {
+        "error_signatures": [
+          "model infer fusion skill",
+          "model infer graph aclgraph torchair"
+        ],
+        "keywords": [
+          "model infer fusion skill",
+          "model infer graph aclgraph torchair",
+          "model infer stream overlap skill",
+          "npugraph ex static kernel capture",
+          "fix graph break aclgraph torch npu",
+          "model-infer-fusion",
+          "model-infer-graph",
+          "model-infer-stream-overlap",
+          "aclgraph",
+          "npugraph-ex",
+          "torchair",
+          "static-kernel"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "End-to-end migration and SOTA optimization of PyTorch/HuggingFace inference models on Ascend NPU"
+        ]
+      },
+      "domain_path": "infer-core/recipes-design/skills-migrator-and-sota",
+      "evidence_strength": "software_contract",
+      "id": "unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/recipes-design/skills-migrator-and-sota/unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-sota-approach/SKILL.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-migrator/SKILL.md"
+        ],
+        "source_digest": "cd15743a95dde10b1ec73f3b914744f1ac79d4c0460e7761e9487a0fc2485ac7",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:.agents/skills/model-infer-sota-approach/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Agentic Model Inference Migrator and SOTA Optimization Closed-Loop Workflow",
+      "token_estimate": 745,
+      "triggers": {
+        "error_signatures": [
+          "model infer migrator skill",
+          "model infer sota approach workflow"
+        ],
+        "keywords": [
+          "model infer migrator skill",
+          "model infer sota approach workflow",
+          "five stage npu model optimization",
+          "gpu to ascend npu inference migration",
+          "model-infer-migrator",
+          "model-infer-sota-approach",
+          "agent-workflow",
+          "npu-migration",
+          "five-stage-optimization"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Parallelism selection, KV cache refactoring, W8A8/W4A8 quantization, and precision debugging on Ascend NPU"
+        ]
+      },
+      "domain_path": "infer-core/recipes-design/skills-parallel-kv-quant-debug",
+      "evidence_strength": "software_contract",
+      "id": "unit-agent-skills-parallel-analysis-kvcache-quantization-and-accuracy-debug",
+      "inherits_from": [
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/recipes-design/skills-parallel-kv-quant-debug/unit-agent-skills-parallel-analysis-kvcache-quantization-and-accuracy-debug.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-parallel-analysis/SKILL.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-kvcache/SKILL.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-quantization/SKILL.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/.agents/skills/model-infer-accuracy-debug/SKILL.md"
+        ],
+        "source_digest": "ce6874c7c295198568ce7356947c2ea8deb706f674f0c14975f81b6f0e11d3b8",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:.agents/skills/model-infer-parallel-analysis/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Agentic Playbook for Parallelism Sizing, KV Cache Staticization, Quantization, and Accuracy Debugging",
+      "token_estimate": 820,
+      "triggers": {
+        "error_signatures": [
+          "model infer parallel analysis skill",
+          "model infer kvcache skill"
+        ],
+        "keywords": [
+          "model infer parallel analysis skill",
+          "model infer kvcache skill",
+          "model infer quantization skill",
+          "model infer accuracy debug skill",
+          "layerwise cosine similarity bisect npu",
+          "model-infer-parallel-analysis",
+          "model-infer-kvcache",
+          "model-infer-quantization",
+          "model-infer-accuracy-debug",
+          "bisect-layer"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Bailing-2.5 and Ling-3.0-Flash (Bailing-V3) MoE inference"
+        ]
+      },
+      "domain_path": "infer-core/models/glm-longcat-bailing/bailing-and-ling-flash",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-bailing-25-and-ling-30-flash-pypto-megakernel-inference-recipe",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/models/glm-longcat-bailing/bailing-and-ling-flash/unit-bailing-25-and-ling-30-flash-pypto-megakernel-inference-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/integration/ling-3.0-flash/bailing_v3_pypto_operator_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/bailing_2_5/README.md"
+        ],
+        "source_digest": "a5fc7f335e0b52c69a7c5dc9a08f0e1b0bd3c19a655b600eaadab1d0a461ed6a",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/integration/ling-3.0-flash/bailing_v3_pypto_operator_guide.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Bailing-2.5 and Ling-3.0-Flash (Bailing-V3) NPU Inference and PyPTO Operator Recipe",
+      "token_estimate": 618,
+      "triggers": {
+        "error_signatures": [
+          "bailing 2.5 ascend inference",
+          "ling 3.0 flash bailing v3 pypto"
+        ],
+        "keywords": [
+          "bailing 2.5 ascend inference",
+          "ling 3.0 flash bailing v3 pypto",
+          "bailing v3 pypto operator guide",
+          "pypto mpmd attention moe fusion",
+          "bailing-2.5",
+          "ling-3.0-flash",
+          "bailing-v3",
+          "pypto",
+          "mpmd",
+          "megakernel",
+          "moe"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "LLM, VLM, and DiT model execution and online serving in cann-recipes-infer"
+        ]
+      },
+      "domain_path": "infer-core/recipes-design/executor-and-online-serving",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-recipes-executor-multimodal-and-online-serving-architecture",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "path": "infer-core/recipes-design/executor-and-online-serving/unit-cann-recipes-executor-multimodal-and-online-serving-architecture.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/executor_design.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/online_inference_design.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/mm_inference_design.md"
+        ],
+        "source_digest": "96aab0b64afc449cf0e82148f492d91b10ec84ad44ea3a069d11de0a4774ea93",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/design/executor_design.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "CANN-Recipes-Infer Executor, Online Serving Engine, and Multimodal DiT Design Architecture",
+      "token_estimate": 736,
+      "triggers": {
+        "error_signatures": [
+          "cann recipes infer executor design",
+          "online inference continuous batching ascend"
+        ],
+        "keywords": [
+          "cann recipes infer executor design",
+          "online inference continuous batching ascend",
+          "multimodal dit vae executor design",
+          "new model adaptation checklist cann recipes",
+          "executor-design",
+          "online-serving",
+          "mm-inference-design",
+          "continuous-batching",
+          "chunked-prefill",
+          "new-model-checklist"
+        ]
+      }
+    },
     {
       "category": "sop",
       "conditions": {
@@ -342,6 +797,690 @@
           "calculate_fixed_block_memory_bytes",
           "_alloc_aligned_hbm_tensor",
           "HIXL"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "Plug-and-play DiT and multimodal acceleration modules in cann-recipes-infer/module"
+        ]
+      },
+      "domain_path": "infer-core/acceleration-modules/dit-sparse-cache-and-sp",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-cann-recipes-module-blockwise-sparse-cache-and-ulysses-sp",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/acceleration-modules/dit-sparse-cache-and-sp/unit-cann-recipes-module-blockwise-sparse-cache-and-ulysses-sp.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/module/blockwise_sparse/sparse_method.py",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/mm_inference_design.md"
+        ],
+        "source_digest": "a078e35ca3fe60347c8fc9f1072ac86026a318615b92edb4f5cc2bb6efe7e5b3",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:module/blockwise_sparse/sparse_method.py",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Reusable Acceleration Modules: Blockwise Sparse Attention, TeaCache/TaylorSeer, and Ulysses SP",
+      "token_estimate": 688,
+      "triggers": {
+        "error_signatures": [
+          "module blockwise sparse sparse_method",
+          "ada bsa blockwise sparse attention"
+        ],
+        "keywords": [
+          "module blockwise sparse sparse_method",
+          "ada bsa blockwise sparse attention",
+          "taylorseer dit feature forecasting",
+          "cann recipes infer module cache teacache",
+          "vae patch parallel module ascend",
+          "blockwise-sparse",
+          "ada-bsa",
+          "teacache",
+          "taylorseer",
+          "ulysses-sp",
+          "cfg-parallel",
+          "vae-patch-parallel"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Fused MoE GMM execution and W8A8/MXFP8 linear quantization across cann-recipes-infer models"
+        ]
+      },
+      "domain_path": "infer-core/acceleration-modules/moe-gmm-linear-and-mxquant",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-cann-recipes-module-fuse-moe-gmm-linear-and-mxfp8-quantization",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/acceleration-modules/moe-gmm-linear-and-mxquant/unit-cann-recipes-module-fuse-moe-gmm-linear-and-mxfp8-quantization.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/module/fuse_moe_gmm.py"
+        ],
+        "source_digest": "2e3a711c9571c6424cb7c19e532dcf3ddb5b6c69a79532095dc8647cdc4b063c",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:module/fuse_moe_gmm.py",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Reusable Acceleration Modules: Fused MoE GMM, Parallel Linear, and MXFP8/W8A8 Quantization",
+      "token_estimate": 719,
+      "triggers": {
+        "error_signatures": [
+          "module fuse_moe_gmm.py",
+          "npu grouped matmul split_item 2 3"
+        ],
+        "keywords": [
+          "module fuse_moe_gmm.py",
+          "npu grouped matmul split_item 2 3",
+          "npu moe init routing v2 finalize routing",
+          "mxfp8 dynamic quant matmul ascend 950",
+          "fuse-moe-gmm",
+          "npu-grouped-matmul",
+          "mxfp8",
+          "w8a8",
+          "split-item",
+          "moe-init-routing-v2"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "DeepSeek-R1 671B prefill/decode",
+          "DeepSeek-V3.2-Exp sparse attention inference"
+        ]
+      },
+      "domain_path": "infer-core/models/deepseek-recipes/r1-and-v32-exp",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-deepseek-r1-and-v32-exp-prefill-decode-sfa-optimization",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/deepseek-recipes/r1-and-v32-exp/unit-deepseek-r1-and-v32-exp-prefill-decode-sfa-optimization.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_r1/deepseek_r1_decode_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_r1/deepseek_r1_prefill_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v3_2_exp/deepseek_v3.2_exp_inference_guide.md"
+        ],
+        "source_digest": "598e304b95fb94d50fa4d379cbf3e57d5a9b0c69949f0fda14a3265760d3bea2",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_r1/deepseek_r1_decode_optimization.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek-R1 and DeepSeek-V3.2-Exp Prefill/Decode MLA, SFA, and Multi-Stream Pipeline Playbook",
+      "token_estimate": 1133,
+      "triggers": {
+        "error_signatures": [
+          "deepseek r1 prefill decode optimization",
+          "deepseek v3.2 exp sparse flash attention"
+        ],
+        "keywords": [
+          "deepseek r1 prefill decode optimization",
+          "deepseek v3.2 exp sparse flash attention",
+          "lightning indexer topk 2048 sfa",
+          "dual microbatch communication computation overlap",
+          "mla absorb page attention c8 kvcache",
+          "amla aic aiv parallel execution",
+          "deepseek-r1",
+          "deepseek-v3.2-exp",
+          "mla",
+          "sfa",
+          "lightning-indexer",
+          "prefill-decode",
+          "w8a8",
+          "c8",
+          "ep",
+          "mc2"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "DeepSeek-V3.2-Exp long-context 32K-128K sparse attention inference"
+        ]
+      },
+      "domain_path": "infer-core/models/deepseek-recipes/r1-and-v32-exp",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-deepseek-v32-exp-sparse-flash-attention-and-indexer-recipe",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/models/deepseek-recipes/r1-and-v32-exp/unit-deepseek-v32-exp-sparse-flash-attention-and-indexer-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v3_2_exp/deepseek_v3.2_exp_inference_guide.md"
+        ],
+        "source_digest": "727f6e094d799cb4e674ee7959c34084d86e2b2a29b18c401874ee6538a2c216",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v3_2_exp/deepseek_v3.2_exp_inference_guide.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek-V3.2-Exp Sparse Flash Attention (SFA), LightningIndexer, and MTP Serving Recipe",
+      "token_estimate": 707,
+      "triggers": {
+        "error_signatures": [
+          "deepseek v3.2 exp inference guide",
+          "npu_lightning_indexer npu_sparse_flash_attention"
+        ],
+        "keywords": [
+          "deepseek v3.2 exp inference guide",
+          "npu_lightning_indexer npu_sparse_flash_attention",
+          "deepseek v3.2 exp 32k 128k tpot",
+          "index_n_heads 64 index_head_dim 128 index_topk 2048",
+          "deepseek-v3.2-exp",
+          "sfa",
+          "lightning-indexer",
+          "mtp",
+          "sparse-attention",
+          "atlas-a3",
+          "ascend-950"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "DeepSeek-V4-Flash TileLang + Inductor inference",
+          "Single-NPU large MoE inference with host DRAM offload in SGLang"
+        ]
+      },
+      "domain_path": "infer-core/models/deepseek-recipes/v4-flash-tilelang-offload",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-deepseek-v4-flash-tilelang-inductor-and-single-npu-moe-offload",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/models/deepseek-recipes/v4-flash-tilelang-offload/unit-deepseek-v4-flash-tilelang-inductor-and-single-npu-moe-offload.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/integration/sglang/dsv4-flash-single-npu-moe-offload/dsv4_flash_single_card_design.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/deepseek_v4_flash_tilelang_and_inductor_af/README.md"
+        ],
+        "source_digest": "7e8659ef49578885aa3a46993ae649a9427251a633a3027df069617236f0c42e",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/integration/sglang/dsv4-flash-single-npu-moe-offload/dsv4_flash_single_card_design.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "DeepSeek-V4-Flash TileLang + Inductor AutoFuse and SGLang Single-NPU MoE Offload Recipe",
+      "token_estimate": 831,
+      "triggers": {
+        "error_signatures": [
+          "deepseek v4 flash tilelang inductor autofuse",
+          "dsv4 flash single npu moe offload"
+        ],
+        "keywords": [
+          "deepseek v4 flash tilelang inductor autofuse",
+          "dsv4 flash single npu moe offload",
+          "sglang single card moe cpu offload",
+          "pinned memory expert weight prefetch",
+          "hybrid cpu npu moe execution",
+          "deepseek-v4-flash",
+          "tilelang",
+          "inductor",
+          "autofuse",
+          "sglang",
+          "moe-offload",
+          "single-npu",
+          "pcie-prefetch"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "DeepSeek-V4 multi-stream residual, AutoFuse graph compilation, and SHMEM low-latency collective inference"
+        ]
+      },
+      "domain_path": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-deepseek-v4-mhc-autofuse-and-shmem-symmetric-memory-recipe",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms"
+      ],
+      "path": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem/unit-deepseek-v4-mhc-autofuse-and-shmem-symmetric-memory-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_inference_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_mHC_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_autofuse_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_shmem_guide.md"
+        ],
+        "source_digest": "04fb54a26c253d61d10fa694955eabfd30a3668f13804dd38f9d3653bc8517fb",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v4/deepseek_v4_inference_guide.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek-V4 Inference Guide: mHC Hyper-Connections, AutoFuse, and SHMEM Symmetric Memory",
+      "token_estimate": 875,
+      "triggers": {
+        "error_signatures": [
+          "deepseek v4 inference guide",
+          "manifold constrained hyper connections mhc"
+        ],
+        "keywords": [
+          "deepseek v4 inference guide",
+          "manifold constrained hyper connections mhc",
+          "sinkhorn knopp doubly stochastic residual",
+          "deepseek v4 autofuse torch compile",
+          "deepseek v4 shmem symmetric memory communication",
+          "deepseek-v4",
+          "mhc",
+          "autofuse",
+          "shmem",
+          "sinkhorn-knopp",
+          "sparse-attn-sharedkv",
+          "compressor"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "DeepSeek-V4 mHC residual stream fusion and SHMEM symmetric memory collective acceleration"
+        ]
+      },
+      "domain_path": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-deepseek-v4-mhc-sinkhorn-knopp-and-shmem-collectives-deep-dive",
+      "inherits_from": [
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem/unit-deepseek-v4-mhc-sinkhorn-knopp-and-shmem-collectives-deep-dive.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_mHC_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_shmem_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_autofuse_guide.md"
+        ],
+        "source_digest": "fcd727092e4a88df2e7c5b7a53aba5690394d053bde6745dda0ec9f93e0f570c",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v4/deepseek_v4_mHC_guide.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek-V4 mHC Sinkhorn-Knopp Fusion and SHMEM Device-Side Collectives Deep Dive",
+      "token_estimate": 690,
+      "triggers": {
+        "error_signatures": [
+          "deepseek v4 mhc guide",
+          "deepseek v4 shmem guide"
+        ],
+        "keywords": [
+          "deepseek v4 mhc guide",
+          "deepseek v4 shmem guide",
+          "mhc_pre_op mhc_post_op sinkhorn 20 iterations",
+          "shmem symmetric heap putmem barrier npu",
+          "deepseek-v4",
+          "mhc-guide",
+          "shmem-guide",
+          "birkhoff-polytope",
+          "sinkhorn-knopp",
+          "one-sided-dma"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Gemma-4 26B-A4B and Tencent Hy3 295B-A21B inference on 8-card / 16-rank NPU nodes"
+        ]
+      },
+      "domain_path": "infer-core/models/emerging-llm-and-rec/gemma4-and-hy3-agentic",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-gemma4-and-hy3-agentic-four-stage-npu-optimization-recipe",
+      "inherits_from": [
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/models/emerging-llm-and-rec/gemma4-and-hy3-agentic/unit-gemma4-and-hy3-agentic-four-stage-npu-optimization-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/gemma_4/agentic/optimization_report.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/hy3/agentic/optimization_report.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/hy3/hy3_optimization.md"
+        ],
+        "source_digest": "78c58dc1a26f248e7811d6690e75f93d58e74321c3192ddf413509e252bff712",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:models/gemma_4/agentic/optimization_report.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Gemma-4 (26B-A4B) and Tencent Hy3 (295B-A21B) Four-Stage Agentic Optimization Playbook",
+      "token_estimate": 709,
+      "triggers": {
+        "error_signatures": [
+          "gemma 4 ascend optimization report",
+          "hy3 295b moe ascend optimization"
+        ],
+        "keywords": [
+          "gemma 4 ascend optimization report",
+          "hy3 295b moe ascend optimization",
+          "dual mode sliding full attention kvcache",
+          "attention k eq v shared kv projection",
+          "parallel dense mlp and moe addition",
+          "gemma-4",
+          "hy3",
+          "hunyuan",
+          "dual-mode-attention",
+          "k-eq-v",
+          "mc2",
+          "torchair",
+          "npugraph-ex"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "GLM-5 and GLM-5.2 MoE inference under constrained HBM or ultra-long context"
+        ]
+      },
+      "domain_path": "infer-core/models/glm-longcat-bailing/glm5-and-glm52-offload",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-glm5-and-glm52-moe-inference-and-kv-expert-offload-recipe",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/glm-longcat-bailing/glm5-and-glm52-offload/unit-glm5-and-glm52-moe-inference-and-kv-expert-offload-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/glm_5_2/glm_5_2_offload_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/glm_5/README.md"
+        ],
+        "source_digest": "99a365fddb6cbf55bed19a4d8f4d4c8fbd59245cd2c4645ad197eeb3725cd859",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/glm_5_2/glm_5_2_offload_guide.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "GLM-5 and GLM-5.2 NPU Inference Optimization and Hierarchical Offload Recipe",
+      "token_estimate": 707,
+      "triggers": {
+        "error_signatures": [
+          "glm 5 ascend inference optimization",
+          "glm 5.2 offload guide"
+        ],
+        "keywords": [
+          "glm 5 ascend inference optimization",
+          "glm 5.2 offload guide",
+          "glm moe expert and kv cache offload",
+          "async h2d d2h stream overlap glm",
+          "glm-5",
+          "glm-5.2",
+          "offload",
+          "moe",
+          "kv-offload",
+          "expert-offload",
+          "aclgraph"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "HSTU (Hierarchical Sequential Transduction Units) generative recommendation inference"
+        ]
+      },
+      "domain_path": "infer-core/models/emerging-llm-and-rec/hstu-generative-rec",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-hstu-generative-recommendation-ragged-tnd-and-rab-optimization",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "path": "infer-core/models/emerging-llm-and-rec/hstu-generative-rec/unit-hstu-generative-recommendation-ragged-tnd-and-rab-optimization.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/hstu/hstu_optimization.md"
+        ],
+        "source_digest": "f99dcf76cd5bb8f42b4331d4b921ce95cc112e12c82f493f6fd2ac5c93d2ba5e",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/hstu/hstu_optimization.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HSTU Generative Recommendation NPU Optimization: Ragged TND Packing, RAB Bias, and Fused Ops",
+      "token_estimate": 735,
+      "triggers": {
+        "error_signatures": [
+          "hstu generative recommendation optimization",
+          "hierarchical sequential transduction units ascend"
+        ],
+        "keywords": [
+          "hstu generative recommendation optimization",
+          "hierarchical sequential transduction units ascend",
+          "hstu ragged tnd sequence packing",
+          "relative attention bias rab time position",
+          "silu pointwise aggregated attention hstu",
+          "hstu",
+          "generative-recommendation",
+          "ragged-tensor",
+          "tnd-layout",
+          "rab",
+          "relative-attention-bias",
+          "pointwise-attention"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "HunyuanVideo text/image-to-video DiT and HunyuanImage-3.0 MoE image generation"
+        ]
+      },
+      "domain_path": "infer-core/models/multimodal-dit-video/hunyuan-video-and-image3",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-hunyuan-video-and-hunyuan-image3-dit-moe-parallel-cache-recipe",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/multimodal-dit-video/hunyuan-video-and-image3/unit-hunyuan-video-and-hunyuan-image3-dit-moe-parallel-cache-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/hunyuan-video/hunyuan_video_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/hunyuan-image-3.0/hunyuan_image_3_optimization.md"
+        ],
+        "source_digest": "33eadd260cc66e3a9bb4c0479bfc7e8956096a521d80bd1456a9dbaa9033e9a4",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/hunyuan-video/hunyuan_video_optimization.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HunyuanVideo and HunyuanImage-3.0 DiT/MoE Parallelism, FBCache/TeaCache, and Operator Fusion",
+      "token_estimate": 716,
+      "triggers": {
+        "error_signatures": [
+          "hunyuan video optimization ascend",
+          "hunyuan image 3.0 optimization"
+        ],
+        "keywords": [
+          "hunyuan video optimization ascend",
+          "hunyuan image 3.0 optimization",
+          "fbcache teacache dit residual reuse",
+          "ulysses anything attention arbitrary heads",
+          "hunyuan image 3.0 moe ep double routing",
+          "hunyuan-video",
+          "hunyuan-image-3.0",
+          "dit",
+          "ulysses",
+          "ring-attention",
+          "fbcache",
+          "teacache",
+          "double-routing"
         ]
       }
     },
@@ -1535,6 +2674,625 @@
           "FRACTAL_NZ",
           "npu_mm_all_reduce_base",
           "taylorseer_predictive_dit_cache"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Kimi-K3 ultra-large MoE inference",
+          "Kimi-K2-Thinking long chain-of-thought reasoning"
+        ]
+      },
+      "domain_path": "infer-core/models/kimi-and-qwen-recipes/kimi-k3-and-k2-thinking",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/kimi-and-qwen-recipes/kimi-k3-and-k2-thinking/unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/kimi_k3/kimi_k3_inference_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/kimi_k2_thinking/kimi_k2_thinking_inference_guide.md"
+        ],
+        "source_digest": "807e9eaa7c67b358c6b671652d072e5b1ca599241e43f4cc75e06bbe08ddecdf",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/kimi_k3/kimi_k3_inference_guide.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Kimi-K3 and Kimi-K2-Thinking Long-Context MoE Inference Optimization Recipe",
+      "token_estimate": 777,
+      "triggers": {
+        "error_signatures": [
+          "kimi k3 inference optimization",
+          "kimi k2 thinking ascend inference"
+        ],
+        "keywords": [
+          "kimi k3 inference optimization",
+          "kimi k2 thinking ascend inference",
+          "kimi long reasoning chain decode",
+          "kimi moe ep32 mc2 w4a8",
+          "kimi-k3",
+          "kimi-k2-thinking",
+          "moe",
+          "mla",
+          "long-context",
+          "w4a8",
+          "w8a8",
+          "ep",
+          "mc2"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Paged KV cache management, MTP speculative decoding, and variable-length TND packed execution"
+        ]
+      },
+      "domain_path": "infer-core/recipes-design/kvcache-mtp-and-packed-tnd",
+      "evidence_strength": "software_contract",
+      "id": "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
+      ],
+      "path": "infer-core/recipes-design/kvcache-mtp-and-packed-tnd/unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/kv_cache_design.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/mtp_design.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/common/mtp_model_guide.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/design/packed_sequence_design.md"
+        ],
+        "source_digest": "00ee747822a09e180fbb94429d68470c084cf5dc4990e2645c1c2a587f8b3520",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/design/kv_cache_design.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "KV Cache Manager, Multi-Token Prediction (MTP), and Packed Sequence TND Execution Design",
+      "token_estimate": 786,
+      "triggers": {
+        "error_signatures": [
+          "cann recipes kv cache design",
+          "mtp multi token prediction design guide"
+        ],
+        "keywords": [
+          "cann recipes kv cache design",
+          "mtp multi token prediction design guide",
+          "packed sequence tnd layout design",
+          "actual seq lengths cumulative tnd",
+          "mla absorbed kv cache layout",
+          "kv-cache-design",
+          "mtp-design",
+          "packed-sequence",
+          "tnd-layout",
+          "paged-attention",
+          "speculative-decoding"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "LongCat-2.0, LongCat-Flash, and LongCat-Flash-Lite (68.5B-A3B) inference"
+        ]
+      },
+      "domain_path": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe",
+      "inherits_from": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic/unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/longcat_flash/longcat_flash_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/longcat-2.0/longcat_2.0_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/longcat_flash_lite/agentic/optimization_report_ep.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/longcat_flash_lite/agentic/optimization_report_tp.md"
+        ],
+        "source_digest": "92fcd4af300d941db9f90da22805b46a10e8628b1f4a2404bce8613d945b65ba",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/longcat_flash/longcat_flash_optimization.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "LongCat-2.0, LongCat-Flash, and LongCat-Flash-Lite Agentic TP vs. EP Optimization Recipe",
+      "token_estimate": 869,
+      "triggers": {
+        "error_signatures": [
+          "longcat 2.0 optimization ascend",
+          "longcat flash shortcut moe"
+        ],
+        "keywords": [
+          "longcat 2.0 optimization ascend",
+          "longcat flash shortcut moe",
+          "longcat flash lite tp vs ep",
+          "zero computation identity expert moe",
+          "mla kv lora rank 512 longcat",
+          "longcat-2.0",
+          "longcat-flash",
+          "longcat-flash-lite",
+          "zero-computation-expert",
+          "shortcut-moe",
+          "tp-vs-ep",
+          "aclgraph"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "cann_versions": [
+          ">=8.0.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "End-to-end automated quantization and accuracy recovery for LLM/VLM/MoE models"
+        ]
+      },
+      "domain_path": "infer-core/quantization-and-accuracy/quant-accuracy-tuning",
+      "evidence_strength": "software_contract",
+      "id": "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/quantization-and-accuracy/quant-accuracy-tuning/unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/Ascend/msagent/blob/521f8ead0ebda5db5b282f0c3c4147006e01e016/skills/quantizer/quantization-accuracy-tuning-orchestrator/SKILL.md"
+        ],
+        "source_digest": "aa0b66a5acd2651c046c43086fff5e28f560941bbebe3ce460d91f3284449e96",
+        "source_locator": "Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/quantizer/quantization-accuracy-tuning-orchestrator/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Automated Quantization Accuracy Tuning Orchestrator: Outlier Suppression, Rollback, and Search Loop",
+      "token_estimate": 734,
+      "triggers": {
+        "error_signatures": [
+          "quantization accuracy tuning orchestrator",
+          "msmodelslim quant analyze tuning"
+        ],
+        "keywords": [
+          "quantization accuracy tuning orchestrator",
+          "msmodelslim quant analyze tuning",
+          "w8a8 w4a8 accuracy drop recovery",
+          "quarot awq iter_smooth laos rollback",
+          "disable_names sensitive layer rollback",
+          "quantization-tuning",
+          "msmodelslim-analyze",
+          "awq",
+          "quarot",
+          "iter-smooth",
+          "laos",
+          "aisbench",
+          "layer-rollback"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "DiT image/video diffusion quantization (Wan2.1/2.2, HunyuanVideo, Flux, Qwen-Image)"
+        ]
+      },
+      "domain_path": "infer-core/quantization-and-accuracy/dit-quantization-tuning",
+      "evidence_strength": "software_contract",
+      "id": "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "path": "infer-core/quantization-and-accuracy/dit-quantization-tuning/unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/Ascend/msagent/blob/521f8ead0ebda5db5b282f0c3c4147006e01e016/skills/quantizer/quant-tuning-quantize-dit/SKILL.md"
+        ],
+        "source_digest": "490238f22134458ce1581e9475a3703d2198b0dd44db8292d708fdea73aaf828",
+        "source_locator": "Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/quantizer/quant-tuning-quantize-dit/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DiT Diffusion Model W8A8 Dynamic Quantization, Timestep Calibration, and FA3 Quant Recipe",
+      "token_estimate": 684,
+      "triggers": {
+        "error_signatures": [
+          "quant tuning quantize dit skill",
+          "dit diffusion w8a8 quantization"
+        ],
+        "keywords": [
+          "quant tuning quantize dit skill",
+          "dit diffusion w8a8 quantization",
+          "fa3 attention quantization dit",
+          "dit timestep aware calibration msmodelslim",
+          "dual expert dit quantization wan2.2",
+          "dit-quantization",
+          "quant-tuning-quantize-dit",
+          "w8a8-dynamic",
+          "fa3-quant",
+          "timestep-calibration",
+          "wan2.2",
+          "hunyuan-video"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.0.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "msModelSlim LLM/VLM/MoE model adaptation and multi-card quantization calibration"
+        ]
+      },
+      "domain_path": "infer-core/quantization-and-accuracy/msmodelslim-adaptation",
+      "evidence_strength": "software_contract",
+      "id": "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/quantization-and-accuracy/msmodelslim-adaptation/unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/Ascend/msagent/blob/521f8ead0ebda5db5b282f0c3c4147006e01e016/skills/quantizer/msmodelslim-model-adapt/SKILL.md"
+        ],
+        "source_digest": "b11cec6261e0788528adc99a66a581e7059cf49479fe683a7cfc6d790ac59eb2",
+        "source_locator": "Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/quantizer/msmodelslim-model-adapt/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "msModelSlim Model Adapter Implementation, Layerwise Lazy Loading, and EP Parallel Quantization SOP",
+      "token_estimate": 765,
+      "triggers": {
+        "error_signatures": [
+          "msmodelslim model adapt skill",
+          "create msmodelslim model adapter"
+        ],
+        "keywords": [
+          "msmodelslim model adapt skill",
+          "create msmodelslim model adapter",
+          "generate_model_visit generate_model_forward",
+          "msmodelslim ep parallel adaptation",
+          "msmodelslim buffer to nn parameter",
+          "msmodelslim",
+          "model-adapter",
+          "layerwise-quantization",
+          "ep-parallel",
+          "four-step-verification",
+          "moe-unpack"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.0.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Precision debugging, NaN/Inf root-cause isolation, and GPU-vs-NPU operator alignment"
+        ]
+      },
+      "domain_path": "infer-core/quantization-and-accuracy/msprobe-nan-and-determinism",
+      "evidence_strength": "software_contract",
+      "id": "unit-msprobe-nan-overflow-detection-and-deterministic-alignment-sop",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/quantization-and-accuracy/msprobe-nan-and-determinism/unit-msprobe-nan-overflow-detection-and-deterministic-alignment-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/Ascend/msagent/blob/521f8ead0ebda5db5b282f0c3c4147006e01e016/skills/accuracy/nan-overflow-detection/SKILL.md"
+        ],
+        "source_digest": "4d111b48d201815778fad61944952923d64972dc8f1fcdc86e1917d36bb1f542",
+        "source_locator": "Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/accuracy/nan-overflow-detection/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "msprobe NaN/Inf Overflow Detection, Cross-Platform Dump Comparison, and Determinism SOP",
+      "token_estimate": 750,
+      "triggers": {
+        "error_signatures": [
+          "nan overflow detection skill msagent",
+          "msprobe precisiondebugger dump compare"
+        ],
+        "keywords": [
+          "nan overflow detection skill msagent",
+          "msprobe precisiondebugger dump compare",
+          "npu deterministic mode hccl deterministic",
+          "locate first nan inf operator torch npu",
+          "msprobe",
+          "nan-overflow",
+          "deterministic-execution",
+          "accuracy-comparison",
+          "hccl-deterministic",
+          "precision-debugger"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Qwen3.5-MoE, Qwen3-235B-A22B / 30B-A3B, Qwen3-Next-80B-A3B, and Qwen2.5/Qwen3 Dense inference"
+        ]
+      },
+      "domain_path": "infer-core/models/kimi-and-qwen-recipes/qwen35-qwen3-moe-and-dense",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-qwen35-moe-qwen3-moe-qwen3-next-and-dense-optimization-recipe",
+      "inherits_from": [
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/kimi-and-qwen-recipes/qwen35-qwen3-moe-and-dense/unit-qwen35-moe-qwen3-moe-qwen3-next-and-dense-optimization-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/qwen3_5/qwen3_5_moe_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/qwen3_moe/qwen3_moe_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/qwen/qwen_dense_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/integration/sglang/qwen3-next/qwen3_next_optimization.md"
+        ],
+        "source_digest": "9eb14fe7d621f5a9fd457364e778b3e41c2e00a1889c825e434f712f7d1a2842",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/qwen3_5/qwen3_5_moe_optimization.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Qwen3.5-MoE, Qwen3-MoE, Qwen3-Next Hybrid Linear Attention, and Qwen Dense Playbook",
+      "token_estimate": 798,
+      "triggers": {
+        "error_signatures": [
+          "qwen3.5 moe optimization ascend",
+          "qwen3 moe optimization recipe"
+        ],
+        "keywords": [
+          "qwen3.5 moe optimization ascend",
+          "qwen3 moe optimization recipe",
+          "qwen3 next sglang gated deltanet",
+          "qwen dense optimization torch npu",
+          "hybrid linear attention mamba deltanet kv cache",
+          "qwen3.5-moe",
+          "qwen3-moe",
+          "qwen3-next",
+          "qwen-dense",
+          "gated-deltanet",
+          "hybrid-attention",
+          "sglang",
+          "gmm"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.0.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "RLHF / GRPO / PPO rollout-trainer precision alignment and Eagle/MTP speculator verification on NPU"
+        ]
+      },
+      "domain_path": "infer-core/quantization-and-accuracy/rl-spike-and-speculators",
+      "evidence_strength": "software_contract",
+      "id": "unit-rl-rollout-inference-engine-mismatch-and-spike-root-cause-sop",
+      "inherits_from": [
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
+        "unit-infer-core-mindspeed-torchtitan-5d-parallel-zero-and-recompute-axioms"
+      ],
+      "path": "infer-core/quantization-and-accuracy/rl-spike-and-speculators/unit-rl-rollout-inference-engine-mismatch-and-spike-root-cause-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/Ascend/msagent/blob/521f8ead0ebda5db5b282f0c3c4147006e01e016/skills/accuracy/spike-root-cause-analysis/SKILL.md"
+        ],
+        "source_digest": "4bff7df4bdf95c184c98c81b26036e6ae0806dd09f50208ab85005818cb5711f",
+        "source_locator": "Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/accuracy/spike-root-cause-analysis/SKILL.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "RL Rollout vs. Trainer Logprob Mismatch, Spike Root-Cause Analysis, and Speculator Alignment SOP",
+      "token_estimate": 684,
+      "triggers": {
+        "error_signatures": [
+          "spike root cause analysis skill msagent",
+          "rl rollout trainer logprob kl mismatch"
+        ],
+        "keywords": [
+          "spike root cause analysis skill msagent",
+          "rl rollout trainer logprob kl mismatch",
+          "moe router topk tie break rl spike",
+          "vllm sglang rollout mindspeed trainer precision mismatch",
+          "spike-root-cause",
+          "rl-rollout",
+          "kl-divergence",
+          "logprob-mismatch",
+          "routed-experts",
+          "speculators"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "SANA-Video, Wan2.2-I2V, and daVinci-MagiHuman video diffusion and VAE inference"
+        ]
+      },
+      "domain_path": "infer-core/models/multimodal-dit-video/sana-wan22-and-magihuman",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
+      ],
+      "path": "infer-core/models/multimodal-dit-video/sana-wan22-and-magihuman/unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/sana-video/SANA-Video_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/wan2.2-i2v/wan2.2-i2v_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/davinci-magihuman/davinci-magihuman_optimization.md"
+        ],
+        "source_digest": "1e000dff3a6f0b7d1902e7c96794dc5d45b5241b814434b79768ae55fe39c2e7",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/sana-video/SANA-Video_optimization.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "SANA-Video, Wan2.2-I2V, and daVinci-MagiHuman Video Generation NPU Optimization Playbook",
+      "token_estimate": 751,
+      "triggers": {
+        "error_signatures": [
+          "sana video optimization ascend",
+          "wan2.2 i2v optimization npu"
+        ],
+        "keywords": [
+          "sana video optimization ascend",
+          "wan2.2 i2v optimization npu",
+          "davinci magihuman video generation ascend",
+          "1x1 conv2d to linear matmul replacement",
+          "glumbconv temporal conv2d hw axis swap",
+          "sana-video",
+          "wan2.2-i2v",
+          "davinci-magihuman",
+          "conv2d-to-matmul",
+          "temporal-conv-swap",
+          "fia",
+          "rotary-mul"
         ]
       }
     },
@@ -3289,6 +5047,69 @@
           "mode-specific",
           "envelope",
           "contracts"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)"
+        ],
+        "workloads": [
+          "Step-3.7-Flash 197B multimodal MoE, GPT_OSS 120B/20B, and Pangu-7B inference"
+        ]
+      },
+      "domain_path": "infer-core/models/emerging-llm-and-rec/step3p7-gpt-oss-and-pangu",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe",
+      "inherits_from": [
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms",
+        "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
+      ],
+      "path": "infer-core/models/emerging-llm-and-rec/step3p7-gpt-oss-and-pangu/unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/step3p7_flash/README.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/gpt-oss/gpt_oss_optimization.md",
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/models/pangu_7b/README.md"
+        ],
+        "source_digest": "bc55fe39c0a6615159756544307ab2b22bd8380711ca9a515819736e0c27995f",
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:models/step3p7_flash/README.md",
+        "source_type": "code",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Step-3.7-Flash (197B Multimodal MoE), GPT-OSS (120B/20B), and Pangu-7B NPU Inference Recipe",
+      "token_estimate": 696,
+      "triggers": {
+        "error_signatures": [
+          "step 3.7 flash npu inference",
+          "gpt oss 120b 20b ascend optimization"
+        ],
+        "keywords": [
+          "step 3.7 flash npu inference",
+          "gpt oss 120b 20b ascend optimization",
+          "pangu 7b npu inference",
+          "swiglu clamp limit 7 16",
+          "hybrid full sliding window rope kvcache",
+          "step-3.7-flash",
+          "gpt-oss",
+          "pangu-7b",
+          "hybrid-sliding-attention",
+          "swiglu-clamp",
+          "ep16",
+          "npugraph-ex"
         ]
       }
     },
