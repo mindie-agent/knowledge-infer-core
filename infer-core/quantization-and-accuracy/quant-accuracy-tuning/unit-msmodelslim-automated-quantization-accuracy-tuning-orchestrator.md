@@ -76,7 +76,7 @@ Apply tuning strategies in strict ascending order of runtime overhead:
    - **`AWQ` / Weight Clipping (`w_method="autoround"` or `ssz` / `minmax` clip)**: Protects salient weight channels driven by high-magnitude activations.
    - **Calibration Dataset Alignment**: Replace generic calibration text with domain-matched prompts (`calib_set` matching reasoning/code/math distribution, `32..128` samples of length `2048..4096`).
 2. **Tier 2 — Orthogonal Rotation (`QuaRot` / Hadamard Transform & `LAOS` for `W4A8`)**:
-   - Applies Hadamard orthogonal rotation ($X H \cdot H^	op W^	op$) to disperse channel-wise outliers uniformly across all dimensions prior to 4-bit/8-bit quantization.
+   - Applies Hadamard orthogonal rotation ($X H \cdot H^\top W^\top$) to disperse channel-wise outliers uniformly across all dimensions prior to 4-bit/8-bit quantization.
    - For `W4A8` MoE models, combine per-group `W4` (`group_size=64` or `128`) with `LAOS` (Low-rank / Learnable Affine Outlier Suppression) and dynamic per-token `A8`.
 3. **Tier 3 — Selective Sensitive-Layer Float Rollback (`disable_names` / `rollback`)**:
    - Roll back the top `5%–15%` most sensitive layers identified by `msmodelslim analyze` (starting with `down_proj` in early/late layers and `o_proj`) to `BF16`/`FP16` or `W8A8_dynamic`.

@@ -52,9 +52,9 @@ triggers:
 
 For long-sequence video/image DiTs (`S = 32K..128K` spatiotemporal tokens), full $O(S^2)$ attention dominates latency. `BlockwiseSparseAttention` (`Ada-BSA`) reduces attention compute via a 3-step block selection pipeline:
 1. **Block Pooling & Representative Token Compression**:
-   - Partitions Q and K sequences of length $S$ into coarse blocks of size $B_q, B_k$ (e.g., `block_size=64` or `128`) and computes mean/max pooled block representations $ar{Q}, ar{K} \in \mathbb{R}^{B 	imes H 	imes (S/B_b) 	imes D}$.
+   - Partitions Q and K sequences of length $S$ into coarse blocks of size $B_q, B_k$ (e.g., `block_size=64` or `128`) and computes mean/max pooled block representations $\bar{Q}, \bar{K} \in \mathbb{R}^{B \times H \times (S/B_b) \times D}$.
 2. **Coarse Block Importance Scoring & CDF / Top-K Selection**:
-   - Evaluates coarse block-to-block attention scores $S_{	ext{coarse}} = 	ext{Softmax}(ar{Q} ar{K}^	op / \sqrt{D})$.
+   - Evaluates coarse block-to-block attention scores $S_{\text{coarse}} = \text{Softmax}(\bar{Q} \bar{K}^\top / \sqrt{D})$.
    - Selects either a fixed `top_k` blocks per query block or the minimal set of key blocks whose cumulative probability exceeds a dynamic threshold `cdf_threshold` (e.g., `0.90`–`0.95`), always retaining diagonal (local spatial/temporal) blocks.
 3. **Sparse Block Gather & NPU FlashAttention Execution**:
    - Executes sparse block-level attention over only the selected key/value blocks on NPU, achieving `1.8x–3.2x` attention speedup on high-resolution video generation.
@@ -62,11 +62,11 @@ For long-sequence video/image DiTs (`S = 32K..128K` spatiotemporal tokens), full
 ## 2. DiT Timestep Feature Caching (`module/cache`: `TeaCache`, `FBCache`, `TaylorSeer`)
 
 1. **`TeaCache` & `FBCache`**:
-   - Reuses block-stack residuals $\Delta x_{t-1}$ when modulated input or first-block output L1 drift is below threshold $	au$.
+   - Reuses block-stack residuals $\Delta x_{t-1}$ when modulated input or first-block output L1 drift is below threshold $\tau$.
 2. **`TaylorSeer` (Taylor Series Feature Forecasting)**:
-   - Instead of zero-order copy ($x_t pprox x_{t-1}$), `TaylorSeer` caches finite differences ($\Delta^1 x, \Delta^2 x$) across activated calibration timesteps and predicts intermediate timestep features via $m$-th order Taylor expansion:
-     $$\hat{F}(t + k) = F(t) + \sum_{i=1}^m rac{\Delta^i F(t)}{i!} \prod_{j=0}^{i-1} (k - j)$$
-   - Permits higher skip intervals ($N_{	ext{skip}} = 3..5$) without blurring fast-moving video subjects.
+   - Instead of zero-order copy ($x_t \approx x_{t-1}$), `TaylorSeer` caches finite differences ($\Delta^1 x, \Delta^2 x$) across activated calibration timesteps and predicts intermediate timestep features via $m$-th order Taylor expansion:
+     $$\hat{F}(t + k) = F(t) + \sum_{i=1}^m \frac{\Delta^i F(t)}{i!} \prod_{j=0}^{i-1} (k - j)$$
+   - Permits higher skip intervals ($N_{\text{skip}} = 3..5$) without blurring fast-moving video subjects.
 
 ## 3. Composable Multimodal Parallelism (`module/parallel`)
 

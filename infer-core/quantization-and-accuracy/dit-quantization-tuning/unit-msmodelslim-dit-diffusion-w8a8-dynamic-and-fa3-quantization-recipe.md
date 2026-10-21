@@ -58,7 +58,7 @@ Diffusion Transformers (`Wan2.1/2.2`, `HunyuanVideo`, `Flux`, `SD3`) iterate ove
    - Quantizes DiT linear weights (`to_q`, `to_k`, `to_v`, `to_out`, `ff.net`) offline to symmetric `INT8` per-channel while computing activation scales **dynamically per token at every denoising timestep** via `npu_dynamic_quant` + `npu_quant_matmul`.
    - Requires **zero calibration dataset** (`data-free`) and naturally adapts to shifting activation ranges across all $T$ denoising steps.
 2. **Timestep-Stratified Calibration (For Static `W8A8` / `SmoothQuant` / `FA3` Quant)**:
-   - When static smoothing (`iter_smooth` / `SmoothQuant`) or `FA3` (`FP8`/`INT8` attention Q/K/V) quantization is enabled, the DiT adapter (`SetTimestep` hook) must sample activations uniformly across the full denoising trajectory (e.g., `8..16` Prompts $	imes$ all $T$ timesteps) rather than calibrating on a single forward pass.
+   - When static smoothing (`iter_smooth` / `SmoothQuant`) or `FA3` (`FP8`/`INT8` attention Q/K/V) quantization is enabled, the DiT adapter (`SetTimestep` hook) must sample activations uniformly across the full denoising trajectory (e.g., `8..16` Prompts $\times$ all $T$ timesteps) rather than calibrating on a single forward pass.
 3. **Dual-Expert / Multi-Transformer DiT Handling (`Wan2.2` High-Noise / Low-Noise Experts)**:
    - Models like `Wan2.2` split denoising into two separate DiT backbones (`high_noise_model` for early steps and `low_noise_model` for late steps).
    - Quantize and export each sub-transformer into its own isolated subfolder with independent sensitivity rollback lists (`disable_names`).

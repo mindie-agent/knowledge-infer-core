@@ -72,4 +72,4 @@ Apply end-to-end production case studies and the multi-agent `model-infer-optimi
 4. **Size AscendC Attention/Indexer Tiling Strictly Within L1, L0A/B/C, and Double-Buffered UB Byte Ceilings (`ascendc_attention_op_tiling_budget.md`).**
    - When computing block tiling sizes $(B_m, B_n, B_k)$ in `op_host`:
      - Partition the outer $M$ (query token/head) axis evenly across active AIC/AIV cores first;
-     - Account for **2x (`BUFFER_NUM = 2`) double-buffering** on every `TQue` in Unified Buffer (`UB` $\le 192\text{ KiB}$ on 910B/910_93), `L1` ($\le 512	ext{ KiB}$), and `L0A`/`L0B` ($\le 64	ext{ KiB}$ each) / `L0C` ($\le 128	ext{ KiB}$), plus `32-byte` UB alignment rounding on every intermediate vector register buffer.
+     - Account for **2x (`BUFFER_NUM = 2`) double-buffering** on every `TQue` in Unified Buffer (`UB` $\le 192\text{ KiB}$ on 910B/910_93), `L1` ($\le 512\text{ KiB}$), and `L0A`/`L0B` ($\le 64\text{ KiB}$ each) / `L0C` ($\le 128\text{ KiB}$), plus `32-byte` UB alignment rounding on every intermediate vector register buffer.

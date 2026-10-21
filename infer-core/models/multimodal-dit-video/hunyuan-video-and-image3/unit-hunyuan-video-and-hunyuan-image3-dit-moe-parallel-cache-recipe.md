@@ -53,11 +53,11 @@ triggers:
 
 1. **Sequence Parallelism (`Ulysses` + `Ring Attention` + `Ulysses Anything Attention`)**:
    - **Standard Ulysses**: Splits sequence length $S$ across $P$ cards (`S / P` per card) outside attention and switches to head partitioning (`H / P`) inside `npu_fused_infer_attention_score` via `AlltoAll`.
-   - **Ulysses Anything Attention**: Overcomes the strict divisibility requirement ($H mod P = 0$) by dynamically padding/aligning head dimensions across `AlltoAll`, supporting arbitrary head counts on 8-card or 16-card NPU clusters.
+   - **Ulysses Anything Attention**: Overcomes the strict divisibility requirement ($H \bmod P = 0$) by dynamically padding/aligning head dimensions across `AlltoAll`, supporting arbitrary head counts on 8-card or 16-card NPU clusters.
    - **Hybrid Ulysses + Ring**: Combines intra-node Ulysses `AlltoAll` with inter-node Ring Attention P2P KV passing for ultra-long video token sequences (`S > 100K`).
 2. **Timestep Residual Caching (`FBCache` vs. `TeaCache`)**:
-   - Diffusion transformers execute $T_{	ext{steps}} = 30..50$ denoising steps where adjacent timesteps produce highly correlated hidden state residuals $\Delta x_t = x_t^{	ext{out}} - x_t^{	ext{in}}$.
-   - **`FBCache` (First-Block Cache)**: Evaluates the relative L1 difference of the **first DiT Block output** between step $t$ and step $t-1$. When below threshold $	au$, skips all remaining DiT blocks for step $t$ and reuses the cached block-stack residual $\Delta x_{t-1}$.
+   - Diffusion transformers execute $T_{\text{steps}} = 30..50$ denoising steps where adjacent timesteps produce highly correlated hidden state residuals $\Delta x_t = x_t^{\text{out}} - x_t^{\text{in}}$.
+   - **`FBCache` (First-Block Cache)**: Evaluates the relative L1 difference of the **first DiT Block output** between step $t$ and step $t-1$. When below threshold $\tau$, skips all remaining DiT blocks for step $t$ and reuses the cached block-stack residual $\Delta x_{t-1}$.
    - **`TeaCache` (Timestep Embedding Aware Cache)**: Uses a polynomial-rescaled relative L1 distance of the **first `img_modulate` output** to decide whether to reuse the cached residual, saving 1.5x–2.2x DiT compute FLOPs with negligible visual degradation.
 3. **Fused Operators (`FIA`, `npu_rms_norm`, `npu_rotary_mul`, `W8A8` Dynamic Quant)**:
    - Replaces unfused LayerNorm/RMSNorm, 3D RoPE, and FlashAttention with `torch_npu` fused operators.
@@ -68,7 +68,7 @@ triggers:
    - Concatenates `q_proj`, `k_proj`, `v_proj` into `merged_qkv_proj` and MoE `gate_proj` + `up_proj` into `w13_weight` followed by `torch_npu.npu_swiglu`.
 2. **MoE `EP` with Sequence-Sliced `DoubleRouting`**:
    - Under pure `MoE TP`, every rank executes full-sequence `gating`, `routing`, and `finalizing` over all tokens $S$, making routing overhead scale poorly as rank count grows.
-   - **Optimization (`DoubleRouting` EP)**: Slices input sequence $S$ into $S / 	ext{ep\_size}$ per rank before gating so routing and finalizing compute drop by $1 / 	ext{ep\_size}$, and uses a two-stage permutation (`local top-k gating -> AlltoAll dispatch -> expert GMM -> AlltoAll combine -> local finalize`) to balance multi-rank MoE execution.
+   - **Optimization (`DoubleRouting` EP)**: Slices input sequence $S$ into $S / \text{ep\_size}$ per rank before gating so routing and finalizing compute drop by $1 / \text{ep\_size}$, and uses a two-stage permutation (`local top-k gating -> AlltoAll dispatch -> expert GMM -> AlltoAll combine -> local finalize`) to balance multi-rank MoE execution.
 
 ## Verification Checklist
 

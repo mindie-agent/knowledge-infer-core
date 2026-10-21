@@ -72,7 +72,7 @@ When deploying `GLM-5.2` on memory-constrained NPU clusters or serving ultra-lon
 2. **Prefill & Multi-Turn Prefix Reuse**:
    - During long prefill or multi-turn prefix hits, historical KV blocks are prefetched layer-by-layer on `KVH2DStream` during layer $l-1$ computation and evicted asynchronously on `KVD2HStream` after attention completes.
 3. **Bandwidth Sizing Rule**:
-   - Ensure per-layer compute time $T_{	ext{compute}}^{(l)} \ge rac{	ext{OffloadedBytes}^{(l)}}{B_{	ext{PCIe}}}$ by tuning the offload ratio $lpha \in (0, 1]$ (partial layer offload) and quantizing offloaded weights/KV blocks to `INT8` / `FP8`.
+   - Ensure per-layer compute time $T_{\text{compute}}^{(l)} \ge \frac{\text{OffloadedBytes}^{(l)}}{B_{\text{PCIe}}}$ by tuning the offload ratio $\alpha \in (0, 1]$ (partial layer offload) and quantizing offloaded weights/KV blocks to `INT8` / `FP8`.
 
 ## Verification Checklist
 

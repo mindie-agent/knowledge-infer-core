@@ -58,15 +58,15 @@ DeepSeek-V4 extends MLA and sparse attention with three tightly coupled architec
    - Compresses historical KV blocks via `Compressor` (strided pooling/projection with offset write-back), evaluates token importance via `LightningIndexer`, and executes unified attention over sliding-window, compressed, and top-k sparse KV blocks in a single `SparseAttnSharedKV` kernel.
    - Separates value-dependent tile scheduling into an `AICPU Scheduler` (`npu_sparse_attn_sharedkv_metadata`) so `AICore` kernels run with deterministic static-graph capture.
 2. **Manifold-Constrained Hyper-Connections (`mHC`)**:
-   - Replaces single-stream residual connections with an $n$-stream residual highway ($n=4$ expansion rate) governed by pre-mapping $H^{	ext{pre}}$, post-mapping $H^{	ext{post}}$, and residual mixing matrix $H^{	ext{res}} \in \mathbb{R}^{n 	imes n}$:
-     $$x_{l+1} = H_l^{	ext{res}} x_l + (H_l^{	ext{post}})^	op \mathcal{F}(H_l^{	ext{pre}} x_l, W_l)$$
-   - Projects $H_l^{	ext{res}}$ onto the Birkhoff polytope (doubly stochastic matrices) via exponentiation followed by iterative Sinkhorn-Knopp row/column normalization ($t_{\max}=20$ iterations) so multi-layer products preserve unit spectral norm and prevent signal explosion.
+   - Replaces single-stream residual connections with an $n$-stream residual highway ($n=4$ expansion rate) governed by pre-mapping $H^{\text{pre}}$, post-mapping $H^{\text{post}}$, and residual mixing matrix $H^{\text{res}} \in \mathbb{R}^{n \times n}$:
+     $$x_{l+1} = H_l^{\text{res}} x_l + (H_l^{\text{post}})^\top \mathcal{F}(H_l^{\text{pre}} x_l, W_l)$$
+   - Projects $H_l^{\text{res}}$ onto the Birkhoff polytope (doubly stochastic matrices) via exponentiation followed by iterative Sinkhorn-Knopp row/column normalization ($t_{\max}=20$ iterations) so multi-layer products preserve unit spectral norm and prevent signal explosion.
 
 ## 2. `mHC` Operator Fusion Strategy (`Pre-Op` and `Post-Op`)
 
-Unfused `mHC` launches dozens of small elementwise, reduction, and Sinkhorn-Knopp kernels per layer, inflating HBM traffic by $n	imes$:
-- **`mhc_pre_op` Fusion**: Fuses multi-stream linear projection, RMSNorm across $n 	imes C$, sigmoid scaling for $H^{	ext{pre}}$ / $H^{	ext{post}}$, exponential activation, 20-step Sinkhorn-Knopp normalization in UB SRAM, and stream contraction $x_{	ext{in}} = H^{	ext{pre}} x_l$ into a single kernel.
-- **`mhc_post_op` Fusion**: Fuses layer output expansion $(H^{	ext{post}})^	op y_l$ with multi-stream residual mixing $H^{	ext{res}} x_l$ in UB without intermediate GM materialization.
+Unfused `mHC` launches dozens of small elementwise, reduction, and Sinkhorn-Knopp kernels per layer, inflating HBM traffic by $n\times$:
+- **`mhc_pre_op` Fusion**: Fuses multi-stream linear projection, RMSNorm across $n \times C$, sigmoid scaling for $H^{\text{pre}}$ / $H^{\text{post}}$, exponential activation, 20-step Sinkhorn-Knopp normalization in UB SRAM, and stream contraction $x_{\text{in}} = H^{\text{pre}} x_l$ into a single kernel.
+- **`mhc_post_op` Fusion**: Fuses layer output expansion $(H^{\text{post}})^\top y_l$ with multi-stream residual mixing $H^{\text{res}} x_l$ in UB without intermediate GM materialization.
 
 ## 3. AutoFuse Compiler Optimization (`deepseek_v4_autofuse_guide.md`)
 

@@ -49,9 +49,9 @@ triggers:
 ---
 ## 1. Anatomy of RL Loss & Grad-Norm Spikes on NPU (`spike-root-cause-analysis`)
 
-In GRPO / PPO / RLHF pipelines, an **Inference Engine** (`vLLM-Ascend` or `SGLang`) generates rollout trajectories and records behavior policy log-probabilities $\log \pi_{	ext{infer}}(a_t | s_t)$, while a **Training Engine** (`MindSpeed` / `FSDP`) recomputes $\log \pi_{	ext{train}}(a_t | s_t)$ on the same weights to form the importance sampling ratio:
-$$r_t(	heta) = \expig(\log \pi_{	ext{train}}(a_t | s_t) - \log \pi_{	ext{infer}}(a_t | s_t)ig)$$
-Even when weights are identical, numerical discrepancies between inference fused kernels and training kernels cause $|\log \pi_{	ext{train}} - \log \pi_{	ext{infer}}|$ spikes on rare tokens, exploding $r_t(	heta)$, `kl_loss`, and `grad_norm`.
+In GRPO / PPO / RLHF pipelines, an **Inference Engine** (`vLLM-Ascend` or `SGLang`) generates rollout trajectories and records behavior policy log-probabilities $\log \pi_{\text{infer}}(a_t | s_t)$, while a **Training Engine** (`MindSpeed` / `FSDP`) recomputes $\log \pi_{\text{train}}(a_t | s_t)$ on the same weights to form the importance sampling ratio:
+$$r_t(\theta) = \exp\big(\log \pi_{\text{train}}(a_t | s_t) - \log \pi_{\text{infer}}(a_t | s_t)\big)$$
+Even when weights are identical, numerical discrepancies between inference fused kernels and training kernels cause $|\log \pi_{\text{train}} - \log \pi_{\text{infer}}|$ spikes on rare tokens, exploding $r_t(\theta)$, `kl_loss`, and `grad_norm`.
 
 ## 2. Three Primary Sources of Inference-Training Divergence on Ascend NPU
 
@@ -65,7 +65,7 @@ Even when weights are identical, numerical discrepancies between inference fused
    - Inference engines often store `cos`/`sin` tables in `BF16` while training engines compute RoPE in `FP32` and cast back. Over `16K..32K` reasoning chains, phase error accumulates.
    - **Fix**: Align RoPE `cos`/`sin` computation dtype and `npu_rms_norm` accumulation (`FP32` variance calculation) between rollout and trainer.
 3. **Matmul Accumulation (`HF32` vs. `BF16`) & Speculator Draft Verification**:
-   - Disable `allow_hf32` mismatches and verify that Eagle3 / MTP speculative decoding in the rollout engine uses strict lossless rejection sampling (or greedy `temperature=0` verification) so accepted rollout tokens follow the exact target model distribution $\pi_{	ext{infer}}$.
+   - Disable `allow_hf32` mismatches and verify that Eagle3 / MTP speculative decoding in the rollout engine uses strict lossless rejection sampling (or greedy `temperature=0` verification) so accepted rollout tokens follow the exact target model distribution $\pi_{\text{infer}}$.
 
 ## Verification Checklist
 

@@ -50,7 +50,7 @@ triggers:
 
 Unlike standard LLM decoders that use softmax dot-product attention over uniform token blocks, **HSTU (Hierarchical Sequential Transduction Units)** for large-scale generative recommendation processes highly skewed user interaction histories (`seq_len` ranging from `10` to `4096` events per user in the same batch):
 1. **Pointwise Aggregated Attention (SiLU-Attention instead of Softmax)**:
-   - Projects input $x$ through a unified linear layer into $U, V, Q, K = 	ext{Split}(	ext{SiLU}(W_{uvqk} x))$, computes attention weights $	ext{SiLU}(Q K^	op + 	ext{RAB}^{p,t}) / N$, multiplies by $V$, and gates the result via $	ext{Norm}(A(x) V) \odot U$.
+   - Projects input $x$ through a unified linear layer into $U, V, Q, K = \text{Split}(\text{SiLU}(W_{uvqk} x))$, computes attention weights $\text{SiLU}(Q K^\top + \text{RAB}^{p,t}) / N$, multiplies by $V$, and gates the result via $\text{Norm}(A(x) V) \odot U$.
 2. **Padding Waste in `BSND` Layout**:
    - Padding skewed user history lengths to `max_seq_len` wastes 60%–85% of Cube FLOPs on zero-padded tokens.
 
@@ -60,7 +60,7 @@ Unlike standard LLM decoders that use softmax dot-product attention over uniform
    - Concatenates all user interaction sequences along the token dimension into a dense 3D tensor `[T_total, N, D]` (`TND` layout) accompanied by cumulative sequence offset array `seq_offsets` (`cu_seqlens` of shape `[B + 1]`).
    - Eliminates padding tokens across both linear projections (`W_uvqk`, `W_o`) and attention kernels.
 2. **Vectorized Relative Attention Bias (`RAB`) Pre-Computation**:
-   - HSTU injects relative position and timestamp bucket biases ($	ext{RAB}^{p,t}$) into attention scores.
+   - HSTU injects relative position and timestamp bucket biases ($\text{RAB}^{p,t}$) into attention scores.
    - **Optimization**: Replace per-layer Python loops and dynamic bucket lookups with a single vectorized pre-computation pass per batch that constructs the bucketed relative time/position bias tensor once on NPU and reuses it across all HSTU transduction layers.
 3. **Fused `UVQK` Projection & Dedicated HSTU Attention Kernel**:
    - Fuses the four separate projections (`u_proj`, `v_proj`, `q_proj`, `k_proj`) into a single `uvqk_linear` GEMM + fused `SiLU` + split.

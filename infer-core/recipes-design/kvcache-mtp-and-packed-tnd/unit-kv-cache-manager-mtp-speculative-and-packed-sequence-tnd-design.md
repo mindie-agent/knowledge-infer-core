@@ -72,7 +72,7 @@ triggers:
 ## 3. Packed Sequence (`TND`) Design (`docs/design/packed_sequence_design.md`)
 
 1. **`TND` Flattening Invariant**:
-   - Flattens variable-length sequences $S_1, S_2, \dots, S_B$ into $T_{	ext{total}} = \sum_{i=1}^B S_i$ tokens with tensor layout `[T_total, N_heads, Head_Dim]` (`TND`) for attention and `[T_total, Hidden_Size]` (`TH`) for linear/MoE layers.
+   - Flattens variable-length sequences $S_1, S_2, \dots, S_B$ into $T_{\text{total}} = \sum_{i=1}^B S_i$ tokens with tensor layout `[T_total, N_heads, Head_Dim]` (`TND`) for attention and `[T_total, Hidden_Size]` (`TH`) for linear/MoE layers.
 2. **Cumulative Sequence Length Contract (`actual_seq_lengths` / `actual_seq_lengths_kv`)**:
    - In `TND` mode, `npu_fused_infer_attention_score` requires **cumulative** sequence lengths (`prefix sum`: `[S_1, S_1+S_2, ..., T_total]`), whereas `BSH`/`BSND` mode uses **per-request** lengths (`[S_1, S_2, ..., S_B]`).
    - Mixing up per-request vs. cumulative `actual_seq_lengths` in `TND` layout causes silent attention corruption or AICore out-of-bounds faults.

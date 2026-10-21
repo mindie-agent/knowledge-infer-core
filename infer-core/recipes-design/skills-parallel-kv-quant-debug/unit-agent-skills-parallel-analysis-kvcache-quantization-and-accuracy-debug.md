@@ -53,7 +53,7 @@ triggers:
 ## 1. Parallelism Analytical Sizing (`model-infer-parallel-analysis`)
 
 1. **Per-Rank Memory Feasibility Check**:
-   $$M_{	ext{rank}} = rac{M_{	ext{attn}}}{	ext{TP}_{	ext{attn}}} + rac{M_{	ext{moe}}}{	ext{EP} 	imes 	ext{TP}_{	ext{moe}}} + M_{	ext{KV}}(	ext{batch}, S, 	ext{TP}_{	ext{attn}}) + M_{	ext{act}} + M_{	ext{HCCL}} \le 0.85 	imes M_{	ext{HBM}}$$
+   $$M_{\text{rank}} = \frac{M_{\text{attn}}}{\text{TP}_{\text{attn}}} + \frac{M_{\text{moe}}}{\text{EP} \times \text{TP}_{\text{moe}}} + M_{\text{KV}}(\text{batch}, S, \text{TP}_{\text{attn}}) + M_{\text{act}} + M_{\text{HCCL}} \le 0.85 \times M_{\text{HBM}}$$
 2. **GQA Head Divisibility & KV Replication Rule**:
    - When `num_kv_heads < tp_size`, requires `tp_size % num_kv_heads == 0` and replicates each KV head across `tp_size // num_kv_heads` ranks.
    - For MLA (`num_kv_heads=1` compressed latent vector), prefer `DP` on Attention (`attn_tp=1` or `2`) so the latent KV cache is not replicated across 8 or 16 ranks.

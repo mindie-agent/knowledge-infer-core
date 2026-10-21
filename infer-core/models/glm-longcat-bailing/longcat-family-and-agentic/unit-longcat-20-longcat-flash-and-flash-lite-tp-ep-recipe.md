@@ -66,7 +66,7 @@ triggers:
 - **Optimal NPU Implementation**:
   1. Compute top-$k$ routing over all `N_real + N_zero` experts via `npu_moe_gating_top_k_softmax`.
   2. Partition routed indices into **Real Expert Tokens** (`idx < N_real`) and **Identity Shortcut Tokens** (`idx >= N_real`).
-  3. Sum the routing weights of all selected identity experts per token into a single scalar multiplier $w_{	ext{zero}}(t) = \sum_{j \in 	ext{zero}} g_{t,j}$ and fuse $w_{	ext{zero}}(t) \cdot x_t$ into the residual accumulation without dispatching those tokens through `GMM` or `AlltoAll`.
+  3. Sum the routing weights of all selected identity experts per token into a single scalar multiplier $w_{\text{zero}}(t) = \sum_{j \in \text{zero}} g_{t,j}$ and fuse $w_{\text{zero}}(t) \cdot x_t$ into the residual accumulation without dispatching those tokens through `GMM` or `AlltoAll`.
   4. Pass only real expert counts `expert_tokens[:N_real]` to `npu_grouped_matmul` (`split_item=2`).
 
 ## 3. Empirical `TP8` vs. `EP8` Crossover (`LongCat-Flash-Lite` 68.5B-A3B on Atlas A3)
