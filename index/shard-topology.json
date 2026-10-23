@@ -150,6 +150,19 @@
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
       "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
     ],
+    "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms": [],
+    "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop": [
+      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
+    "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop": [
+      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop": [
+      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
     "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
       "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
@@ -244,8 +257,8 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 524734,
-      "estimated_tokens": 78242,
+      "bytes": 547302,
+      "estimated_tokens": 82350,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -291,6 +304,10 @@
         "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe",
         "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design",
         "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe",
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
+        "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
+        "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop",
         "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator",
         "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe",
         "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop",
@@ -355,13 +372,13 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 105
+      "units": 109
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 256494,
-        "estimated_tokens": 35787,
+        "bytes": 279062,
+        "estimated_tokens": 39895,
         "exceeds": [],
         "kind": "federation",
         "path": "infer-core",
@@ -406,6 +423,10 @@
           "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe",
           "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design",
           "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe",
+          "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+          "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
+          "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
+          "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop",
           "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator",
           "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe",
           "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop",
@@ -415,7 +436,7 @@
           "unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe",
           "unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe"
         ],
-        "units": 47
+        "units": 51
       },
       {
         "automatic": false,
@@ -489,12 +510,12 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 34.63520796503872,
+  "index_build_elapsed_ms": 39.66524999123067,
   "leaves": [
     {
       "automatic": false,
-      "bytes": 4688,
-      "estimated_tokens": 688,
+      "bytes": 4702,
+      "estimated_tokens": 692,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/acceleration-modules/dit-sparse-cache-and-sp",
@@ -597,6 +618,58 @@
     },
     {
       "automatic": false,
+      "bytes": 5190,
+      "estimated_tokens": 941,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/mindie-sd/architecture",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5743,
+      "estimated_tokens": 1039,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/mindie-sd/dit-compute",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5357,
+      "estimated_tokens": 960,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/mindie-sd/quantization-contract",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6187,
+      "estimated_tokens": 1145,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "infer-core/mindie-sd/vae-and-offload",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 11448,
       "estimated_tokens": 1840,
       "exceeds": [],
@@ -624,8 +697,8 @@
     },
     {
       "automatic": false,
-      "bytes": 10493,
-      "estimated_tokens": 1565,
+      "bytes": 10511,
+      "estimated_tokens": 1570,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem",
@@ -651,8 +724,8 @@
     },
     {
       "automatic": false,
-      "bytes": 4731,
-      "estimated_tokens": 735,
+      "bytes": 4738,
+      "estimated_tokens": 737,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/models/emerging-llm-and-rec/hstu-generative-rec",
@@ -690,8 +763,8 @@
     },
     {
       "automatic": false,
-      "bytes": 4611,
-      "estimated_tokens": 707,
+      "bytes": 4616,
+      "estimated_tokens": 708,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/models/glm-longcat-bailing/glm5-and-glm52-offload",
@@ -703,7 +776,7 @@
     },
     {
       "automatic": false,
-      "bytes": 5698,
+      "bytes": 5701,
       "estimated_tokens": 869,
       "exceeds": [],
       "kind": "leaf",
@@ -742,8 +815,8 @@
     },
     {
       "automatic": false,
-      "bytes": 4822,
-      "estimated_tokens": 716,
+      "bytes": 4829,
+      "estimated_tokens": 718,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/models/multimodal-dit-video/hunyuan-video-and-image3",
@@ -768,7 +841,7 @@
     },
     {
       "automatic": false,
-      "bytes": 6243,
+      "bytes": 6246,
       "estimated_tokens": 783,
       "exceeds": [],
       "kind": "leaf",
@@ -898,8 +971,8 @@
     },
     {
       "automatic": false,
-      "bytes": 4511,
-      "estimated_tokens": 684,
+      "bytes": 4512,
+      "estimated_tokens": 685,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/quantization-and-accuracy/dit-quantization-tuning",
@@ -937,7 +1010,7 @@
     },
     {
       "automatic": false,
-      "bytes": 4779,
+      "bytes": 4781,
       "estimated_tokens": 734,
       "exceeds": [],
       "kind": "leaf",
@@ -950,8 +1023,8 @@
     },
     {
       "automatic": false,
-      "bytes": 4581,
-      "estimated_tokens": 684,
+      "bytes": 4592,
+      "estimated_tokens": 687,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/quantization-and-accuracy/rl-spike-and-speculators",
@@ -976,7 +1049,7 @@
     },
     {
       "automatic": false,
-      "bytes": 5284,
+      "bytes": 5285,
       "estimated_tokens": 786,
       "exceeds": [],
       "kind": "leaf",
@@ -1015,8 +1088,8 @@
     },
     {
       "automatic": false,
-      "bytes": 5537,
-      "estimated_tokens": 820,
+      "bytes": 5556,
+      "estimated_tokens": 825,
       "exceeds": [],
       "kind": "leaf",
       "path": "infer-core/recipes-design/skills-parallel-kv-quant-debug",
@@ -1381,8 +1454,8 @@
   "two_level_subtrees": [
     {
       "automatic": false,
-      "bytes": 9268,
-      "estimated_tokens": 1407,
+      "bytes": 9282,
+      "estimated_tokens": 1411,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/acceleration-modules",
@@ -1425,8 +1498,24 @@
     },
     {
       "automatic": false,
-      "bytes": 27341,
-      "estimated_tokens": 4236,
+      "bytes": 22477,
+      "estimated_tokens": 4085,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "infer-core/mindie-sd",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
+        "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
+        "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop"
+      ],
+      "units": 4
+    },
+    {
+      "automatic": false,
+      "bytes": 27359,
+      "estimated_tokens": 4241,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/models/deepseek-recipes",
@@ -1442,8 +1531,8 @@
     },
     {
       "automatic": false,
-      "bytes": 14371,
-      "estimated_tokens": 2140,
+      "bytes": 14378,
+      "estimated_tokens": 2142,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/models/emerging-llm-and-rec",
@@ -1457,8 +1546,8 @@
     },
     {
       "automatic": false,
-      "bytes": 14633,
-      "estimated_tokens": 2194,
+      "bytes": 14641,
+      "estimated_tokens": 2195,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/models/glm-longcat-bailing",
@@ -1486,8 +1575,8 @@
     },
     {
       "automatic": false,
-      "bytes": 9905,
-      "estimated_tokens": 1467,
+      "bytes": 9912,
+      "estimated_tokens": 1469,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/models/multimodal-dit-video",
@@ -1500,7 +1589,7 @@
     },
     {
       "automatic": false,
-      "bytes": 12962,
+      "bytes": 12965,
       "estimated_tokens": 1593,
       "exceeds": [],
       "kind": "subtree",
@@ -1558,8 +1647,8 @@
     },
     {
       "automatic": false,
-      "bytes": 23419,
-      "estimated_tokens": 3617,
+      "bytes": 23433,
+      "estimated_tokens": 3621,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/quantization-and-accuracy",
@@ -1575,8 +1664,8 @@
     },
     {
       "automatic": false,
-      "bytes": 25817,
-      "estimated_tokens": 3873,
+      "bytes": 25837,
+      "estimated_tokens": 3878,
       "exceeds": [],
       "kind": "subtree",
       "path": "infer-core/recipes-design",
@@ -1773,7 +1862,7 @@
       "units": 1
     }
   ],
-  "unit_count": 105,
+  "unit_count": 109,
   "units": {
     "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": {
       "bytes": 5207,
@@ -1803,11 +1892,11 @@
       "tier": "L3"
     },
     "unit-agent-skills-parallel-analysis-kvcache-quantization-and-accuracy-debug": {
-      "bytes": 5537,
+      "bytes": 5556,
       "category": "sop",
-      "content_sha256": "9e7595c0cbf1c8c47d551f2149ce422524994eece739cc823ae45feb69f25d08",
+      "content_sha256": "0daf9a65e95d31e9818c8f5d624c054d3d75421ab63de005a63a44c3f3424520",
       "domain_path": "infer-core/recipes-design/skills-parallel-kv-quant-debug",
-      "estimated_tokens": 820,
+      "estimated_tokens": 825,
       "evidence_strength": "software_contract",
       "inherits_from": [
         "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",
@@ -1878,11 +1967,11 @@
       "tier": "L2"
     },
     "unit-cann-recipes-module-blockwise-sparse-cache-and-ulysses-sp": {
-      "bytes": 4688,
+      "bytes": 4702,
       "category": "sop",
-      "content_sha256": "b6e7d877da30ff499109e162a671196416cc45ba65c0d2779f94b5d091be2f21",
+      "content_sha256": "856cb36d51777e92435a297d0e69ea02b831a2bf662a53b1644f3fe5ca96a94c",
       "domain_path": "infer-core/acceleration-modules/dit-sparse-cache-and-sp",
-      "estimated_tokens": 688,
+      "estimated_tokens": 692,
       "evidence_strength": "reproduced_empirical",
       "inherits_from": [
         "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
@@ -1948,11 +2037,11 @@
       "tier": "L3"
     },
     "unit-deepseek-v4-mhc-autofuse-and-shmem-symmetric-memory-recipe": {
-      "bytes": 5776,
+      "bytes": 5794,
       "category": "sop",
-      "content_sha256": "50809429640cf240942dabfbd33f5db2c2504eafafd2a9b73b11a3daebd0f43f",
+      "content_sha256": "76c6a108bad756668e4070a266de6c1ecf90960ecf713e9df0ff3810a84b3ff4",
       "domain_path": "infer-core/models/deepseek-recipes/v4-mhc-and-shmem",
-      "estimated_tokens": 875,
+      "estimated_tokens": 880,
       "evidence_strength": "reproduced_empirical",
       "inherits_from": [
         "unit-infer-core-gated-deltanet-mamba2-mhc-and-hybrid-moe-axioms",
@@ -1990,11 +2079,11 @@
       "tier": "L2"
     },
     "unit-glm5-and-glm52-moe-inference-and-kv-expert-offload-recipe": {
-      "bytes": 4611,
+      "bytes": 4616,
       "category": "sop",
-      "content_sha256": "0b7307c9c3f22cc2f9c41fac2500decdf57466aa97ddc273692803cbb3aa2131",
+      "content_sha256": "4956d9b5e93f0fefdf1c6730b2b3d4b8a912cb79bd9dad43776f280c30d04962",
       "domain_path": "infer-core/models/glm-longcat-bailing/glm5-and-glm52-offload",
-      "estimated_tokens": 707,
+      "estimated_tokens": 708,
       "evidence_strength": "reproduced_empirical",
       "inherits_from": [
         "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms",
@@ -2004,11 +2093,11 @@
       "tier": "L2"
     },
     "unit-hstu-generative-recommendation-ragged-tnd-and-rab-optimization": {
-      "bytes": 4731,
+      "bytes": 4738,
       "category": "sop",
-      "content_sha256": "edca2ce1ddef56009da0094768500d7471c38c6be6823e6bd305042aa24845a3",
+      "content_sha256": "46ffced0c4971dad5b5fd0b46c62bb91da0c544108bfac9942bd42321ba8ee22",
       "domain_path": "infer-core/models/emerging-llm-and-rec/hstu-generative-rec",
-      "estimated_tokens": 735,
+      "estimated_tokens": 737,
       "evidence_strength": "reproduced_empirical",
       "inherits_from": [
         "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
@@ -2017,11 +2106,11 @@
       "tier": "L2"
     },
     "unit-hunyuan-video-and-hunyuan-image3-dit-moe-parallel-cache-recipe": {
-      "bytes": 4822,
+      "bytes": 4829,
       "category": "sop",
-      "content_sha256": "5ab263b10eadb721e68e212bacb98166c8eeb6b503726eaeaa99c4760db3711c",
+      "content_sha256": "43b586980131ddc02c4eecf680f7102a3af38e2f198ed97f699a2d3fddf1b223",
       "domain_path": "infer-core/models/multimodal-dit-video/hunyuan-video-and-image3",
-      "estimated_tokens": 716,
+      "estimated_tokens": 718,
       "evidence_strength": "reproduced_empirical",
       "inherits_from": [
         "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
@@ -2055,9 +2144,9 @@
       "tier": "L1"
     },
     "unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow": {
-      "bytes": 6243,
+      "bytes": 6246,
       "category": "workflow",
-      "content_sha256": "bd55f7ab1c9420dd0ae6ab0f263b11a6eea688405fd408cabf9f34c24fed0e94",
+      "content_sha256": "f9b966d5d1847d60e2a5667f813e51b7028aec3b5c1d2b23c7302791cc48b35b",
       "domain_path": "infer-core/optimizations/interventions-and-cases/e2e-case-studies",
       "estimated_tokens": 783,
       "evidence_strength": "reproduced_empirical",
@@ -2301,9 +2390,9 @@
       "tier": "L2"
     },
     "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design": {
-      "bytes": 5284,
+      "bytes": 5285,
       "category": "sop",
-      "content_sha256": "b7d8df9625c90999d08f09183dbe456ad9f2e5ac6d59ecd7bb0a16adb9990ff5",
+      "content_sha256": "e2520eb36dda6adc01ff760726fc538c015a0da0fa7b1fe35cd5c06cba2f49ac",
       "domain_path": "infer-core/recipes-design/kvcache-mtp-and-packed-tnd",
       "estimated_tokens": 786,
       "evidence_strength": "software_contract",
@@ -2315,9 +2404,9 @@
       "tier": "L2"
     },
     "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe": {
-      "bytes": 5698,
+      "bytes": 5701,
       "category": "sop",
-      "content_sha256": "e032c4af9cbc75f944b26731181bf8256a322e69586e8f49453ea3ed82a13c76",
+      "content_sha256": "5cc27748163a04b4dbc54f89aee15e8eec831e5f11da81fe6cfae401a2944139",
       "domain_path": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic",
       "estimated_tokens": 869,
       "evidence_strength": "reproduced_empirical",
@@ -2328,10 +2417,63 @@
       "path": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic/unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe.md",
       "tier": "L2"
     },
+    "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms": {
+      "bytes": 5190,
+      "category": "axiom",
+      "content_sha256": "8f3342e228f9f2146c0b5b6506967e0a93b2870958b1654ae81958e6a37ba0e5",
+      "domain_path": "infer-core/mindie-sd/architecture",
+      "estimated_tokens": 941,
+      "evidence_strength": "software_contract",
+      "inherits_from": [],
+      "path": "infer-core/mindie-sd/architecture/unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms.md",
+      "tier": "L1"
+    },
+    "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop": {
+      "bytes": 5743,
+      "category": "sop",
+      "content_sha256": "b924a24af1fc26d4919e85212152070b5babfce0d8c054abedc38953c8fda8f7",
+      "domain_path": "infer-core/mindie-sd/dit-compute",
+      "estimated_tokens": 1039,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
+      ],
+      "path": "infer-core/mindie-sd/dit-compute/unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop.md",
+      "tier": "L2"
+    },
+    "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop": {
+      "bytes": 5357,
+      "category": "sop",
+      "content_sha256": "c55e8364f146fc0cc8b1257f6fe1b308231e7cace3e631271134a7cc41aeb1b9",
+      "domain_path": "infer-core/mindie-sd/quantization-contract",
+      "estimated_tokens": 960,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
+      ],
+      "path": "infer-core/mindie-sd/quantization-contract/unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop.md",
+      "tier": "L2"
+    },
+    "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop": {
+      "bytes": 6187,
+      "category": "sop",
+      "content_sha256": "eae2bbbe8f46ce6343cb3dc2fed219d9623971bc0084705afa9318f14f7731f5",
+      "domain_path": "infer-core/mindie-sd/vae-and-offload",
+      "estimated_tokens": 1145,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
+      ],
+      "path": "infer-core/mindie-sd/vae-and-offload/unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop.md",
+      "tier": "L2"
+    },
     "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": {
-      "bytes": 4779,
+      "bytes": 4781,
       "category": "workflow",
-      "content_sha256": "52493b774d0af1dec57d82123c347774fa139abd6806b1198d544e13e4c1cc56",
+      "content_sha256": "4770a75856b8c1a97a0c13d7255890ee5a20f64af31218ff4d208159be01c4c5",
       "domain_path": "infer-core/quantization-and-accuracy/quant-accuracy-tuning",
       "estimated_tokens": 734,
       "evidence_strength": "software_contract",
@@ -2342,11 +2484,11 @@
       "tier": "L3"
     },
     "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe": {
-      "bytes": 4511,
+      "bytes": 4512,
       "category": "sop",
-      "content_sha256": "350317cb1d35bde925663fcadfff1a817d6f3bcb7e0f4f2382fe5a297355c7f6",
+      "content_sha256": "de04a32ee4f8b016e768973913f1798a4f8caae723a9cc76817764b9dd845db4",
       "domain_path": "infer-core/quantization-and-accuracy/dit-quantization-tuning",
-      "estimated_tokens": 684,
+      "estimated_tokens": 685,
       "evidence_strength": "software_contract",
       "inherits_from": [
         "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
@@ -2395,11 +2537,11 @@
       "tier": "L2"
     },
     "unit-rl-rollout-inference-engine-mismatch-and-spike-root-cause-sop": {
-      "bytes": 4581,
+      "bytes": 4592,
       "category": "sop",
-      "content_sha256": "93c61d1e2878fc3e5a7d808480171d91d37d0f45d895ef7a64cd25bb3089857e",
+      "content_sha256": "1a0e0d16018a7a83fe5bbf5eacfe3de664047809a7664bfdb332d423a2cfb5ff",
       "domain_path": "infer-core/quantization-and-accuracy/rl-spike-and-speculators",
-      "estimated_tokens": 684,
+      "estimated_tokens": 687,
       "evidence_strength": "software_contract",
       "inherits_from": [
         "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms",

@@ -12,7 +12,7 @@
   <a href="https://github.com/mindie-agent/mindie-agent"><img src="https://img.shields.io/badge/MindIE%20Agent-Ecosystem-7045f5.svg" alt="MindIE Agent"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/Schema-mindie--graded--unit%2F1-0f766e.svg" alt="Schema mindie-graded-unit/1"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/domain-infer--core-0284c7.svg" alt="Domain infer-core"></a>
-  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-78%20Units-d97757.svg" alt="78 Graded Units"></a>
+  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-109%20Units-d97757.svg" alt="109 Graded Units"></a>
   <a href="./index/shard-topology.json"><img src="https://img.shields.io/badge/Levels-L1%20to%20L4-10a37f.svg" alt="Levels L1-L4"></a>
 </p>
 
@@ -81,11 +81,11 @@ Once installed, the native host plugin connects to the [`mindie-knowledge`](http
 
 ## 🏗️ Domain Overview & L1–L4 Graded Architecture
 
-This repository hosts the **`infer-core` graded domain knowledge corpus** for MindIE Agent (**78 graded units**: `L1: 7`, `L2: 69`, `L3: 2`). Focusing on core inference engine architecture and serving runtimes (spanning MindIE Server/Service/LLM/Motor, CANN Executor, SGLang, vLLM, and TGI), it captures hardware & executor axioms (Atlas A2/A3/Ascend 950, MLA/DSA/Lightning Indexer, GDN/Mamba2/mHC, DiT/3D-VAE/HSTU), request lifecycle and cancellation reclamation, Radix/Paged KV-cache ownership, HIXL/Mooncake/HF3FS/NIXL tiered storage offload, multi-stream compute-communication overlap, SuperKernel & AutoFuse graph optimization, and end-to-end serving + RLHF post-training (veRL/GRPO/DAPO) workflows.
+This repository hosts the **`infer-core` graded domain knowledge corpus** for MindIE Agent (**109 graded units**: `L1: 8`, `L2: 96`, `L3: 5`, `L4: 0`). Focusing on core inference engine architecture and serving runtimes (spanning MindIE Server/Service/LLM/Motor, CANN Executor, SGLang, vLLM, and TGI), it captures hardware & executor axioms (Atlas A2/A3/Ascend 950, MLA/DSA/Lightning Indexer, GDN/Mamba2/mHC, DiT/3D-VAE/HSTU), request lifecycle and cancellation reclamation, Radix/Paged KV-cache ownership, HIXL/Mooncake/HF3FS/NIXL tiered storage offload, multi-stream compute-communication overlap, SuperKernel & AutoFuse graph optimization, and end-to-end serving + RLHF post-training (veRL/GRPO/DAPO) workflows.
 
 ### 1. The `mindie-graded-unit/1` L1–L4 Hierarchy
 
-Instead of lossy chat summaries or unconditioned "best practices", every knowledge unit in this repository is structured into **four graded levels (L1–L4)** based on engineering abstraction and actionability (current breakdown: **L1: 7 · L2: 69 · L3: 2 · L4: 0**):
+Instead of lossy chat summaries or unconditioned "best practices", every knowledge unit in this repository is structured into **four graded levels (L1–L4)** based on engineering abstraction and actionability (current breakdown: **L1: 8 · L2: 96 · L3: 5 · L4: 0**):
 
 | Level | Canonical Category (`category`) | Role | Scope & Admission Requirements |
 | :---: | --- | --- | --- |
@@ -100,7 +100,7 @@ Instead of lossy chat summaries or unconditioned "best practices", every knowled
 flowchart LR
   Agent["🤖 AI Coding Agent (Claude Code / Codex / Kimi / DSH)"]
   Query["🔎 knowledge_query (Query text + observed conditions)"]
-  Manifest["📋 index/routing-manifest.json (78 units · condition predicates · inheritance)"]
+  Manifest["📋 index/routing-manifest.json (109 units · condition predicates · inheritance)"]
   Topology["🗂️ index/shard-topology.json (Subdomain shards · L1-L4 counts)"]
   Match{"⚖️ Condition Matcher (matched / mismatch / condition_unknown)"}
   Explain["📖 knowledge_explain (Read pinned unit @revision)"]
@@ -117,14 +117,14 @@ flowchart LR
 
 ## 📊 Subdomain Breakdown & Representative Units
 
-[`index/routing-manifest.json`](./index/routing-manifest.json) and [`index/shard-topology.json`](./index/shard-topology.json) are the authoritative derived inventories rebuilt from the Markdown units. This repository currently contains **78 graded knowledge units** (**L1: 7 · L2: 69 · L3: 2 · L4: 0**):
+[`index/routing-manifest.json`](./index/routing-manifest.json) and [`index/shard-topology.json`](./index/shard-topology.json) are the authoritative derived inventories rebuilt from the Markdown units. This repository currently contains **109 graded knowledge units** (**L1: 8 · L2: 96 · L3: 5 · L4: 0**):
 
 ### 1. Subdomain Statistics
 
 | Subdomain | Units | Level Breakdown (`L1–L4`) | Core Engineering Scope |
 | --- | :---: | :---: | --- |
 | `serving` | **58** | `L2: 58` | Serving engine (CANN-Recipes-Infer, SGLang, vLLM, TGI) request admission, abort & block reclamation, UnifiedRadixCache/Paged KV ownership, HIXL/Mooncake/NIXL/HF3FS offload, multi-stream SuperKernel wrappers, and multimodal serving contracts |
-| `infer-core` | **20** | `L1: 7, L2: 11, L3: 2` | Ascend platform & model architecture axioms (MLA/DSA/GDN/Mamba2/DiT/5D parallelism), TND/FIA/MLAPO fusion rules, Paged KV & weight prefetch, dual-stream core budgeting, msprobe determinism triage, and DeepSeek/GLM/MoE AFD E2E workflows |
+| `infer-core` | **51** | `L1: 8, L2: 38, L3: 5` | Ascend platform & model architecture axioms (MLA/DSA/GDN/Mamba2/DiT/5D parallelism), TND/FIA/MLAPO fusion rules, Paged KV & weight prefetch, dual-stream core budgeting, msprobe determinism triage, and DeepSeek/GLM/MoE AFD E2E workflows |
 
 ### 2. Representative Graded Knowledge Units
 
@@ -142,6 +142,8 @@ flowchart LR
 | [`unit-sglang-cancellation-and-cache-ownership`](./serving/sglang/lifecycle/unit-sglang-cancellation-and-cache-ownership.md) | `serving` | **L2** / `sop` | Trace SGLang abort state, cache ownership and local asynchronous drains | `mindie://infer-core/units/unit-sglang-cancellation-and-cache-ownership@1` |
 | [`unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow`](./infer-core/optimizations/interventions-and-cases/e2e-case-studies/unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow.md) | `infer-core` | **L3** / `workflow` | End-to-end optimization case studies & SOTA workflow: AFD disaggregation, AscendC L1/L0/UB tiling budgets, DSA Indexer memory budgeting, and MLA NTD prefill | `mindie://infer-core/units/unit-infer-core-deepseek-glm-moe-afd-and-ascendc-tiling-cases-workflow@1` |
 | [`unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow`](./infer-core/training-and-alignment/concepts/rlhf-post-training/unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow.md) | `infer-core` | **L3** / `workflow` | Ascend RLHF/Post-Training workflow: veRL/MindSpeed-RL GRPO/DAPO, co-located Train/Rollout resharding, Partial Rollout, and SAM speculative decoding | `mindie://infer-core/units/unit-infer-core-verl-grpo-dapo-rollout-switch-and-sam-speculative-workflow@1` |
+| [`unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms`](./infer-core/mindie-sd/architecture/unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms.md) | `infer-core` | **L1** / `axiom` | MindIE-SD DiT sparse attention (RainFusion/Ada-BSA/EagleQBSA), step caching (DiTCache), and timestep quantization axioms | `mindie://infer-core/units/unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms@1` |
+| [`unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop`](./infer-core/mindie-sd/vae-and-offload/unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop.md) | `infer-core` | **L2** / `sop` | MindIE-SD 3D causal VAE/TAEHV latent-boundary state-carry sliced decode and layerwise offload SOP | `mindie://infer-core/units/unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop@1` |
 
 ---
 
@@ -155,6 +157,7 @@ knowledge-infer-core/
 ├── AGENTS.md                           # Maintainer and AI-Agent repository boundary rules
 ├── README.md                           # Primary documentation (Chinese)
 ├── README.en.md                        # Primary documentation (English)
+├── LICENSE                             # Dual license (CC BY 4.0 corpus & docs + MIT scripts)
 ├── index/
 │   ├── routing-manifest.json           # [Derived Index] Live unit IDs, paths, tiers, conditions, inheritance & token estimates
 │   └── shard-topology.json             # [Derived Index] Subdomain shard counts and level topology
@@ -182,10 +185,19 @@ Every push and pull request targeting `main` is enforced by `.github/workflows/c
 - **Main Repository & One-Line Installer**: [`mindie-agent/mindie-agent`](https://github.com/mindie-agent/mindie-agent)
 - **Knowledge Runtime & Redaction Engine**: [`mindie-agent/knowledge`](https://github.com/mindie-agent/knowledge) (`mindie-knowledge`)
 - **The 7 Public Domain Knowledge Corpora**:
-  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` model bring-up, ACLGraph, MoE & PD disaggregation (43 Units)
-  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang operator development & optimization (87 Units)
-  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — Core inference engine scheduling, KV cache, multi-stream overlap & serving (78 Units)
-  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL collectives, RoCE/HCCS topology, hybrid parallelism & SHMEM (23 Units)
-  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN fault diagnostics, `msprof` profiling & accuracy validation (23 Units)
-  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir graph compilation, custom-op registration & CUDA migration (22 Units)
-  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — Multi-agent orchestration, NPU lease coordination, redaction audit & benchmarking (23 Units)
+  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` & `vLLM-Omni` model bring-up, ACLGraph, MoE, PD disaggregation & omni pipelines (91 Units)
+  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang / MindIE-SD operator development & optimization (105 Units)
+  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — Core inference engine scheduling, KV cache, `MindIE-SD` DiT acceleration & serving (109 Units)
+  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL collectives, RoCE/HCCS topology, Ulysses/Ring/CFG hybrid parallelism & SHMEM (39 Units)
+  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN fault diagnostics, `msprof` profiling & Window A/B/A perf/accuracy gates (39 Units)
+  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir/Inductor graph compilation, custom-op registration & two-stage integration (34 Units)
+  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — Multi-agent orchestration, S0–S6 auto-optimization, redaction audit & benchmarking (33 Units)
+
+---
+
+## 📄 License
+
+This repository is dual-licensed under [`LICENSE`](./LICENSE) in alignment with the `mindie-publication-contract/2` repository layout:
+
+- **Knowledge Corpus, Derived Indexes, Public Feedback & Documentation** (`<domain_path>/unit-*.md`, `index/`, `feedback/`, `README.md`, `README.en.md`, `AGENTS.md`, `docs/`) are licensed under **[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE)**.
+- **Repository Maintenance Scripts & Workflow Configuration** (`scripts/`, `.github/workflows/`, `publication-contract.json`) are licensed under the **[MIT License](./LICENSE)**.

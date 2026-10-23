@@ -1,6 +1,6 @@
 # Core Inference Engine Domain Boundaries (`domain: "infer-core"`)
 
-This repository (`/Volumes/data/code/knowledge-infer-core`) contains core
+This repository (`knowledge-infer-core`) contains core
 inference engine knowledge and source-verification evidence under the canonical
 domain name `infer-core`. Keep stable unit IDs independent of path moves. Parse
 every unit as `mindie-graded-unit/1`, preserve its `evidence_strength` and
@@ -23,12 +23,11 @@ Runtime code remains in `mindie-agent/knowledge`.
    without real execution/ablation receipts, and never adopt unreviewed raw
    model outputs without line-level source verification.
 3. **Domain Isolation**: Do not import Ascend operator kernels (`operators`),
-   `vllm-ascend` adapter corpus files (`/Users/maoxx241/code/mindie-transcript-20261004/content`),
+   `vllm-ascend` adapter corpus files (`vllm-ascend`),
    or unclosed private histories into this repository. Cross-domain `explain`
    and `feedback` URIs belonging to other domains must be rejected.
-4. **Local Draft & Publication Gate**: This repository (initial commit
-   `da8844d02da74673320e7e5155dc5f742ec1fe20`) is a local draft without a remote
-   or `publication-contract.json`. Do not fabricate a `publication-contract.json`
-   using an older runtime base commit, and do not cut over installed Harness
-   pins from this local draft before formal `mindie-publication-contract/2`
-   release acceptance.
+4. **Publication Gate**: [`./publication-contract.json`](./publication-contract.json)
+   (`mindie-publication-contract/2`) and maintenance entry points under
+   `scripts/` define the validator pin and local checks; run
+   `python3 scripts/build_routing_index.py --root . --check` after any unit or
+   index edit.

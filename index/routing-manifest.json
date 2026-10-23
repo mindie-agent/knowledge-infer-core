@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 34.63520796503872,
+  "build_elapsed_ms": 39.66524999123067,
   "closure": {
     "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
@@ -151,6 +151,19 @@
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
       "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
     ],
+    "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms": [],
+    "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop": [
+      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
+    "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop": [
+      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+    ],
+    "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop": [
+      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+    ],
     "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
       "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
@@ -242,7 +255,7 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "generation": "bb6267c263033c881c20dd21d65475cb9cc635dc93d45885c5992b01eb5953db",
+  "generation": "60cef391540e434a60ecdb0ae25f15d179f27fa5b5c54be902810e4886424eb7",
   "id_path": {
     "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": "infer-core/recipes-design/skills-fusion-graph-and-stream/unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook.md",
     "unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow": "infer-core/recipes-design/skills-migrator-and-sota/unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow.md",
@@ -286,6 +299,10 @@
     "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe": "infer-core/models/kimi-and-qwen-recipes/kimi-k3-and-k2-thinking/unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe.md",
     "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design": "infer-core/recipes-design/kvcache-mtp-and-packed-tnd/unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design.md",
     "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic/unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe.md",
+    "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms": "infer-core/mindie-sd/architecture/unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms.md",
+    "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop": "infer-core/mindie-sd/dit-compute/unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop.md",
+    "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop": "infer-core/mindie-sd/quantization-contract/unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop.md",
+    "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop": "infer-core/mindie-sd/vae-and-offload/unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop.md",
     "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": "infer-core/quantization-and-accuracy/quant-accuracy-tuning/unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator.md",
     "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe": "infer-core/quantization-and-accuracy/dit-quantization-tuning/unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe.md",
     "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop": "infer-core/quantization-and-accuracy/msmodelslim-adaptation/unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop.md",
@@ -353,7 +370,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 105,
+  "unit_count": 109,
   "units": [
     {
       "category": "sop",
@@ -519,7 +536,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Agentic Playbook for Parallelism Sizing, KV Cache Staticization, Quantization, and Accuracy Debugging",
-      "token_estimate": 820,
+      "token_estimate": 825,
       "triggers": {
         "error_signatures": [
           "model infer parallel analysis skill",
@@ -840,7 +857,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Reusable Acceleration Modules: Blockwise Sparse Attention, TeaCache/TaylorSeer, and Ulysses SP",
-      "token_estimate": 688,
+      "token_estimate": 692,
       "triggers": {
         "error_signatures": [
           "module blockwise sparse sparse_method",
@@ -1154,7 +1171,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "DeepSeek-V4 Inference Guide: mHC Hyper-Connections, AutoFuse, and SHMEM Symmetric Memory",
-      "token_estimate": 875,
+      "token_estimate": 880,
       "triggers": {
         "error_signatures": [
           "deepseek v4 inference guide",
@@ -1342,7 +1359,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "GLM-5 and GLM-5.2 NPU Inference Optimization and Hierarchical Offload Recipe",
-      "token_estimate": 707,
+      "token_estimate": 708,
       "triggers": {
         "error_signatures": [
           "glm 5 ascend inference optimization",
@@ -1399,7 +1416,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "HSTU Generative Recommendation NPU Optimization: Ragged TND Packing, RAB Bias, and Fused Ops",
-      "token_estimate": 735,
+      "token_estimate": 737,
       "triggers": {
         "error_signatures": [
           "hstu generative recommendation optimization",
@@ -1461,7 +1478,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "HunyuanVideo and HunyuanImage-3.0 DiT/MoE Parallelism, FBCache/TeaCache, and Operator Fusion",
-      "token_estimate": 716,
+      "token_estimate": 718,
       "triggers": {
         "error_signatures": [
           "hunyuan video optimization ascend",
@@ -2871,6 +2888,228 @@
       }
     },
     {
+      "category": "axiom",
+      "conditions": {
+        "framework": "mindie-sd",
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ]
+      },
+      "domain_path": "infer-core/mindie-sd/architecture",
+      "evidence_strength": "software_contract",
+      "id": "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "infer-core/mindie-sd/architecture/unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/architecture.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/sparse.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/quantization.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/cache.md"
+        ],
+        "source_digest": "6d9df1e389bee0b17a8cb483685e3e920c0290bffd777733c999c0a38c8a1599",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/architecture.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "MindIE-SD DiT/Diffusion acceleration architecture, sparse attention, CacheAgent, and quantization axioms",
+      "token_estimate": 941,
+      "triggers": {
+        "error_signatures": [
+          "aclnnBlockSparseAttention",
+          "inferShape function does not exist",
+          "W4A4_MXFP4_FOUROVERSIX_DYNAMIC"
+        ],
+        "keywords": [
+          "MindIE-SD",
+          "mindiesd",
+          "RainFusion",
+          "rf_v2",
+          "rf_v3",
+          "ada_bsa",
+          "EagleQBSA",
+          "CacheAgent",
+          "MindieSDBackend",
+          "attention_forward",
+          "sparse_attention"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "framework": "mindie-sd",
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ]
+      },
+      "domain_path": "infer-core/mindie-sd/dit-compute",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
+      "inherits_from": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "path": "infer-core/mindie-sd/dit-compute/unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/dit-perf-opt/SKILL.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/sparse.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/quantization.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/cache.md"
+        ],
+        "source_digest": "76dd44bd584d0e0b20c537f7df547ed5f3d8bc17c5ee5a7919e9726f3497a2e6",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/dit-perf-opt/SKILL.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MindIE-SD DiT compute bottleneck optimization, sparse/quant/cache tier selection, and combination search SOP",
+      "token_estimate": 1039,
+      "triggers": {
+        "error_signatures": [
+          "staying dense",
+          "Can't find Parallelism/Quantization Config for",
+          "|Δwall| >= 2 * |Δdev|"
+        ],
+        "keywords": [
+          "dit-perf-opt",
+          "rf_v2",
+          "rf_v3",
+          "ada_bsa",
+          "EagleQBSA",
+          "DiTCache",
+          "AttentionCache",
+          "W8A8_MXFP8",
+          "W8A8_DYNAMIC",
+          "combination-search",
+          "lora-adapter-cost"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "framework": "mindie-sd",
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ]
+      },
+      "domain_path": "infer-core/mindie-sd/quantization-contract",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
+      "inherits_from": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
+      ],
+      "path": "infer-core/mindie-sd/quantization-contract/unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/quantization-dev/SKILL.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/quantization.md"
+        ],
+        "source_digest": "907b981d252520f4e9d3e4b64e4ead918b9f2aff5efa2eeaa16093e358b24ba9",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/quantization-dev/SKILL.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MindIE-SD quantization device byte contract reverse-engineering and Triton-Ascend bit-exact alignment SOP",
+      "token_estimate": 960,
+      "triggers": {
+        "error_signatures": [
+          "fused quantizer payload differs from aclnn reference on ~58% or ~0.1% of bytes",
+          "triton-ascend x.to(tl.bfloat16).to(tl.float32) silently eliminated as no-op",
+          "8-bit conversion wrap-around garbage when clamping is removed"
+        ],
+        "keywords": [
+          "quantization-dev",
+          "MXFP8",
+          "e8m0",
+          "e4m3",
+          "RNE",
+          "ieee_rounding",
+          "bitcast",
+          "wrap-around",
+          "quant_four_over_six_a5"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "framework": "mindie-sd",
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ]
+      },
+      "domain_path": "infer-core/mindie-sd/vae-and-offload",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop",
+      "inherits_from": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
+        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
+      ],
+      "path": "infer-core/mindie-sd/vae-and-offload/unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/vae-opt/SKILL.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/cpu_offload.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/share_memory.md"
+        ],
+        "source_digest": "351aff4228d45196180fe9a7fd227070f7cff06c7df846332af3d0cc8c43dcf6",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/vae-opt/SKILL.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MindIE-SD VAE/TAE independence proof, latent-boundary sliced state decode, and async CPU offload SOP",
+      "token_estimate": 1145,
+      "triggers": {
+        "error_signatures": [
+          "all_gather_into_tensor writes to stack copy leaving original list uninitialized",
+          "nn.Upsample large batch silently leaves tail frames un-updated with stale HBM",
+          "deadlock when collective participation depends on rank < pieces"
+        ],
+        "keywords": [
+          "vae-opt",
+          "sliced_state_decode",
+          "MemBlock",
+          "shard_equivalence_check",
+          "frame_health",
+          "enable_offload",
+          "share_memory",
+          "min_reserved_blocks_count"
+        ]
+      }
+    },
+    {
       "category": "workflow",
       "conditions": {
         "cann_versions": [
@@ -2968,7 +3207,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "DiT Diffusion Model W8A8 Dynamic Quantization, Timestep Calibration, and FA3 Quant Recipe",
-      "token_estimate": 684,
+      "token_estimate": 685,
       "triggers": {
         "error_signatures": [
           "quant tuning quantize dit skill",
@@ -3213,7 +3452,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "RL Rollout vs. Trainer Logprob Mismatch, Spike Root-Cause Analysis, and Speculator Alignment SOP",
-      "token_estimate": 684,
+      "token_estimate": 687,
       "triggers": {
         "error_signatures": [
           "spike root cause analysis skill msagent",
