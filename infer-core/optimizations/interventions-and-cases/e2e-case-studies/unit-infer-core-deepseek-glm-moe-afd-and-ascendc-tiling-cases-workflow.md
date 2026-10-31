@@ -27,7 +27,7 @@ provenance:
   source_locator: cann/cannbot-knowledge@be5882ef29fa9943305085652d2025a038ba491c:knowledge/model/inference/optimizations/experience/cases/afd_attn_ffn_disaggregation.md
   source_type: cannbot_case_study_distillation
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 tier: L3
 title: 'End-to-end optimization case studies & SOTA workflow: AFD disaggregation,

@@ -22,7 +22,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/hunyuan-video/hunyuan_video_optimization.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Optimization playbook for HunyuanVideo and HunyuanImage-3.0 covering Ulysses/Ring/Anything
   sequence parallelism, FBCache & TeaCache timestep skipping, VAE conv3d tiling, and

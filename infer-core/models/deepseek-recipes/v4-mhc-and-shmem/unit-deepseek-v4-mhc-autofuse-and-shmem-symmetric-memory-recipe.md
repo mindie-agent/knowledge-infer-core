@@ -25,7 +25,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v4/deepseek_v4_inference_guide.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: DeepSeek-V4 inference optimization guide covering Manifold-Constrained Hyper-Connections
   (mHC), Compressor + SparseAttnSharedKV attention pipeline, AutoFuse compiler pass,

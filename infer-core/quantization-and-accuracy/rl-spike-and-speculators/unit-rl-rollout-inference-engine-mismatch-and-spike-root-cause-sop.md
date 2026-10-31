@@ -23,7 +23,7 @@ provenance:
   source_locator: Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/accuracy/spike-root-cause-analysis/SKILL.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Root-cause analysis SOP from Ascend/msagent (`spike-root-cause-analysis`)
   for diagnosing RL training loss/grad-norm spikes caused by inference-training logprob

@@ -21,7 +21,7 @@ provenance:
   source_locator: Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/quantizer/quantization-accuracy-tuning-orchestrator/SKILL.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Closed-loop workflow from Ascend/msagent (`quantization-accuracy-tuning-orchestrator`)
   for diagnosing quantization accuracy drops via `msmodelslim analyze` and iterating

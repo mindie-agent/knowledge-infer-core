@@ -21,7 +21,7 @@ provenance:
   source_locator: Ascend/msagent@521f8ead0ebda5db5b282f0c3c4147006e01e016:skills/quantizer/quant-tuning-quantize-dit/SKILL.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Specialized quantization SOP from Ascend/msagent (`quant-tuning-quantize-dit`)
   for DiT diffusion models covering data-free W8A8 dynamic quantization, timestep-sampled

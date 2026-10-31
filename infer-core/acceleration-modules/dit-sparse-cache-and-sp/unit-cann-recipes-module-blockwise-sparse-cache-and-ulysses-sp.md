@@ -22,7 +22,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:module/blockwise_sparse/sparse_method.py
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: 'Reference guide to cann-recipes-infer reusable acceleration modules (`module/blockwise_sparse`,
   `module/cache`, `module/parallel`): Ada-BSA blockwise sparse attention, TeaCache/FBCache/TaylorSeer,

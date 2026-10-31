@@ -26,7 +26,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/design/kv_cache_design.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Core design specification for KV Cache layouts (BSH/BNSD/PA_BSND/MLA compressed),
   Multi-Token Prediction (MTP) draft-verify state alignment, and Packed Sequence (TND)

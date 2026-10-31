@@ -20,7 +20,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/hstu/hstu_optimization.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Optimization recipe for HSTU generative recommendation models on Ascend NPU
   covering ragged TND variable-length sequence packing, Relative Attention Bias (RAB)

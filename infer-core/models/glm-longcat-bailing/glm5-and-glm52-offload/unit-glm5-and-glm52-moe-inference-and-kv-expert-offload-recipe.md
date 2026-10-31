@@ -22,7 +22,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/glm_5_2/glm_5_2_offload_guide.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Inference and memory-offload playbook for GLM-5 and GLM-5.2 covering TP/EP
   hybrid execution, fused MoE/Attention operators, and asynchronous layer-pipelined

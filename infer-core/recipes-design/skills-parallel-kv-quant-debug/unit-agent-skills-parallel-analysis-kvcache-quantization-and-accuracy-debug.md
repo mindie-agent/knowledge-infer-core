@@ -26,7 +26,7 @@ provenance:
   source_locator: cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:.agents/skills/model-infer-parallel-analysis/SKILL.md
   source_type: code
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 summary: Consolidated methodology from cann-recipes-infer skills for analytical TP/DP/EP/SP
   sizing, static KV cache refactoring, W8A8/W4A8/C8 quantization, and layer-wise accuracy

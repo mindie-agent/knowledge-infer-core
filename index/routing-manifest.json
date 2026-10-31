@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 39.66524999123067,
+  "build_elapsed_ms": 35.62037495430559,
   "closure": {
     "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
@@ -255,7 +255,7 @@
     "unit-tgi-vision-token-mask-and-connector-geometry": [],
     "unit-vllm-cancellation-and-block-reclamation": []
   },
-  "generation": "60cef391540e434a60ecdb0ae25f15d179f27fa5b5c54be902810e4886424eb7",
+  "generation": "0fc84ca29297b3bdd8874364cfa2826e5892abacb86b1bf461edad938e02696a",
   "id_path": {
     "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": "infer-core/recipes-design/skills-fusion-graph-and-stream/unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook.md",
     "unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow": "infer-core/recipes-design/skills-migrator-and-sota/unit-agent-skills-model-infer-migrator-and-sota-optimization-workflow.md",
@@ -533,7 +533,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Agentic Playbook for Parallelism Sizing, KV Cache Staticization, Quantization, and Accuracy Debugging",
       "token_estimate": 825,
@@ -854,7 +854,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Reusable Acceleration Modules: Blockwise Sparse Attention, TeaCache/TaylorSeer, and Ulysses SP",
       "token_estimate": 692,
@@ -1168,7 +1168,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "DeepSeek-V4 Inference Guide: mHC Hyper-Connections, AutoFuse, and SHMEM Symmetric Memory",
       "token_estimate": 880,
@@ -1356,7 +1356,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "GLM-5 and GLM-5.2 NPU Inference Optimization and Hierarchical Offload Recipe",
       "token_estimate": 708,
@@ -1413,7 +1413,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "HSTU Generative Recommendation NPU Optimization: Ragged TND Packing, RAB Bias, and Fused Ops",
       "token_estimate": 737,
@@ -1475,7 +1475,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "HunyuanVideo and HunyuanImage-3.0 DiT/MoE Parallelism, FBCache/TeaCache, and Operator Fusion",
       "token_estimate": 718,
@@ -1660,7 +1660,7 @@
         "source_type": "cannbot_case_study_distillation",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L3",
       "title": "End-to-end optimization case studies & SOTA workflow: AFD disaggregation, AscendC L1/L0/UB tiling budgets, DSA Indexer memory budgeting, and MLA NTD prefill",
       "token_estimate": 783,
@@ -2799,7 +2799,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "KV Cache Manager, Multi-Token Prediction (MTP), and Packed Sequence TND Execution Design",
       "token_estimate": 786,
@@ -2862,7 +2862,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "LongCat-2.0, LongCat-Flash, and LongCat-Flash-Lite Agentic TP vs. EP Optimization Recipe",
       "token_estimate": 869,
@@ -3144,7 +3144,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L3",
       "title": "Automated Quantization Accuracy Tuning Orchestrator: Outlier Suppression, Rollback, and Search Loop",
       "token_estimate": 734,
@@ -3204,7 +3204,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "DiT Diffusion Model W8A8 Dynamic Quantization, Timestep Calibration, and FA3 Quant Recipe",
       "token_estimate": 685,
@@ -3449,7 +3449,7 @@
         "source_type": "code",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "RL Rollout vs. Trainer Logprob Mismatch, Spike Root-Cause Analysis, and Speculator Alignment SOP",
       "token_estimate": 687,
