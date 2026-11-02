@@ -150,19 +150,6 @@
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
       "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
     ],
-    "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms": [],
-    "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop": [
-      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
-      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
-    ],
-    "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop": [
-      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
-      "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms"
-    ],
-    "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop": [
-      "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
-      "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms"
-    ],
     "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": [
       "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
       "unit-infer-core-cann-executor-sglang-pd-and-kv-manager-axioms"
@@ -257,8 +244,8 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 547302,
-      "estimated_tokens": 82350,
+      "bytes": 524825,
+      "estimated_tokens": 78265,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -304,10 +291,6 @@
         "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe",
         "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design",
         "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe",
-        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
-        "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
-        "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
-        "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop",
         "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator",
         "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe",
         "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop",
@@ -372,13 +355,13 @@
         "unit-tgi-vision-token-mask-and-connector-geometry",
         "unit-vllm-cancellation-and-block-reclamation"
       ],
-      "units": 109
+      "units": 105
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 279062,
-        "estimated_tokens": 39895,
+        "bytes": 256585,
+        "estimated_tokens": 35810,
         "exceeds": [],
         "kind": "federation",
         "path": "infer-core",
@@ -423,10 +406,6 @@
           "unit-kimi-k3-and-kimi-k2-thinking-long-context-moe-recipe",
           "unit-kv-cache-manager-mtp-speculative-and-packed-sequence-tnd-design",
           "unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe",
-          "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
-          "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
-          "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
-          "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop",
           "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator",
           "unit-msmodelslim-dit-diffusion-w8a8-dynamic-and-fa3-quantization-recipe",
           "unit-msmodelslim-model-adapter-and-ep-layerwise-quantization-sop",
@@ -436,7 +415,7 @@
           "unit-sana-video-wan22-i2v-and-davinci-magihuman-npu-optimization-recipe",
           "unit-step3p7-flash-gpt-oss-and-pangu-7b-npu-inference-recipe"
         ],
-        "units": 51
+        "units": 47
       },
       {
         "automatic": false,
@@ -510,7 +489,7 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 35.62037495430559,
+  "index_build_elapsed_ms": 37.39070799201727,
   "leaves": [
     {
       "automatic": false,
@@ -613,58 +592,6 @@
       "recommended_action": "review_leaf_split",
       "unit_ids": [
         "unit-infer-core-mla-dsa-lightning-indexer-and-sparse-attention-axioms"
-      ],
-      "units": 1
-    },
-    {
-      "automatic": false,
-      "bytes": 5190,
-      "estimated_tokens": 941,
-      "exceeds": [],
-      "kind": "leaf",
-      "path": "infer-core/mindie-sd/architecture",
-      "recommended_action": "review_leaf_split",
-      "unit_ids": [
-        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
-      ],
-      "units": 1
-    },
-    {
-      "automatic": false,
-      "bytes": 5743,
-      "estimated_tokens": 1039,
-      "exceeds": [],
-      "kind": "leaf",
-      "path": "infer-core/mindie-sd/dit-compute",
-      "recommended_action": "review_leaf_split",
-      "unit_ids": [
-        "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop"
-      ],
-      "units": 1
-    },
-    {
-      "automatic": false,
-      "bytes": 5357,
-      "estimated_tokens": 960,
-      "exceeds": [],
-      "kind": "leaf",
-      "path": "infer-core/mindie-sd/quantization-contract",
-      "recommended_action": "review_leaf_split",
-      "unit_ids": [
-        "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop"
-      ],
-      "units": 1
-    },
-    {
-      "automatic": false,
-      "bytes": 6187,
-      "estimated_tokens": 1145,
-      "exceeds": [],
-      "kind": "leaf",
-      "path": "infer-core/mindie-sd/vae-and-offload",
-      "recommended_action": "review_leaf_split",
-      "unit_ids": [
-        "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop"
       ],
       "units": 1
     },
@@ -1498,22 +1425,6 @@
     },
     {
       "automatic": false,
-      "bytes": 22477,
-      "estimated_tokens": 4085,
-      "exceeds": [],
-      "kind": "subtree",
-      "path": "infer-core/mindie-sd",
-      "recommended_action": "review_two_level_subtree_split",
-      "unit_ids": [
-        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms",
-        "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop",
-        "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop",
-        "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop"
-      ],
-      "units": 4
-    },
-    {
-      "automatic": false,
       "bytes": 27359,
       "estimated_tokens": 4241,
       "exceeds": [],
@@ -1862,7 +1773,7 @@
       "units": 1
     }
   ],
-  "unit_count": 109,
+  "unit_count": 105,
   "units": {
     "unit-agent-skills-fusion-graph-capture-and-stream-overlap-playbook": {
       "bytes": 5207,
@@ -2415,59 +2326,6 @@
         "unit-infer-core-tp-dp-ep-cp-sp-ulysses-and-cfg-parallel-axioms"
       ],
       "path": "infer-core/models/glm-longcat-bailing/longcat-family-and-agentic/unit-longcat-20-longcat-flash-and-flash-lite-tp-ep-recipe.md",
-      "tier": "L2"
-    },
-    "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms": {
-      "bytes": 5190,
-      "category": "axiom",
-      "content_sha256": "8f3342e228f9f2146c0b5b6506967e0a93b2870958b1654ae81958e6a37ba0e5",
-      "domain_path": "infer-core/mindie-sd/architecture",
-      "estimated_tokens": 941,
-      "evidence_strength": "software_contract",
-      "inherits_from": [],
-      "path": "infer-core/mindie-sd/architecture/unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms.md",
-      "tier": "L1"
-    },
-    "unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop": {
-      "bytes": 5743,
-      "category": "sop",
-      "content_sha256": "b924a24af1fc26d4919e85212152070b5babfce0d8c054abedc38953c8fda8f7",
-      "domain_path": "infer-core/mindie-sd/dit-compute",
-      "estimated_tokens": 1039,
-      "evidence_strength": "reproduced_empirical",
-      "inherits_from": [
-        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
-        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
-      ],
-      "path": "infer-core/mindie-sd/dit-compute/unit-mindie-sd-dit-compute-sparse-cache-and-quant-selection-sop.md",
-      "tier": "L2"
-    },
-    "unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop": {
-      "bytes": 5357,
-      "category": "sop",
-      "content_sha256": "c55e8364f146fc0cc8b1257f6fe1b308231e7cace3e631271134a7cc41aeb1b9",
-      "domain_path": "infer-core/mindie-sd/quantization-contract",
-      "estimated_tokens": 960,
-      "evidence_strength": "reproduced_empirical",
-      "inherits_from": [
-        "unit-infer-core-atlas-a3-ascend950-and-kernel-dsl-platform-axioms",
-        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
-      ],
-      "path": "infer-core/mindie-sd/quantization-contract/unit-mindie-sd-quantization-device-byte-contract-and-alignment-sop.md",
-      "tier": "L2"
-    },
-    "unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop": {
-      "bytes": 6187,
-      "category": "sop",
-      "content_sha256": "eae2bbbe8f46ce6343cb3dc2fed219d9623971bc0084705afa9318f14f7731f5",
-      "domain_path": "infer-core/mindie-sd/vae-and-offload",
-      "estimated_tokens": 1145,
-      "evidence_strength": "reproduced_empirical",
-      "inherits_from": [
-        "unit-infer-core-dit-vae-multimodal-and-hstu-architecture-axioms",
-        "unit-mindie-sd-dit-acceleration-sparse-cache-and-quantization-axioms"
-      ],
-      "path": "infer-core/mindie-sd/vae-and-offload/unit-mindie-sd-vae-tae-sliced-state-decode-and-offload-sop.md",
       "tier": "L2"
     },
     "unit-msmodelslim-automated-quantization-accuracy-tuning-orchestrator": {
